@@ -1,12 +1,10 @@
-# Exclude plugin configuration and data (prevents some plugins from exposing sensitive data)
-.obsidian/plugins/obsidian-git
-
-# Exclude theme configuration and data
-.obsidian/themes/
+# Exclude all plugin data (prevents some plugins from exposing sensitive data)
+# .obsidian/plugins/
 
 # Exclude workspace cache (for desktop and mobile)
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
 
 # Exclude OS settings and caches
+**/desktop.ini
 .DS_Store
