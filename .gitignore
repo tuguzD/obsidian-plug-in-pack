@@ -1,1 +1,14 @@
-.obsidian
+# Exclude plugin configuration and data (prevents some plugins from exposing sensitive data)
+.obsidian/plugins/
+.obsidian/community-plugins.json
+
+# Exclude theme configuration and data
+.obsidian/themes/
+
+# Exclude workspace cache (for desktop and mobile)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# Exclude OS settings and caches
+.DS_Store
+# .trash/
