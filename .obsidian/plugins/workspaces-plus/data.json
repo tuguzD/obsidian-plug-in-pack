@@ -1,0 +1,24 @@
+{
+  "showInstructions": true,
+  "showDeletePrompt": true,
+  "saveOnSwitch": false,
+  "saveOnChange": false,
+  "workspaceSettings": false,
+  "systemDarkMode": false,
+  "globalSettings": {
+    "baseFontSizeAction": true,
+    "readableLineLength": false,
+    "showLineNumber": true,
+    "trashOption": "local",
+    "alwaysUpdateLinks": true,
+    "newFileLocation": "current",
+    "showUnsupportedFiles": true,
+    "showInlineTitle": false
+  },
+  "activeWorkspaceDesktop": "Basic",
+  "activeWorkspaceMobile": "",
+  "reloadLivePreview": false,
+  "workspaceSwitcherRibbon": false,
+  "modeSwitcherRibbon": false,
+  "replaceNativeRibbon": false
+}

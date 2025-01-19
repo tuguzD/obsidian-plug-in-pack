@@ -1,6 +1,5 @@
 # Exclude plugin configuration and data (prevents some plugins from exposing sensitive data)
-.obsidian/plugins/
-.obsidian/community-plugins.json
+.obsidian/plugins/obsidian-git
 
 # Exclude theme configuration and data
 .obsidian/themes/
@@ -11,4 +10,3 @@
 
 # Exclude OS settings and caches
 .DS_Store
-# .trash/
