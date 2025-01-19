@@ -18,5 +18,7 @@
   "obsidian-paste-image-rename",
   "homepage",
   "dynamic-outline",
-  "obsidian-style-settings"
+  "obsidian-style-settings",
+  "settings-search",
+  "hotkey-helper"
 ]
