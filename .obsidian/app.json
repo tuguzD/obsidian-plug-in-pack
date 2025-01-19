@@ -1,4 +1,9 @@
 {
   "readableLineLength": false,
-  "showLineNumber": true
+  "showLineNumber": true,
+  "trashOption": "local",
+  "alwaysUpdateLinks": true,
+  "newFileLocation": "current",
+  "showUnsupportedFiles": true,
+  "showInlineTitle": false
 }
