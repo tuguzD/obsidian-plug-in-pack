@@ -3,5 +3,7 @@
   "workspaces-plus",
   "better-word-count",
   "darlal-switcher-plus",
-  "cmdr"
+  "cmdr",
+  "table-editor-obsidian",
+  "sheets"
 ]
