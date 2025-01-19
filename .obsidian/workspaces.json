@@ -6,11 +6,11 @@
         "type": "split",
         "children": [
           {
-            "id": "b7748165efbc40e0",
+            "id": "d6a40a782864decc",
             "type": "tabs",
             "children": [
               {
-                "id": "24b944bb151455cc",
+                "id": "6a1e613a50f4639e",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
@@ -194,6 +194,7 @@
       "left-ribbon": {
         "hiddenItems": {
           "switcher:Open quick switcher": true,
+          "obsidian-day-and-night:Toggle Theme": false,
           "graph:Open graph view": false,
           "canvas:Create new canvas": true,
           "templates:Insert template": true,
@@ -205,8 +206,8 @@
           "table-editor-obsidian:Advanced Tables Toolbar": true
         }
       },
-      "active": "b19e462c8cc18b82",
-      "mtime": "2025-01-19T23:22:50+03:00",
+      "active": "6a1e613a50f4639e",
+      "mtime": "2025-01-20T00:02:40+03:00",
       "workspaces-plus:settings-v1": {}
     }
   },
