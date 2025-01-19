@@ -10,5 +10,7 @@
   "obsidian-day-and-night",
   "obsidian-cursor-location-plugin",
   "remember-cursor-position",
-  "dataview"
+  "dataview",
+  "obsidian-discordrpc",
+  "obsidian-wakatime"
 ]
