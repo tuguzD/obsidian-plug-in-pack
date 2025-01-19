@@ -28,5 +28,6 @@
   "obsidian-search-everywhere-plugin",
   "replace-all",
   "better-search-views",
-  "obsidian-footnotes"
+  "obsidian-footnotes",
+  "obsidian-linter"
 ]

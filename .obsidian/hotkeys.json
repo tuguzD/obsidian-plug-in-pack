@@ -72,5 +72,22 @@
       ],
       "key": "S"
     }
+  ],
+  "obsidian-linter:lint-file-unless-ignored": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "L"
+    }
+  ],
+  "obsidian-linter:lint-file": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
+      ],
+      "key": "L"
+    }
   ]
 }
