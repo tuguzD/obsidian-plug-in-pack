@@ -12,5 +12,7 @@
   "remember-cursor-position",
   "dataview",
   "obsidian-discordrpc",
-  "obsidian-wakatime"
+  "obsidian-wakatime",
+  "editing-toolbar",
+  "obsidian-hider"
 ]
