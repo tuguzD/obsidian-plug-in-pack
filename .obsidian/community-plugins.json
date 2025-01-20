@@ -49,5 +49,6 @@
   "obsidian-version-history-diff",
   "text-extractor",
   "enhanced-annotations",
-  "scroll-speed"
+  "scroll-speed",
+  "obsidian-scroll-to-top-plugin"
 ]
