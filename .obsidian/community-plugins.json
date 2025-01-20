@@ -48,5 +48,6 @@
   "templater-obsidian",
   "obsidian-version-history-diff",
   "text-extractor",
-  "enhanced-annotations"
+  "enhanced-annotations",
+  "scroll-speed"
 ]

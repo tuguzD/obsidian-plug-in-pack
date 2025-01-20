@@ -172,6 +172,9 @@
       },
       "enhanced-annotations": {
         "startupType": "instant"
+      },
+      "scroll-speed": {
+        "startupType": "instant"
       }
     }
   }
