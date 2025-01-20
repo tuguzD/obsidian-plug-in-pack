@@ -1,6 +1,9 @@
 # Exclude all plugin data (prevents some plugins from exposing sensitive data)
 # .obsidian/plugins/
 
+# Exclude all files needed to test plugins
+Tests/
+
 # Exclude workspace cache (for desktop and mobile)
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json

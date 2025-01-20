@@ -1,0 +1,174 @@
+{
+  "settings": {
+    "useAdvancedFormatting": false,
+    "countType": "word",
+    "countConfig": {
+      "customSuffix": "w",
+      "$sessionCountType": "word"
+    },
+    "countType2": "page",
+    "countConfig2": {
+      "$sessionCountType": "word",
+      "customSuffix": "p"
+    },
+    "countType3": "none",
+    "countConfig3": {
+      "$sessionCountType": "word"
+    },
+    "pipeSeparator": "|",
+    "abbreviateDescriptions": false,
+    "alignment": "right",
+    "showSameCountsOnFolders": false,
+    "folderCountType": "note",
+    "folderCountConfig": {
+      "customSuffix": "n",
+      "$sessionCountType": "word"
+    },
+    "folderCountType2": "pagedecimal",
+    "folderCountConfig2": {
+      "$sessionCountType": "word",
+      "customSuffix": "p"
+    },
+    "folderCountType3": "readtime",
+    "folderCountConfig3": {
+      "$sessionCountType": "word"
+    },
+    "folderPipeSeparator": "|",
+    "folderAbbreviateDescriptions": false,
+    "folderAlignment": "right",
+    "showSameCountsOnRoot": false,
+    "rootCountType": "note",
+    "rootCountConfig": {
+      "customSuffix": "n",
+      "$sessionCountType": "word"
+    },
+    "rootCountType2": "pagedecimal",
+    "rootCountConfig2": {
+      "$sessionCountType": "word",
+      "customSuffix": "p"
+    },
+    "rootCountType3": "none",
+    "rootCountConfig3": {
+      "$sessionCountType": "word"
+    },
+    "rootPipeSeparator": "|",
+    "rootAbbreviateDescriptions": false,
+    "showAdvanced": true,
+    "wordsPerMinute": 265,
+    "charsPerMinute": 500,
+    "wordsPerPage": 300,
+    "charsPerPage": 1500,
+    "charsPerPageIncludesWhitespace": false,
+    "characterCountType": "AllCharacters",
+    "pageCountType": "ByWords",
+    "includeDirectories": "",
+    "excludeComments": false,
+    "excludeCodeBlocks": false,
+    "excludeNonVisibleLinkPortions": false,
+    "excludeFootnotes": false,
+    "momentDateFormat": "Y.MM.DD",
+    "debugMode": false
+  },
+  "cachedCounts": {
+    "README.md": {
+      "isCountable": true,
+      "targetNodeType": "file",
+      "noteCount": 1,
+      "wordCount": 9,
+      "wordCountTowardGoal": 0,
+      "wordGoal": null,
+      "pageCount": 0.03,
+      "characterCount": 63,
+      "nonWhitespaceCharacterCount": 52,
+      "readingTimeInMinutes": 0.033962264150943396,
+      "linkCount": 0,
+      "embedCount": 0,
+      "aliases": null,
+      "createdDate": 1737307831772,
+      "modifiedDate": 1737327348489,
+      "sizeInBytes": 63,
+      "sessionStart": {
+        "noteCount": 1,
+        "pageCount": 0.03,
+        "wordCount": 9,
+        "characterCount": 63,
+        "nonWhitespaceCharacterCount": 52
+      }
+    },
+    "Home.md": {
+      "isCountable": true,
+      "targetNodeType": "file",
+      "noteCount": 1,
+      "wordCount": 1,
+      "wordCountTowardGoal": 0,
+      "wordGoal": null,
+      "pageCount": 0.0033333333333333335,
+      "characterCount": 10,
+      "nonWhitespaceCharacterCount": 6,
+      "readingTimeInMinutes": 0.0037735849056603774,
+      "linkCount": 0,
+      "embedCount": 0,
+      "aliases": null,
+      "createdDate": 1737322669427,
+      "modifiedDate": 1737329865308,
+      "sizeInBytes": 12,
+      "sessionStart": {
+        "noteCount": 1,
+        "pageCount": 0.0033333333333333335,
+        "wordCount": 1,
+        "characterCount": 10,
+        "nonWhitespaceCharacterCount": 6
+      }
+    },
+    "Tests/Lorem ipsum.md": {
+      "isCountable": true,
+      "targetNodeType": "file",
+      "noteCount": 1,
+      "wordCount": 69,
+      "wordCountTowardGoal": 0,
+      "wordGoal": null,
+      "pageCount": 0.23,
+      "characterCount": 446,
+      "nonWhitespaceCharacterCount": 377,
+      "readingTimeInMinutes": 0.26037735849056604,
+      "linkCount": 0,
+      "embedCount": 0,
+      "aliases": null,
+      "createdDate": 1737334598060,
+      "modifiedDate": 1737334609450,
+      "sizeInBytes": 446,
+      "sessionStart": {
+        "noteCount": 0,
+        "pageCount": 0,
+        "wordCount": 0,
+        "characterCount": 0,
+        "nonWhitespaceCharacterCount": 0
+      }
+    },
+    "Tests/Рыба-текст.md": {
+      "isCountable": true,
+      "targetNodeType": "file",
+      "noteCount": 1,
+      "wordCount": 80,
+      "wordCountTowardGoal": 0,
+      "wordGoal": null,
+      "pageCount": 0.26666666666666666,
+      "characterCount": 738,
+      "nonWhitespaceCharacterCount": 658,
+      "readingTimeInMinutes": 0.3018867924528302,
+      "linkCount": 0,
+      "embedCount": 0,
+      "aliases": null,
+      "createdDate": 1737334583303,
+      "modifiedDate": 1737334593481,
+      "sizeInBytes": 1383,
+      "sessionStart": {
+        "noteCount": 0,
+        "pageCount": 0,
+        "wordCount": 0,
+        "characterCount": 0,
+        "nonWhitespaceCharacterCount": 0
+      }
+    }
+  }
+}
