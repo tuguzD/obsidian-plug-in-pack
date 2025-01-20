@@ -6,11 +6,11 @@
         "type": "split",
         "children": [
           {
-            "id": "e591a8af2f203c01",
+            "id": "cc5e152fbfc2fd75",
             "type": "tabs",
             "children": [
               {
-                "id": "0222303bb4879df4",
+                "id": "0e96e9b21ddeac91",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
@@ -117,7 +117,7 @@
           {
             "id": "b9c37a9ed48bf901",
             "type": "tabs",
-            "dimension": 63.254310344827594,
+            "dimension": 63.25431034482759,
             "children": [
               {
                 "id": "24d2f5bedfc1d5e8",
@@ -161,39 +161,6 @@
             "dimension": 36.74568965517241,
             "children": [
               {
-                "id": "0d45adfa82e5537e",
-                "type": "leaf",
-                "state": {
-                  "type": "outgoing-link",
-                  "state": {
-                    "file": "Home.md",
-                    "linksCollapsed": false,
-                    "unlinkedCollapsed": false
-                  },
-                  "icon": "links-going-out",
-                  "title": "Outgoing links from Home"
-                }
-              },
-              {
-                "id": "af28f8e770267c82",
-                "type": "leaf",
-                "state": {
-                  "type": "backlink",
-                  "state": {
-                    "file": "Home.md",
-                    "collapseAll": false,
-                    "extraContext": false,
-                    "sortOrder": "alphabetical",
-                    "showSearch": false,
-                    "searchQuery": "",
-                    "backlinkCollapsed": false,
-                    "unlinkedCollapsed": true
-                  },
-                  "icon": "links-coming-in",
-                  "title": "Backlinks for Home"
-                }
-              },
-              {
                 "id": "fcf16252da970e3f",
                 "type": "leaf",
                 "state": {
@@ -231,6 +198,39 @@
                 }
               },
               {
+                "id": "0d45adfa82e5537e",
+                "type": "leaf",
+                "state": {
+                  "type": "outgoing-link",
+                  "state": {
+                    "file": "Home.md",
+                    "linksCollapsed": false,
+                    "unlinkedCollapsed": false
+                  },
+                  "icon": "links-going-out",
+                  "title": "Outgoing links from Home"
+                }
+              },
+              {
+                "id": "af28f8e770267c82",
+                "type": "leaf",
+                "state": {
+                  "type": "backlink",
+                  "state": {
+                    "file": "Home.md",
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical",
+                    "showSearch": false,
+                    "searchQuery": "",
+                    "backlinkCollapsed": false,
+                    "unlinkedCollapsed": true
+                  },
+                  "icon": "links-coming-in",
+                  "title": "Backlinks for Home"
+                }
+              },
+              {
                 "id": "82d4afd67b1be2db",
                 "type": "leaf",
                 "state": {
@@ -240,8 +240,7 @@
                   "title": "Advanced Tables"
                 }
               }
-            ],
-            "currentTab": 2
+            ]
           }
         ],
         "direction": "horizontal",
@@ -263,8 +262,8 @@
           "omnisearch:Omnisearch": false
         }
       },
-      "active": "b19e462c8cc18b82",
-      "mtime": "2025-01-21T01:37:00+03:00",
+      "active": "0e96e9b21ddeac91",
+      "mtime": "2025-01-21T01:39:23+03:00",
       "workspaces-plus:settings-v1": {
         "explorerFoldState": [
           "Tests"
