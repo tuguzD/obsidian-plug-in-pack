@@ -157,6 +157,12 @@
       },
       "workspaces-plus": {
         "startupType": "instant"
+      },
+      "templater-obsidian": {
+        "startupType": "instant"
+      },
+      "obsidian-version-history-diff": {
+        "startupType": "instant"
       }
     }
   }
