@@ -32,5 +32,7 @@
   "obsidian-linter",
   "calendar",
   "periodic-notes",
-  "nldates-obsidian"
+  "nldates-obsidian",
+  "plugins-annotations",
+  "obsidian-plugin-update-tracker"
 ]
