@@ -6,11 +6,11 @@
         "type": "split",
         "children": [
           {
-            "id": "34ca79cedb15aade",
+            "id": "b58a3e6dd8af378e",
             "type": "tabs",
             "children": [
               {
-                "id": "d4e3bdc4a55e9443",
+                "id": "e8a6df1b8d1aefdf",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
@@ -35,7 +35,7 @@
           {
             "id": "8563ba047e468848",
             "type": "tabs",
-            "dimension": 61.87363834422658,
+            "dimension": 60.609480812641074,
             "children": [
               {
                 "id": "ee8cb8980264dcf0",
@@ -82,7 +82,7 @@
           {
             "id": "c5b359856d887b32",
             "type": "tabs",
-            "dimension": 38.12636165577342,
+            "dimension": 39.39051918735892,
             "children": [
               {
                 "id": "9d3b4839544cf4e5",
@@ -117,7 +117,7 @@
           {
             "id": "b9c37a9ed48bf901",
             "type": "tabs",
-            "dimension": 66.25,
+            "dimension": 69.9353448275862,
             "children": [
               {
                 "id": "24d2f5bedfc1d5e8",
@@ -133,6 +133,16 @@
                 }
               },
               {
+                "id": "af17b037b043fbd3",
+                "type": "leaf",
+                "state": {
+                  "type": "annotations-outline",
+                  "state": {},
+                  "icon": "message-square",
+                  "title": "Enhanced Annotations"
+                }
+              },
+              {
                 "id": "b19e462c8cc18b82",
                 "type": "leaf",
                 "state": {
@@ -141,24 +151,14 @@
                   "icon": "git-pull-request",
                   "title": "Source Control"
                 }
-              },
-              {
-                "id": "271b35fadb2fbeaf",
-                "type": "leaf",
-                "state": {
-                  "type": "git-history-view",
-                  "state": {},
-                  "icon": "history",
-                  "title": "History"
-                }
               }
             ],
-            "currentTab": 1
+            "currentTab": 2
           },
           {
             "id": "57f3dcfa2c7c4e84",
             "type": "tabs",
-            "dimension": 33.75,
+            "dimension": 30.064655172413794,
             "children": [
               {
                 "id": "0d45adfa82e5537e",
@@ -167,7 +167,7 @@
                   "type": "outgoing-link",
                   "state": {
                     "linksCollapsed": false,
-                    "unlinkedCollapsed": true
+                    "unlinkedCollapsed": false
                   },
                   "icon": "links-going-out",
                   "title": "Outgoing links"
@@ -179,6 +179,7 @@
                 "state": {
                   "type": "backlink",
                   "state": {
+                    "file": "Home.md",
                     "collapseAll": false,
                     "extraContext": false,
                     "sortOrder": "alphabetical",
@@ -188,7 +189,7 @@
                     "unlinkedCollapsed": true
                   },
                   "icon": "links-coming-in",
-                  "title": "Backlinks"
+                  "title": "Backlinks for Home"
                 }
               },
               {
@@ -202,11 +203,11 @@
                 }
               }
             ],
-            "currentTab": 2
+            "currentTab": 1
           }
         ],
         "direction": "horizontal",
-        "width": 340.5
+        "width": 327.5
       },
       "left-ribbon": {
         "hiddenItems": {
@@ -219,12 +220,13 @@
           "command-palette:Open command palette": true,
           "obsidian-git:Open Git source control": true,
           "workspaces:Manage workspace layouts": true,
-          "periodic-notes:Open today": true,
-          "templater-obsidian:Templater": true
+          "templater-obsidian:Templater": true,
+          "periodic-notes:Open today": false,
+          "omnisearch:Omnisearch": false
         }
       },
-      "active": "d4e3bdc4a55e9443",
-      "mtime": "2025-01-20T14:21:19+03:00",
+      "active": "b19e462c8cc18b82",
+      "mtime": "2025-01-21T00:08:36+03:00",
       "workspaces-plus:settings-v1": {
         "explorerFoldState": [
           "Tests"
