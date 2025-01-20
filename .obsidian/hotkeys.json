@@ -146,5 +146,13 @@
       "key": "A"
     }
   ],
-  "table-editor-obsidian:table-control-bar": []
+  "table-editor-obsidian:table-control-bar": [],
+  "quick-explorer:browse-current": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "V"
+    }
+  ]
 }

@@ -33,7 +33,12 @@
   },
   "FolderNote": {
     "Enable": true,
-    "FolderTagLinks": [],
+    "FolderTagLinks": [
+      {
+        "tag_name": "new/rus",
+        "folder_path": "Tests/Folder Notes"
+      }
+    ],
     "EnableAutoDetect": true,
     "EnableBackgroundOpacity": false,
     "Values": {
