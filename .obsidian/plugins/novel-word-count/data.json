@@ -19,14 +19,15 @@
     "abbreviateDescriptions": false,
     "alignment": "right",
     "showSameCountsOnFolders": false,
-    "folderCountType": "pagedecimal",
+    "folderCountType": "note",
     "folderCountConfig": {
-      "customSuffix": "p",
+      "customSuffix": "n",
       "$sessionCountType": "word"
     },
-    "folderCountType2": "readtime",
+    "folderCountType2": "pagedecimal",
     "folderCountConfig2": {
-      "$sessionCountType": "word"
+      "$sessionCountType": "word",
+      "customSuffix": "p"
     },
     "folderCountType3": "none",
     "folderCountConfig3": {
@@ -90,7 +91,7 @@
         "noteCount": 1,
         "pageCount": 0.26666666666666666,
         "wordCount": 80,
-        "characterCount": 738,
+        "characterCount": 740,
         "nonWhitespaceCharacterCount": 658
       },
       "frontmatter": {
@@ -116,10 +117,10 @@
       "sizeInBytes": 452,
       "sessionStart": {
         "noteCount": 1,
-        "pageCount": 0.23,
-        "wordCount": 69,
-        "characterCount": 446,
-        "nonWhitespaceCharacterCount": 377
+        "pageCount": 0.23333333333333334,
+        "wordCount": 70,
+        "characterCount": 452,
+        "nonWhitespaceCharacterCount": 381
       }
     },
     "README.md": {
@@ -137,14 +138,14 @@
       "embedCount": 0,
       "aliases": null,
       "createdDate": 1737307831772,
-      "modifiedDate": 1737338699233,
+      "modifiedDate": 1737340660334,
       "sizeInBytes": 63,
       "sessionStart": {
         "noteCount": 1,
-        "pageCount": 0.03333333333333333,
-        "wordCount": 10,
-        "characterCount": 71,
-        "nonWhitespaceCharacterCount": 56
+        "pageCount": 0.03,
+        "wordCount": 9,
+        "characterCount": 63,
+        "nonWhitespaceCharacterCount": 52
       }
     },
     "Home.md": {
