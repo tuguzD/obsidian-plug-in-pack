@@ -19,7 +19,9 @@
   "macros": [],
   "explorer": [],
   "hide": {
-    "statusbar": [],
+    "statusbar": [
+      "obsidian-discordrpc"
+    ],
     "leftRibbon": [
       "Open today",
       "Open quick switcher"

@@ -7,7 +7,6 @@
   "obsidian-cursor-location-plugin",
   "dataview",
   "obsidian-day-and-night",
-  "obsidian-discordrpc",
   "obsidian-git",
   "obsidian-hider",
   "homepage",
@@ -16,7 +15,6 @@
   "remember-cursor-position",
   "sheets",
   "obsidian-style-settings",
-  "obsidian-wakatime",
   "workspaces-plus",
   "editing-toolbar",
   "settings-search",
@@ -34,11 +32,9 @@
   "periodic-notes",
   "nldates-obsidian",
   "plugins-annotations",
-  "obsidian-plugin-update-tracker",
   "open-with-nldates",
   "colored-tags-wrangler",
   "recent-files-obsidian",
-  "obsidian-icon-folder",
   "novel-word-count",
   "obsidian-copy-block-link",
   "graph-nested-tags",
@@ -46,5 +42,7 @@
   "folder-notes",
   "quick-explorer",
   "links",
-  "link-favicon"
+  "link-favicon",
+  "lazy-plugins",
+  "obsidian-icon-folder"
 ]
