@@ -163,6 +163,12 @@
       },
       "obsidian-version-history-diff": {
         "startupType": "instant"
+      },
+      "omnisearch": {
+        "startupType": "short"
+      },
+      "text-extractor": {
+        "startupType": "instant"
       }
     }
   }

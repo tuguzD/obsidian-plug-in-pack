@@ -30,7 +30,8 @@
     ],
     "leftRibbon": [
       "Open today",
-      "Open quick switcher"
+      "Open quick switcher",
+      "Omnisearch"
     ]
   },
   "spacing": 8,
