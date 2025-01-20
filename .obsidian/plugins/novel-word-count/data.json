@@ -6,7 +6,7 @@
       "customSuffix": "w",
       "$sessionCountType": "word"
     },
-    "countType2": "page",
+    "countType2": "pagedecimal",
     "countConfig2": {
       "$sessionCountType": "word",
       "customSuffix": "p"
@@ -77,21 +77,24 @@
       "wordCountTowardGoal": 0,
       "wordGoal": null,
       "pageCount": 0.26666666666666666,
-      "characterCount": 738,
+      "characterCount": 740,
       "nonWhitespaceCharacterCount": 658,
       "readingTimeInMinutes": 0.3018867924528302,
       "linkCount": 0,
       "embedCount": 0,
       "aliases": null,
       "createdDate": 1737334583303,
-      "modifiedDate": 1737334593481,
-      "sizeInBytes": 1383,
+      "modifiedDate": 1737338070608,
+      "sizeInBytes": 1405,
       "sessionStart": {
         "noteCount": 1,
         "pageCount": 0.26666666666666666,
         "wordCount": 80,
         "characterCount": 738,
         "nonWhitespaceCharacterCount": 658
+      },
+      "frontmatter": {
+        "year": "2023"
       }
     },
     "Tests/Lorem ipsum.md": {
@@ -134,7 +137,7 @@
       "embedCount": 0,
       "aliases": null,
       "createdDate": 1737307831772,
-      "modifiedDate": 1737337254178,
+      "modifiedDate": 1737338699233,
       "sizeInBytes": 63,
       "sessionStart": {
         "noteCount": 1,

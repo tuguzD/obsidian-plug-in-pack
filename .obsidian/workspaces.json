@@ -6,11 +6,11 @@
         "type": "split",
         "children": [
           {
-            "id": "715993e5af6817bc",
+            "id": "d29f16907d02a146",
             "type": "tabs",
             "children": [
               {
-                "id": "529bbcc425729448",
+                "id": "1d67b5c1e77656c1",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
@@ -212,15 +212,14 @@
           "obsidian-git:Open Git source control": true,
           "workspaces:Manage workspace layouts": true,
           "periodic-notes:Open today": true,
-          "periodic-notes:Open this week": true
+          "dashboard-navigator:Open dashboard navigator": false
         }
       },
-      "active": "529bbcc425729448",
-      "mtime": "2025-01-20T03:19:25+03:00",
+      "active": "1d67b5c1e77656c1",
+      "mtime": "2025-01-20T05:13:27+03:00",
       "workspaces-plus:settings-v1": {
         "explorerFoldState": [
-          "2025",
-          "2025/2025-01"
+          "Tests"
         ]
       }
     }
