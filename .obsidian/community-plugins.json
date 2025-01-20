@@ -45,5 +45,6 @@
   "link-favicon",
   "lazy-plugins",
   "obsidian-icon-folder",
-  "templater-obsidian"
+  "templater-obsidian",
+  "obsidian-version-history-diff"
 ]
