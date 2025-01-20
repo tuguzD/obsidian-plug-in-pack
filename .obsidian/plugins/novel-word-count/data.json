@@ -19,17 +19,16 @@
     "abbreviateDescriptions": false,
     "alignment": "right",
     "showSameCountsOnFolders": false,
-    "folderCountType": "note",
+    "folderCountType": "pagedecimal",
     "folderCountConfig": {
-      "customSuffix": "n",
+      "customSuffix": "p",
       "$sessionCountType": "word"
     },
-    "folderCountType2": "pagedecimal",
+    "folderCountType2": "readtime",
     "folderCountConfig2": {
-      "$sessionCountType": "word",
-      "customSuffix": "p"
+      "$sessionCountType": "word"
     },
-    "folderCountType3": "readtime",
+    "folderCountType3": "none",
     "folderCountConfig3": {
       "$sessionCountType": "word"
     },
@@ -70,6 +69,56 @@
     "debugMode": false
   },
   "cachedCounts": {
+    "Tests/Рыба-текст.md": {
+      "isCountable": true,
+      "targetNodeType": "file",
+      "noteCount": 1,
+      "wordCount": 80,
+      "wordCountTowardGoal": 0,
+      "wordGoal": null,
+      "pageCount": 0.26666666666666666,
+      "characterCount": 738,
+      "nonWhitespaceCharacterCount": 658,
+      "readingTimeInMinutes": 0.3018867924528302,
+      "linkCount": 0,
+      "embedCount": 0,
+      "aliases": null,
+      "createdDate": 1737334583303,
+      "modifiedDate": 1737334593481,
+      "sizeInBytes": 1383,
+      "sessionStart": {
+        "noteCount": 1,
+        "pageCount": 0.26666666666666666,
+        "wordCount": 80,
+        "characterCount": 738,
+        "nonWhitespaceCharacterCount": 658
+      }
+    },
+    "Tests/Lorem ipsum.md": {
+      "isCountable": true,
+      "targetNodeType": "file",
+      "noteCount": 1,
+      "wordCount": 70,
+      "wordCountTowardGoal": 0,
+      "wordGoal": null,
+      "pageCount": 0.23333333333333334,
+      "characterCount": 452,
+      "nonWhitespaceCharacterCount": 381,
+      "readingTimeInMinutes": 0.2641509433962264,
+      "linkCount": 0,
+      "embedCount": 0,
+      "aliases": null,
+      "createdDate": 1737334598060,
+      "modifiedDate": 1737337259975,
+      "sizeInBytes": 452,
+      "sessionStart": {
+        "noteCount": 1,
+        "pageCount": 0.23,
+        "wordCount": 69,
+        "characterCount": 446,
+        "nonWhitespaceCharacterCount": 377
+      }
+    },
     "README.md": {
       "isCountable": true,
       "targetNodeType": "file",
@@ -85,14 +134,14 @@
       "embedCount": 0,
       "aliases": null,
       "createdDate": 1737307831772,
-      "modifiedDate": 1737327348489,
+      "modifiedDate": 1737337254178,
       "sizeInBytes": 63,
       "sessionStart": {
         "noteCount": 1,
-        "pageCount": 0.03,
-        "wordCount": 9,
-        "characterCount": 63,
-        "nonWhitespaceCharacterCount": 52
+        "pageCount": 0.03333333333333333,
+        "wordCount": 10,
+        "characterCount": 71,
+        "nonWhitespaceCharacterCount": 56
       }
     },
     "Home.md": {
@@ -118,56 +167,6 @@
         "wordCount": 1,
         "characterCount": 10,
         "nonWhitespaceCharacterCount": 6
-      }
-    },
-    "Tests/Lorem ipsum.md": {
-      "isCountable": true,
-      "targetNodeType": "file",
-      "noteCount": 1,
-      "wordCount": 69,
-      "wordCountTowardGoal": 0,
-      "wordGoal": null,
-      "pageCount": 0.23,
-      "characterCount": 446,
-      "nonWhitespaceCharacterCount": 377,
-      "readingTimeInMinutes": 0.26037735849056604,
-      "linkCount": 0,
-      "embedCount": 0,
-      "aliases": null,
-      "createdDate": 1737334598060,
-      "modifiedDate": 1737334609450,
-      "sizeInBytes": 446,
-      "sessionStart": {
-        "noteCount": 0,
-        "pageCount": 0,
-        "wordCount": 0,
-        "characterCount": 0,
-        "nonWhitespaceCharacterCount": 0
-      }
-    },
-    "Tests/Рыба-текст.md": {
-      "isCountable": true,
-      "targetNodeType": "file",
-      "noteCount": 1,
-      "wordCount": 80,
-      "wordCountTowardGoal": 0,
-      "wordGoal": null,
-      "pageCount": 0.26666666666666666,
-      "characterCount": 738,
-      "nonWhitespaceCharacterCount": 658,
-      "readingTimeInMinutes": 0.3018867924528302,
-      "linkCount": 0,
-      "embedCount": 0,
-      "aliases": null,
-      "createdDate": 1737334583303,
-      "modifiedDate": 1737334593481,
-      "sizeInBytes": 1383,
-      "sessionStart": {
-        "noteCount": 0,
-        "pageCount": 0,
-        "wordCount": 0,
-        "characterCount": 0,
-        "nonWhitespaceCharacterCount": 0
       }
     }
   }

@@ -137,5 +137,13 @@
       ],
       "key": "Y"
     }
+  ],
+  "obsidian-git:toggle-line-author-info": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "A"
+    }
   ]
 }

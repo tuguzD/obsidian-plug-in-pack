@@ -36,5 +36,6 @@
   "plugins-annotations",
   "obsidian-plugin-update-tracker",
   "novel-word-count",
-  "open-with-nldates"
+  "open-with-nldates",
+  "colored-tags-wrangler"
 ]
