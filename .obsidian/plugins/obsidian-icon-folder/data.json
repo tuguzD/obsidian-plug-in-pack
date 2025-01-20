@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiAlarmSmoke",
       "LiTestTube2",
       "🧪",
       "LiBookMarked",
-      "LiHome",
-      "LiAlarmClock"
+      "LiHome"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -42,5 +42,9 @@
   "README.md": {
     "iconName": "LiBookMarked",
     "iconColor": "#ac6d16"
+  },
+  "Tests/Tests.md": {
+    "iconName": "LiTestTube2",
+    "iconColor": "#438c12"
   }
 }

@@ -20,7 +20,10 @@
   "explorer": [],
   "hide": {
     "statusbar": [],
-    "leftRibbon": []
+    "leftRibbon": [
+      "Open today",
+      "Open quick switcher"
+    ]
   },
   "spacing": 8,
   "advancedToolbar": {
