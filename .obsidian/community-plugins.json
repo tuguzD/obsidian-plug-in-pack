@@ -44,5 +44,6 @@
   "links",
   "link-favicon",
   "lazy-plugins",
-  "obsidian-icon-folder"
+  "obsidian-icon-folder",
+  "templater-obsidian"
 ]
