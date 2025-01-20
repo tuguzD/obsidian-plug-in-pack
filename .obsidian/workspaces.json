@@ -6,11 +6,11 @@
         "type": "split",
         "children": [
           {
-            "id": "6d9dac8fc455275d",
+            "id": "715993e5af6817bc",
             "type": "tabs",
             "children": [
               {
-                "id": "dcb38b3a673697e8",
+                "id": "529bbcc425729448",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
@@ -35,6 +35,7 @@
           {
             "id": "8563ba047e468848",
             "type": "tabs",
+            "dimension": 61.87363834422658,
             "children": [
               {
                 "id": "ee8cb8980264dcf0",
@@ -77,6 +78,23 @@
               }
             ],
             "currentTab": 1
+          },
+          {
+            "id": "c5b359856d887b32",
+            "type": "tabs",
+            "dimension": 38.12636165577342,
+            "children": [
+              {
+                "id": "9d3b4839544cf4e5",
+                "type": "leaf",
+                "state": {
+                  "type": "calendar",
+                  "state": {},
+                  "icon": "calendar-with-checkmark",
+                  "title": "Calendar"
+                }
+              }
+            ]
           }
         ],
         "direction": "horizontal",
@@ -192,13 +210,18 @@
           "templates:Insert template": true,
           "command-palette:Open command palette": true,
           "obsidian-git:Open Git source control": true,
-          "workspaces:Manage workspace layouts": true
+          "workspaces:Manage workspace layouts": true,
+          "periodic-notes:Open today": true,
+          "periodic-notes:Open this week": true
         }
       },
-      "active": "dcb38b3a673697e8",
-      "mtime": "2025-01-20T01:42:24+03:00",
+      "active": "529bbcc425729448",
+      "mtime": "2025-01-20T03:19:25+03:00",
       "workspaces-plus:settings-v1": {
-        "explorerFoldState": []
+        "explorerFoldState": [
+          "2025",
+          "2025/2025-01"
+        ]
       }
     }
   },

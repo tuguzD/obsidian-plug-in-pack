@@ -29,5 +29,8 @@
   "replace-all",
   "better-search-views",
   "obsidian-footnotes",
-  "obsidian-linter"
+  "obsidian-linter",
+  "calendar",
+  "periodic-notes",
+  "nldates-obsidian"
 ]

@@ -89,5 +89,13 @@
       ],
       "key": "L"
     }
+  ],
+  "workspace:toggle-pin": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "P"
+    }
   ]
 }
