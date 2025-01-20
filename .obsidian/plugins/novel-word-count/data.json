@@ -99,19 +99,19 @@
       "isCountable": true,
       "targetNodeType": "file",
       "noteCount": 1,
-      "wordCount": 80,
+      "wordCount": 81,
       "wordCountTowardGoal": 0,
       "wordGoal": null,
-      "pageCount": 0.26666666666666666,
-      "characterCount": 740,
-      "nonWhitespaceCharacterCount": 658,
-      "readingTimeInMinutes": 0.3018867924528302,
+      "pageCount": 0.27,
+      "characterCount": 750,
+      "nonWhitespaceCharacterCount": 666,
+      "readingTimeInMinutes": 0.30566037735849055,
       "linkCount": 0,
       "embedCount": 0,
       "aliases": null,
       "createdDate": 1737334583303,
-      "modifiedDate": 1737338070608,
-      "sizeInBytes": 1405,
+      "modifiedDate": 1737362683185,
+      "sizeInBytes": 1415,
       "sessionStart": {
         "noteCount": 1,
         "pageCount": 0.26666666666666666,
@@ -163,7 +163,7 @@
       "embedCount": 0,
       "aliases": null,
       "createdDate": 1737322669427,
-      "modifiedDate": 1737329865308,
+      "modifiedDate": 1737362673821,
       "sizeInBytes": 12,
       "sessionStart": {
         "noteCount": 1,
@@ -171,6 +171,31 @@
         "wordCount": 1,
         "characterCount": 10,
         "nonWhitespaceCharacterCount": 6
+      }
+    },
+    "Tests/Lists.md": {
+      "isCountable": true,
+      "targetNodeType": "file",
+      "noteCount": 1,
+      "wordCount": 26,
+      "wordCountTowardGoal": 0,
+      "wordGoal": null,
+      "pageCount": 0.08666666666666667,
+      "characterCount": 284,
+      "nonWhitespaceCharacterCount": 222,
+      "readingTimeInMinutes": 0.09811320754716982,
+      "linkCount": 0,
+      "embedCount": 0,
+      "aliases": null,
+      "createdDate": 1737361304502,
+      "modifiedDate": 1737361377192,
+      "sizeInBytes": 284,
+      "sessionStart": {
+        "noteCount": 0,
+        "pageCount": 0,
+        "wordCount": 0,
+        "characterCount": 0,
+        "nonWhitespaceCharacterCount": 0
       }
     }
   }
