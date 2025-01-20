@@ -6,11 +6,11 @@
         "type": "split",
         "children": [
           {
-            "id": "f7365e2c6be94f10",
+            "id": "34ca79cedb15aade",
             "type": "tabs",
             "children": [
               {
-                "id": "dd7a88a5d817fac7",
+                "id": "d4e3bdc4a55e9443",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
@@ -108,7 +108,7 @@
           }
         ],
         "direction": "horizontal",
-        "width": 300
+        "width": 325.5
       },
       "right": {
         "id": "c40a130a818295e1",
@@ -223,8 +223,8 @@
           "templater-obsidian:Templater": true
         }
       },
-      "active": "b19e462c8cc18b82",
-      "mtime": "2025-01-20T14:08:57+03:00",
+      "active": "d4e3bdc4a55e9443",
+      "mtime": "2025-01-20T14:21:19+03:00",
       "workspaces-plus:settings-v1": {
         "explorerFoldState": [
           "Tests"
