@@ -1,5 +1,8 @@
 {
   "baseFontSizeAction": false,
   "theme": "obsidian",
-  "cssTheme": ""
+  "cssTheme": "",
+  "enabledCssSnippets": [
+    "obsidian-blur-plugin"
+  ]
 }

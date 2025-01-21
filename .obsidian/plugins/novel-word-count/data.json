@@ -70,31 +70,6 @@
     "debugMode": false
   },
   "cachedCounts": {
-    "README.md": {
-      "isCountable": true,
-      "targetNodeType": "file",
-      "noteCount": 0,
-      "wordCount": 0,
-      "wordCountTowardGoal": 0,
-      "wordGoal": 0,
-      "pageCount": 0,
-      "characterCount": 0,
-      "nonWhitespaceCharacterCount": 0,
-      "readingTimeInMinutes": 0,
-      "linkCount": 0,
-      "embedCount": 0,
-      "aliases": [],
-      "createdDate": 1737307831772,
-      "modifiedDate": 1737340660334,
-      "sizeInBytes": 63,
-      "sessionStart": {
-        "noteCount": 0,
-        "pageCount": 0,
-        "wordCount": 0,
-        "characterCount": 0,
-        "nonWhitespaceCharacterCount": 0
-      }
-    },
     "Tests/Рыба-текст.md": {
       "isCountable": true,
       "targetNodeType": "file",
@@ -112,6 +87,31 @@
       "createdDate": 1737334583303,
       "modifiedDate": 1737450133117,
       "sizeInBytes": 12567,
+      "sessionStart": {
+        "noteCount": 0,
+        "pageCount": 0,
+        "wordCount": 0,
+        "characterCount": 0,
+        "nonWhitespaceCharacterCount": 0
+      }
+    },
+    "Tests/Lorem ipsum.md": {
+      "isCountable": true,
+      "targetNodeType": "file",
+      "noteCount": 0,
+      "wordCount": 0,
+      "wordCountTowardGoal": 0,
+      "wordGoal": 0,
+      "pageCount": 0,
+      "characterCount": 0,
+      "nonWhitespaceCharacterCount": 0,
+      "readingTimeInMinutes": 0,
+      "linkCount": 0,
+      "embedCount": 0,
+      "aliases": [],
+      "createdDate": 1737334598060,
+      "modifiedDate": 1737464697625,
+      "sizeInBytes": 488,
       "sessionStart": {
         "noteCount": 0,
         "pageCount": 0,
@@ -145,31 +145,6 @@
         "nonWhitespaceCharacterCount": 0
       }
     },
-    "Tests/Lorem ipsum.md": {
-      "isCountable": true,
-      "targetNodeType": "file",
-      "noteCount": 0,
-      "wordCount": 0,
-      "wordCountTowardGoal": 0,
-      "wordGoal": 0,
-      "pageCount": 0,
-      "characterCount": 0,
-      "nonWhitespaceCharacterCount": 0,
-      "readingTimeInMinutes": 0,
-      "linkCount": 0,
-      "embedCount": 0,
-      "aliases": [],
-      "createdDate": 1737334598060,
-      "modifiedDate": 1737362884729,
-      "sizeInBytes": 452,
-      "sessionStart": {
-        "noteCount": 0,
-        "pageCount": 0,
-        "wordCount": 0,
-        "characterCount": 0,
-        "nonWhitespaceCharacterCount": 0
-      }
-    },
     "Tests/Lists.md": {
       "isCountable": true,
       "targetNodeType": "file",
@@ -195,29 +170,79 @@
         "nonWhitespaceCharacterCount": 0
       }
     },
+    "Tests/Canvas.canvas": {
+      "isCountable": true,
+      "targetNodeType": "file",
+      "noteCount": 1,
+      "wordCount": 4,
+      "wordCountTowardGoal": 0,
+      "wordGoal": null,
+      "pageCount": 0.013333333333333334,
+      "characterCount": 22,
+      "nonWhitespaceCharacterCount": 19,
+      "readingTimeInMinutes": 0.01509433962264151,
+      "linkCount": 0,
+      "embedCount": 0,
+      "aliases": null,
+      "createdDate": 1737463332656,
+      "modifiedDate": 1737464504896,
+      "sizeInBytes": 483,
+      "sessionStart": {
+        "noteCount": 1,
+        "pageCount": 0.013333333333333334,
+        "wordCount": 4,
+        "characterCount": 22,
+        "nonWhitespaceCharacterCount": 19
+      }
+    },
+    "README.md": {
+      "isCountable": true,
+      "targetNodeType": "file",
+      "noteCount": 0,
+      "wordCount": 0,
+      "wordCountTowardGoal": 0,
+      "wordGoal": 0,
+      "pageCount": 0,
+      "characterCount": 0,
+      "nonWhitespaceCharacterCount": 0,
+      "readingTimeInMinutes": 0,
+      "linkCount": 0,
+      "embedCount": 0,
+      "aliases": [],
+      "createdDate": 1737307831772,
+      "modifiedDate": 1737340660334,
+      "sizeInBytes": 63,
+      "sessionStart": {
+        "noteCount": 0,
+        "pageCount": 0,
+        "wordCount": 0,
+        "characterCount": 0,
+        "nonWhitespaceCharacterCount": 0
+      }
+    },
     "Home.md": {
       "isCountable": true,
       "targetNodeType": "file",
       "noteCount": 1,
-      "wordCount": 45,
+      "wordCount": 42,
       "wordCountTowardGoal": 0,
       "wordGoal": null,
-      "pageCount": 0.15,
-      "characterCount": 653,
-      "nonWhitespaceCharacterCount": 587,
-      "readingTimeInMinutes": 0.16981132075471697,
+      "pageCount": 0.14,
+      "characterCount": 594,
+      "nonWhitespaceCharacterCount": 531,
+      "readingTimeInMinutes": 0.15849056603773584,
       "linkCount": 0,
       "embedCount": 0,
       "aliases": null,
       "createdDate": 1737322669427,
-      "modifiedDate": 1737458221383,
-      "sizeInBytes": 663,
+      "modifiedDate": 1737465342635,
+      "sizeInBytes": 604,
       "sessionStart": {
         "noteCount": 1,
-        "pageCount": 0.15,
-        "wordCount": 45,
-        "characterCount": 653,
-        "nonWhitespaceCharacterCount": 587
+        "pageCount": 0.14,
+        "wordCount": 42,
+        "characterCount": 594,
+        "nonWhitespaceCharacterCount": 531
       }
     }
   }

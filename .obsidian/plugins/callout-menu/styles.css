@@ -1,0 +1,12 @@
+
+body:has(.menu.callout-menu) .menu:not(.callout-menu) {
+    display: none;
+}
+
+.callout[data-callout-metadata*="no-icon"] .callout-icon {
+    display: none;
+}
+
+.callout[data-callout-metadata*="no-title"] .callout-title {
+    display: none;
+}

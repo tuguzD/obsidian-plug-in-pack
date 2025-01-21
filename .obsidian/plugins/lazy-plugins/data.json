@@ -5,7 +5,7 @@
     "shortDelaySeconds": 2,
     "longDelaySeconds": 5,
     "delayBetweenPlugins": 40,
-    "defaultStartupType": null,
+    "defaultStartupType": "instant",
     "showDescriptions": true,
     "plugins": {
       "table-editor-obsidian": {
@@ -189,6 +189,18 @@
         "startupType": "disabled"
       },
       "obsidian42-brat": {
+        "startupType": "instant"
+      },
+      "blur": {
+        "startupType": "instant"
+      },
+      "callout-menu": {
+        "startupType": "instant"
+      },
+      "occura-word-highlighter": {
+        "startupType": "instant"
+      },
+      "search-in-canvas": {
         "startupType": "instant"
       }
     }
