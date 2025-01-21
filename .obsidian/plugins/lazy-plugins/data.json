@@ -39,7 +39,7 @@
         "startupType": "short"
       },
       "obsidian-day-and-night": {
-        "startupType": "instant"
+        "startupType": "short"
       },
       "obsidian-discordrpc": {
         "startupType": "long"

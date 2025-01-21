@@ -6,11 +6,11 @@
         "type": "split",
         "children": [
           {
-            "id": "c632bebaf0d42443",
+            "id": "93cc1ef46315cb82",
             "type": "tabs",
             "children": [
               {
-                "id": "08b6e99da5f75800",
+                "id": "8f7a8345df204242",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
@@ -259,22 +259,22 @@
       "left-ribbon": {
         "hiddenItems": {
           "switcher:Open quick switcher": true,
-          "obsidian-day-and-night:Toggle Theme": false,
-          "homepage:Open homepage": false,
+          "homepage:Open homepage": true,
           "graph:Open graph view": false,
           "canvas:Create new canvas": true,
           "templates:Insert template": true,
           "command-palette:Open command palette": true,
           "obsidian-git:Open Git source control": true,
           "workspaces:Manage workspace layouts": true,
-          "templater-obsidian:Templater": true,
           "obsidian42-brat:BRAT": true,
           "periodic-notes:Open today": false,
+          "obsidian-day-and-night:Toggle Theme": false,
+          "templater-obsidian:Templater": false,
           "omnisearch:Omnisearch": false
         }
       },
-      "active": "08b6e99da5f75800",
-      "mtime": "2025-01-21T16:19:49+03:00",
+      "active": "8f7a8345df204242",
+      "mtime": "2025-01-21T18:47:53+03:00",
       "workspaces-plus:settings-v1": {
         "explorerFoldState": [
           "Tests"

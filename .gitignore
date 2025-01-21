@@ -1,5 +1,5 @@
-# Exclude all plugin data (prevents some plugins from exposing sensitive data)
-# .obsidian/plugins/
+# Exclude certain plugin data (don't expose sensitive data, keep personal settings intact)
+**/cursor-positions.json
 
 # Exclude all files needed to test plugins
 Tests/
