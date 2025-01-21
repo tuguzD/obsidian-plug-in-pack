@@ -222,6 +222,31 @@
         "characterCount": 63,
         "nonWhitespaceCharacterCount": 52
       }
+    },
+    "HOME.md": {
+      "isCountable": true,
+      "targetNodeType": "file",
+      "noteCount": 1,
+      "wordCount": 42,
+      "wordCountTowardGoal": 0,
+      "wordGoal": null,
+      "pageCount": 0.14,
+      "characterCount": 594,
+      "nonWhitespaceCharacterCount": 531,
+      "readingTimeInMinutes": 0.15849056603773584,
+      "linkCount": 0,
+      "embedCount": 0,
+      "aliases": null,
+      "createdDate": 1737322669427,
+      "modifiedDate": 1737484954149,
+      "sizeInBytes": 604,
+      "sessionStart": {
+        "noteCount": 0,
+        "pageCount": 0,
+        "wordCount": 0,
+        "characterCount": 0,
+        "nonWhitespaceCharacterCount": 0
+      }
     }
   }
 }

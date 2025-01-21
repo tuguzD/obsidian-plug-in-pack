@@ -45,5 +45,6 @@
   "Tests/Tests.md": {
     "iconName": "LiTestTube2",
     "iconColor": "#438c12"
-  }
+  },
+  "HOME.md": "LiHome"
 }
