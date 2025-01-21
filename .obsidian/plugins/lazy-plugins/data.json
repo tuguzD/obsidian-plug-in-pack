@@ -207,7 +207,7 @@
         "startupType": "long"
       },
       "advanced-canvas": {
-        "startupType": "instant"
+        "startupType": "short"
       },
       "canvas-mindmap": {
         "startupType": "instant"
@@ -228,7 +228,7 @@
         "startupType": "instant"
       },
       "canvas-minimap": {
-        "startupType": "instant"
+        "startupType": "short"
       },
       "canvas-send-to-back": {
         "startupType": "instant"

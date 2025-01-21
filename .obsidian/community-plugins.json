@@ -34,7 +34,6 @@
   "scroll-speed",
   "obsidian42-brat",
   "lazy-plugins",
-  "search-in-canvas",
   "callout-menu",
   "occura-word-highlighter",
   "blur",
@@ -43,12 +42,12 @@
   "tag-wrangler",
   "table-editor-obsidian",
   "enhanced-annotations",
-  "canvas-mindmap",
-  "advanced-canvas",
-  "optimize-canvas-connections",
+  "canvas-card-bg-remover",
   "canvas-keyboard-pan",
   "canvas-link-optimizer",
-  "canvas-card-bg-remover",
-  "canvas-minimap",
-  "canvas-send-to-back"
+  "canvas-mindmap",
+  "canvas-send-to-back",
+  "optimize-canvas-connections",
+  "search-in-canvas",
+  "canvas-links"
 ]
