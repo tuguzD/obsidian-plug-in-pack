@@ -1,0 +1,15 @@
+{
+  "applyAllEmbed": false,
+  "targets": [
+    {
+      "type": "image-embed",
+      "display": "Image",
+      "cls": "ccbgrm-plugin-img"
+    },
+    {
+      "type": "canvas-embed",
+      "display": "Canvas",
+      "cls": "ccbgrm-plugin-cnvs"
+    }
+  ]
+}

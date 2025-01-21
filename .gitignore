@@ -1,5 +1,7 @@
 # Exclude certain plugin data (don't expose sensitive data, keep personal settings intact)
 **/cursor-positions.json
+**/text-extractor/cache/**
+**/canvas-link-optimizer/data/linkCache/
 
 # Exclude all files needed to test plugins
 Tests/

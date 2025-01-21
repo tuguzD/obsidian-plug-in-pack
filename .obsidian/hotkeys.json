@@ -219,5 +219,24 @@
       ],
       "key": "M"
     }
-  ]
+  ],
+  "optimize-canvas-connections:optimize-preserve-axes-selection": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "O"
+    }
+  ],
+  "optimize-canvas-connections:optimize-shortest-path-selection": [
+    {
+      "modifiers": [
+        "Alt",
+        "Shift"
+      ],
+      "key": "O"
+    }
+  ],
+  "canvas-mindmap-helper:new-node": [],
+  "canvas-mindmap-helper:new-child-node": []
 }

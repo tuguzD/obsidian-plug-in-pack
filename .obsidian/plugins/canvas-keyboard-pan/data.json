@@ -1,0 +1,9 @@
+{
+  "keys": {
+    "north": "w",
+    "west": "a",
+    "south": "s",
+    "east": "d"
+  },
+  "maxSpeed": 50
+}

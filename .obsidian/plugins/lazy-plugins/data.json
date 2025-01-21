@@ -205,6 +205,33 @@
       },
       "obsidian-mindmap-nextgen": {
         "startupType": "long"
+      },
+      "advanced-canvas": {
+        "startupType": "instant"
+      },
+      "canvas-mindmap": {
+        "startupType": "instant"
+      },
+      "canvas-keyboard-pan": {
+        "startupType": "instant"
+      },
+      "optimize-canvas-connections": {
+        "startupType": "instant"
+      },
+      "canvas-card-bg-remover": {
+        "startupType": "instant"
+      },
+      "canvas-link-optimizer": {
+        "startupType": "instant"
+      },
+      "canvas-links": {
+        "startupType": "instant"
+      },
+      "canvas-minimap": {
+        "startupType": "instant"
+      },
+      "canvas-send-to-back": {
+        "startupType": "instant"
       }
     }
   }
