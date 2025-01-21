@@ -202,6 +202,9 @@
       },
       "search-in-canvas": {
         "startupType": "instant"
+      },
+      "obsidian-mindmap-nextgen": {
+        "startupType": "long"
       }
     }
   }

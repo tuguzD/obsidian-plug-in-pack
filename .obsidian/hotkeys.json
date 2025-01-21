@@ -211,5 +211,13 @@
       ],
       "key": "="
     }
+  ],
+  "obsidian-mindmap-nextgen:mindmapnextgen:unpinned": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "M"
+    }
   ]
 }

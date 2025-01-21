@@ -38,7 +38,6 @@
     "iconName": "LiTestTube2",
     "iconColor": "#438c12"
   },
-  "Home.md": "LiHome",
   "README.md": {
     "iconName": "LiBookMarked",
     "iconColor": "#ac6d16"
@@ -46,5 +45,6 @@
   "Tests/Tests.md": {
     "iconName": "LiTestTube2",
     "iconColor": "#438c12"
-  }
+  },
+  "HOME.md": "LiHome"
 }
