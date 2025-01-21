@@ -6,11 +6,11 @@
         "type": "split",
         "children": [
           {
-            "id": "4f835ffaa714b5eb",
+            "id": "157886a2223df385",
             "type": "tabs",
             "children": [
               {
-                "id": "8109170d05b7fcf4",
+                "id": "d982a1f8a9bc00b8",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
@@ -199,7 +199,7 @@
                       "repelStrength": 10,
                       "linkStrength": 1,
                       "linkDistance": 250,
-                      "scale": 1.0000000000000002,
+                      "scale": 1.401982897776101,
                       "close": true
                     }
                   },
@@ -268,12 +268,13 @@
           "obsidian-git:Open Git source control": true,
           "workspaces:Manage workspace layouts": true,
           "templater-obsidian:Templater": true,
-          "periodic-notes:Open today": false,
-          "omnisearch:Omnisearch": false
+          "obsidian42-brat:BRAT": true,
+          "periodic-notes:Open today": true,
+          "omnisearch:Omnisearch": true
         }
       },
-      "active": "8109170d05b7fcf4",
-      "mtime": "2025-01-21T12:07:14+03:00",
+      "active": "d982a1f8a9bc00b8",
+      "mtime": "2025-01-21T14:22:47+03:00",
       "workspaces-plus:settings-v1": {
         "explorerFoldState": [
           "Tests"

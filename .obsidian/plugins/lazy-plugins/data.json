@@ -186,6 +186,9 @@
         "startupType": "instant"
       },
       "continuous-mode": {
+        "startupType": "disabled"
+      },
+      "obsidian42-brat": {
         "startupType": "instant"
       }
     }
