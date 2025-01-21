@@ -6,11 +6,11 @@
         "type": "split",
         "children": [
           {
-            "id": "cc5e152fbfc2fd75",
+            "id": "4f835ffaa714b5eb",
             "type": "tabs",
             "children": [
               {
-                "id": "0e96e9b21ddeac91",
+                "id": "8109170d05b7fcf4",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
@@ -84,6 +84,16 @@
             "type": "tabs",
             "dimension": 39.1647855530474,
             "children": [
+              {
+                "id": "ee0493006aa23741",
+                "type": "leaf",
+                "state": {
+                  "type": "vertical-tabs",
+                  "state": {},
+                  "icon": "gallery-vertical",
+                  "title": "Vertical tabs"
+                }
+              },
               {
                 "id": "9d3b4839544cf4e5",
                 "type": "leaf",
@@ -262,8 +272,8 @@
           "omnisearch:Omnisearch": false
         }
       },
-      "active": "0e96e9b21ddeac91",
-      "mtime": "2025-01-21T01:39:23+03:00",
+      "active": "8109170d05b7fcf4",
+      "mtime": "2025-01-21T12:07:14+03:00",
       "workspaces-plus:settings-v1": {
         "explorerFoldState": [
           "Tests"

@@ -1,0 +1,26 @@
+{
+  "showActiveTabs": false,
+  "autoUncollapseGroup": true,
+  "hideSidebars": true,
+  "sidebarTabTypes": [
+    "markdown"
+  ],
+  "sidebarExcludeSelf": true,
+  "trimTabNames": true,
+  "showMoreButtons": true,
+  "useTabEditing": true,
+  "zenMode": false,
+  "enableTabZoom": true,
+  "enhancedKeyboardTabSwitch": true,
+  "alwaysOpenInNewTab": false,
+  "deduplicateTabs": true,
+  "ephemeralTabs": false,
+  "smartNavigation": false,
+  "navigationStrategy": "custom",
+  "autoCloseEphemeralTabs": true,
+  "deduplicateSameGroupTabs": true,
+  "deduplicateSidebarTabs": true,
+  "deduplicatePopupTabs": true,
+  "backgroundMode": false,
+  "installationID": "SFqkLdBZtbiIae8BGos1d"
+}

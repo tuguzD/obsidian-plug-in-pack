@@ -181,6 +181,9 @@
       },
       "list-style": {
         "startupType": "instant"
+      },
+      "vertical-tabs": {
+        "startupType": "instant"
       }
     }
   }

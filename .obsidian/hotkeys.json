@@ -179,5 +179,37 @@
       ],
       "key": "H"
     }
+  ],
+  "vertical-tabs:zoom-in-current-tab": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "="
+    }
+  ],
+  "vertical-tabs:zoom-out-current-tab": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "-"
+    }
+  ],
+  "vertical-tabs:zoom-reset-current-tab": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "-"
+    },
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "="
+    }
   ]
 }

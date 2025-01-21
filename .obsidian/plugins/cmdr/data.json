@@ -11,7 +11,7 @@
   "pageHeader": [
     {
       "id": "file-explorer:reveal-active-file",
-      "icon": "lucide-aperture",
+      "icon": "lucide-crosshair",
       "name": "Files: Reveal current file in navigation",
       "mode": "any"
     },
