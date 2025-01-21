@@ -152,25 +152,25 @@
       "isCountable": true,
       "targetNodeType": "file",
       "noteCount": 1,
-      "wordCount": 62,
+      "wordCount": 67,
       "wordCountTowardGoal": 0,
       "wordGoal": null,
-      "pageCount": 0.20666666666666667,
+      "pageCount": 0.22333333333333333,
       "characterCount": 811,
-      "nonWhitespaceCharacterCount": 602,
-      "readingTimeInMinutes": 0.2339622641509434,
+      "nonWhitespaceCharacterCount": 607,
+      "readingTimeInMinutes": 0.2528301886792453,
       "linkCount": 0,
       "embedCount": 0,
       "aliases": null,
       "createdDate": 1737361304502,
-      "modifiedDate": 1737446590432,
+      "modifiedDate": 1737476490760,
       "sizeInBytes": 811,
       "sessionStart": {
         "noteCount": 1,
-        "pageCount": 0.20666666666666667,
-        "wordCount": 62,
+        "pageCount": 0.22333333333333333,
+        "wordCount": 67,
         "characterCount": 811,
-        "nonWhitespaceCharacterCount": 602
+        "nonWhitespaceCharacterCount": 607
       }
     },
     "Tests/Canvas.canvas": {
@@ -221,31 +221,6 @@
         "wordCount": 9,
         "characterCount": 63,
         "nonWhitespaceCharacterCount": 52
-      }
-    },
-    "Home.md": {
-      "isCountable": true,
-      "targetNodeType": "file",
-      "noteCount": 1,
-      "wordCount": 42,
-      "wordCountTowardGoal": 0,
-      "wordGoal": null,
-      "pageCount": 0.14,
-      "characterCount": 605,
-      "nonWhitespaceCharacterCount": 531,
-      "readingTimeInMinutes": 0.15849056603773584,
-      "linkCount": 0,
-      "embedCount": 0,
-      "aliases": null,
-      "createdDate": 1737322669427,
-      "modifiedDate": 1737473080377,
-      "sizeInBytes": 615,
-      "sessionStart": {
-        "noteCount": 1,
-        "pageCount": 0.14,
-        "wordCount": 42,
-        "characterCount": 594,
-        "nonWhitespaceCharacterCount": 531
       }
     }
   }
