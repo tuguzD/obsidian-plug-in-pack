@@ -8,7 +8,6 @@
   "obsidian-paste-image-rename",
   "darlal-switcher-plus",
   "sheets",
-  "obsidian-style-settings",
   "workspaces-plus",
   "editing-toolbar",
   "settings-search",
@@ -49,5 +48,6 @@
   "canvas-send-to-back",
   "optimize-canvas-connections",
   "search-in-canvas",
-  "canvas-links"
+  "canvas-links",
+  "obsidian-style-settings"
 ]

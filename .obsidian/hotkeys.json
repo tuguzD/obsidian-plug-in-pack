@@ -66,46 +66,6 @@
       "key": "P"
     }
   ],
-  "open-with-nldates:open-daily-note": [
-    {
-      "modifiers": [
-        "Alt"
-      ],
-      "key": "D"
-    }
-  ],
-  "periodic-notes:open-weekly-note": [
-    {
-      "modifiers": [
-        "Alt"
-      ],
-      "key": "W"
-    }
-  ],
-  "periodic-notes:open-monthly-note": [
-    {
-      "modifiers": [
-        "Alt"
-      ],
-      "key": "M"
-    }
-  ],
-  "periodic-notes:open-quarterly-note": [
-    {
-      "modifiers": [
-        "Alt"
-      ],
-      "key": "Q"
-    }
-  ],
-  "periodic-notes:open-yearly-note": [
-    {
-      "modifiers": [
-        "Alt"
-      ],
-      "key": "Y"
-    }
-  ],
   "obsidian-git:toggle-line-author-info": [
     {
       "modifiers": [
@@ -238,5 +198,50 @@
     }
   ],
   "canvas-mindmap-helper:new-node": [],
-  "canvas-mindmap-helper:new-child-node": []
+  "canvas-mindmap-helper:new-child-node": [],
+  "periodic-notes:open-quarterly-note": [
+    {
+      "modifiers": [
+        "Alt",
+        "Shift"
+      ],
+      "key": "Q"
+    }
+  ],
+  "periodic-notes:open-monthly-note": [
+    {
+      "modifiers": [
+        "Alt",
+        "Shift"
+      ],
+      "key": "M"
+    }
+  ],
+  "periodic-notes:open-weekly-note": [
+    {
+      "modifiers": [
+        "Alt",
+        "Shift"
+      ],
+      "key": "W"
+    }
+  ],
+  "periodic-notes:open-yearly-note": [
+    {
+      "modifiers": [
+        "Alt",
+        "Shift"
+      ],
+      "key": "Y"
+    }
+  ],
+  "open-with-nldates:open-daily-note": [
+    {
+      "modifiers": [
+        "Alt",
+        "Shift"
+      ],
+      "key": "D"
+    }
+  ]
 }
