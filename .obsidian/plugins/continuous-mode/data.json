@@ -1,0 +1,26 @@
+{
+  "allowSingleClickOpenFolder": false,
+  "allowSingleClickOpenFolderAction": "disabled",
+  "alwaysHideNoteHeaders": false,
+  "alwaysOpenInContinuousMode": false,
+  "compactModeTabGroupIds": [],
+  "defaultSortOrder": "alphabetical",
+  "disableScrollRootItemsIntoView": false,
+  "disableScrollSidebarsIntoView": false,
+  "disableWarnings": false,
+  "excludedNames": [],
+  "extraFileTypes": [],
+  "includeBlockLinks": true,
+  "includeEmbeddedFiles": true,
+  "includedFileTypes": [
+    "markdown",
+    "images",
+    "media",
+    "pdf"
+  ],
+  "maximumItemsToOpen": "0",
+  "onlyShowFileName": false,
+  "tabGroupIds": [
+    "054d7ed642df09e6_d31f74255e184805"
+  ]
+}

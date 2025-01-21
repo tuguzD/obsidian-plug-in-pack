@@ -184,6 +184,9 @@
       },
       "vertical-tabs": {
         "startupType": "instant"
+      },
+      "continuous-mode": {
+        "startupType": "instant"
       }
     }
   }

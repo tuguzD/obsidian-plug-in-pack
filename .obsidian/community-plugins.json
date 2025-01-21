@@ -12,7 +12,6 @@
   "homepage",
   "obsidian-paste-image-rename",
   "darlal-switcher-plus",
-  "remember-cursor-position",
   "sheets",
   "obsidian-style-settings",
   "workspaces-plus",
@@ -43,14 +42,14 @@
   "quick-explorer",
   "links",
   "link-favicon",
-  "lazy-plugins",
   "obsidian-icon-folder",
   "templater-obsidian",
   "obsidian-version-history-diff",
   "text-extractor",
   "enhanced-annotations",
-  "scroll-speed",
-  "obsidian-scroll-to-top-plugin",
   "list-style",
-  "vertical-tabs"
+  "vertical-tabs",
+  "remember-cursor-position",
+  "obsidian-scroll-to-top-plugin",
+  "scroll-speed"
 ]
