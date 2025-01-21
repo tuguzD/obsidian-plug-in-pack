@@ -50,5 +50,6 @@
   "text-extractor",
   "enhanced-annotations",
   "scroll-speed",
-  "obsidian-scroll-to-top-plugin"
+  "obsidian-scroll-to-top-plugin",
+  "list-style"
 ]

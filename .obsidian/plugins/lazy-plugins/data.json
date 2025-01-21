@@ -178,6 +178,9 @@
       },
       "obsidian-scroll-to-top-plugin": {
         "startupType": "instant"
+      },
+      "list-style": {
+        "startupType": "instant"
       }
     }
   }
