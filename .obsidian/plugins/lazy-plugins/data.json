@@ -2,11 +2,11 @@
   "dualConfigs": false,
   "showConsoleLog": false,
   "desktop": {
-    "shortDelaySeconds": 2,
-    "longDelaySeconds": 5,
+    "shortDelaySeconds": 0.5,
+    "longDelaySeconds": 2,
     "delayBetweenPlugins": 40,
     "defaultStartupType": "instant",
-    "showDescriptions": true,
+    "showDescriptions": false,
     "plugins": {
       "table-editor-obsidian": {
         "startupType": "instant"
@@ -18,13 +18,13 @@
         "startupType": "instant"
       },
       "better-word-count": {
-        "startupType": "instant"
+        "startupType": "short"
       },
       "calendar": {
         "startupType": "instant"
       },
       "colored-tags-wrangler": {
-        "startupType": "instant"
+        "startupType": "short"
       },
       "cmdr": {
         "startupType": "instant"
@@ -36,13 +36,13 @@
         "startupType": "instant"
       },
       "dataview": {
-        "startupType": "instant"
+        "startupType": "short"
       },
       "obsidian-day-and-night": {
         "startupType": "instant"
       },
       "obsidian-discordrpc": {
-        "startupType": "short"
+        "startupType": "long"
       },
       "dynamic-outline": {
         "startupType": "instant"
@@ -51,10 +51,10 @@
         "startupType": "instant"
       },
       "obsidian-file-color": {
-        "startupType": "instant"
+        "startupType": "short"
       },
       "folder-notes": {
-        "startupType": "instant"
+        "startupType": "short"
       },
       "folders2graph": {
         "startupType": "disabled"
@@ -75,19 +75,19 @@
         "startupType": "instant"
       },
       "obsidian-icon-folder": {
-        "startupType": "instant"
+        "startupType": "short"
       },
       "link-favicon": {
-        "startupType": "instant"
+        "startupType": "short"
       },
       "links": {
-        "startupType": "instant"
+        "startupType": "short"
       },
       "obsidian-linter": {
-        "startupType": "instant"
+        "startupType": "short"
       },
       "nldates-obsidian": {
-        "startupType": "instant"
+        "startupType": "short"
       },
       "graph-nested-tags": {
         "startupType": "instant"
@@ -108,7 +108,7 @@
         "startupType": "instant"
       },
       "obsidian-plugin-update-tracker": {
-        "startupType": "short"
+        "startupType": "long"
       },
       "plugins-annotations": {
         "startupType": "instant"
@@ -150,25 +150,25 @@
         "startupType": "instant"
       },
       "various-complements": {
-        "startupType": "instant"
+        "startupType": "short"
       },
       "obsidian-wakatime": {
-        "startupType": "short"
+        "startupType": "long"
       },
       "workspaces-plus": {
         "startupType": "instant"
       },
       "templater-obsidian": {
-        "startupType": "instant"
-      },
-      "obsidian-version-history-diff": {
-        "startupType": "instant"
-      },
-      "omnisearch": {
         "startupType": "short"
       },
+      "obsidian-version-history-diff": {
+        "startupType": "short"
+      },
+      "omnisearch": {
+        "startupType": "long"
+      },
       "text-extractor": {
-        "startupType": "instant"
+        "startupType": "short"
       },
       "enhanced-annotations": {
         "startupType": "instant"

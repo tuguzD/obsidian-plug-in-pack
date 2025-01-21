@@ -29,7 +29,8 @@
     "rate": 1.1,
     "pitch": 1,
     "volume": 1,
-    "focusAnnotationInEditor": true
+    "focusAnnotationInEditor": true,
+    "voice": "Microsoft Irina - Russian (Russia)"
   },
   "notes": {
     "defaultFolder": "notes",
