@@ -235,6 +235,9 @@
       },
       "obsidian-hover-editor": {
         "startupType": "short"
+      },
+      "obsidian-limelight": {
+        "startupType": "instant"
       }
     }
   }
