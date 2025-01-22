@@ -253,6 +253,9 @@
       },
       "enhanced-copy": {
         "startupType": "instant"
+      },
+      "link-headers-directly": {
+        "startupType": "instant"
       }
     }
   }
