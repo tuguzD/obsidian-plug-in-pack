@@ -238,6 +238,9 @@
       },
       "obsidian-limelight": {
         "startupType": "instant"
+      },
+      "chord-sheets": {
+        "startupType": "long"
       }
     }
   }
