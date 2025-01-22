@@ -48,7 +48,7 @@
         "startupType": "instant"
       },
       "editing-toolbar": {
-        "startupType": "instant"
+        "startupType": "short"
       },
       "obsidian-file-color": {
         "startupType": "short"
@@ -93,7 +93,7 @@
         "startupType": "instant"
       },
       "novel-word-count": {
-        "startupType": "instant"
+        "startupType": "short"
       },
       "open-with-nldates": {
         "startupType": "instant"
