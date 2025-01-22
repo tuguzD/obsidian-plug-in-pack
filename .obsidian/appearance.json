@@ -2,6 +2,7 @@
   "baseFontSizeAction": false,
   "theme": "obsidian",
   "cssTheme": "",
+  "accentColor": "",
   "enabledCssSnippets": [
     "obsidian-blur-plugin"
   ]

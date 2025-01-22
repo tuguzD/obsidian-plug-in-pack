@@ -244,5 +244,14 @@
       "key": "D"
     }
   ],
-  "templater-obsidian:insert-templater": []
+  "templater-obsidian:insert-templater": [],
+  "file-explorer:new-file-in-new-pane": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "N"
+    }
+  ],
+  "file-explorer:new-file": []
 }
