@@ -243,9 +243,15 @@
         "startupType": "long"
       },
       "note-refactor-obsidian": {
-        "startupType": "instant"
+        "startupType": "short"
       },
       "obsidian-reading-time": {
+        "startupType": "instant"
+      },
+      "copy-image": {
+        "startupType": "short"
+      },
+      "enhanced-copy": {
         "startupType": "instant"
       }
     }
