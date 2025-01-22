@@ -1,0 +1,16 @@
+{
+  "delay": 500,
+  "key": "Shift",
+  "shortcuts": [
+    {
+      "command": "global-search:open",
+      "key": "Shift",
+      "lastKeyUpTime": 0
+    },
+    {
+      "command": "app:open-settings",
+      "key": "`",
+      "lastKeyUpTime": 0
+    }
+  ]
+}

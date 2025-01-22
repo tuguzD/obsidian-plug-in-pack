@@ -13,7 +13,6 @@
   "hotkey-helper",
   "obsidian-smart-typography",
   "obsidian-outliner",
-  "obsidian-search-everywhere-plugin",
   "replace-all",
   "better-search-views",
   "obsidian-footnotes",
@@ -51,5 +50,7 @@
   "obsidian-reading-time",
   "enhanced-copy",
   "link-headers-directly",
-  "blur"
+  "blur",
+  "obsidian-doubleshift",
+  "double-click-tab"
 ]
