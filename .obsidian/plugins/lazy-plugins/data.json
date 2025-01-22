@@ -244,6 +244,9 @@
       },
       "note-refactor-obsidian": {
         "startupType": "instant"
+      },
+      "obsidian-reading-time": {
+        "startupType": "instant"
       }
     }
   }
