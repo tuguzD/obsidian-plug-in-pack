@@ -12,14 +12,16 @@ If your plugin does not need CSS, delete this file.
 	transition: width 275ms var(--anim-motion-swing);
 }
 
-.titlebar-button-container.mod-right {
+/* Fixed: https://github.com/Quorafind/Obsidian-Double-Click-Tab/issues/17#issuecomment-2102761249 */
+
+/* .titlebar-button-container.mod-right {
 	width: var(--size-4-2);
 	transition: width 275ms var(--anim-motion-swing);
 }
 
 .is-hidden-frameless:not(.is-fullscreen) .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
 	padding-right: var(--size-4-2);
-}
+} */
 
 .show-title-bar-button.is-hidden-frameless:not(.is-fullscreen) .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
 	padding-right: var(--frame-right-space);
