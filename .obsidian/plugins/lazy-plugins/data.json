@@ -232,6 +232,9 @@
       },
       "canvas-send-to-back": {
         "startupType": "instant"
+      },
+      "obsidian-hover-editor": {
+        "startupType": "short"
       }
     }
   }
