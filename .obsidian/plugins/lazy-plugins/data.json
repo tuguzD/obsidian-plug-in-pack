@@ -241,6 +241,9 @@
       },
       "chord-sheets": {
         "startupType": "long"
+      },
+      "note-refactor-obsidian": {
+        "startupType": "instant"
       }
     }
   }
