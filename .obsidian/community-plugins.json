@@ -33,7 +33,6 @@
   "lazy-plugins",
   "callout-menu",
   "occura-word-highlighter",
-  "blur",
   "obsidian-git",
   "vertical-tabs",
   "tag-wrangler",
@@ -51,5 +50,6 @@
   "obsidian-limelight",
   "obsidian-reading-time",
   "enhanced-copy",
-  "link-headers-directly"
+  "link-headers-directly",
+  "blur"
 ]

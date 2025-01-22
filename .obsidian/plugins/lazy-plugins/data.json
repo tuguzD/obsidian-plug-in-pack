@@ -256,6 +256,12 @@
       },
       "link-headers-directly": {
         "startupType": "instant"
+      },
+      "execute-code": {
+        "startupType": "long"
+      },
+      "code-styler": {
+        "startupType": "long"
       }
     }
   }
