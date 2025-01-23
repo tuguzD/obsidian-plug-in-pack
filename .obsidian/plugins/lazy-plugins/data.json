@@ -280,6 +280,9 @@
       },
       "obsidian-list-callouts": {
         "startupType": "short"
+      },
+      "obsidian-latex-suite": {
+        "startupType": "long"
       }
     }
   }
