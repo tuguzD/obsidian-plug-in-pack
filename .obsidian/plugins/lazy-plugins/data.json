@@ -286,6 +286,9 @@
       },
       "iconic": {
         "startupType": "short"
+      },
+      "file-explorer-plus": {
+        "startupType": "instant"
       }
     }
   }
