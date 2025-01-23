@@ -283,6 +283,9 @@
       },
       "obsidian-latex-suite": {
         "startupType": "long"
+      },
+      "quick-tagger": {
+        "startupType": "instant"
       }
     }
   }

@@ -20,6 +20,12 @@
       "icon": "lucide-github",
       "name": "Version history diff: Show Git Diff view for active file",
       "mode": "any"
+    },
+    {
+      "id": "quick-tagger:quick-add-tag",
+      "icon": "lucide-tags",
+      "name": "Quick Tagger: Add tag",
+      "mode": "any"
     }
   ],
   "macros": [],
