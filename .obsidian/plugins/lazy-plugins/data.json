@@ -289,6 +289,9 @@
       },
       "file-explorer-plus": {
         "startupType": "instant"
+      },
+      "pexels-banner": {
+        "startupType": "instant"
       }
     }
   }
