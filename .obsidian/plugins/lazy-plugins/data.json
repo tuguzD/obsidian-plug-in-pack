@@ -247,10 +247,7 @@
       },
       "obsidian-reading-time": {
         "startupType": "instant"
-      },
-      "copy-image": {
-        "startupType": "short"
-      },
+      }
       "enhanced-copy": {
         "startupType": "instant"
       },
@@ -274,6 +271,9 @@
       },
       "js-engine": {
         "startupType": "short"
+      },
+      "image-converter": {
+        "startupType": "long"
       }
     }
   }
