@@ -261,5 +261,22 @@
       ],
       "key": "C"
     }
+  ],
+  "callout-integrator:callout-integrate": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "."
+    }
+  ],
+  "callout-integrator:callout-unintegrate": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "."
+    }
   ]
 }

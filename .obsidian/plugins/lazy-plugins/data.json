@@ -274,6 +274,12 @@
       },
       "image-converter": {
         "startupType": "long"
+      },
+      "callout-integrator": {
+        "startupType": "instant"
+      },
+      "obsidian-list-callouts": {
+        "startupType": "short"
       }
     }
   }

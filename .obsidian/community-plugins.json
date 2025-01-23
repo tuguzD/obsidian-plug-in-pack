@@ -52,5 +52,6 @@
   "link-headers-directly",
   "blur",
   "obsidian-doubleshift",
-  "double-click-tab"
+  "double-click-tab",
+  "callout-integrator"
 ]
