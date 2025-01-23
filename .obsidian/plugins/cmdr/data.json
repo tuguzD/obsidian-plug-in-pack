@@ -40,13 +40,20 @@
       "Open today",
       "Open quick switcher",
       "Omnisearch",
-      "BRAT",
       "Templater",
       "Open homepage",
-      "Manage workspace layouts"
+      "Manage workspace layouts",
+      "Remove tag from current note",
+      "Add tag to current note",
+      "Open rulebook",
+      "BRAT",
+      "Open Git source control",
+      "Open command palette",
+      "Insert template",
+      "Create new canvas"
     ]
   },
-  "spacing": 8,
+  "spacing": "12",
   "advancedToolbar": {
     "rowHeight": 48,
     "rowCount": 1,

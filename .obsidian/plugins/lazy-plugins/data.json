@@ -74,9 +74,6 @@
       "hotkey-helper": {
         "startupType": "instant"
       },
-      "obsidian-icon-folder": {
-        "startupType": "short"
-      },
       "link-favicon": {
         "startupType": "short"
       },
@@ -286,6 +283,9 @@
       },
       "quick-tagger": {
         "startupType": "instant"
+      },
+      "iconic": {
+        "startupType": "short"
       }
     }
   }
