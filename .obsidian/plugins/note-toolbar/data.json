@@ -1,0 +1,17 @@
+{
+  "export": {
+    "includeIcons": true,
+    "replaceVars": true,
+    "useDataEls": true,
+    "useIds": true
+  },
+  "folderMappings": [],
+  "icon": "circle-ellipsis",
+  "ribbonAction": "toolbar",
+  "scriptingEnabled": true,
+  "showEditInFabMenu": true,
+  "toolbarProp": "toolbar",
+  "toolbars": [],
+  "version": 20240727.1,
+  "whatsnew_version": 1.16
+}
