@@ -313,6 +313,9 @@
       },
       "typewriter-mode": {
         "startupType": "short"
+      },
+      "obsidian-languagetool-plugin": {
+        "startupType": "short"
       }
     }
   }
