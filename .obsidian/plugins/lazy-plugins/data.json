@@ -120,7 +120,7 @@
         "startupType": "instant"
       },
       "remember-cursor-position": {
-        "startupType": "instant"
+        "startupType": "short"
       },
       "replace-all": {
         "startupType": "instant"
@@ -291,7 +291,19 @@
         "startupType": "instant"
       },
       "pexels-banner": {
+        "startupType": "short"
+      },
+      "callout-manager": {
         "startupType": "instant"
+      },
+      "callout-suggestions": {
+        "startupType": "short"
+      },
+      "tab-navigator": {
+        "startupType": "instant"
+      },
+      "math-in-callout": {
+        "startupType": "short"
       }
     }
   }

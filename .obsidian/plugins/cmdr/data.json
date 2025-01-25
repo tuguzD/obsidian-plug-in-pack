@@ -50,7 +50,8 @@
       "Open Git source control",
       "Open command palette",
       "Insert template",
-      "Create new canvas"
+      "Create new canvas",
+      "Insert Callout"
     ]
   },
   "spacing": "12",

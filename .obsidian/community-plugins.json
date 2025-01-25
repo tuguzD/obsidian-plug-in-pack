@@ -25,7 +25,6 @@
   "graph-nested-tags",
   "quick-explorer",
   "list-style",
-  "remember-cursor-position",
   "obsidian-scroll-to-top-plugin",
   "scroll-speed",
   "obsidian42-brat",
@@ -56,5 +55,6 @@
   "callout-integrator",
   "quick-tagger",
   "file-explorer-plus",
-  "pexels-banner"
+  "tab-navigator",
+  "callout-manager"
 ]

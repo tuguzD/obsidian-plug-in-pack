@@ -278,5 +278,13 @@
       ],
       "key": "."
     }
+  ],
+  "tab-navigator:search-tabs": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "T"
+    }
   ]
 }
