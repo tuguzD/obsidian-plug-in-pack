@@ -319,6 +319,9 @@
       },
       "slash-commander": {
         "startupType": "short"
+      },
+      "media-notes": {
+        "startupType": "long"
       }
     }
   }
