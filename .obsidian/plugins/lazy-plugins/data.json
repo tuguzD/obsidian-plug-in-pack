@@ -322,6 +322,9 @@
       },
       "media-notes": {
         "startupType": "long"
+      },
+      "obsidian-view-mode-by-frontmatter": {
+        "startupType": "short"
       }
     }
   }
