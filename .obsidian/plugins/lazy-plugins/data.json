@@ -304,6 +304,12 @@
       },
       "math-in-callout": {
         "startupType": "short"
+      },
+      "beautitab": {
+        "startupType": "short"
+      },
+      "obsidian-checklist-reset": {
+        "startupType": "short"
       }
     }
   }

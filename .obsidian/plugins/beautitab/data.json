@@ -1,0 +1,26 @@
+{
+  "backgroundTheme": "seasons and holidays",
+  "customBackground": "",
+  "localBackgrounds": [],
+  "showTopLeftSearchButton": true,
+  "topLeftSearchProvider": {
+    "command": "darlal-switcher-plus:switcher-plus:open-vaults",
+    "display": "Quick Switcher++: Open in Vaults Mode"
+  },
+  "showTime": true,
+  "timeFormat": "24-hour",
+  "showGreeting": true,
+  "greetingText": "{{greeting}}, my dear!",
+  "showInlineSearch": true,
+  "inlineSearchProvider": {
+    "command": "omnisearch:show-modal",
+    "display": "Omnisearch: Vault search"
+  },
+  "showRecentFiles": true,
+  "showBookmarks": true,
+  "bookmarkSource": "all",
+  "bookmarkGroup": "",
+  "showQuote": true,
+  "quoteSource": "Both",
+  "customQuotes": []
+}

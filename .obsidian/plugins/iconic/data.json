@@ -20,7 +20,11 @@
     "rulePage": "file"
   },
   "appIcons": {},
-  "tabIcons": {},
+  "tabIcons": {
+    "advanced-tables-toolbar": {
+      "icon": "lucide-table-properties"
+    }
+  },
   "fileIcons": {
     "HOME.md": {
       "icon": "lucide-home"
