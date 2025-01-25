@@ -310,6 +310,9 @@
       },
       "obsidian-checklist-reset": {
         "startupType": "short"
+      },
+      "typewriter-mode": {
+        "startupType": "short"
       }
     }
   }
