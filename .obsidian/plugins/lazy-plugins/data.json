@@ -316,6 +316,9 @@
       },
       "obsidian-languagetool-plugin": {
         "startupType": "short"
+      },
+      "slash-commander": {
+        "startupType": "short"
       }
     }
   }
