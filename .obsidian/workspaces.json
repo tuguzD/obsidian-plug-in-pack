@@ -123,7 +123,7 @@
           {
             "id": "b9c37a9ed48bf901",
             "type": "tabs",
-            "dimension": 64.22413793103449,
+            "dimension": 66.70258620689656,
             "children": [
               {
                 "id": "0378d32ae6e83c62",
@@ -171,12 +171,12 @@
                 }
               }
             ],
-            "currentTab": 2
+            "currentTab": 3
           },
           {
             "id": "57f3dcfa2c7c4e84",
             "type": "tabs",
-            "dimension": 35.775862068965516,
+            "dimension": 33.297413793103445,
             "children": [
               {
                 "id": "fcf16252da970e3f",
@@ -281,8 +281,7 @@
                   "title": "All properties"
                 }
               }
-            ],
-            "currentTab": 5
+            ]
           }
         ],
         "direction": "horizontal",
@@ -310,8 +309,8 @@
           "omnisearch:Omnisearch": false
         }
       },
-      "active": "38338a52b618bc17",
-      "mtime": "2025-01-25T22:03:27+03:00",
+      "active": "4ddba649f3fc1abd",
+      "mtime": "2025-01-25T23:29:48+03:00",
       "workspaces-plus:settings-v1": {
         "explorerFoldState": []
       }
