@@ -23,6 +23,9 @@
   "tabIcons": {
     "advanced-tables-toolbar": {
       "icon": "lucide-table-properties"
+    },
+    "reveal-preview-view": {
+      "icon": "lucide-presentation"
     }
   },
   "fileIcons": {

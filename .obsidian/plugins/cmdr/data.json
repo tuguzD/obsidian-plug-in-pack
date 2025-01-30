@@ -26,6 +26,12 @@
       "icon": "lucide-tags",
       "name": "Quick Tagger: Add tag",
       "mode": "any"
+    },
+    {
+      "id": "slides-extended:open-preview",
+      "icon": "lucide-presentation",
+      "name": "Slides Extended: Show slide preview",
+      "mode": "any"
     }
   ],
   "macros": [],
@@ -50,7 +56,9 @@
       "Open command palette",
       "Insert template",
       "Create new canvas",
-      "Insert Callout"
+      "Insert Callout",
+      "Show Slide Preview",
+      "Show slide preview"
     ]
   },
   "spacing": "12",

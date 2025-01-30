@@ -325,6 +325,12 @@
       },
       "obsidian-view-mode-by-frontmatter": {
         "startupType": "short"
+      },
+      "obsidian-advanced-slides": {
+        "startupType": "long"
+      },
+      "slides-extended": {
+        "startupType": "long"
       }
     }
   }
