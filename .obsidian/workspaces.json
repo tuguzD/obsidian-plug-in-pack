@@ -6,16 +6,21 @@
         "type": "split",
         "children": [
           {
-            "id": "bafa8b3924e04eca",
+            "id": "077c125e0d9ba2c2",
             "type": "tabs",
             "children": [
               {
-                "id": "38338a52b618bc17",
+                "id": "94c1446e621de87d",
                 "type": "leaf",
                 "state": {
-                  "type": "beautitab-react-view",
-                  "state": {},
-                  "title": "New tab"
+                  "type": "markdown",
+                  "state": {
+                    "file": "HOME.md",
+                    "mode": "preview",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "HOME"
                 }
               }
             ]
@@ -30,7 +35,7 @@
           {
             "id": "8563ba047e468848",
             "type": "tabs",
-            "dimension": 60.8352144469526,
+            "dimension": 60.609480812641074,
             "children": [
               {
                 "id": "a2b61e686cc07b31",
@@ -48,7 +53,8 @@
                 "state": {
                   "type": "file-explorer",
                   "state": {
-                    "sortOrder": "alphabetical"
+                    "sortOrder": "alphabetical",
+                    "autoReveal": false
                   },
                   "icon": "lucide-folder-closed",
                   "title": "Files"
@@ -70,6 +76,26 @@
                   "icon": "lucide-search",
                   "title": "Search"
                 }
+              },
+              {
+                "id": "a9de8dcdc933ebe7",
+                "type": "leaf",
+                "state": {
+                  "type": "recent-files",
+                  "state": {},
+                  "icon": "clock",
+                  "title": "Recent Files"
+                }
+              },
+              {
+                "id": "a5ee2c609a590622",
+                "type": "leaf",
+                "state": {
+                  "type": "webviewer-history",
+                  "state": {},
+                  "icon": "lucide-clock",
+                  "title": "Web history"
+                }
               }
             ],
             "currentTab": 1
@@ -77,7 +103,7 @@
           {
             "id": "c5b359856d887b32",
             "type": "tabs",
-            "dimension": 39.1647855530474,
+            "dimension": 39.39051918735892,
             "children": [
               {
                 "id": "ee0493006aa23741",
@@ -100,13 +126,27 @@
                 }
               },
               {
-                "id": "a9de8dcdc933ebe7",
+                "id": "af8550b3fe47306b",
                 "type": "leaf",
                 "state": {
-                  "type": "recent-files",
+                  "type": "all-properties",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "showSearch": false,
+                    "searchQuery": ""
+                  },
+                  "icon": "lucide-archive",
+                  "title": "All properties"
+                }
+              },
+              {
+                "id": "79418ea42fbb6d73",
+                "type": "leaf",
+                "state": {
+                  "type": "trash-explorer",
                   "state": {},
-                  "icon": "clock",
-                  "title": "Recent Files"
+                  "icon": "trash",
+                  "title": "Trash explorer"
                 }
               }
             ],
@@ -123,7 +163,7 @@
           {
             "id": "b9c37a9ed48bf901",
             "type": "tabs",
-            "dimension": 66.70258620689656,
+            "dimension": 61.099137931034484,
             "children": [
               {
                 "id": "0378d32ae6e83c62",
@@ -131,10 +171,12 @@
                 "state": {
                   "type": "outline",
                   "state": {
-                    "file": "HOME.md"
+                    "followCursor": false,
+                    "showSearch": false,
+                    "searchQuery": ""
                   },
                   "icon": "lucide-list",
-                  "title": "Outline of HOME"
+                  "title": "Outline"
                 }
               },
               {
@@ -154,7 +196,9 @@
                   "type": "tag",
                   "state": {
                     "sortOrder": "frequency",
-                    "useHierarchy": true
+                    "useHierarchy": true,
+                    "showSearch": false,
+                    "searchQuery": ""
                   },
                   "icon": "lucide-tags",
                   "title": "Tags"
@@ -176,7 +220,7 @@
           {
             "id": "57f3dcfa2c7c4e84",
             "type": "tabs",
-            "dimension": 33.297413793103445,
+            "dimension": 38.900862068965516,
             "children": [
               {
                 "id": "fcf16252da970e3f",
@@ -184,6 +228,7 @@
                 "state": {
                   "type": "localgraph",
                   "state": {
+                    "file": "HOME.md",
                     "options": {
                       "collapse-filter": true,
                       "search": "",
@@ -211,7 +256,7 @@
                     }
                   },
                   "icon": "lucide-git-fork",
-                  "title": "Graph view"
+                  "title": "Graph of HOME"
                 }
               },
               {
@@ -220,12 +265,11 @@
                 "state": {
                   "type": "outgoing-link",
                   "state": {
-                    "file": "HOME.md",
                     "linksCollapsed": false,
                     "unlinkedCollapsed": false
                   },
                   "icon": "links-going-out",
-                  "title": "Outgoing links from HOME"
+                  "title": "Outgoing links"
                 }
               },
               {
@@ -244,7 +288,6 @@
                 "state": {
                   "type": "backlink",
                   "state": {
-                    "file": "HOME.md",
                     "collapseAll": false,
                     "extraContext": false,
                     "sortOrder": "alphabetical",
@@ -254,7 +297,7 @@
                     "unlinkedCollapsed": true
                   },
                   "icon": "links-coming-in",
-                  "title": "Backlinks for HOME"
+                  "title": "Backlinks"
                 }
               },
               {
@@ -265,20 +308,6 @@
                   "state": {},
                   "icon": "spreadsheet",
                   "title": "Advanced Tables"
-                }
-              },
-              {
-                "id": "af8550b3fe47306b",
-                "type": "leaf",
-                "state": {
-                  "type": "all-properties",
-                  "state": {
-                    "sortOrder": "frequency",
-                    "showSearch": false,
-                    "searchQuery": ""
-                  },
-                  "icon": "lucide-archive",
-                  "title": "All properties"
                 }
               }
             ]
@@ -300,17 +329,19 @@
           "quick-tagger:Add tag to current note": true,
           "quick-tagger:Remove tag from current note": true,
           "callout-manager:Insert Callout": false,
-          "periodic-notes:Open today": false,
           "graph:Open graph view": false,
+          "obsidian-trash-explorer:Open trash explorer": false,
           "workspaces-plus:Manage workspaces": false,
+          "periodic-notes:Open today": false,
           "obsidian-day-and-night:Toggle Theme": false,
           "iconic:Open rulebook": false,
           "templater-obsidian:Templater": false,
-          "omnisearch:Omnisearch": false
+          "omnisearch:Omnisearch": false,
+          "slides-extended:Show slide preview": false
         }
       },
-      "active": "4ddba649f3fc1abd",
-      "mtime": "2025-01-25T23:29:48+03:00",
+      "active": "94c1446e621de87d",
+      "mtime": "2025-01-30T20:10:09+03:00",
       "workspaces-plus:settings-v1": {
         "explorerFoldState": []
       }
