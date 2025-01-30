@@ -1,5 +1,6 @@
 # Exclude certain plugin data (don't expose sensitive data, keep personal settings intact)
 **/cursor-positions.json
+**/todoist-token
 **/code-styler/reference-files/cache.json
 **/various-complements/histories.json
 **/text-extractor/cache/**

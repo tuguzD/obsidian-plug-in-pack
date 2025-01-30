@@ -331,6 +331,9 @@
       },
       "slides-extended": {
         "startupType": "long"
+      },
+      "todoist-sync-plugin": {
+        "startupType": "long"
       }
     }
   }
