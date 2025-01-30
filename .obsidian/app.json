@@ -6,5 +6,6 @@
   "newFileLocation": "current",
   "showUnsupportedFiles": true,
   "showInlineTitle": false,
-  "spellcheckDictionary": []
+  "spellcheckDictionary": [],
+  "attachmentFolderPath": "./"
 }
