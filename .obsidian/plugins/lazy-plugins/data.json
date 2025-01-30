@@ -343,6 +343,9 @@
       },
       "obsidian-icon-shortcodes": {
         "startupType": "long"
+      },
+      "widgets": {
+        "startupType": "short"
       }
     }
   }
