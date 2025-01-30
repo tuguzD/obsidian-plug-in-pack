@@ -1,3 +1,10 @@
-# Obsidian template
+# "Plugin" template for [Obsidian](https://obsidian.md)
 
-Useful plugins and themes already set up!
+This is just a large collection of already set up plugins and hotkeys...
+That was gotten rid of any conflicts. 
+
+NOTE: After forking/using the template, feel free to give this file a proper use)
+
+## List of plugins
+
+~~To-be-done~~
