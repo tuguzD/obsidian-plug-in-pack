@@ -1,11 +1,11 @@
 # "Plugin" template for [Obsidian](https://obsidian.md)
 
-This is just a large collection of already set up plugins and hotkeys...
-That was gotten rid of any conflicts. 
+This is just a large collection of already set up plugins and hotkeys… That was gotten rid of any conflicts.
 
 NOTE: After forking/using the template, feel free to give this file a proper use)
 
 ## List of plugins
+
 - [Advanced Tables](https://github.com/tgrosinger/advanced-tables-obsidian)
 - [Auto Link Title](https://github.com/zolrath/obsidian-auto-link-title)
 - [Beautitab](https://github.com/andrewmcgivery/obsidian-beautitab)
@@ -91,20 +91,23 @@ NOTE: After forking/using the template, feel free to give this file a proper use
 - [Widgets](https://github.com/rafaelveiga/obsidian-widgets)
 
 ### Plugin management
+
 - [BRAT](https://github.com/TfTHacker/obsidian42-brat)
 - [Lazy Plugin Loader](https://github.com/alangrainger/obsidian-lazy-plugins)
 - [Plugin Update Tracker](https://github.com/swar8080/obsidian-plugin-update-tracker)
 - [Plugins Annotations](https://github.com/alberti42/obsidian-plugins-annotations)
 
 ### Core plugin upgrades
+
 - [Better Word Count](https://github.com/lukeleppan/better-word-count) (turn OFF core [Word Count](https://help.obsidian.md/Plugins/Word+count))
-- [Better Search Views](https://github.com/ivan-lednev/better-search-views) (overhauls core ...)
+- [Better Search Views](https://github.com/ivan-lednev/better-search-views) (overhauls core …)
 - [Hover Editor](https://github.com/nothingislost/obsidian-hover-editor) (turn ON core [Page preview](https://help.obsidian.md/Plugins/Page+preview))
 - [Periodic Notes](https://github.com/liamcain/obsidian-periodic-notes) (IDK)
-- [Slash Commander](https://github.com/alephpiece/obsidian-slash-commander) (turn ON core ...)
-- [Workspaces Plus](https://github.com/nothingislost/obsidian-workspaces-plus) (turn ON core ...)
+- [Slash Commander](https://github.com/alephpiece/obsidian-slash-commander) (turn ON core …)
+- [Workspaces Plus](https://github.com/nothingislost/obsidian-workspaces-plus) (turn ON core …)
 
 #### Canvas
+
 - [Advanced Canvas](https://github.com/Developer-Mike/obsidian-advanced-canvas)
 - [Canvas Card Background Remover](https://github.com/luxmargos/obsidian-canvas-card-bg-remover)
 - [Canvas Keyboard Pan](https://github.com/nathonius/obsidian-canvas-pan)
@@ -116,15 +119,18 @@ NOTE: After forking/using the template, feel free to give this file a proper use
 - [Search in Canvas](https://github.com/quorafind/obsidian-search-in-canvas)
 
 ### Visual fixes/enhancements
+
 - [Better Math in Callouts & Blockquotes](https://github.com/RyotaUshio/obsidian-math-in-callout)
 - [Link Headers Directly](https://github.com/Signynt/link-headers-directly) (works only in Reading view)
 
 ### Callout
+
 - [Callout Integrator](https://github.com/Cleoche/obsidian-callout-integrator)
 - [Callout Manager](https://github.com/eth-p/obsidian-callout-manager)
 - [Callout Menu](https://github.com/anareaty/callout-menu)
 - [Callout Suggestions](https://github.com/cwfryer/obsidian-callout-suggestions)
 
 ### Graph
+
 - [Nested tags graph](https://github.com/drPilman/obsidian-graph-nested-tags)
 - ~~[Folders to Graph](https://github.com/Ratibus11/folders2graph)~~ (disabled, conflicts with plugin above)
