@@ -24,13 +24,18 @@
     "advanced-tables-toolbar": {
       "icon": "lucide-table-properties"
     },
+    "beautitab-react-view": {
+      "icon": "lucide-mouse-pointer-square-dashed",
+      "color": "purple"
+    },
     "reveal-preview-view": {
       "icon": "lucide-presentation"
     }
   },
   "fileIcons": {
     "HOME.md": {
-      "icon": "lucide-home"
+      "icon": "lucide-home",
+      "color": "yellow"
     },
     "README.md": {
       "icon": "lucide-book-marked",
