@@ -32,6 +32,12 @@
       "icon": "lucide-presentation",
       "name": "Slides Extended: Show slide preview",
       "mode": "any"
+    },
+    {
+      "id": "widgets:add-widget",
+      "icon": "lucide-app-window-mac",
+      "name": "Widgets: Add widget",
+      "mode": "any"
     }
   ],
   "macros": [],
@@ -59,7 +65,8 @@
       "Insert Callout",
       "Show Slide Preview",
       "Show slide preview",
-      "Open trash explorer"
+      "Open trash explorer",
+      "Add widget"
     ]
   },
   "spacing": "12",
