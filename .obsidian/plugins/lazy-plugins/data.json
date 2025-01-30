@@ -340,6 +340,9 @@
       },
       "mouse-navigation": {
         "startupType": "instant"
+      },
+      "obsidian-icon-shortcodes": {
+        "startupType": "long"
       }
     }
   }
