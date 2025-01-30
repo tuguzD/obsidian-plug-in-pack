@@ -26,10 +26,16 @@
     },
     "beautitab-react-view": {
       "icon": "lucide-mouse-pointer-square-dashed",
-      "color": "purple"
+      "color": "gray"
+    },
+    "recent-files": {
+      "icon": "lucide-file-search"
     },
     "reveal-preview-view": {
       "icon": "lucide-presentation"
+    },
+    "webviewer-history": {
+      "icon": "lucide-history"
     }
   },
   "fileIcons": {
@@ -56,7 +62,11 @@
   "bookmarkIcons": {},
   "tagIcons": {},
   "propertyIcons": {},
-  "ribbonIcons": {},
+  "ribbonIcons": {
+    "homepage:Open homepage": {
+      "icon": "lucide-home"
+    }
+  },
   "fileRules": [],
   "folderRules": []
 }

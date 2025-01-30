@@ -58,7 +58,8 @@
       "Create new canvas",
       "Insert Callout",
       "Show Slide Preview",
-      "Show slide preview"
+      "Show slide preview",
+      "Open trash explorer"
     ]
   },
   "spacing": "12",

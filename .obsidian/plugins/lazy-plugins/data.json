@@ -334,6 +334,9 @@
       },
       "todoist-sync-plugin": {
         "startupType": "long"
+      },
+      "obsidian-trash-explorer": {
+        "startupType": "instant"
       }
     }
   }
