@@ -79,7 +79,7 @@ NOTE: After forking/using the template, feel free to give this file a proper use
 
 ### Plugin management
 - [Lazy Plugin Loader](https://github.com/alangrainger/obsidian-lazy-plugins) – load chosen plugins later to improve speed of `Obsidian` app launch
-- [Plugin Update Tracker](https://github.com/swar8080/obsidian-plugin-update-tracker) – show update status of all installed plugins, browse release notes for each update and even ignore them
+- [Plugin Update Tracker](https://github.com/swar8080/obsidian-plugin-update-tracker) – show updates for all plugins, browse their release notes and even ignore them
 - [BRAT](https://github.com/TfTHacker/obsidian42-brat) – download plugins that were not listed from in-app plugin search (or beta versions of listed plugins)
 - [Plugins Annotations](https://github.com/alberti42/obsidian-plugins-annotations) – add personal annotations to each installed plugin to store their use-cases, as labels can't provide full info
 
