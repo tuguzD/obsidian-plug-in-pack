@@ -28,6 +28,8 @@ NOTE: After forking/using the template, feel free to give this file a proper use
 
 
 ### Overhaul *core plugins*
+<details> <summary> Add more functionality to core plugins using community ones below: </summary>
+
 - [Periodic Notes](https://github.com/liamcain/obsidian-periodic-notes) – create not just daily, but also weekly, monthly, quarterly and yearly notes!
   - should turn OFF core [Daily Notes](https://help.obsidian.md/Plugins/Daily+notes) plugin
 - [Better Word Count](https://github.com/lukeleppan/better-word-count) – collect stats about your whole vault, also customize displaying them
@@ -47,6 +49,8 @@ NOTE: After forking/using the template, feel free to give this file a proper use
 - [Nested tags graph](https://github.com/drPilman/obsidian-graph-nested-tags) / ~~[Folders to Graph](https://github.com/Ratibus11/folders2graph)~~ – link nested tags ~~or show folder structure~~ in graph view
   - MUST turn ON core [Graph view](https://help.obsidian.md/Plugins/Graph+view) plugin
   - one cancels another, choose anything you like
+
+</details>
 
 #### [Canvas](https://help.obsidian.md/Plugins/Canvas) plugin
 <details> <summary> MUST be turned ON for plugins below to work: </summary>
@@ -78,11 +82,14 @@ NOTE: After forking/using the template, feel free to give this file a proper use
 
 
 ### Plugin management
+<details> <summary> Manage loading and update all plugins using these below: </summary>
+
 - [Lazy Plugin Loader](https://github.com/alangrainger/obsidian-lazy-plugins) – load chosen plugins later to improve speed of `Obsidian` app launch
 - [Plugin Update Tracker](https://github.com/swar8080/obsidian-plugin-update-tracker) – show updates for all plugins, browse their release notes and even ignore them
 - [BRAT](https://github.com/TfTHacker/obsidian42-brat) – download plugins that were not listed from in-app plugin search (or beta versions of listed plugins)
 - [Plugins Annotations](https://github.com/alberti42/obsidian-plugins-annotations) – add custom annotation for each plugin to store personal note (e.g., its actual use-case scenario, as labels can't usually provide full info)
 
+</details>
 
 ### Third-party integrations
 - [Discord Rich Presence](https://github.com/lukeleppan/obsidian-discordrpc) – integrate an app into [`Discord`](https://discord.com) status: show vault name, editing file and elapsed time
