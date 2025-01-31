@@ -6,28 +6,28 @@ NOTE: After forking/using the template, feel free to give this file a proper use
 
 ## List of plugins
 
-### App feature upgrades
-- [Settings Search](https://github.com/javalent/settings-search) – ...
-- [Hotkey Helper](https://github.com/pjeby/hotkey-helper) – ...
-- [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) – ...
-- [Scroll Speed](https://github.com/flolu/obsidian-scroll-speed) – ...
-- [Trash Explorer](https://github.com/proog/obsidian-trash-explorer) – ...
+### Improve *default app* features
+- [Settings Search](https://github.com/javalent/settings-search) – perform search among all settings, including: application, core and community plugins
+- [Hotkey Helper](https://github.com/pjeby/hotkey-helper) – jump to plugins' hotkeys from their description, view which plugins have conflicting hotkeys
+- [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) – change configuration options provided by some themes and plugins' CSS files
+- [Scroll Speed](https://github.com/flolu/obsidian-scroll-speed) – modify base mouse scroll speed and make animation smoother, scroll faster by pressing `Alt` key
+- [Trash Explorer](https://github.com/proog/obsidian-trash-explorer) – view, restore or remove deleted files (located in app's hidden `.trash` folder)
 
 #### Tags
-- [Tag Wrangler](https://github.com/pjeby/tag-wrangler) – ...
-- [Quick Tagger](https://github.com/Gorkycreator/obsidian-quick-tagger) – ...
-- [Colored Tags Wrangler](https://github.com/code-of-chaos/obsidian-colored_tags_wrangler) – ...
+- [Tag Wrangler](https://github.com/pjeby/tag-wrangler) – rename (sub)tags "in bulk", filter search with tags and manage "[Tag Pages](https://github.com/pjeby/tag-wrangler?tab=readme-ov-file#tag-pages)"
+- [Colored Tags Wrangler](https://github.com/code-of-chaos/obsidian-colored_tags_wrangler) – assign unique colors to tags and then apply them to items in canvas, folders and/or notes
+- [Quick Tagger](https://github.com/Gorkycreator/obsidian-quick-tagger) – add/remove tags of file(s) "in bulk" by calling commands, using hotkeys or context menu
 
 #### Links
-- [Links](https://github.com/mii-key/obsidian-links) – ...
-- [Auto Link Title](https://github.com/zolrath/obsidian-auto-link-title) – ...
-- [Link Favicons](https://github.com/joethei/obsidian-link-favicon) – ...
-- [Link Headers Directly](https://github.com/Signynt/link-headers-directly) – ...
+- [Links](https://github.com/mii-key/obsidian-links) – add A LOT of context menu actions for link creation, editing, convertion and removal/deletion from note
+- [Auto Link Title](https://github.com/zolrath/obsidian-auto-link-title) – automatically fetch website's title upon pasting it into notes
+- [Link Favicons](https://github.com/joethei/obsidian-link-favicon) – automatically render favicons for external links (website), set custom icon for certain links
+- [Copy Block Link](https://github.com/mgmeyers/obsidian-copy-block-link) – get links to text blocks and headings directly from a context menu
+- [Link Headers Directly](https://github.com/Signynt/link-headers-directly) – show only the last header of internal links, and not the whole note hierarchy
   - works only in [Reading](https://help.obsidian.md/Editing+and+formatting/Edit+and+preview+Markdown#Editor+views) view
-- [Copy Block Link](https://github.com/mgmeyers/obsidian-copy-block-link) – ...
 
 
-### Core plugin upgrades
+### Overhaul *core plugins*
 - [Periodic Notes](https://github.com/liamcain/obsidian-periodic-notes) – create not just daily, but also weekly, monthly, quarterly and yearly notes!
   - should turn OFF core [Daily Notes](https://help.obsidian.md/Plugins/Daily+notes) plugin
 - [Better Word Count](https://github.com/lukeleppan/better-word-count) – collect stats about your whole vault, also customize displaying them
