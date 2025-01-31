@@ -51,11 +51,11 @@ NOTE: After forking/using the template to create your vault, feel free to give t
 
 - [Better Search Views](https://github.com/ivan-lednev/better-search-views) <sup>[✅[Search](https://help.obsidian.md/Plugins/Search), ✅[Backlinks](https://help.obsidian.md/Plugins/Backlinks) ON]</sup> – search results now [decorated](https://github.com/ivan-lednev/better-search-views?tab=readme-ov-file#but-what-does-it-do-exactly) with breadcrumbs, or display an hierarchy
 
-- [Quick Switcher++](https://github.com/darlal/obsidian-switcher-plus) <sup>[✅[Quick switcher](https://help.obsidian.md/Plugins/Quick+switcher), ✅[Command palette](https://help.obsidian.md/Plugins/Command+palette) ON]</sup> – make searching, filtering results and navigation quicker: switch between multiple modes (Commands, Editor, Symbols, Headings, Related Items, Bookmarks, Workspaces, Vaults)
+- [Quick Switcher++](https://github.com/darlal/obsidian-switcher-plus) <sup>[✅[Quick switcher](https://help.obsidian.md/Plugins/Quick+switcher), ✅[Command palette](https://help.obsidian.md/Plugins/Command+palette) ON]</sup> – search, filter results and navigate quicker: switch between multiple modes (Commands, Editor, Symbols, Headings, Related Items, Bookmarks, Workspaces, Vaults)
 
 - [Hover Editor](https://github.com/nothingislost/obsidian-hover-editor) <sup>[✅[Page preview](https://help.obsidian.md/Plugins/Page+preview) ON]</sup> – "turn the hover popover into a full featured [editor instance](https://github.com/nothingislost/obsidian-hover-editor?tab=readme-ov-file#features)"
 
-- [Workspaces Plus](https://github.com/nothingislost/obsidian-workspaces-plus) <sup>[✅[Workspaces](https://help.obsidian.md/Plugins/Workspaces) ON]</sup> – make editing and switching workspaces easier, also setup different theme for each one
+- [Workspaces Plus](https://github.com/nothingislost/obsidian-workspaces-plus) <sup>[✅[Workspaces](https://help.obsidian.md/Plugins/Workspaces) ON]</sup> – edit and switch workspaces easier, set different themes for each one
 
 - [Nested tags graph](https://github.com/drPilman/obsidian-graph-nested-tags) / [Folders to Graph](https://github.com/Ratibus11/folders2graph) <sup>[✅[Graph view](https://help.obsidian.md/Plugins/Graph+view) ON]</sup> – link nested tags / show folder structure in graph view (one breaks another, choose the one you like)
 </details>
