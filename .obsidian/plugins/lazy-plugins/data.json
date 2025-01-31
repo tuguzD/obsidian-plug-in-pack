@@ -346,6 +346,9 @@
       },
       "widgets": {
         "startupType": "short"
+      },
+      "inline-math": {
+        "startupType": "instant"
       }
     }
   }
