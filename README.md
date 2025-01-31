@@ -41,25 +41,23 @@ NOTE: After forking/using the template to create your vault, feel free to give t
 ### Overhaul *core plugins*
 <details> <summary> Add more functionality to core plugins using community ones below: </summary>
 
-- [Periodic Notes](https://github.com/liamcain/obsidian-periodic-notes) – create not just daily, but also weekly, monthly, quarterly and yearly notes!
-  - should turn OFF core [Daily Notes](https://help.obsidian.md/Plugins/Daily+notes) plugin
-- [Better Word Count](https://github.com/lukeleppan/better-word-count) – collect stats about your whole vault, also customize displaying them
-  - should turn OFF core [Word Count](https://help.obsidian.md/Plugins/Word+count) plugin
-- [Slides Extended](https://github.com/ebullient/obsidian-slides-extended) – create presentations: customize each element and apply themes globally, improve slide navigation, view changes live, switch between different modes, and more
-  - should turn OFF core [Slides](https://help.obsidian.md/Plugins/Slides) plugin
-- [Slash Commander](https://github.com/alephpiece/obsidian-slash-commander) – customize slash command list and show descriptions for each one
-  - MUST turn OFF core [Slash commands](https://help.obsidian.md/Plugins/Slash+commands) plugin
-- [Better Search Views](https://github.com/ivan-lednev/better-search-views) – search results now [decorated](https://github.com/ivan-lednev/better-search-views?tab=readme-ov-file#but-what-does-it-do-exactly) with breadcrumbs, or display an hierarchy
-  - MUST turn ON core [Search](https://help.obsidian.md/Plugins/Search) and [Backlinks](https://help.obsidian.md/Plugins/Backlinks) plugins
-- [Quick Switcher++](https://github.com/darlal/obsidian-switcher-plus) – make searching, filtering results and navigation quicker: switch between multiple modes (Commands, Editor, Symbols, Headings, Related Items, Bookmarks, Workspaces, Vaults)
-  - MUST turn ON core [Quick switcher](https://help.obsidian.md/Plugins/Quick+switcher) and [Command palette](https://help.obsidian.md/Plugins/Command+palette) plugins
-- [Hover Editor](https://github.com/nothingislost/obsidian-hover-editor) – "turn the hover popover into a full featured [editor instance](https://github.com/nothingislost/obsidian-hover-editor?tab=readme-ov-file#features)"
-  - MUST turn ON core [Page preview](https://help.obsidian.md/Plugins/Page+preview) plugin
-- [Workspaces Plus](https://github.com/nothingislost/obsidian-workspaces-plus) – make editing and switching workspaces easier, also setup different theme for each one
-  - MUST turn ON core [Workspaces](https://help.obsidian.md/Plugins/Workspaces) plugin
-- [Nested tags graph](https://github.com/drPilman/obsidian-graph-nested-tags) / ~~[Folders to Graph](https://github.com/Ratibus11/folders2graph)~~ – link nested tags ~~or show folder structure~~ in graph view
-  - MUST turn ON core [Graph view](https://help.obsidian.md/Plugins/Graph+view) plugin
-  - one cancels another, choose anything you like
+- [Periodic Notes](https://github.com/liamcain/obsidian-periodic-notes) <sup>[⚠️[Daily Notes](https://help.obsidian.md/Plugins/Daily+notes) OFF]</sup> – create not just daily, but also weekly, monthly, quarterly and yearly notes!
+
+- [Better Word Count](https://github.com/lukeleppan/better-word-count) <sup>[⚠️[Word Count](https://help.obsidian.md/Plugins/Word+count) OFF]</sup> – collect stats about your whole vault, also customize displaying them
+
+- [Slides Extended](https://github.com/ebullient/obsidian-slides-extended) <sup>[⚠️[Slides](https://help.obsidian.md/Plugins/Slides) OFF]</sup> – create presentations: customize each element and apply themes globally, improve slide navigation, view changes live, switch between different modes, and more
+
+- [Slash Commander](https://github.com/alephpiece/obsidian-slash-commander) <sup>[⚠️[Slash commands](https://help.obsidian.md/Plugins/Slash+commands) OFF]</sup> – customize slash command list and show descriptions for each one
+
+- [Better Search Views](https://github.com/ivan-lednev/better-search-views) <sup>[✅[Search](https://help.obsidian.md/Plugins/Search), ✅[Backlinks](https://help.obsidian.md/Plugins/Backlinks) ON]</sup> – search results now [decorated](https://github.com/ivan-lednev/better-search-views?tab=readme-ov-file#but-what-does-it-do-exactly) with breadcrumbs, or display an hierarchy
+
+- [Quick Switcher++](https://github.com/darlal/obsidian-switcher-plus) <sup>[✅[Quick switcher](https://help.obsidian.md/Plugins/Quick+switcher), ✅[Command palette](https://help.obsidian.md/Plugins/Command+palette) ON]</sup> – make searching, filtering results and navigation quicker: switch between multiple modes (Commands, Editor, Symbols, Headings, Related Items, Bookmarks, Workspaces, Vaults)
+
+- [Hover Editor](https://github.com/nothingislost/obsidian-hover-editor) <sup>[✅[Page preview](https://help.obsidian.md/Plugins/Page+preview) ON]</sup> – "turn the hover popover into a full featured [editor instance](https://github.com/nothingislost/obsidian-hover-editor?tab=readme-ov-file#features)"
+
+- [Workspaces Plus](https://github.com/nothingislost/obsidian-workspaces-plus) <sup>[✅[Workspaces](https://help.obsidian.md/Plugins/Workspaces) ON]</sup> – make editing and switching workspaces easier, also setup different theme for each one
+
+- [Nested tags graph](https://github.com/drPilman/obsidian-graph-nested-tags) / [Folders to Graph](https://github.com/Ratibus11/folders2graph) <sup>[✅[Graph view](https://help.obsidian.md/Plugins/Graph+view) ON]</sup> – link nested tags / show folder structure in graph view (one breaks another, choose the one you like)
 </details>
 
 #### [Canvas](https://help.obsidian.md/Plugins/Canvas) plugin
