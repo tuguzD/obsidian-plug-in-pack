@@ -6,11 +6,32 @@ NOTE: After forking/using the template, feel free to give this file a proper use
 
 ## List of plugins
 
+### App feature upgrades
+- [Settings Search](https://github.com/javalent/settings-search) – ...
+- [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) – ...
+- [Scroll Speed](https://github.com/flolu/obsidian-scroll-speed) – ...
+
+#### Tags
+- [Tag Wrangler](https://github.com/pjeby/tag-wrangler) – ...
+- [Quick Tagger](https://github.com/Gorkycreator/obsidian-quick-tagger) – ...
+- [Colored Tags Wrangler](https://github.com/code-of-chaos/obsidian-colored_tags_wrangler) – ...
+
+#### Links
+- [Links](https://github.com/mii-key/obsidian-links) – ...
+- [Auto Link Title](https://github.com/zolrath/obsidian-auto-link-title) – ...
+- [Link Favicons](https://github.com/joethei/obsidian-link-favicon) – ...
+- [Link Headers Directly](https://github.com/Signynt/link-headers-directly) – ...
+  - works only in [Reading](https://help.obsidian.md/Editing+and+formatting/Edit+and+preview+Markdown#Editor+views) view
+- [Copy Block Link](https://github.com/mgmeyers/obsidian-copy-block-link) – ...
+
+
 ### Core plugin upgrades
 - [Periodic Notes](https://github.com/liamcain/obsidian-periodic-notes) – create not just daily, but also weekly, monthly, quarterly and yearly notes!
   - should turn OFF core [Daily Notes](https://help.obsidian.md/Plugins/Daily+notes) plugin
 - [Better Word Count](https://github.com/lukeleppan/better-word-count) – collect stats about your whole vault, also customize displaying them
   - should turn OFF core [Word Count](https://help.obsidian.md/Plugins/Word+count) plugin
+- [Slides Extended](https://github.com/ebullient/obsidian-slides-extended) – create presentations: customize each element and apply themes globally, improve slide navigation, view changes live, switch between different modes, and more
+  - should turn OFF core [Slides](https://help.obsidian.md/Plugins/Slides) plugin
 - [Slash Commander](https://github.com/alephpiece/obsidian-slash-commander) – customize slash command list and show descriptions for each one
   - MUST turn OFF core [Slash commands](https://help.obsidian.md/Plugins/Slash+commands) plugin
 - [Better Search Views](https://github.com/ivan-lednev/better-search-views) – search results now [decorated](https://github.com/ivan-lednev/better-search-views?tab=readme-ov-file#but-what-does-it-do-exactly) with breadcrumbs, or display an hierarchy
@@ -25,7 +46,9 @@ NOTE: After forking/using the template, feel free to give this file a proper use
   - MUST turn ON core [Graph view](https://help.obsidian.md/Plugins/Graph+view) plugin
   - one cancels another, choose anything you like
 
-#### [`Canvas`](https://obsidian.md/canvas) feature
+#### [Canvas](https://help.obsidian.md/Plugins/Canvas) plugin
+<details> <summary> MUST be turned ON for plugins below to work: </summary>
+
 - [Advanced Canvas](https://github.com/Developer-Mike/obsidian-advanced-canvas) – change note/edge styles, auto-resize elements and create presentations from `Canvas` files
 - [Canvas Card Background Remover](https://github.com/luxmargos/obsidian-canvas-card-bg-remover) – remove background from transparent embeds (like images)
 - [Canvas Keyboard Pan](https://github.com/nathonius/obsidian-canvas-pan) – move in Canvas using the keyboard (instead of just mouse wheel)
@@ -36,6 +59,7 @@ NOTE: After forking/using the template, feel free to give this file a proper use
 - [Optimize Canvas Connections](https://github.com/felixchenier/obsidian-optimize-canvas-connections) – reconnect notes using their nearest edges to prevent "messy-looking" canvas
 - [Search in Canvas](https://github.com/quorafind/obsidian-search-in-canvas) – search in canvas contents for text and highlight found entries
 
+</details>
 
 ### Plugin management
 - [Lazy Plugin Loader](https://github.com/alangrainger/obsidian-lazy-plugins) – load chosen plugins later to improve speed of `Obsidian` app launch
@@ -73,31 +97,24 @@ NOTE: After forking/using the template, feel free to give this file a proper use
 - [Callout Suggestions](https://github.com/cwfryer/obsidian-callout-suggestions) – add suggestion modal (by name) upon creating new callout
 - [Callout Menu](https://github.com/anareaty/callout-menu) – improve callout context menu to change it's type, default collapse and metadata
 - [Callout Integrator](https://github.com/Cleoche/obsidian-callout-integrator) – include selected blocks of text in existing callouts using a hotkey (containing "`>`")
+- [Better Math in Callouts & Blockquotes](https://github.com/RyotaUshio/obsidian-math-in-callout) – ...
 
 #### Table
 - [Advanced Tables](https://github.com/tgrosinger/advanced-tables-obsidian) – manipulate and navigate tables using buttons from new tab, also add spreadsheet formulas
 - [Sheets Extended](https://github.com/NicoNekoru/obsidan-advanced-table-xt) – create vertical headers, change style of table cells and merge them together
 
 
-### Visual fixes/enhancements
-- [Better Math in Callouts & Blockquotes](https://github.com/RyotaUshio/obsidian-math-in-callout) – ...
-- [Link Headers Directly](https://github.com/Signynt/link-headers-directly) – ...
-  - works only in [Reading](https://help.obsidian.md/Editing+and+formatting/Edit+and+preview+Markdown#Editor+views) view
-
-
 ### Unsorted yet
+- [Dataview](https://github.com/blacksmithgu/obsidian-dataview) – ...
+- [Templater](https://github.com/SilentVoid13/Templater) – ...
 - [Execute Code](https://github.com/twibiral/obsidian-execute-code)
-- [Auto Link Title](https://github.com/zolrath/obsidian-auto-link-title)
 - [Beautitab](https://github.com/andrewmcgivery/obsidian-beautitab)
 - [Blur](https://github.com/gapmiss/blur)
 - [Calendar](https://github.com/liamcain/obsidian-calendar-plugin)
 - [Chord Sheets](https://github.com/olvidalo/obsidian-chord-sheets) (provides the best "autoscroll note" feature)
-- [Colored Tags Wrangler](https://github.com/code-of-chaos/obsidian-colored_tags_wrangler)
 - [Commander](https://github.com/phibr0/obsidian-commander)
 - ~~[Continuous Mode](https://github.com/gasparschott/obsidian-continuous-mode)~~ (kinda broken right now)
-- [Copy Block Link](https://github.com/mgmeyers/obsidian-copy-block-link)
 - [Cursor Location](https://github.com/spslater/obsidian-cursor-location-plugin)
-- [Dataview](https://github.com/blacksmithgu/obsidian-dataview)
 - [Day and Night](https://github.com/CyberT17/obsidian-day-and-night) (used to manually "toggle light/dark mode")
 - [Double Click Tab](https://github.com/Quorafind/Obsidian-Double-Click-Tab)
 - [Doubleshift](https://github.com/Qwyntex/doubleshift) (create hotkeys with double tap)
@@ -118,8 +135,6 @@ NOTE: After forking/using the template, feel free to give this file a proper use
 - [JS Engine](https://github.com/mProjectsCode/obsidian-js-engine-plugin)
 - [Latex Suite](https://github.com/artisticat1/obsidian-latex-suite)
 - [Limelight](https://github.com/smikula/obsidian-limelight)
-- [Link Favicons](https://github.com/joethei/obsidian-link-favicon)
-- [Links](https://github.com/mii-key/obsidian-links)
 - [Linter](https://github.com/platers/obsidian-linter)
 - [Media Notes](https://github.com/jemstelos/obsidian-media-notes)
 - [Mindmap NextGen](https://github.com/james-tindal/obsidian-mindmap-nextgen)
@@ -134,19 +149,12 @@ NOTE: After forking/using the template, feel free to give this file a proper use
 - [Paste Image Rename](https://github.com/reorx/obsidian-paste-image-rename)
 - [Pixel Banner](https://github.com/jparkerweb/pixel-banner)
 - [Quick Explorer](https://github.com/pjeby/quick-explorer)
-- [Quick Tagger](https://github.com/Gorkycreator/obsidian-quick-tagger)
 - [Reading Time](https://github.com/avr/obsidian-reading-time)
 - [Recent Files](https://github.com/tgrosinger/recent-files-obsidian)
 - [Remember cursor position](https://github.com/dy-sh/obsidian-remember-cursor-position)
 - [Replace All](https://github.com/patrickchiang/obsidian-replace-all)
-- [Scroll Speed](https://github.com/flolu/obsidian-scroll-speed)
-- [Settings Search](https://github.com/javalent/settings-search)
-- [Slides Extended](https://github.com/ebullient/obsidian-slides-extended)
 - [Smart Typography](https://github.com/mgmeyers/obsidian-smart-typography)
-- [Style Settings](https://github.com/mgmeyers/obsidian-style-settings)
 - ~~[Tab Switcher](https://github.com/Vinzent03/tab-switcher)~~ (disabled as I cannot understand what it resolves)
-- [Tag Wrangler](https://github.com/pjeby/tag-wrangler)
-- [Templater](https://github.com/SilentVoid13/Templater)
 - [Text Extractor](https://github.com/scambier/obsidian-text-extractor)
 - [Trash Explorer](https://github.com/proog/obsidian-trash-explorer)
 - [Typewriter Mode](https://github.com/davisriedel/obsidian-typewriter-mode)
