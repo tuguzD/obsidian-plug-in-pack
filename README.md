@@ -76,7 +76,6 @@ NOTE: After forking/using the template, feel free to give this file a proper use
 - [Slides Extended](https://github.com/ebullient/obsidian-slides-extended)
 - [Smart Typography](https://github.com/mgmeyers/obsidian-smart-typography)
 - [Style Settings](https://github.com/mgmeyers/obsidian-style-settings)
-- [Tab Navigator](https://github.com/o02c/obsidian-tab-navigator)
 - ~~[Tab Switcher](https://github.com/Vinzent03/tab-switcher)~~ (disabled as I cannot understand what it resolves)
 - [Tag Wrangler](https://github.com/pjeby/tag-wrangler)
 - [Templater](https://github.com/SilentVoid13/Templater)

@@ -108,14 +108,6 @@
       "key": "/"
     }
   ],
-  "darlal-switcher-plus:switcher-plus:open-editors": [
-    {
-      "modifiers": [
-        "Alt"
-      ],
-      "key": "."
-    }
-  ],
   "darlal-switcher-plus:switcher-plus:open-workspaces": [
     {
       "modifiers": [
@@ -279,7 +271,7 @@
       "key": "."
     }
   ],
-  "tab-navigator:search-tabs": [
+  "darlal-switcher-plus:switcher-plus:open-editors": [
     {
       "modifiers": [
         "Alt"
