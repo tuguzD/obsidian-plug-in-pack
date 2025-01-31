@@ -6,6 +6,52 @@ NOTE: After forking/using the template, feel free to give this file a proper use
 
 ## List of plugins
 
+### Core plugin upgrades
+
+- [Periodic Notes](https://github.com/liamcain/obsidian-periodic-notes) (should turn OFF core [Daily Notes](https://help.obsidian.md/Plugins/Daily+notes))
+- [Better Word Count](https://github.com/lukeleppan/better-word-count) (should turn OFF core [Word Count](https://help.obsidian.md/Plugins/Word+count))
+- [Slash Commander](https://github.com/alephpiece/obsidian-slash-commander) (MUST turn OFF core [Slash commands](https://help.obsidian.md/Plugins/Slash+commands))
+- [Better Search Views](https://github.com/ivan-lednev/better-search-views) (MUST turn ON core [Search](https://help.obsidian.md/Plugins/Search) and [Backlinks](https://help.obsidian.md/Plugins/Backlinks))
+- [Hover Editor](https://github.com/nothingislost/obsidian-hover-editor) (MUST turn ON core [Page preview](https://help.obsidian.md/Plugins/Page+preview))
+- [Workspaces Plus](https://github.com/nothingislost/obsidian-workspaces-plus) (MUST turn ON core [Workspaces](https://help.obsidian.md/Plugins/Workspaces))
+- [Nested tags graph](https://github.com/drPilman/obsidian-graph-nested-tags) / ~~[Folders to Graph](https://github.com/Ratibus11/folders2graph)~~ (MUST turn ON core [Graph view](https://help.obsidian.md/Plugins/Graph+view))
+  - one cancels another, choose anything you like
+
+#### Canvas
+
+- [Advanced Canvas](https://github.com/Developer-Mike/obsidian-advanced-canvas)
+- [Canvas Card Background Remover](https://github.com/luxmargos/obsidian-canvas-card-bg-remover)
+- [Canvas Keyboard Pan](https://github.com/nathonius/obsidian-canvas-pan)
+- [Canvas Link Optimizer](https://github.com/Qbject/obsidian-canvas-link-optimizer)
+- [Canvas Links](https://github.com/aqav/obsidian-canvas-links)
+- [Canvas MindMap](https://github.com/Quorafind/Obsidian-Canvas-MindMap)
+- [Canvas Minimap](https://github.com/ifree/Obsidian-canvas-minimap)
+- [Optimize Canvas Connections](https://github.com/felixchenier/obsidian-optimize-canvas-connections)
+- [Search in Canvas](https://github.com/quorafind/obsidian-search-in-canvas)
+
+### Plugin management
+
+- [BRAT](https://github.com/TfTHacker/obsidian42-brat)
+- [Lazy Plugin Loader](https://github.com/alangrainger/obsidian-lazy-plugins)
+- [Plugin Update Tracker](https://github.com/swar8080/obsidian-plugin-update-tracker)
+- [Plugins Annotations](https://github.com/alberti42/obsidian-plugins-annotations)
+
+### Markdown [formatting](https://help.obsidian.md/Editing+and+formatting/Basic+formatting+syntax)
+
+#### Callout
+
+- [Callout Integrator](https://github.com/Cleoche/obsidian-callout-integrator)
+- [Callout Manager](https://github.com/eth-p/obsidian-callout-manager)
+- [Callout Menu](https://github.com/anareaty/callout-menu)
+- [Callout Suggestions](https://github.com/cwfryer/obsidian-callout-suggestions)
+
+### Visual fixes/enhancements
+
+- [Better Math in Callouts & Blockquotes](https://github.com/RyotaUshio/obsidian-math-in-callout)
+- [Link Headers Directly](https://github.com/Signynt/link-headers-directly) (works only in Reading view)
+
+### Unsorted yet
+
 - [Advanced Tables](https://github.com/tgrosinger/advanced-tables-obsidian)
 - [Auto Link Title](https://github.com/zolrath/obsidian-auto-link-title)
 - [Beautitab](https://github.com/andrewmcgivery/obsidian-beautitab)
@@ -88,48 +134,3 @@ NOTE: After forking/using the template, feel free to give this file a proper use
 - [Vertical Tabs](https://github.com/oxdc/obsidian-vertical-tabs)
 - [WakaTime](https://github.com/wakatime/obsidian-wakatime)
 - [Widgets](https://github.com/rafaelveiga/obsidian-widgets)
-
-### Plugin management
-
-- [BRAT](https://github.com/TfTHacker/obsidian42-brat)
-- [Lazy Plugin Loader](https://github.com/alangrainger/obsidian-lazy-plugins)
-- [Plugin Update Tracker](https://github.com/swar8080/obsidian-plugin-update-tracker)
-- [Plugins Annotations](https://github.com/alberti42/obsidian-plugins-annotations)
-
-### Core plugin upgrades
-
-- [Better Word Count](https://github.com/lukeleppan/better-word-count) (turn OFF core [Word Count](https://help.obsidian.md/Plugins/Word+count))
-- [Better Search Views](https://github.com/ivan-lednev/better-search-views) (overhauls core …)
-- [Hover Editor](https://github.com/nothingislost/obsidian-hover-editor) (turn ON core [Page preview](https://help.obsidian.md/Plugins/Page+preview))
-- [Periodic Notes](https://github.com/liamcain/obsidian-periodic-notes) (IDK)
-- [Slash Commander](https://github.com/alephpiece/obsidian-slash-commander) (turn ON core …)
-- [Workspaces Plus](https://github.com/nothingislost/obsidian-workspaces-plus) (turn ON core …)
-
-#### Canvas
-
-- [Advanced Canvas](https://github.com/Developer-Mike/obsidian-advanced-canvas)
-- [Canvas Card Background Remover](https://github.com/luxmargos/obsidian-canvas-card-bg-remover)
-- [Canvas Keyboard Pan](https://github.com/nathonius/obsidian-canvas-pan)
-- [Canvas Link Optimizer](https://github.com/Qbject/obsidian-canvas-link-optimizer)
-- [Canvas Links](https://github.com/aqav/obsidian-canvas-links)
-- [Canvas MindMap](https://github.com/Quorafind/Obsidian-Canvas-MindMap)
-- [Canvas Minimap](https://github.com/ifree/Obsidian-canvas-minimap)
-- [Optimize Canvas Connections](https://github.com/felixchenier/obsidian-optimize-canvas-connections)
-- [Search in Canvas](https://github.com/quorafind/obsidian-search-in-canvas)
-
-### Visual fixes/enhancements
-
-- [Better Math in Callouts & Blockquotes](https://github.com/RyotaUshio/obsidian-math-in-callout)
-- [Link Headers Directly](https://github.com/Signynt/link-headers-directly) (works only in Reading view)
-
-### Callout
-
-- [Callout Integrator](https://github.com/Cleoche/obsidian-callout-integrator)
-- [Callout Manager](https://github.com/eth-p/obsidian-callout-manager)
-- [Callout Menu](https://github.com/anareaty/callout-menu)
-- [Callout Suggestions](https://github.com/cwfryer/obsidian-callout-suggestions)
-
-### Graph
-
-- [Nested tags graph](https://github.com/drPilman/obsidian-graph-nested-tags)
-- ~~[Folders to Graph](https://github.com/Ratibus11/folders2graph)~~ (disabled, conflicts with plugin above)
