@@ -1,4 +1,4 @@
-# "Plugin" template for [`Obsidian`](https://obsidian.md)
+# "Plugin-pack" for [`Obsidian`](https://obsidian.md)
 
 This is just a large collection of already set up plugins and hotkeys… That was gotten rid of any conflicts.
 
