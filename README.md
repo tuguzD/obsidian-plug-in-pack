@@ -15,7 +15,7 @@ NOTE: After forking/using the template, feel free to give this file a proper use
 
 #### Tags
 - [Tag Wrangler](https://github.com/pjeby/tag-wrangler) – rename (sub)tags "in bulk", filter search with tags and manage "[Tag Pages](https://github.com/pjeby/tag-wrangler?tab=readme-ov-file#tag-pages)"
-- [Colored Tags Wrangler](https://github.com/code-of-chaos/obsidian-colored_tags_wrangler) – assign unique colors to tags and then apply them to items in canvas, folders and/or notes
+- [Colored Tags Wrangler](https://github.com/code-of-chaos/obsidian-colored_tags_wrangler) – assign unique tag colors, then apply them to canvas items, folders and/or notes
 - [Quick Tagger](https://github.com/Gorkycreator/obsidian-quick-tagger) – add/remove tags of file(s) "in bulk" by calling commands, using hotkeys or context menu
 
 #### Links
