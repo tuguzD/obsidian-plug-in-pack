@@ -38,8 +38,8 @@ NOTE: After forking/using the template, feel free to give this file a proper use
   - MUST turn OFF core [Slash commands](https://help.obsidian.md/Plugins/Slash+commands) plugin
 - [Better Search Views](https://github.com/ivan-lednev/better-search-views) – search results now [decorated](https://github.com/ivan-lednev/better-search-views?tab=readme-ov-file#but-what-does-it-do-exactly) with breadcrumbs, or display an hierarchy
   - MUST turn ON core [Search](https://help.obsidian.md/Plugins/Search) and [Backlinks](https://help.obsidian.md/Plugins/Backlinks) plugins
-- [Quick Switcher++](https://github.com/darlal/obsidian-switcher-plus) – switch between multiple modes (Standard, Commands, Editor, Symbols, Headings, Related Items, Bookmarks, Workspaces, Vaults) to make searching, filtering results and navigation between any `Obsidian` entities quicker
-  - MUST turn ON core [Quick Switcher](https://help.obsidian.md/Plugins/Quick+switcher) and [Command palette](https://help.obsidian.md/Plugins/Command+palette) plugins
+- [Quick Switcher++](https://github.com/darlal/obsidian-switcher-plus) – make searching, filtering results and navigation quicker: switch between multiple modes (Commands, Editor, Symbols, Headings, Related Items, Bookmarks, Workspaces, Vaults)
+  - MUST turn ON core [Quick switcher](https://help.obsidian.md/Plugins/Quick+switcher) and [Command palette](https://help.obsidian.md/Plugins/Command+palette) plugins
 - [Hover Editor](https://github.com/nothingislost/obsidian-hover-editor) – "turn the hover popover into a full featured [editor instance](https://github.com/nothingislost/obsidian-hover-editor?tab=readme-ov-file#features)"
   - MUST turn ON core [Page preview](https://help.obsidian.md/Plugins/Page+preview) plugin
 - [Workspaces Plus](https://github.com/nothingislost/obsidian-workspaces-plus) – make editing and switching workspaces easier, also setup different theme for each one
