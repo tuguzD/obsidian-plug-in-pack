@@ -56,15 +56,15 @@ NOTE: After forking/using the template, feel free to give this file a proper use
 
 
 ### Markdown [formatting](https://help.obsidian.md/Editing+and+formatting/Basic+formatting+syntax)
-- [Footnote Shortcut](https://github.com/MichaBrugger/obsidian-footnotes) – ...
-- [Code Styler](https://github.com/mayurankv/Obsidian-Code-Styler) – ...
+- [Footnote Shortcut](https://github.com/MichaBrugger/obsidian-footnotes) – insert auto-numbered/named footnote, create description at the note bottom, navigate between them
+- [Code Styler](https://github.com/mayurankv/Obsidian-Code-Styler) – apply styles/themes to codeblocks and inline code, or customize them to your liking
 
 #### List
-- [Outliner](https://github.com/vslinko/obsidian-outliner) – ...
-- [List Callouts](https://github.com/mgmeyers/obsidian-list-callouts) – ...
-- [Ordered List Style](https://github.com/erykwalder/obsidian-list-style) – ...
-  - works only in [Reading](https://help.obsidian.md/Editing+and+formatting/Edit+and+preview+Markdown#Editor+views) view
-- [Checklist Reset](https://github.com/lhansford/obsidian-checklist-reset) – ...
+- [Outliner](https://github.com/vslinko/obsidian-outliner) – improve list [editing](https://github.com/vslinko/obsidian-outliner) experience: move around nested elements, change selection behaviour, and so on
+- [List Callouts](https://github.com/mgmeyers/obsidian-list-callouts) – create "callout" lists: change element's front symbol/icon, add color of them and background
+- [Ordered List Style](https://github.com/erykwalder/obsidian-list-style) – change style of ordered lists from a wide [selection](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type#specifications)
+  - styles apply only in [Reading](https://help.obsidian.md/Editing+and+formatting/Edit+and+preview+Markdown#Editor+views) view
+- [Checklist Reset](https://github.com/lhansford/obsidian-checklist-reset) – reset state (set to unchecked) of any checklists in opened note
 
 #### Callout
 - [Callout Manager](https://github.com/eth-p/obsidian-callout-manager) – create custom callout types and styles (color and icon) which are similar to existing ones
@@ -73,8 +73,8 @@ NOTE: After forking/using the template, feel free to give this file a proper use
 - [Callout Integrator](https://github.com/Cleoche/obsidian-callout-integrator) – include selected blocks of text in existing callouts using a hotkey (containing "`>`")
 
 #### Table
-- [Advanced Tables](https://github.com/tgrosinger/advanced-tables-obsidian) – ...
-- [Sheets Extended](https://github.com/NicoNekoru/obsidan-advanced-table-xt) – ...
+- [Advanced Tables](https://github.com/tgrosinger/advanced-tables-obsidian) – manipulate and navigate tables using buttons from new tab, also add spreadsheet formulas
+- [Sheets Extended](https://github.com/NicoNekoru/obsidan-advanced-table-xt) – create vertical headers, change style of table cells and merge them together
 
 
 ### Visual fixes/enhancements
