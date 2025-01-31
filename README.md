@@ -117,6 +117,7 @@ NOTE: After forking/using the template, feel free to give this file a proper use
 #### Math
 - [Latex Suite](https://github.com/artisticat1/obsidian-latex-suite) – type [LaTeX](https://www.overleaf.com/learn/latex/Mathematical_expressions) quicker using customizable snippets, [conceal](https://github.com/artisticat1/obsidian-latex-suite?tab=readme-ov-file#conceal) LaTeX markup for ease of reading
 - [Better Math in Callouts & Blockquotes](https://github.com/RyotaUshio/obsidian-math-in-callout) – properly display math formulas in both callouts and blockquotes
+- [No More Flickering Inline Math](https://github.com/RyotaUshio/obsidian-inline-math) – prevent inline math block from flickering with each `Space` key pressed
 
 #### Table
 - [Advanced Tables](https://github.com/tgrosinger/advanced-tables-obsidian) – manipulate and navigate tables using buttons from new tab, also add spreadsheet formulas
