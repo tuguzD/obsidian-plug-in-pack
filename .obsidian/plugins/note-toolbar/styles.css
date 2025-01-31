@@ -11,7 +11,7 @@ settings:
         title.uk: 'Плаваюча кнопка'
         title.de: 'Schwebende Schaltfläche'
         title.zh: '浮动按钮'
-        description: 'Styles for floating buttons (set toolbar position to "floating button")'
+        description: 'Styles for the "floating button" position'
         description.uk: 'Стилі  плаваючих кнопок (встановіть позицію панелі «Плаваюча кнопка»)'
         description.de: 'Stile für schwebende Schaltflächen (Position der Symbolleiste auf „schwebende Schaltfläche" setzen)'
         description.zh: '浮动按钮的样式（工具栏位置为「浮动按钮」时）'
@@ -72,6 +72,15 @@ settings:
         default-light: '#'
         default-dark: '#'
     -
+        id: cg-nt-fab-border-color
+        title: 'Border color'
+        description: 'Border around button'
+        type: variable-themed-color
+        opacity: true
+        format: hex
+        default-light: '#'
+        default-dark: '#'
+    -
         id: cg-nt-fab-icon-color-desktop
         title: 'Icon color on desktop'
         title.uk: 'Колір іконок на робочому столі'
@@ -104,56 +113,56 @@ settings:
         collapsed: true
     -
         id: cg-nt-fab-pos-x-desktop
-        title: 'X position on desktop (in em units)'
+        title: 'X position on desktop (in px units)'
         title.uk: 'Позиція X на робочому столі (em)'
-        title.de: 'X-Position am PC (in vw-Einheiten)'
-        title.zh: '桌面端X轴位置（单位：em）'
+        title.de: 'X-Position am PC (in px-Einheiten)'
+        title.zh: '桌面端X轴位置（单位：px）'
         description: 'Distance from the edge of the editor view.'
         description.uk: 'Відстань від краю вікна редактора'
         description.de: 'Abstand vom Rand der Editoransicht.'
         description.zh: '距编辑器视图边缘的距离'
         type: variable-number
-        default: 4
-        format: em
+        default: 32
+        format: px
     -
-        id: cg-nt-fab-pos-x
-        title: 'X position on mobile (in vw units) 📱'
+        id: cg-nt-fab-pos-x-mobile
+        title: 'X position on mobile (in px units) 📱'
         title.uk: 'Позиція X на мобільному (% ширини) 📱'
-        title.de: 'X-Position am Handy (in vw-Einheiten) 📱'
-        title.zh: '移动端X轴位置（单位：vw）📱'
-        description: "As a percentage of the editor's width, from the left edge (reversed when button is on right)."
+        title.de: 'X-Position am Handy (in px-Einheiten) 📱'
+        title.zh: '移动端X轴位置（单位：px）📱'
+        description: "Distance from the edge of the editor view."
         description.uk: 'У відсотках від ширини редактора, від лівого краю (у зворотному порядку, коли кнопка знаходиться праворуч)'
         description.de: 'Als Prozentsatz der Breite des Editors, ausgehend vom linken Rand (umgekehrt, wenn sich die Schaltfläche rechts befindet).'
         description.zh: '基于左侧边缘，占编辑器宽度的百分比（当按钮在右侧时则相反）'
         type: variable-number
-        default: 82
-        format: vw
+        default: 24
+        format: px
     -
         id: cg-nt-fab-pos-y-desktop
-        title: 'Y position on desktop (in vh units)'
+        title: 'Y position on desktop (in px units)'
         title.uk: 'Позиція Y на робочому столі (% висоти)'
-        title.de: 'Y-Position am PC (in vh-Einheiten)'
-        title.zh: '桌面端Y轴位置（单位：vh）'
-        description: "As a percentage of the editor's height, from the top edge."
+        title.de: 'Y-Position am PC (in px-Einheiten)'
+        title.zh: '桌面端Y轴位置（单位：px）'
+        description: "Distance from the bottom of the editor view."
         description.uk: 'У відсотках від висоти редактора, від верхнього краю'
         description.de: 'Als Prozentsatz der Höhe des Editors, vom oberen Rand aus.'
         description.zh: '基于顶部边缘，占编辑器高度的百分比'
         type: variable-number
-        default: 90
-        format: vh
+        default: 50
+        format: px
     -
-        id: cg-nt-fab-pos-y
-        title: 'Y position on mobile (in vh units) 📱'
+        id: cg-nt-fab-pos-y-mobile
+        title: 'Y position on mobile (in px units) 📱'
         title.uk: 'Позиція Y на мобільному пристрої (% висоти) 📱'
-        title.de: 'Y-Position am Handy (in vh-Einheiten) 📱'
-        title.zh: '移动端Y轴位置（单位：vh）📱'
-        description: "As a percentage of the editor's height, from the top edge."
+        title.de: 'Y-Position am Handy (in px-Einheiten) 📱'
+        title.zh: '移动端Y轴位置（单位：px）📱'
+        description: "Distance from the bottom of the editor view."
         description.uk: 'У відсотках від висоти редактора, від верхнього краю'
         description.de: 'Als Prozentsatz der Höhe des Editors, vom oberen Rand aus.'
         description.zh: '基于顶部边缘，占编辑器高度的百分比'
         type: variable-number
-        default: 90
-        format: vh
+        default: 24
+        format: px
     -
         id: toolbar-fab-sizing-spacing
         title: '↳ 📐 Sizing and Spacing'
@@ -233,6 +242,15 @@ settings:
         type: heading
         level: 2
         collapsed: true
+    -
+        id: cg-nt-fab-autohide-opacity
+        title: 'Autohide opacity'
+        description: 'When autohide style is enabled, how transparent the button is when hidden'
+        type: variable-number-slider
+        default: 0
+        min: 0
+        max: 1
+        step: 0.05
     -
         id: cg-nt-fab-border-radius-desktop
         title: 'Border radius on desktop (in px units)'
@@ -782,6 +800,15 @@ settings:
         level: 2
         collapsed: true
     -    
+        id: cg-nt-tbar-autohide-opacity
+        title: 'Autohide opacity'
+        description: 'When autohide style is enabled, how transparent the toolbar is when hidden'
+        type: variable-number-slider
+        default: 0
+        min: 0
+        max: 1
+        step: 0.05
+    -
         id: cg-nt-tbar-border-radius
         title: 'Border radius (in px units)'
         title.uk: 'Закруглення рамок (пікселі)'
@@ -791,12 +818,12 @@ settings:
         default: 0
         format: px
     -
-        id: cg-nt-tbar-inactive-opacity
-        title: 'Inactive opacity'
+        id: cg-nt-tbar-inactive-opacity-desktop
+        title: 'Inactive opacity on desktop'
         title.uk: 'Прозорість у неактивному режимі'
         title.de: 'Inaktive Deckkraft'
         title.zh: '非活动状态透明度'
-        description: 'When focus is in another tab, dim the toolbar'
+        description: 'When focus is in another view, dim the toolbar'
         description.uk: 'Затемняє панель інструментів, коли фокус знаходиться на іншій вкладці'
         description.de: 'Wenn der Fokus auf einem anderen Tab liegt, die Symbolleiste abdunkeln'
         description.zh: '当焦点在其他标签页时，使工具栏变暗'
@@ -805,26 +832,92 @@ settings:
         min: 0
         max: 1
         step: 0.05
+    -
+        id: cg-nt-tbar-inactive-opacity-mobile
+        title: 'Inactive opacity on mobile 📱'
+        title.uk: 'Прозорість у неактивному режимі'
+        title.de: 'Inaktive Deckkraft'
+        title.zh: '非活动状态透明度'
+        description: 'When focus is in another view, dim the toolbar'
+        description.uk: 'Затемняє панель інструментів, коли фокус знаходиться на іншій вкладці'
+        description.de: 'Wenn der Fokus auf einem anderen Tab liegt, die Symbolleiste abdunkeln'
+        description.zh: '当焦点在其他标签页时，使工具栏变暗'
+        type: variable-number-slider
+        default: 0.5
+        min: 0
+        max: 1
+        step: 0.05
+    -
+        id: toolbar-bottom-tbar
+        title: 'Toolbars (bottom)'
+        description: 'Styles for toolbars in the "bottom" position'
+        type: heading
+        level: 1
+        collapsed: true
+    -
+        id: cg-nt-tbar-bottom-border-radius
+        title: 'Toolbar border radius (in px units)'
+        description: 'How rounded the toolbar is. The higher the number the more rounded.'
+        type: variable-number
+        default: 5
+        format: px
+    -
+        id: cg-nt-tbar-bottom-padding-x-desktop
+        title: 'Left + Right toolbar padding on desktop (in px units)'
+        description: 'Spacing around the toolbar.'
+        type: variable-number
+        default: 32
+        format: px
+    -
+        id: cg-nt-tbar-bottom-padding-x-mobile
+        title: 'Left + Right toolbar padding on mobile (in px units) 📱'
+        description: 'Spacing around the toolbar.'
+        type: variable-number
+        default: 24
+        format: px
+    -
+        id: cg-nt-tbar-bottom-pos-y-desktop
+        title: 'Y position on desktop (in em units)'
+        description: "Distance from bottom edge."
+        type: variable-number
+        default: 4.25
+        format: em
+    -
+        id: cg-nt-tbar-bottom-pos-y-mobile
+        title: 'Y position on mobile (in em units) 📱'
+        description: "Distance from bottom edge."
+        type: variable-number
+        default: 1
+        format: em
  */
 
 body {
+    --cg-nt-tbar-autohide-opacity: 0;
     --cg-nt-tbar-bg-color: var(--background-primary);
     --cg-nt-tbar-border-color: var(--hr-color);
     --cg-nt-tbar-border-radius: 0px;
-    --cg-nt-tbar-inactive-opacity: 0.8;
+    --cg-nt-tbar-inactive-opacity-desktop: 0.8;
+    --cg-nt-tbar-inactive-opacity-mobile: 0.5;
     --cg-nt-tbar-margin-y: 0.5em;
     --cg-nt-tbar-padding-inline: 0em;
+    --cg-nt-tbar-bottom-border-radius: 5px;
+    --cg-nt-tbar-bottom-padding-x-desktop: var(--size-4-8);
+    --cg-nt-tbar-bottom-padding-x-mobile: var(--size-4-6);
+    --cg-nt-tbar-bottom-pos-y-desktop: 4.25em;
+    --cg-nt-tbar-bottom-pos-y-mobile: 1em;
     --cg-nt-tbar-top-sticky-pos-desktop: calc(var(--header-height) * -1);
     --cg-nt-tbar-top-sticky-pos-mobile: -1rem;
+    --cg-nt-fab-autohide-opacity: 0;
     --cg-nt-fab-bg-color: var(--interactive-normal);
     --cg-nt-fab-bg-color-desktop: var(--interactive-normal);
     --cg-nt-fab-bg-color-hover: var(--interactive-hover);
     --cg-nt-fab-bg-color-hover-desktop: var(--interactive-hover);
+    --cg-nt-fab-border-color: var(--icon-color);
     --cg-nt-fab-inactive-opacity: 0.7;
-    --cg-nt-fab-pos-x: 82vw;
-    --cg-nt-fab-pos-y: 90vh;
-    --cg-nt-fab-pos-x-desktop: 4em;
-    --cg-nt-fab-pos-y-desktop: 90vh;
+    --cg-nt-fab-pos-x-desktop: var(--size-4-8);
+    --cg-nt-fab-pos-y-desktop: calc(var(--size-4-8) + 18px);
+    --cg-nt-fab-pos-x-mobile: var(--size-4-6);
+    --cg-nt-fab-pos-y-mobile: var(--size-4-6);
     --cg-nt-fab-icon-color: var(--icon-color);
     --cg-nt-fab-icon-color-desktop: var(--icon-color);
     --cg-nt-fab-icon-size: var(--icon-l);
@@ -883,11 +976,13 @@ body {
 }
 
 .cm-embed-block:has(> div > .callout[data-callout="note-toolbar"][data-callout-metadata*="sticky"]) {
-    position: sticky;
-    top: var(--cg-nt-tbar-top-sticky-pos-desktop);
-    z-index: 2;
-    .is-mobile &, .is-phone & {
-        top: var(--cg-nt-tbar-top-sticky-pos-mobile);
+    &:not([data-tbar-position="bottom"]) {
+        position: sticky;
+        top: var(--cg-nt-tbar-top-sticky-pos-desktop);
+        z-index: 2;
+        .is-mobile &, .is-phone & {
+            top: var(--cg-nt-tbar-top-sticky-pos-mobile);
+        }
     }
 }
 
@@ -911,6 +1006,13 @@ body {
     .is-mobile &, .is-phone & {
         top: inherit;
         position: relative;
+    }
+}
+
+.cm-embed-block[data-tbar-position="bottom"],
+.cm-embed-block[data-tbar-position="top"] {
+    & .callout[data-callout="note-toolbar"] {
+        max-width: var(--file-line-width);
     }
 }
 
@@ -938,12 +1040,11 @@ body {
 .callout[data-callout="note-toolbar"] {
 
     background-color: var(--cg-nt-tbar-bg-color) !important;
-    
     border-radius: var(--cg-nt-tbar-border-radius);
+    border-style: none;
     padding: 0;
     padding-inline: var(--cg-nt-tbar-padding-inline);
     width: 100%;
-    /* max-width: var(--file-line-width); */
 
     & .callout-title {
         display: none;
@@ -957,6 +1058,9 @@ body {
             gap: 0rem;
             margin: var(--cg-nt-tbar-margin-y) 0;
             padding-inline-start: 0;
+            [data-tbar-position="bottom"] & {
+                margin: var(--cg-nt-tbar-margin-y);
+            }
         }
     
         & li {
@@ -1082,7 +1186,7 @@ body {
 
     &[data-callout-metadata*="autohide"] {
         &:not(.is-mobile &) {
-            opacity: 0;
+            opacity: var(--cg-nt-tbar-autohide-opacity);
             transition: all 0.2s ease-in-out;
             -webkit-transition: all 0.2s ease-in-out;
             &:hover {
@@ -1102,9 +1206,16 @@ body {
     }
 
     &[data-callout-metadata*="border"] {
-        border-top: solid 1px var(--cg-nt-tbar-border-color);
         border-bottom: solid 1px var(--cg-nt-tbar-border-color);
+        border-top: solid 1px var(--cg-nt-tbar-border-color);
         border-radius: 0;
+        [data-tbar-position="top"] & {
+            border-top: none;
+        }
+        [data-tbar-position="bottom"] & {
+            border: solid 1px var(--cg-nt-tbar-border-color);
+            border-radius: var(--cg-nt-tbar-bottom-border-radius);
+        }
     }
 
     &[data-callout-metadata*="mbrder"] {
@@ -1206,7 +1317,7 @@ body {
     }
 
     &[data-callout-metadata*="wide"] {
-        max-width: none;
+        max-width: none !important;
     }
 
     &[data-callout-metadata*="mwd"] {
@@ -1261,12 +1372,35 @@ body {
             /* themes like Cyber Glow add a hover color to callouts; remove it for toolbars */
             background-color: unset;
         }
-        /* user feedback that toolbar interaction is not available; workaround for #69 */
-        &:not(.is-focused &), &:not(.mod-active &) {
-            opacity: var(--cg-nt-tbar-inactive-opacity);
-        }
     }
     
+}
+
+/* user feedback that toolbar interaction is not available; workaround for #69 */
+body:not(.is-mobile):not(.is-focused), .workspace-leaf:not(.mod-active) {
+    & .cg-note-toolbar-callout[data-callout="note-toolbar"] {
+        opacity: var(--cg-nt-tbar-inactive-opacity-desktop);
+        .is-mobile & {
+            opacity: var(--cg-nt-tbar-inactive-opacity-mobile);
+        }
+    }
+}
+
+.cg-note-toolbar-fab-container {
+    & button[data-fab-metadata*="autohide"] {
+        box-shadow: none;
+        &:not(.is-mobile &) {
+            opacity: var(--cg-nt-fab-autohide-opacity);
+            transition: all 0.2s ease-in-out;
+            -webkit-transition: all 0.2s ease-in-out;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+    & button[data-fab-metadata*="border"] {
+        border: solid 1px var(--cg-nt-fab-border-color);
+    }
 }
 
 /*************************************************************************
@@ -1277,33 +1411,31 @@ body {
     visibility: hidden;
 }
 
-/* FAB styles adapted from: https://web.dev/articles/building/a-fab-component */
 .cg-note-toolbar-fab-container {
-    --_viewport-margin: 24px;
-    position: fixed;
-    z-index: auto;
-    display: flex;
-    flex-direction: column-reverse;
-    place-items: center;
-    top: calc(var(--cg-nt-fab-pos-y-desktop) - 4em);
-    left: unset;
-    right: var(--cg-nt-fab-pos-x-desktop);
-    &[data-fab-position="left"] {
-        left: var(--cg-nt-fab-pos-x-desktop);
-        right: unset;
+    bottom: var(--cg-nt-fab-pos-y-desktop);
+    position: absolute;
+    padding: 0;
+    left: var(--cg-nt-fab-pos-x-desktop);
+    right: unset;
+    z-index: var(--layer-status-bar);
+    &[data-tbar-position="fabr"] {
+        left: unset;
+        right: var(--cg-nt-fab-pos-x-desktop);
     }
     .is-mobile & {
-        left: var(--cg-nt-fab-pos-x);
+        bottom: var(--cg-nt-fab-pos-y-mobile);
+        left: var(--cg-nt-fab-pos-x-mobile);
         right: unset;
-        top: calc(var(--cg-nt-fab-pos-y) - 110px);
-        transform: translate(0, 5%);
-        &[data-fab-position="left"] {
+        &[data-tbar-position="fabr"] {
             left: unset;
-            right: var(--cg-nt-fab-pos-x);
+            right: var(--cg-nt-fab-pos-x-mobile);
         }
     }
-    /* user feedback that toolbar interaction is not available; workaround for #69 */
-    &:not(.is-focused &), &:not(.mod-active &) {
+}
+
+/* user feedback that toolbar interaction is not available; workaround for #69 */
+body:not(.is-mobile):not(.is-focused), .workspace-leaf:not(.mod-active) {
+    & .cg-note-toolbar-fab-container {
         opacity: var(--cg-nt-fab-inactive-opacity);
     }
 }
@@ -1376,6 +1508,38 @@ body {
     /* width: var(--var-max-width);
     max-width: var(--var-max-width); */
 
+    &[data-tbar-position="bottom"],
+    &[data-tbar-position="top"] {
+        background-color: var(--cg-nt-tbar-bg-color);
+        font-size: var(--font-text-size);
+        margin-bottom: 0;
+        padding: var(--file-margins);
+        padding-bottom: 0;
+        padding-top: 0;
+        &:hover {
+            /* undoes fix (#14) which causes a layout shift on hover */
+            overflow: visible !important;
+        }
+        & .cg-note-toolbar-callout {
+            margin-bottom: 0;
+            margin-inline: auto auto !important;
+            transition: border-top 0.5s ease-out;
+        }
+    }
+
+    &[data-tbar-position="bottom"] {
+        background-color: unset; /* fixes issue with padding color; but when tbar not in focus it's transparent */
+        border-radius: var(--cg-nt-tbar-bottom-border-radius);
+        bottom: var(--cg-nt-tbar-bottom-pos-y-desktop);
+        position: absolute;
+        padding: 0 var(--cg-nt-tbar-bottom-padding-x-desktop);
+        .is-mobile & {
+            bottom: var(--cg-nt-tbar-bottom-pos-y-mobile);
+            padding: 0 var(--cg-nt-tbar-bottom-padding-x-mobile);
+        }
+        z-index: var(--layer-status-bar);
+    }
+
     /* width fix for Minimal theme in props position #204 #216 */
     &[data-csstheme="Minimal"][data-tbar-position="props"] {
         .is-readable-line-width & {
@@ -1383,27 +1547,6 @@ body {
             width: var(--line-width);
             margin-inline: var(--content-margin) !important;
         }
-    }
-}
-
-.cg-note-toolbar-position-top,
-.cg-note-toolbar-reading-sticky {
-    background-color: var(--cg-nt-tbar-bg-color);
-    font-size: var(--font-text-size);
-    margin-bottom: 0;
-    padding: var(--file-margins);
-    padding-bottom: 0;
-    padding-top: 0;
-    &:hover {
-        /* undoes fix (#14) which causes a layout shift on hover */
-        overflow: visible !important;
-    }
-    & .cg-note-toolbar-callout {
-        border-top: none !important;
-        margin-bottom: 0;
-        margin-inline: auto auto !important;
-        max-width: var(--file-line-width);
-        transition: border-top 0.5s ease-out;
     }
 }
 
@@ -2451,8 +2594,10 @@ input[type="text"].note-toolbar-setting-error,
     line-height: var(--line-height-normal);
     margin-bottom: 2rem;
     user-select: text;
-    code {
+    pre > code {
         font-size: calc(var(--font-ui-small) + 1px);
+        overflow: scroll;
+        white-space: pre;
     }
     hr {
         border-top: 1px solid;
@@ -2485,23 +2630,65 @@ input[type="text"].note-toolbar-setting-error,
  * Components (Note Toolbar API)
  *************************************************************************/
 
-.note-toolbar-comp-button-div {
+ .note-toolbar-ui {
+    min-height: unset;
+    & .modal-close-button {
+        z-index: 2; /* fix for modal title overlapping close button */
+    }
+    &.prompt {
+        .is-mobile & {
+            border-radius: var(--radius-l);
+            height: unset;
+        }
+    }
+    & .modal-header > .modal-title {
+        font-size: var(--font-ui-medium);
+        font-weight: var(--font-normal);
+    }
+    & .suggestion-item > p, .modal-title > p {
+        margin: 0;
+    }
+    &[data-ntb-ui-mode*="noclose"] {
+        & .modal-close-button {
+            display: none;
+        }
+    }
+    &[data-ntb-ui-mode*="noheader"] {
+        & .modal-header {
+            display: none;
+        }
+    }
+    &[data-ntb-ui-type="modal"] {
+        & .modal-content {
+            overflow-y: auto;
+        }
+        & .modal-title > .markdown-preview-view > * {
+            margin: unset;
+        }
+        & .modal-header, .modal-content {
+            & .markdown-preview-view {
+                padding: unset;
+            }
+        }
+    }
+}
+
+.note-toolbar-ui-button-div {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: end;
     margin-top: 1rem;
 }
 
-.note-toolbar-comp-div {
+.note-toolbar-ui-div {
     display: flex;
 }
 
-.note-toolbar-comp-form {
+.note-toolbar-ui-form {
     display: flex;
     flex-grow: 1;
 }
 
-.note-toolbar-comp-input {
+.note-toolbar-ui-input {
     flex-grow: 1;
 }
-

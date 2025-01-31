@@ -5,6 +5,7 @@
   "alwaysOpenInContinuousMode": false,
   "compactModeTabGroupIds": [],
   "defaultSortOrder": "alphabetical",
+  "disableScrollIntoView": true,
   "disableScrollRootItemsIntoView": false,
   "disableScrollSidebarsIntoView": false,
   "disableWarnings": false,

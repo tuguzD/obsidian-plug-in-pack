@@ -74,9 +74,6 @@
       "hotkey-helper": {
         "startupType": "instant"
       },
-      "obsidian-icon-folder": {
-        "startupType": "short"
-      },
       "link-favicon": {
         "startupType": "short"
       },
@@ -123,7 +120,7 @@
         "startupType": "instant"
       },
       "remember-cursor-position": {
-        "startupType": "instant"
+        "startupType": "short"
       },
       "replace-all": {
         "startupType": "instant"
@@ -283,6 +280,78 @@
       },
       "obsidian-latex-suite": {
         "startupType": "long"
+      },
+      "quick-tagger": {
+        "startupType": "instant"
+      },
+      "iconic": {
+        "startupType": "short"
+      },
+      "file-explorer-plus": {
+        "startupType": "instant"
+      },
+      "pexels-banner": {
+        "startupType": "short"
+      },
+      "callout-manager": {
+        "startupType": "instant"
+      },
+      "callout-suggestions": {
+        "startupType": "short"
+      },
+      "tab-navigator": {
+        "startupType": "instant"
+      },
+      "math-in-callout": {
+        "startupType": "short"
+      },
+      "beautitab": {
+        "startupType": "short"
+      },
+      "obsidian-checklist-reset": {
+        "startupType": "short"
+      },
+      "typewriter-mode": {
+        "startupType": "short"
+      },
+      "obsidian-languagetool-plugin": {
+        "startupType": "short"
+      },
+      "slash-commander": {
+        "startupType": "short"
+      },
+      "media-notes": {
+        "startupType": "long"
+      },
+      "obsidian-view-mode-by-frontmatter": {
+        "startupType": "short"
+      },
+      "obsidian-advanced-slides": {
+        "startupType": "long"
+      },
+      "slides-extended": {
+        "startupType": "long"
+      },
+      "todoist-sync-plugin": {
+        "startupType": "long"
+      },
+      "obsidian-trash-explorer": {
+        "startupType": "instant"
+      },
+      "mouse-navigation": {
+        "startupType": "instant"
+      },
+      "obsidian-icon-shortcodes": {
+        "startupType": "long"
+      },
+      "widgets": {
+        "startupType": "short"
+      },
+      "inline-math": {
+        "startupType": "instant"
+      },
+      "quickadd": {
+        "startupType": "short"
       }
     }
   }

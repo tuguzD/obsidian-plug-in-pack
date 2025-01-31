@@ -2898,7 +2898,8 @@ var ObsidianLinksSettingTab = class extends import_obsidian6.PluginSettingTab {
       this.plugin.settings.removeLinksFromHeadingsInternalWikilinkWithoutTextAction = value;
       await this.plugin.saveSettings();
     }));
-    containerEl.createEl("h4", { text: "Delete link" });
+    const deleteLinkEl = containerEl.createEl("h4", { text: "Delete link" });
+    this.setElementHelpLink(deleteLinkEl, this.getFullDocUrl("delete-link"));
     new import_obsidian6.Setting(containerEl).setName("Delete unreferenced link target").addToggle((toggle) => {
       toggle.setValue(this.plugin.settings.deleteUnreferencedLinkTarget).onChange(async (value) => {
         this.plugin.settings.deleteUnreferencedLinkTarget = value;
@@ -5495,5 +5496,3 @@ map-cache/index.js:
    * Licensed under the MIT License.
    *)
 */
-
-/* nosourcemap */

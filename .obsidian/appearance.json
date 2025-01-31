@@ -3,6 +3,7 @@
   "theme": "obsidian",
   "cssTheme": "",
   "accentColor": "",
+  "showRibbon": true,
   "enabledCssSnippets": [
     "obsidian-blur-plugin"
   ]

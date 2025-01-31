@@ -10,8 +10,9 @@
   "ribbonAction": "toolbar",
   "scriptingEnabled": true,
   "showEditInFabMenu": true,
+  "showToolbarInFileMenu": false,
   "toolbarProp": "toolbar",
   "toolbars": [],
   "version": 20240727.1,
-  "whatsnew_version": 1.16
+  "whatsnew_version": 1.17
 }

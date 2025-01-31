@@ -20,6 +20,24 @@
       "icon": "lucide-github",
       "name": "Version history diff: Show Git Diff view for active file",
       "mode": "any"
+    },
+    {
+      "id": "quick-tagger:quick-add-tag",
+      "icon": "lucide-tags",
+      "name": "Quick Tagger: Add tag",
+      "mode": "any"
+    },
+    {
+      "id": "slides-extended:open-preview",
+      "icon": "lucide-presentation",
+      "name": "Slides Extended: Show slide preview",
+      "mode": "any"
+    },
+    {
+      "id": "widgets:add-widget",
+      "icon": "lucide-app-window-mac",
+      "name": "Widgets: Add widget",
+      "mode": "any"
     }
   ],
   "macros": [],
@@ -34,13 +52,25 @@
       "Open today",
       "Open quick switcher",
       "Omnisearch",
-      "BRAT",
       "Templater",
-      "Open homepage",
-      "Manage workspace layouts"
+      "Manage workspace layouts",
+      "Remove tag from current note",
+      "Add tag to current note",
+      "Open rulebook",
+      "BRAT",
+      "Open Git source control",
+      "Open command palette",
+      "Insert template",
+      "Create new canvas",
+      "Insert Callout",
+      "Show Slide Preview",
+      "Show slide preview",
+      "Open trash explorer",
+      "Add widget",
+      "QuickAdd"
     ]
   },
-  "spacing": 8,
+  "spacing": "12",
   "advancedToolbar": {
     "rowHeight": 48,
     "rowCount": 1,

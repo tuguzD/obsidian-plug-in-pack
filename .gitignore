@@ -1,17 +1,18 @@
-# Exclude certain plugin data (don't expose sensitive data, keep personal settings intact)
+# Exclude certain plugin data (don't expose sensitive data)
+**/todoist-token
 **/cursor-positions.json
-**/code-styler/reference-files/cache.json
 **/various-complements/histories.json
 **/text-extractor/cache/**
 **/canvas-link-optimizer/data/linkCache/
+**/code-styler/reference-files/cache.json
 
-# Exclude all files needed to test plugins
-Tests/
-
-# Exclude workspace cache (for desktop and mobile)
+# Exclude workspace cache
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
 
 # Exclude OS settings and caches
 **/desktop.ini
-.DS_Store
+**/.DS_Store
+
+# Exclude plugin tests (delete after forking/using template)
+Tests/

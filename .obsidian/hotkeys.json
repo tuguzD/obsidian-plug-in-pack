@@ -108,14 +108,6 @@
       "key": "/"
     }
   ],
-  "darlal-switcher-plus:switcher-plus:open-editors": [
-    {
-      "modifiers": [
-        "Alt"
-      ],
-      "key": "."
-    }
-  ],
   "darlal-switcher-plus:switcher-plus:open-workspaces": [
     {
       "modifiers": [
@@ -277,6 +269,24 @@
         "Shift"
       ],
       "key": "."
+    }
+  ],
+  "darlal-switcher-plus:switcher-plus:open-editors": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "T"
+    }
+  ],
+  "typewriter-mode:move-typewriter-down": [],
+  "typewriter-mode:move-typewriter-up": [],
+  "quickadd:runQuickAdd": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "Q"
     }
   ]
 }

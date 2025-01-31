@@ -1,0 +1,72 @@
+{
+  "biggerIcons": "mobile",
+  "clickableIcons": "desktop",
+  "showAllFileIcons": false,
+  "showAllFolderIcons": true,
+  "minimalFolderIcons": true,
+  "showItemName": "desktop",
+  "biggerSearchResults": "mobile",
+  "maxSearchResults": 50,
+  "colorPicker1": "list",
+  "colorPicker2": "rgb",
+  "uncolorHover": false,
+  "uncolorDrag": false,
+  "uncolorSelect": false,
+  "uncolorQuick": false,
+  "rememberDeletedItems": true,
+  "dialogState": {
+    "iconMode": true,
+    "emojiMode": true,
+    "rulePage": "file"
+  },
+  "appIcons": {},
+  "tabIcons": {
+    "advanced-tables-toolbar": {
+      "icon": "lucide-table-properties"
+    },
+    "beautitab-react-view": {
+      "icon": "lucide-mouse-pointer-square-dashed",
+      "color": "gray"
+    },
+    "recent-files": {
+      "icon": "lucide-file-search"
+    },
+    "reveal-preview-view": {
+      "icon": "lucide-presentation"
+    },
+    "webviewer-history": {
+      "icon": "lucide-history"
+    }
+  },
+  "fileIcons": {
+    "HOME.md": {
+      "icon": "lucide-home",
+      "color": "yellow"
+    },
+    "README.md": {
+      "icon": "lucide-book-marked",
+      "color": "orange"
+    },
+    "Tests": {
+      "icon": "lucide-test-tube-diagonal",
+      "unsynced": [
+        "054d7ed642df09e6"
+      ],
+      "color": "green"
+    },
+    "Tests/Tests.md": {
+      "icon": "lucide-test-tube-diagonal",
+      "color": "green"
+    }
+  },
+  "bookmarkIcons": {},
+  "tagIcons": {},
+  "propertyIcons": {},
+  "ribbonIcons": {
+    "homepage:Open homepage": {
+      "icon": "lucide-home"
+    }
+  },
+  "fileRules": [],
+  "folderRules": []
+}
