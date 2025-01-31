@@ -3,15 +3,19 @@
     "plugins-annotations": {
       "name": "Plugins Annotations",
       "desc": "Allows writing annotations (just like this one) about the community plugins installed in the vault."
+    },
+    "advanced-canvas": {
+      "desc": "Change note/edge styles, auto-resize elements and create presentations from `Canvas` files",
+      "name": "Advanced Canvas"
     }
   },
   "plugins_annotations_uuid": "BC56AB7B-A46F-4ACF-9BA1-3A4461F74C79",
-  "hide_placeholders": false,
+  "hide_placeholders": true,
   "delete_placeholder_string_on_insertion": false,
-  "label_mobile": "<b>Annotation:&nbsp;</b>",
-  "label_desktop": "<b>Personal annotation:&nbsp;</b>",
+  "label_mobile": "<b></b>",
+  "label_desktop": "<b></b>",
   "label_placeholder": "<em>Add your personal comment about <strong>${plugin_name}</strong> here...</em>",
-  "editable": false,
+  "editable": true,
   "automatic_remove": false,
   "markdown_file_path": "",
   "show_github_icons": true,
