@@ -64,17 +64,17 @@ NOTE: After forking/using the template, feel free to give this file a proper use
 </details>
 
 ### New features
-- [Execute Code](https://github.com/twibiral/obsidian-execute-code)
-  - [JS Engine](https://github.com/mProjectsCode/obsidian-js-engine-plugin)
+- [Execute Code](https://github.com/twibiral/obsidian-execute-code) – ...
+  - [JS Engine](https://github.com/mProjectsCode/obsidian-js-engine-plugin) – ...
 
 #### Date management
-- [Calendar](https://github.com/liamcain/obsidian-calendar-plugin)
-- [Natural Language Dates](https://github.com/argenos/nldates-obsidian)
-- [Open with Natural Language Dates](https://github.com/charliecm/obsidian-open-with-nldates)
+- [Calendar](https://github.com/liamcain/obsidian-calendar-plugin) – ...
+- [Natural Language Dates](https://github.com/argenos/nldates-obsidian) – ...
+- [Open with Natural Language Dates](https://github.com/charliecm/obsidian-open-with-nldates) – ...
 
 #### Search
-- [Omnisearch](https://github.com/scambier/obsidian-omnisearch)
-  - [Text Extractor](https://github.com/scambier/obsidian-text-extractor)
+- [Omnisearch](https://github.com/scambier/obsidian-omnisearch) – ...
+  - [Text Extractor](https://github.com/scambier/obsidian-text-extractor) – ...
 
 
 ### Plugin management
@@ -115,8 +115,8 @@ NOTE: After forking/using the template, feel free to give this file a proper use
 - [Callout Integrator](https://github.com/Cleoche/obsidian-callout-integrator) – include selected blocks of text in existing callouts using a hotkey (containing "`>`")
 
 #### Math
-- [Latex Suite](https://github.com/artisticat1/obsidian-latex-suite) – ...
-- [Better Math in Callouts & Blockquotes](https://github.com/RyotaUshio/obsidian-math-in-callout) – ...
+- [Latex Suite](https://github.com/artisticat1/obsidian-latex-suite) – type [LaTeX](https://www.overleaf.com/learn/latex/Mathematical_expressions) quicker using customizable snippets, [conceal](https://github.com/artisticat1/obsidian-latex-suite?tab=readme-ov-file#conceal) LaTeX markup for ease of reading
+- [Better Math in Callouts & Blockquotes](https://github.com/RyotaUshio/obsidian-math-in-callout) – properly display math formulas in both callouts and blockquotes
 
 #### Table
 - [Advanced Tables](https://github.com/tgrosinger/advanced-tables-obsidian) – manipulate and navigate tables using buttons from new tab, also add spreadsheet formulas
