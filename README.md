@@ -1,4 +1,4 @@
-# "Plugin" template for [Obsidian](https://obsidian.md)
+# "Plugin" template for [`Obsidian`](https://obsidian.md)
 
 This is just a large collection of already set up plugins and hotkeys… That was gotten rid of any conflicts.
 
@@ -38,10 +38,10 @@ NOTE: After forking/using the template, feel free to give this file a proper use
 
 ### Plugin management
 
-- [BRAT](https://github.com/TfTHacker/obsidian42-brat)
-- [Lazy Plugin Loader](https://github.com/alangrainger/obsidian-lazy-plugins)
-- [Plugin Update Tracker](https://github.com/swar8080/obsidian-plugin-update-tracker)
-- [Plugins Annotations](https://github.com/alberti42/obsidian-plugins-annotations)
+- [Lazy Plugin Loader](https://github.com/alangrainger/obsidian-lazy-plugins) – allows to load chosen plugins later to improve speed of `Obsidian` app launch
+- [Plugin Update Tracker](https://github.com/swar8080/obsidian-plugin-update-tracker) – shows update status of all installed plugins, allows to browse release notes for each update and ignore them
+- [BRAT](https://github.com/TfTHacker/obsidian42-brat) – allows downloading plugins unlisted from in-app plugin search (or beta versions of listed plugins)
+- [Plugins Annotations](https://github.com/alberti42/obsidian-plugins-annotations) – allows to add personal annotations to each installed plugin (store their use-cases, as labels can't provide full info)
 
 ### Markdown [formatting](https://help.obsidian.md/Editing+and+formatting/Basic+formatting+syntax)
 
