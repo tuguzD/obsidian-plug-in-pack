@@ -8,13 +8,20 @@ NOTE: After forking/using the template, feel free to give this file a proper use
 
 ### Core plugin upgrades
 
-- [Periodic Notes](https://github.com/liamcain/obsidian-periodic-notes) (should turn OFF core [Daily Notes](https://help.obsidian.md/Plugins/Daily+notes))
-- [Better Word Count](https://github.com/lukeleppan/better-word-count) (should turn OFF core [Word Count](https://help.obsidian.md/Plugins/Word+count))
-- [Slash Commander](https://github.com/alephpiece/obsidian-slash-commander) (MUST turn OFF core [Slash commands](https://help.obsidian.md/Plugins/Slash+commands))
-- [Better Search Views](https://github.com/ivan-lednev/better-search-views) (MUST turn ON core [Search](https://help.obsidian.md/Plugins/Search) and [Backlinks](https://help.obsidian.md/Plugins/Backlinks))
-- [Hover Editor](https://github.com/nothingislost/obsidian-hover-editor) (MUST turn ON core [Page preview](https://help.obsidian.md/Plugins/Page+preview))
-- [Workspaces Plus](https://github.com/nothingislost/obsidian-workspaces-plus) (MUST turn ON core [Workspaces](https://help.obsidian.md/Plugins/Workspaces))
-- [Nested tags graph](https://github.com/drPilman/obsidian-graph-nested-tags) / ~~[Folders to Graph](https://github.com/Ratibus11/folders2graph)~~ (MUST turn ON core [Graph view](https://help.obsidian.md/Plugins/Graph+view))
+- [Periodic Notes](https://github.com/liamcain/obsidian-periodic-notes) – create not just daily, but also weekly, monthly, quarterly and yearly notes!
+  - should turn OFF core [Daily Notes](https://help.obsidian.md/Plugins/Daily+notes)
+- [Better Word Count](https://github.com/lukeleppan/better-word-count) – collect stats about your whole vault, also customize displaying them
+  - should turn OFF core [Word Count](https://help.obsidian.md/Plugins/Word+count)
+- [Slash Commander](https://github.com/alephpiece/obsidian-slash-commander) – customizable slash command list with ability to show their descriptions
+  - MUST turn OFF core [Slash commands](https://help.obsidian.md/Plugins/Slash+commands)
+- [Better Search Views](https://github.com/ivan-lednev/better-search-views) – search results now [decorated](https://github.com/ivan-lednev/better-search-views?tab=readme-ov-file#but-what-does-it-do-exactly) with breadcrumbs, or display an hierarchy
+  - MUST turn ON core [Search](https://help.obsidian.md/Plugins/Search) and [Backlinks](https://help.obsidian.md/Plugins/Backlinks)
+- [Hover Editor](https://github.com/nothingislost/obsidian-hover-editor) – "turns the hover popover into a full featured [editor instance](https://github.com/nothingislost/obsidian-hover-editor?tab=readme-ov-file#features)"
+  - MUST turn ON core [Page preview](https://help.obsidian.md/Plugins/Page+preview)
+- [Workspaces Plus](https://github.com/nothingislost/obsidian-workspaces-plus) – makes editing and switching workspaces easier, also allows to customize different theme for each one
+  - MUST turn ON core [Workspaces](https://help.obsidian.md/Plugins/Workspaces)
+- [Nested tags graph](https://github.com/drPilman/obsidian-graph-nested-tags) / ~~[Folders to Graph](https://github.com/Ratibus11/folders2graph)~~ – links nested tags ~~or shows folder structure~~ in graph view
+  - MUST turn ON core [Graph view](https://help.obsidian.md/Plugins/Graph+view)
   - one cancels another, choose anything you like
 
 #### Canvas
