@@ -24,17 +24,17 @@ NOTE: After forking/using the template, feel free to give this file a proper use
   - MUST turn ON core [Graph view](https://help.obsidian.md/Plugins/Graph+view)
   - one cancels another, choose anything you like
 
-#### Canvas
+#### [`Canvas`](https://obsidian.md/canvas) feature
 
-- [Advanced Canvas](https://github.com/Developer-Mike/obsidian-advanced-canvas)
-- [Canvas Card Background Remover](https://github.com/luxmargos/obsidian-canvas-card-bg-remover)
-- [Canvas Keyboard Pan](https://github.com/nathonius/obsidian-canvas-pan)
-- [Canvas Link Optimizer](https://github.com/Qbject/obsidian-canvas-link-optimizer)
-- [Canvas Links](https://github.com/aqav/obsidian-canvas-links)
-- [Canvas MindMap](https://github.com/Quorafind/Obsidian-Canvas-MindMap)
-- [Canvas Minimap](https://github.com/ifree/Obsidian-canvas-minimap)
-- [Optimize Canvas Connections](https://github.com/felixchenier/obsidian-optimize-canvas-connections)
-- [Search in Canvas](https://github.com/quorafind/obsidian-search-in-canvas)
+- [Advanced Canvas](https://github.com/Developer-Mike/obsidian-advanced-canvas) – changes note/edge styles, auto-resize elements and create presentations from `Canvas` files
+- [Canvas Card Background Remover](https://github.com/luxmargos/obsidian-canvas-card-bg-remover) – removes background from transparent embeds (like images)
+- [Canvas Keyboard Pan](https://github.com/nathonius/obsidian-canvas-pan) – allows to move in Canvas using the keyboard (instead of just mouse wheel)
+- [Canvas Link Optimizer](https://github.com/Qbject/obsidian-canvas-link-optimizer) – displays cached (as image) preview of a note/web page to improve performance
+- [Canvas Links](https://github.com/aqav/obsidian-canvas-links) – displays links between `Canvas` and `Markdown` file types inside of a new menu
+- [Canvas MindMap](https://github.com/Quorafind/Obsidian-Canvas-MindMap) – adds controls to work with `Canvas` elements as a mindmap tree-like structure
+- [Canvas Minimap](https://github.com/ifree/Obsidian-canvas-minimap) – adds minimap that helps to navigate and get an overview of the canvas
+- [Optimize Canvas Connections](https://github.com/felixchenier/obsidian-optimize-canvas-connections) – attempts to reconnect "messy" notes using their nearest edges
+- [Search in Canvas](https://github.com/quorafind/obsidian-search-in-canvas) – adds text search in canvas contents and highlights found entries
 
 ### Plugin management
 
