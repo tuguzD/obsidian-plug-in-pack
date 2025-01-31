@@ -280,5 +280,13 @@
     }
   ],
   "typewriter-mode:move-typewriter-down": [],
-  "typewriter-mode:move-typewriter-up": []
+  "typewriter-mode:move-typewriter-up": [],
+  "quickadd:runQuickAdd": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "Q"
+    }
+  ]
 }
