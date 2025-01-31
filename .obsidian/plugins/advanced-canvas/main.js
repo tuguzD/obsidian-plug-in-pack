@@ -1683,7 +1683,7 @@ __export(main_exports, {
   default: () => AdvancedCanvasPlugin
 });
 module.exports = __toCommonJS(main_exports);
-var import_obsidian12 = require("obsidian");
+var import_obsidian11 = require("obsidian");
 
 // src/quicksettings.ts
 var import_obsidian2 = require("obsidian");
@@ -3460,9 +3460,6 @@ var CanvasPatcher = class extends Patcher {
   }
 };
 
-// src/patchers/metadata-cache-patcher.ts
-var import_obsidian5 = require("obsidian");
-
 // src/utils/hash-helper.ts
 var import_crypto = __toESM(require("crypto"));
 var HashHelper = class {
@@ -3495,41 +3492,49 @@ var MetadataCachePatcher = class extends Patcher {
         return next.call(this, filepath, ...args);
       },
       computeFileMetadataAsync: (next) => async function(file, ...args) {
+        var _a;
         if (PathHelper.extension(file.path) !== "canvas")
           return next.call(this, file, ...args);
+        const fileHash = HashHelper.hash(file.path);
         this.saveFileCache(file.path, {
-          hash: HashHelper.hash(file.path),
+          hash: fileHash,
           // Hash wouldn't get set in the original function
           mtime: file.stat.mtime,
           size: file.stat.size
         });
-        this.resolveLinks(file.path);
-      },
-      resolveLinks: (next) => async function(filepath, ...args) {
-        var _a;
-        if (PathHelper.extension(filepath) !== "canvas")
-          return next.call(this, filepath, ...args);
-        const file = this.vault.getAbstractFileByPath(filepath);
-        if (!(file instanceof import_obsidian5.TFile))
-          return;
-        const fileCache = this.fileCache[file.path];
-        if (!fileCache)
-          return;
         const content = JSON.parse((_a = await this.vault.cachedRead(file)) != null ? _a : "{}");
         if (!(content == null ? void 0 : content.nodes))
           return;
-        const fileNodesEmbeds = content.nodes.filter((node) => node.type === "file" && node.file).map((node) => node.file).map((path) => ({
-          link: path,
-          original: path,
-          displayText: path,
-          position: { start: { line: 0, col: 0, offset: 0 }, end: { line: 0, col: 0, offset: 0 } }
+        const fileNodesEmbeds = content.nodes.filter((node) => node.type === "file" && node.file).map((node) => [node.id, node.file]).map(([nodeId, file2]) => ({
+          link: file2,
+          original: file2,
+          displayText: file2,
+          position: {
+            nodeId,
+            start: { line: 0, col: 0, offset: 0 },
+            end: { line: 0, col: 0, offset: 0 }
+          }
         }));
         const textEncoder = new TextEncoder();
-        const textNodesMetadataPromises = content.nodes.filter((node) => node.type === "text" && node.text).map((node) => node.text).map((text) => textEncoder.encode(text).buffer).map((buffer) => this.computeMetadataAsync(buffer));
+        const textNodes = content.nodes.filter((node) => node.type === "text" && node.text);
+        const textNodesIds = textNodes.map((node) => node.id);
+        const textNodesMetadataPromises = textNodes.map((node) => textEncoder.encode(node.text).buffer).map((buffer) => this.computeMetadataAsync(buffer));
         const textNodesMetadata = await Promise.all(textNodesMetadataPromises);
-        const textNodesEmbeds = textNodesMetadata.map((metadata) => metadata.embeds || []).flat();
-        const textNodesLinks = textNodesMetadata.map((metadata) => metadata.links || []).flat();
-        this.metadataCache[fileCache.hash] = {
+        const textNodesEmbeds = textNodesMetadata.map((metadata, index) => (metadata.embeds || []).map((embed) => ({
+          ...embed,
+          position: {
+            nodeId: textNodesIds[index],
+            ...embed.position
+          }
+        }))).flat();
+        const textNodesLinks = textNodesMetadata.map((metadata, index) => (metadata.links || []).map((link) => ({
+          ...link,
+          position: {
+            nodeId: textNodesIds[index],
+            ...link.position
+          }
+        }))).flat();
+        this.metadataCache[fileHash] = {
           v: 1,
           embeds: [
             ...fileNodesEmbeds,
@@ -3537,28 +3542,50 @@ var MetadataCachePatcher = class extends Patcher {
           ],
           links: [
             ...textNodesLinks
-          ]
+          ],
+          nodes: {
+            ...textNodesMetadata.reduce((acc, metadata, index) => {
+              acc[textNodesIds[index]] = metadata;
+              return acc;
+            }, {})
+          }
         };
-        this.resolvedLinks[file.path] = [...fileNodesEmbeds, ...textNodesEmbeds, ...textNodesLinks].reduce((acc, cacheEntry) => {
-          const resolvedLinkpath = this.getFirstLinkpathDest(cacheEntry.link, file.path);
+        this.trigger("changed", file, "", this.metadataCache[fileHash]);
+        this.resolveLinks(file.path, content);
+      },
+      resolveLinks: (next) => async function(filepath, cachedContent) {
+        var _a, _b, _c;
+        if (PathHelper.extension(filepath) !== "canvas")
+          return next.call(this, filepath);
+        const file = this.vault.getAbstractFileByPath(filepath);
+        if (!file)
+          return;
+        const metadataCache = this.metadataCache[(_a = this.fileCache[filepath]) == null ? void 0 : _a.hash];
+        if (!metadataCache)
+          return;
+        const metadataReferences = [...metadataCache.links || [], ...metadataCache.embeds || []];
+        this.resolvedLinks[filepath] = metadataReferences.reduce((acc, metadataReference) => {
+          const resolvedLinkpath = this.getFirstLinkpathDest(metadataReference.link, filepath);
           if (!resolvedLinkpath)
             return acc;
           acc[resolvedLinkpath.path] = (acc[resolvedLinkpath.path] || 0) + 1;
           return acc;
         }, {});
-        if (!that.plugin.settings.getSetting("treatFileNodeEdgesAsLinks"))
-          return;
-        for (const edge of (content == null ? void 0 : content.edges) || []) {
-          const from = content.nodes.find((node) => node.id === edge.fromNode);
-          const to = content.nodes.find((node) => node.id === edge.toNode);
-          if (!from || !to)
-            continue;
-          if (from.type !== "file" || to.type !== "file" || !from.file || !to.file)
-            continue;
-          this.registerInternalLinkAC(file.name, from.file, to.file);
-          if (!(edge.toEnd !== "none" || edge.fromEnd === "arrow"))
-            this.registerInternalLinkAC(file.name, to.file, from.file);
+        if (that.plugin.settings.getSetting("treatFileNodeEdgesAsLinks")) {
+          for (const edge of cachedContent.edges || []) {
+            const from = (_b = cachedContent.nodes) == null ? void 0 : _b.find((node) => node.id === edge.fromNode);
+            const to = (_c = cachedContent.nodes) == null ? void 0 : _c.find((node) => node.id === edge.toNode);
+            if (!from || !to)
+              continue;
+            if (from.type !== "file" || to.type !== "file" || !from.file || !to.file)
+              continue;
+            this.registerInternalLinkAC(file.name, from.file, to.file);
+            if (!(edge.toEnd !== "none" || edge.fromEnd === "arrow"))
+              this.registerInternalLinkAC(file.name, to.file, from.file);
+          }
         }
+        this.trigger("resolve", file);
+        this.trigger("resolved");
       },
       registerInternalLinkAC: (_next) => function(canvasName, from, to) {
         var _a, _b, _c, _d;
@@ -3582,16 +3609,16 @@ var MetadataCachePatcher = class extends Patcher {
         };
       }
     });
-    this.plugin.app.workspace.onLayoutReady(() => {
-      const graphViews = [...this.plugin.app.workspace.getLeavesOfType("graph"), ...this.plugin.app.workspace.getLeavesOfType("localgraph")];
-      for (const view of graphViews)
-        view.rebuildView();
-    });
+    this.plugin.registerEvent(this.plugin.app.vault.on("modify", (file) => {
+      if (PathHelper.extension(file.path) !== "canvas")
+        return;
+      this.plugin.app.metadataCache.computeFileMetadataAsync(file);
+    }));
   }
 };
 
 // src/patchers/backlinks-patcher.ts
-var import_obsidian6 = require("obsidian");
+var import_obsidian5 = require("obsidian");
 var BacklinksPatcher = class extends Patcher {
   constructor() {
     super(...arguments);
@@ -3618,7 +3645,7 @@ var BacklinksPatcher = class extends Patcher {
           var current = stack.pop();
           if (current) {
             traverse(current);
-            if (current instanceof import_obsidian6.TFolder)
+            if (current instanceof import_obsidian5.TFolder)
               stack = stack.concat(current.children);
           }
         }
@@ -3629,7 +3656,7 @@ var BacklinksPatcher = class extends Patcher {
         var files = [];
         var root = this.getRoot();
         this.recurseChildrenAC(root, (child) => {
-          if (child instanceof import_obsidian6.TFile && (child.extension === "md" || child.extension === "canvas")) {
+          if (child instanceof import_obsidian5.TFile && (child.extension === "md" || child.extension === "canvas")) {
             files.push(child);
           }
         });
@@ -3679,7 +3706,7 @@ var OutgoingLinksPatcher = class extends Patcher {
 };
 
 // src/utils/canvas-helper.ts
-var import_obsidian7 = require("obsidian");
+var import_obsidian6 = require("obsidian");
 
 // src/utils/bbox-helper.ts
 var BBoxHelper = class {
@@ -3802,8 +3829,8 @@ var _CanvasHelper = class _CanvasHelper {
     if (menuOption.id)
       quickSetting.id = menuOption.id;
     quickSetting.classList.add("canvas-control-item");
-    (0, import_obsidian7.setIcon)(quickSetting, menuOption.icon);
-    (0, import_obsidian7.setTooltip)(quickSetting, menuOption.label, { placement: "left" });
+    (0, import_obsidian6.setIcon)(quickSetting, menuOption.icon);
+    (0, import_obsidian6.setTooltip)(quickSetting, menuOption.label, { placement: "left" });
     quickSetting.addEventListener("click", () => {
       var _a;
       return (_a = menuOption.callback) == null ? void 0 : _a.call(menuOption);
@@ -3822,8 +3849,8 @@ var _CanvasHelper = class _CanvasHelper {
       menuOptionElement.id = menuOption.id;
     menuOptionElement.classList.add("canvas-card-menu-button");
     menuOptionElement.classList.add("mod-draggable");
-    (0, import_obsidian7.setIcon)(menuOptionElement, menuOption.icon);
-    (0, import_obsidian7.setTooltip)(menuOptionElement, menuOption.label, { placement: "top" });
+    (0, import_obsidian6.setIcon)(menuOptionElement, menuOption.icon);
+    (0, import_obsidian6.setTooltip)(menuOptionElement, menuOption.label, { placement: "top" });
     menuOptionElement.addEventListener("click", (_e) => {
       onPlaced(canvas, this.getCenterCoordinates(canvas, previewNodeSize()));
     });
@@ -3846,8 +3873,8 @@ var _CanvasHelper = class _CanvasHelper {
     if (menuOption.id)
       menuOptionElement.id = menuOption.id;
     menuOptionElement.classList.add("clickable-icon");
-    (0, import_obsidian7.setIcon)(menuOptionElement, menuOption.icon);
-    (0, import_obsidian7.setTooltip)(menuOptionElement, menuOption.label, { placement: "top" });
+    (0, import_obsidian6.setIcon)(menuOptionElement, menuOption.icon);
+    (0, import_obsidian6.setTooltip)(menuOptionElement, menuOption.label, { placement: "top" });
     menuOptionElement.addEventListener("click", () => {
       var _a;
       return (_a = menuOption.callback) == null ? void 0 : _a.call(menuOption);
@@ -3943,7 +3970,7 @@ var _CanvasHelper = class _CanvasHelper {
         callback: () => {
           setStyleAttribute(stylableAttribute, styleOption.value);
           currentStyleAttributes[stylableAttribute.datasetKey] = styleOption.value;
-          (0, import_obsidian7.setIcon)(menuOption, styleOption.icon);
+          (0, import_obsidian6.setIcon)(menuOption, styleOption.icon);
           menuOption.dispatchEvent(new Event("click"));
         }
       })));
@@ -3962,8 +3989,8 @@ var _CanvasHelper = class _CanvasHelper {
     const styleMenuButtonElement = document.createElement("button");
     styleMenuButtonElement.id = STYLE_MENU_ID;
     styleMenuButtonElement.classList.add("clickable-icon");
-    (0, import_obsidian7.setIcon)(styleMenuButtonElement, "paintbrush");
-    (0, import_obsidian7.setTooltip)(styleMenuButtonElement, "Style", { placement: "top" });
+    (0, import_obsidian6.setIcon)(styleMenuButtonElement, "paintbrush");
+    (0, import_obsidian6.setTooltip)(styleMenuButtonElement, "Style", { placement: "top" });
     popupMenuElement.appendChild(styleMenuButtonElement);
     styleMenuButtonElement.addEventListener("click", () => {
       var _a2, _b2, _c;
@@ -3993,7 +4020,7 @@ var _CanvasHelper = class _CanvasHelper {
         const iconElement = document.createElement("div");
         iconElement.classList.add("menu-item-icon");
         let selectedStyle = (_c = stylableAttribute.options.find((option) => currentStyleAttributes[stylableAttribute.datasetKey] === option.value)) != null ? _c : stylableAttribute.options.find((value) => value.value === null);
-        (0, import_obsidian7.setIcon)(iconElement, selectedStyle.icon);
+        (0, import_obsidian6.setIcon)(iconElement, selectedStyle.icon);
         stylableAttributeElement.appendChild(iconElement);
         const labelElement = document.createElement("div");
         labelElement.classList.add("menu-item-title");
@@ -4001,7 +4028,7 @@ var _CanvasHelper = class _CanvasHelper {
         stylableAttributeElement.appendChild(labelElement);
         const expandIconElement = document.createElement("div");
         expandIconElement.classList.add("menu-item-icon");
-        (0, import_obsidian7.setIcon)(expandIconElement, "chevron-right");
+        (0, import_obsidian6.setIcon)(expandIconElement, "chevron-right");
         stylableAttributeElement.appendChild(expandIconElement);
         styleMenuDropdownElement.appendChild(stylableAttributeElement);
         stylableAttributeElement.addEventListener("pointerenter", () => {
@@ -4034,7 +4061,7 @@ var _CanvasHelper = class _CanvasHelper {
                 setStyleAttribute(stylableAttribute, styleOption.value);
                 currentStyleAttributes[stylableAttribute.datasetKey] = styleOption.value;
                 selectedStyle = styleOption;
-                (0, import_obsidian7.setIcon)(iconElement, styleOption.icon);
+                (0, import_obsidian6.setIcon)(iconElement, styleOption.icon);
                 styleMenuDropdownSubmenuElement.remove();
               }
             });
@@ -4043,7 +4070,7 @@ var _CanvasHelper = class _CanvasHelper {
               const selectedIconElement = document.createElement("div");
               selectedIconElement.classList.add("menu-item-icon");
               selectedIconElement.classList.add("mod-selected");
-              (0, import_obsidian7.setIcon)(selectedIconElement, "check");
+              (0, import_obsidian6.setIcon)(selectedIconElement, "check");
               styleMenuDropdownSubmenuOptionElement.appendChild(selectedIconElement);
             }
             styleMenuDropdownSubmenuElement.appendChild(styleMenuDropdownSubmenuOptionElement);
@@ -4060,7 +4087,7 @@ var _CanvasHelper = class _CanvasHelper {
     menuDropdownOptionElement.classList.add("tappable");
     const iconElement = document.createElement("div");
     iconElement.classList.add("menu-item-icon");
-    (0, import_obsidian7.setIcon)(iconElement, menuOption.icon);
+    (0, import_obsidian6.setIcon)(iconElement, menuOption.icon);
     menuDropdownOptionElement.appendChild(iconElement);
     const labelElement = document.createElement("div");
     labelElement.classList.add("menu-item-title");
@@ -4121,7 +4148,7 @@ var GroupCanvasExtension = class extends CanvasExtension {
 };
 
 // src/canvas-extensions/presentation-canvas-extension.ts
-var import_obsidian8 = require("obsidian");
+var import_obsidian7 = require("obsidian");
 var START_SLIDE_NAME = "Start Slide";
 var DEFAULT_SLIDE_NAME = "New Slide";
 var PresentationCanvasExtension = class extends CanvasExtension {
@@ -4368,7 +4395,7 @@ var PresentationCanvasExtension = class extends CanvasExtension {
     if (!tryContinue || this.visitedNodeIds.length === 0) {
       const startNode2 = this.getStartNode(canvas);
       if (!startNode2) {
-        new import_obsidian8.Notice("No start node found. Please mark a node as a start node trough the popup menu.");
+        new import_obsidian7.Notice("No start node found. Please mark a node as a start node trough the popup menu.");
         return;
       }
       this.visitedNodeIds = [startNode2.getData().id];
@@ -4678,8 +4705,8 @@ var BetterReadonlyCanvasExtension = class extends CanvasExtension {
 };
 
 // src/utils/modal-helper.ts
-var import_obsidian9 = require("obsidian");
-var FileNameModal = class extends import_obsidian9.SuggestModal {
+var import_obsidian8 = require("obsidian");
+var FileNameModal = class extends import_obsidian8.SuggestModal {
   constructor(app, parentPath, fileExtension) {
     super(app);
     this.parentPath = parentPath;
@@ -4707,7 +4734,7 @@ var FileNameModal = class extends import_obsidian9.SuggestModal {
     });
   }
 };
-var FileSelectModal = class extends import_obsidian9.SuggestModal {
+var FileSelectModal = class extends import_obsidian8.SuggestModal {
   constructor(app, extensionsRegex, suggestNewFile = false) {
     super(app);
     this.files = this.app.vault.getFiles().map((file) => file.path).filter((path) => {
@@ -4750,7 +4777,7 @@ var FileSelectModal = class extends import_obsidian9.SuggestModal {
     return new Promise((resolve, _reject) => {
       this.onChooseSuggestion = (path, _evt) => {
         const file = this.app.vault.getAbstractFileByPath(path);
-        if (file instanceof import_obsidian9.TFile)
+        if (file instanceof import_obsidian8.TFile)
           return resolve(file);
         if (!this.suggestNewFile)
           return;
@@ -5114,7 +5141,7 @@ var AutoResizeNodeCanvasExtension = class extends CanvasExtension {
 };
 
 // src/canvas-extensions/portals-canvas-extension.ts
-var import_obsidian10 = require("obsidian");
+var import_obsidian9 = require("obsidian");
 var PORTAL_PADDING = 50;
 var MIN_OPEN_PORTAL_SIZE = { width: 200, height: 200 };
 var PortalsCanvasExtension = class extends CanvasExtension {
@@ -5413,7 +5440,7 @@ var PortalsCanvasExtension = class extends CanvasExtension {
       this.nestedPortals[parentPortalId].push(portalNodeData.portalToFile);
     }
     const portalFile = this.plugin.app.vault.getAbstractFileByPath(portalNodeData.file);
-    if (!(portalFile instanceof import_obsidian10.TFile) || portalFile.extension !== "canvas") {
+    if (!(portalFile instanceof import_obsidian9.TFile) || portalFile.extension !== "canvas") {
       portalNodeData.portalToFile = void 0;
       return addedData;
     }
@@ -5701,7 +5728,7 @@ var ColorPaletteCanvasExtension = class extends CanvasExtension {
 };
 
 // src/canvas-extensions/collapsible-groups-canvas-extension.ts
-var import_obsidian11 = require("obsidian");
+var import_obsidian10 = require("obsidian");
 var COLLAPSE_BUTTON_ID = "group-collapse-button";
 var CollapsibleGroupsCanvasExtension = class extends CanvasExtension {
   isEnabled() {
@@ -5737,7 +5764,7 @@ var CollapsibleGroupsCanvasExtension = class extends CanvasExtension {
     (_a = groupNode.nodeEl) == null ? void 0 : _a.querySelectorAll(`#${COLLAPSE_BUTTON_ID}`).forEach((el) => el.remove());
     const collapseButton = document.createElement("span");
     collapseButton.id = COLLAPSE_BUTTON_ID;
-    (0, import_obsidian11.setIcon)(collapseButton, groupNodeData.isCollapsed ? "plus-circle" : "minus-circle");
+    (0, import_obsidian10.setIcon)(collapseButton, groupNodeData.isCollapsed ? "plus-circle" : "minus-circle");
     collapseButton.onclick = () => {
       this.setCollapsed(canvas, groupNode, groupNode.getData().isCollapsed ? void 0 : true);
       canvas.markMoved(groupNode);
@@ -6597,7 +6624,7 @@ var CANVAS_EXTENSIONS = [
   PresentationCanvasExtension,
   PortalsCanvasExtension
 ];
-var AdvancedCanvasPlugin = class extends import_obsidian12.Plugin {
+var AdvancedCanvasPlugin = class extends import_obsidian11.Plugin {
   async onload() {
     this.migrationHelper = new MigrationHelper(this);
     await this.migrationHelper.migrate();
@@ -6613,7 +6640,7 @@ var AdvancedCanvasPlugin = class extends import_obsidian12.Plugin {
   onunload() {
   }
   getCurrentCanvasView() {
-    const canvasView = this.app.workspace.getActiveViewOfType(import_obsidian12.ItemView);
+    const canvasView = this.app.workspace.getActiveViewOfType(import_obsidian11.ItemView);
     if ((canvasView == null ? void 0 : canvasView.getViewType()) !== "canvas")
       return null;
     return canvasView;
