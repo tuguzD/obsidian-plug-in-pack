@@ -43,16 +43,16 @@ NOTE: After forking/using the template, feel free to give this file a proper use
 
 
 ### Third-party integrations
-- [Discord Rich Presence](https://github.com/lukeleppan/obsidian-discordrpc) – ...
-- [Todoist Sync](https://github.com/jamiebrynes7/obsidian-todoist-plugin) – ...
-- [WakaTime](https://github.com/wakatime/obsidian-wakatime) – ...
-- [LanguageTool Integration](https://github.com/Clemens-E/obsidian-languagetool-plugin) – grammar and spell checking...
-- [Execute Code](https://github.com/twibiral/obsidian-execute-code)
+- [Discord Rich Presence](https://github.com/lukeleppan/obsidian-discordrpc) – integrate an app into [`Discord`](https://discord.com) status: show vault name, editing file and (total) elapsed time
+- [Todoist Sync](https://github.com/jamiebrynes7/obsidian-todoist-plugin) – bidirectional task sync with [`Todoist`](https://todoist.com) task manager: create new tasks and check as completed existing ones
+- [WakaTime](https://github.com/wakatime/obsidian-wakatime) – generate metrics, insights, and time tracking from app usage activity, to later view it in [`WakaTime`](https://wakatime.com) dashboard
+- [LanguageTool Integration](https://github.com/Clemens-E/obsidian-languagetool-plugin) – check grammar and spellling for many languages by sending data to [`LanguageTool`](https://languagetool.org)
 
-#### Synchronization (with `GitHub`)
+#### Synchronization
+- [Version History Diff](https://github.com/kometenstaub/obsidian-version-history-diff) – display diffs for core [File recovery](https://help.obsidian.md/Plugins/File+recovery) plugin and [`Obsidian Sync`](https://help.obsidian.md/Obsidian+Sync/Introduction+to+Obsidian+Sync) paid service
+  - also supports [`Git`](https://git-scm.com) VCS history (using the next plugin below)
 - [Git](https://github.com/Vinzent03/obsidian-git) – store remote copy of your vault in a `GitHub` repository, which also allows sync between different devices
-  - should be disabled on mobile devices, use [...]() instead
-- [Version History Diff](https://github.com/kometenstaub/obsidian-version-history-diff) – ...
+  - should be disabled on mobile devices, use separate [`Git Sync`](https://github.com/ViscousPot/GitSync) app instead
 
 
 ### Markdown [formatting](https://help.obsidian.md/Editing+and+formatting/Basic+formatting+syntax)
@@ -84,6 +84,7 @@ NOTE: After forking/using the template, feel free to give this file a proper use
 
 
 ### Unsorted yet
+- [Execute Code](https://github.com/twibiral/obsidian-execute-code)
 - [Auto Link Title](https://github.com/zolrath/obsidian-auto-link-title)
 - [Beautitab](https://github.com/andrewmcgivery/obsidian-beautitab)
 - [Blur](https://github.com/gapmiss/blur)
