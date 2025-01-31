@@ -49,7 +49,7 @@ NOTE: After forking/using the template to create your vault, feel free to give t
 
 - [Slash Commander](https://github.com/alephpiece/obsidian-slash-commander) <sup>[⚠️[Slash commands](https://help.obsidian.md/Plugins/Slash+commands) OFF]</sup> – customize slash command list and show descriptions for each one
 
-- [Better Search Views](https://github.com/ivan-lednev/better-search-views) <sup>[✅[Search](https://help.obsidian.md/Plugins/Search), ✅[Backlinks](https://help.obsidian.md/Plugins/Backlinks) ON]</sup> – search results now [decorated](https://github.com/ivan-lednev/better-search-views?tab=readme-ov-file#but-what-does-it-do-exactly) with breadcrumbs, or display an hierarchy
+- [Better Search Views](https://github.com/ivan-lednev/better-search-views) <sup>[✅[Search](https://help.obsidian.md/Plugins/Search), ✅[Backlinks](https://help.obsidian.md/Plugins/Backlinks) ON]</sup> – [decorate](https://github.com/ivan-lednev/better-search-views?tab=readme-ov-file#but-what-does-it-do-exactly) search results with breadcrumbs (display their hierarchy)
 
 - [Quick Switcher++](https://github.com/darlal/obsidian-switcher-plus) <sup>[✅[Quick switcher](https://help.obsidian.md/Plugins/Quick+switcher), ✅[Command palette](https://help.obsidian.md/Plugins/Command+palette) ON]</sup> – search, filter results and navigate quicker: switch between multiple modes (Commands, Editor, Symbols, Headings, Related Items, Bookmarks, Workspaces, Vaults)
 
@@ -57,7 +57,7 @@ NOTE: After forking/using the template to create your vault, feel free to give t
 
 - [Workspaces Plus](https://github.com/nothingislost/obsidian-workspaces-plus) <sup>[✅[Workspaces](https://help.obsidian.md/Plugins/Workspaces) ON]</sup> – edit and switch workspaces easier, set different themes for each one
 
-- [Nested tags graph](https://github.com/drPilman/obsidian-graph-nested-tags) / [Folders to Graph](https://github.com/Ratibus11/folders2graph) <sup>[✅[Graph view](https://help.obsidian.md/Plugins/Graph+view) ON]</sup> – link nested tags / show folder structure in graph view (one breaks another, choose the one you like)
+- [Nested tags graph](https://github.com/drPilman/obsidian-graph-nested-tags) / [Folders to Graph](https://github.com/Ratibus11/folders2graph) <sup>[✅[Graph view](https://help.obsidian.md/Plugins/Graph+view) ON]</sup> – link nested tags / show folder structure in graph view (plugins break each other, so choose the one you like)
 </details>
 
 #### [Canvas](https://help.obsidian.md/Plugins/Canvas) plugin
