@@ -12,36 +12,36 @@ NOTE: After forking/using the template, feel free to give this file a proper use
   - should turn OFF core [Daily Notes](https://help.obsidian.md/Plugins/Daily+notes)
 - [Better Word Count](https://github.com/lukeleppan/better-word-count) – collect stats about your whole vault, also customize displaying them
   - should turn OFF core [Word Count](https://help.obsidian.md/Plugins/Word+count)
-- [Slash Commander](https://github.com/alephpiece/obsidian-slash-commander) – customizable slash command list with ability to show their descriptions
+- [Slash Commander](https://github.com/alephpiece/obsidian-slash-commander) – customize slash command list and show descriptions for each one
   - MUST turn OFF core [Slash commands](https://help.obsidian.md/Plugins/Slash+commands)
 - [Better Search Views](https://github.com/ivan-lednev/better-search-views) – search results now [decorated](https://github.com/ivan-lednev/better-search-views?tab=readme-ov-file#but-what-does-it-do-exactly) with breadcrumbs, or display an hierarchy
   - MUST turn ON core [Search](https://help.obsidian.md/Plugins/Search) and [Backlinks](https://help.obsidian.md/Plugins/Backlinks)
-- [Hover Editor](https://github.com/nothingislost/obsidian-hover-editor) – "turns the hover popover into a full featured [editor instance](https://github.com/nothingislost/obsidian-hover-editor?tab=readme-ov-file#features)"
+- [Hover Editor](https://github.com/nothingislost/obsidian-hover-editor) – "turn the hover popover into a full featured [editor instance](https://github.com/nothingislost/obsidian-hover-editor?tab=readme-ov-file#features)"
   - MUST turn ON core [Page preview](https://help.obsidian.md/Plugins/Page+preview)
-- [Workspaces Plus](https://github.com/nothingislost/obsidian-workspaces-plus) – makes editing and switching workspaces easier, also allows to customize different theme for each one
+- [Workspaces Plus](https://github.com/nothingislost/obsidian-workspaces-plus) – make editing and switching workspaces easier, also setup different theme for each one
   - MUST turn ON core [Workspaces](https://help.obsidian.md/Plugins/Workspaces)
-- [Nested tags graph](https://github.com/drPilman/obsidian-graph-nested-tags) / ~~[Folders to Graph](https://github.com/Ratibus11/folders2graph)~~ – links nested tags ~~or shows folder structure~~ in graph view
+- [Nested tags graph](https://github.com/drPilman/obsidian-graph-nested-tags) / ~~[Folders to Graph](https://github.com/Ratibus11/folders2graph)~~ – link nested tags ~~or show folder structure~~ in graph view
   - MUST turn ON core [Graph view](https://help.obsidian.md/Plugins/Graph+view)
   - one cancels another, choose anything you like
 
 #### [`Canvas`](https://obsidian.md/canvas) feature
 
-- [Advanced Canvas](https://github.com/Developer-Mike/obsidian-advanced-canvas) – changes note/edge styles, auto-resize elements and create presentations from `Canvas` files
-- [Canvas Card Background Remover](https://github.com/luxmargos/obsidian-canvas-card-bg-remover) – removes background from transparent embeds (like images)
-- [Canvas Keyboard Pan](https://github.com/nathonius/obsidian-canvas-pan) – allows to move in Canvas using the keyboard (instead of just mouse wheel)
-- [Canvas Link Optimizer](https://github.com/Qbject/obsidian-canvas-link-optimizer) – displays cached (as image) preview of a note/web page to improve performance
-- [Canvas Links](https://github.com/aqav/obsidian-canvas-links) – displays links between `Canvas` and `Markdown` file types inside of a new menu
-- [Canvas MindMap](https://github.com/Quorafind/Obsidian-Canvas-MindMap) – adds controls to work with `Canvas` elements as a mindmap tree-like structure
-- [Canvas Minimap](https://github.com/ifree/Obsidian-canvas-minimap) – adds minimap that helps to navigate and get an overview of the canvas
-- [Optimize Canvas Connections](https://github.com/felixchenier/obsidian-optimize-canvas-connections) – attempts to reconnect "messy" notes using their nearest edges
-- [Search in Canvas](https://github.com/quorafind/obsidian-search-in-canvas) – adds text search in canvas contents and highlights found entries
+- [Advanced Canvas](https://github.com/Developer-Mike/obsidian-advanced-canvas) – change note/edge styles, auto-resize elements and create presentations from `Canvas` files
+- [Canvas Card Background Remover](https://github.com/luxmargos/obsidian-canvas-card-bg-remover) – remove background from transparent embeds (like images)
+- [Canvas Keyboard Pan](https://github.com/nathonius/obsidian-canvas-pan) – move in Canvas using the keyboard (instead of just mouse wheel)
+- [Canvas Link Optimizer](https://github.com/Qbject/obsidian-canvas-link-optimizer) – display cached (as image) preview of a note/web page to improve performance
+- [Canvas Links](https://github.com/aqav/obsidian-canvas-links) – display links between `Canvas` and `Markdown` file types inside of a new menu
+- [Canvas MindMap](https://github.com/Quorafind/Obsidian-Canvas-MindMap) – add new controls to work with `Canvas` elements as a mindmap tree-like structure
+- [Canvas Minimap](https://github.com/ifree/Obsidian-canvas-minimap) – add minimap that helps to navigate and get an overview of the canvas
+- [Optimize Canvas Connections](https://github.com/felixchenier/obsidian-optimize-canvas-connections) – reconnect notes using their nearest edges to prevent "messy-looking" canvas
+- [Search in Canvas](https://github.com/quorafind/obsidian-search-in-canvas) – search in canvas contents for text and highlight found entries
 
 ### Plugin management
 
-- [Lazy Plugin Loader](https://github.com/alangrainger/obsidian-lazy-plugins) – allows to load chosen plugins later to improve speed of `Obsidian` app launch
-- [Plugin Update Tracker](https://github.com/swar8080/obsidian-plugin-update-tracker) – shows update status of all installed plugins, allows to browse release notes for each update and ignore them
-- [BRAT](https://github.com/TfTHacker/obsidian42-brat) – allows downloading plugins unlisted from in-app plugin search (or beta versions of listed plugins)
-- [Plugins Annotations](https://github.com/alberti42/obsidian-plugins-annotations) – allows to add personal annotations to each installed plugin (store their use-cases, as labels can't provide full info)
+- [Lazy Plugin Loader](https://github.com/alangrainger/obsidian-lazy-plugins) – load chosen plugins later to improve speed of `Obsidian` app launch
+- [Plugin Update Tracker](https://github.com/swar8080/obsidian-plugin-update-tracker) – show update status of all installed plugins, browse release notes for each update and even ignore them
+- [BRAT](https://github.com/TfTHacker/obsidian42-brat) – download plugins that were not listed from in-app plugin search (or beta versions of listed plugins)
+- [Plugins Annotations](https://github.com/alberti42/obsidian-plugins-annotations) – add personal annotations to each installed plugin to store their use-cases, as labels can't provide full info
 
 ### Markdown [formatting](https://help.obsidian.md/Editing+and+formatting/Basic+formatting+syntax)
 
