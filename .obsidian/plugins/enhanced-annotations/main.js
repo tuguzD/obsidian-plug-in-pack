@@ -11172,11 +11172,9 @@ var AnnotationSuggest = class extends import_obsidian16.EditorSuggest {
     }
   }
   selectSuggestion(suggestion) {
-    const editor = this.app.workspace.activeEditor?.editor;
-    if (!editor)
-      return;
     if (!this.context)
       return;
+    const editor = this.context.editor;
     const settings = this.plugin.settings.getValue();
     const label = suggestion.label.trim();
     const content = label ? `${label}: ` : label;
@@ -12148,5 +12146,3 @@ var LabeledAnnotations = class extends import_obsidian20.Plugin {
     });
   }
 };
-
-/* nosourcemap */
