@@ -361,6 +361,9 @@
       },
       "recent-notes": {
         "startupType": "instant"
+      },
+      "rich-foot": {
+        "startupType": "disabled"
       }
     }
   }
