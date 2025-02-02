@@ -355,6 +355,9 @@
       },
       "mrj-jump-to-link": {
         "startupType": "instant"
+      },
+      "link-preview": {
+        "startupType": "instant"
       }
     }
   }

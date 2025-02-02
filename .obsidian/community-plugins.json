@@ -58,5 +58,6 @@
   "mouse-navigation",
   "inline-math",
   "cycle-through-panes",
-  "mrj-jump-to-link"
+  "mrj-jump-to-link",
+  "link-preview"
 ]
