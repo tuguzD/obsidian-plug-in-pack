@@ -111,10 +111,12 @@ NOTE: After forking/using the template to create your vault, feel free to give t
 
 ### Reading
 - ~~[Continuous Mode](https://github.com/gasparschott/obsidian-continuous-mode)~~ – display all open notes or files (like PDFs) in tab group as a single scrollable document
-  - disabled (for now) because it has a conflict with "Scroll Speed" plugin
+  - disabled (for now) due to a "auto-scrolling" conflict with "Scroll Speed" plugin
 - [Chord Sheets](https://github.com/olvidalo/obsidian-chord-sheets?tab=readme-ov-file#-autoscroll) – start/stop automatic scroll of an active note, configure scrolling speed on the fly
 - [Mindmap NextGen](https://github.com/james-tindal/obsidian-mindmap-nextgen) – view active note's content as a mindmap, configure its appearance and make screenshots
 - [Media Notes](https://github.com/jemstelos/obsidian-media-notes) – easily pin a video to the note, control its playback and insert configurable timestamps
+- ~~[Rich Foot](https://github.com/jparkerweb/rich-foot)~~ – display backlinks, outlinks, and created/modified dates in a footer of any note (unless ignored)
+  - disabled (for now) due to a "flickering" conflict with "Hover Editor" plugin
 
 ### Note appearance
 - [Blur](https://github.com/gapmiss/blur) – apply blur effect to portions of text to obfuscate it (non-[Markdown](https://help.obsidian.md/Editing+and+formatting/Basic+formatting+syntax), so works only in `Obsidian` app)
