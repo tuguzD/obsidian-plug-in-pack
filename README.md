@@ -12,6 +12,7 @@ NOTE: After forking/using the template to create your vault, feel free to give t
 - [Scroll Speed](https://github.com/flolu/obsidian-scroll-speed) – modify base mouse scroll speed and make animation smoother, scroll faster by pressing `Alt` key
 - [Enhanced Copy](https://github.com/Mara-Li/obsidian-enhanced-copy) – change native copy function behaviour to differ for [reading/editing views](https://help.obsidian.md/Editing+and+formatting/Edit+and+preview+Markdown#Editor+views)
 - [Tab Switcher](https://github.com/Vinzent03/tab-switcher) – ignore groups when switching tabs, navigate tabs in their placement/usage order (via hotkeys)
+- [Jump to link](https://github.com/mrjackphil/obsidian-jump-to-link) – quickly navigate between links, or jump to any word inside of opened note (via hotkeys)
 </details>
 
 <details> <summary> Others try to add must-have features that feel missing from the app: </summary>
