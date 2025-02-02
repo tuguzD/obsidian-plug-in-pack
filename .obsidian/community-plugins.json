@@ -56,5 +56,6 @@
   "callout-manager",
   "obsidian-trash-explorer",
   "mouse-navigation",
-  "inline-math"
+  "inline-math",
+  "cycle-through-panes"
 ]

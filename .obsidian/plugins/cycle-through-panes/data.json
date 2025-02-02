@@ -4,7 +4,7 @@
     "canvas",
     "pdf"
   ],
-  "showModal": true,
+  "showModal": false,
   "skipPinned": true,
   "stayInSplit": true,
   "focusLeafOnKeyUp": false,

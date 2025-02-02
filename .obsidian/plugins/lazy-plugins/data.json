@@ -141,7 +141,7 @@
         "startupType": "instant"
       },
       "cycle-through-panes": {
-        "startupType": "disabled"
+        "startupType": "instant"
       },
       "tag-wrangler": {
         "startupType": "instant"
