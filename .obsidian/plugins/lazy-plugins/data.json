@@ -364,6 +364,9 @@
       },
       "rich-foot": {
         "startupType": "disabled"
+      },
+      "insert-multiple-attachments": {
+        "startupType": "short"
       }
     }
   }
