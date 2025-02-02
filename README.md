@@ -18,7 +18,7 @@ NOTE: After forking/using the template to create your vault, feel free to give t
 <details> <summary> Others try to add must-have features that feel missing from the app: </summary>
 
 - [Trash Explorer](https://github.com/proog/obsidian-trash-explorer) – view, restore or remove deleted files (located in app's hidden `.trash` folder)
-- [Recent Files](https://github.com/tgrosinger/recent-files-obsidian) – view and customize a list of recently opened/modified files (like history from core [Web viewer](https://help.obsidian.md/plugins/web-viewer))
+- [Recent Notes](https://github.com/kamil-rudnicki/obsidian-recent-notes) – view an organized timeline of recently edited files (grouped by their modification time)
 - [Paste Image Rename](https://github.com/reorx/obsidian-paste-image-rename) – choose name and location for each file (e.g., images from clipboard) added to vault
 - [Commander](https://github.com/phibr0/obsidian-commander) – add new macros and commands to app menus (ribbon, status/tool/tab bar, editor/file menu)
 - [Jump to link](https://github.com/mrjackphil/obsidian-jump-to-link) – quickly navigate between links, or jump to any word inside of opened note (via hotkeys)
