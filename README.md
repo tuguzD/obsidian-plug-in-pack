@@ -167,7 +167,7 @@ NOTE: After forking/using the template to create your vault, feel free to give t
 
 
 ## Simplify *Markdown [formatting](https://help.obsidian.md/Editing+and+formatting/Basic+formatting+syntax)*
-- [Footnote Shortcut](https://github.com/MichaBrugger/obsidian-footnotes) – insert auto-numbered/named footnote, create description at the note bottom, navigate between them
+- [Footnote Shortcut](https://github.com/MichaBrugger/obsidian-footnotes) – create and navigate between auto-numbered/named footnotes and their description
 - [Code Styler](https://github.com/mayurankv/Obsidian-Code-Styler) – apply styles/themes to codeblocks and inline code, or customize them to your liking
 
 ### Lists
