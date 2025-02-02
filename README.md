@@ -20,7 +20,7 @@ NOTE: After forking/using the template to create your vault, feel free to give t
 - [Paste Image Rename](https://github.com/reorx/obsidian-paste-image-rename) – choose name and location for each file (e.g., images from clipboard) added to vault
 - [Commander](https://github.com/phibr0/obsidian-commander) – add new macros and commands to app menus (ribbon, status/tool/tab bar, editor/file menu)
 - [Remember cursor position](https://github.com/dy-sh/obsidian-remember-cursor-position) – remember notes' cursor and scroll position (edit multiple notes quicker)
-- [Force note View mode](https://github.com/bwydoogh/obsidian-force-view-mode-of-note) – ...
+- [Force note View mode](https://github.com/bwydoogh/obsidian-force-view-mode-of-note) – forcefully open certain notes in a view chosen from [reading and editing](https://help.obsidian.md/Editing+and+formatting/Edit+and+preview+Markdown) (preview / source)
 </details>
 
 ### Appearance
