@@ -1,5 +1,7 @@
 
-body:has(.menu.callout-menu) .menu:not(.callout-menu) {
+
+
+body:has(.menu.callout-menu) .menu:not(.callout-menu):has([data-section="edit"]) {
     display: none;
 }
 
