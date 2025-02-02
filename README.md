@@ -1,4 +1,4 @@
-# "Plugin-pack" for [`Obsidian`](https://obsidian.md)
+# "Plug-in-pack" for [`Obsidian`](https://obsidian.md)
 
 This is just a large collection of already set up plugins and hotkeys… That was gotten rid of ~~almost~~ any conflicts.
 
@@ -12,7 +12,7 @@ NOTE: After forking/using the template to create your vault, feel free to give t
 - [Scroll Speed](https://github.com/flolu/obsidian-scroll-speed) – modify base mouse scroll speed and make animation smoother, scroll faster by pressing `Alt` key
 - [Enhanced Copy](https://github.com/Mara-Li/obsidian-enhanced-copy) – change native copy function behaviour to differ for [reading/editing views](https://help.obsidian.md/Editing+and+formatting/Edit+and+preview+Markdown#Editor+views)
 - [Tab Switcher](https://github.com/Vinzent03/tab-switcher) – ignore groups when switching tabs, navigate tabs in their placement/usage order (via hotkeys)
-- [Jump to link](https://github.com/mrjackphil/obsidian-jump-to-link) – quickly navigate between links, or jump to any word inside of opened note (via hotkeys)
+- [Remember cursor position](https://github.com/dy-sh/obsidian-remember-cursor-position) – remember notes' cursor and scroll position (edit multiple notes quicker)
 </details>
 
 <details> <summary> Others try to add must-have features that feel missing from the app: </summary>
@@ -21,7 +21,8 @@ NOTE: After forking/using the template to create your vault, feel free to give t
 - [Recent Files](https://github.com/tgrosinger/recent-files-obsidian) – view and customize a list of recently opened/modified files (like history from core [Web viewer](https://help.obsidian.md/plugins/web-viewer))
 - [Paste Image Rename](https://github.com/reorx/obsidian-paste-image-rename) – choose name and location for each file (e.g., images from clipboard) added to vault
 - [Commander](https://github.com/phibr0/obsidian-commander) – add new macros and commands to app menus (ribbon, status/tool/tab bar, editor/file menu)
-- [Remember cursor position](https://github.com/dy-sh/obsidian-remember-cursor-position) – remember notes' cursor and scroll position (edit multiple notes quicker)
+- [Jump to link](https://github.com/mrjackphil/obsidian-jump-to-link) – quickly navigate between links, or jump to any word inside of opened note (via hotkeys)
+- [Link Preview](https://github.com/felipetappata/obsidian-link-preview) – show a preview for external links (without leaving note, unlike when using core [Web viewer](https://help.obsidian.md/plugins/web-viewer))
 </details>
 
 ### Appearance
