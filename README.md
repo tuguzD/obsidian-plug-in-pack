@@ -107,11 +107,11 @@ NOTE: After forking/using the template to create your vault, feel free to give t
 - [Note Refactor](https://github.com/lynchjames/note-refactor-obsidian) – split any chosen note, or extract selected part of a note into a new/existing one
 
 ### Reading
-- ~~[Continuous Mode](https://github.com/gasparschott/obsidian-continuous-mode)~~ – display all open notes/files of a tab group as a single scrollable document
+- ~~[Continuous Mode](https://github.com/gasparschott/obsidian-continuous-mode)~~ – display all open notes or files (like PDFs) in tab group as a single scrollable document
   - disabled (for now) because it has a conflict with "Scroll Speed" plugin
-- [Chord Sheets](https://github.com/olvidalo/obsidian-chord-sheets) (provides the best "autoscroll note" feature) – ...
-- [Mindmap NextGen](https://github.com/james-tindal/obsidian-mindmap-nextgen) – ...
-- [Media Notes](https://github.com/jemstelos/obsidian-media-notes) – ...
+- [Chord Sheets](https://github.com/olvidalo/obsidian-chord-sheets?tab=readme-ov-file#-autoscroll) – start/stop automatic scroll of an active note, configure scrolling speed on the fly
+- [Mindmap NextGen](https://github.com/james-tindal/obsidian-mindmap-nextgen) – view active note's content as a mindmap, configure its appearance and make screenshots
+- [Media Notes](https://github.com/jemstelos/obsidian-media-notes) – easily pin a video to the note, control its playback and insert configurable timestamps
 
 ### Note appearance
 - [Blur](https://github.com/gapmiss/blur) – ...
