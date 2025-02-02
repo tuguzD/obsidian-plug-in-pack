@@ -64,7 +64,7 @@ NOTE: After forking/using the template to create your vault, feel free to give t
 </details>
 
 ### [Canvas](https://help.obsidian.md/Plugins/Canvas) plugins
-<details> <summary> MUST be turned ON for plugins below to work: </summary>
+<details> <summary> Core plugin MUST be turned ON for community ones below to work: </summary>
 
 - [Advanced Canvas](https://github.com/Developer-Mike/obsidian-advanced-canvas) – change note/edge styles, auto-resize elements and create presentations from `Canvas` files
 - [Canvas Card Background Remover](https://github.com/luxmargos/obsidian-canvas-card-bg-remover) – remove background from transparent embeds (like images)
