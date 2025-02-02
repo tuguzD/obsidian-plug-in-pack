@@ -31,7 +31,7 @@ NOTE: After forking/using the template to create your vault, feel free to give t
 ### Tags
 - [Tag Wrangler](https://github.com/pjeby/tag-wrangler) – rename (sub)tags "in bulk", filter search with tags and manage "[Tag Pages](https://github.com/pjeby/tag-wrangler?tab=readme-ov-file#tag-pages)"
 - [Colored Tags Wrangler](https://github.com/code-of-chaos/obsidian-colored_tags_wrangler) – assign unique tag colors, then apply them to canvas items, folders and/or notes
-- [Quick Tagger](https://github.com/Gorkycreator/obsidian-quick-tagger) – add/remove tags of file(s) "" by calling commands, using hotkeys or context menu
+- [Quick Tagger](https://github.com/Gorkycreator/obsidian-quick-tagger) – add/remove tags of file(s) "in bulk" by calling commands, using hotkeys or context menu
 
 ### Links
 - [Links](https://github.com/mii-key/obsidian-links) – add A LOT of context menu actions for link creation, editing, convertion and removal/deletion from note
