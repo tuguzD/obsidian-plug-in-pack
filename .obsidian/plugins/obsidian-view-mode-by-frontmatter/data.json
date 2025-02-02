@@ -7,6 +7,10 @@
     {
       "filePattern": "HOME",
       "viewMode": "obsidianUIMode: preview"
+    },
+    {
+      "filePattern": "README",
+      "viewMode": "obsidianUIMode: preview"
     }
   ]
 }
