@@ -337,5 +337,14 @@
       ],
       "key": "Tab"
     }
+  ],
+  "mrj-jump-to-link:activate-jump-to-anywhere": [],
+  "mrj-jump-to-link:activate-jump-to-link": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "Z"
+    }
   ]
 }

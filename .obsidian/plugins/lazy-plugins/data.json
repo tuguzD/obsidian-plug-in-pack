@@ -352,6 +352,9 @@
       },
       "quickadd": {
         "startupType": "short"
+      },
+      "mrj-jump-to-link": {
+        "startupType": "instant"
       }
     }
   }
