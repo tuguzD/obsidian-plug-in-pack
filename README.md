@@ -38,8 +38,7 @@ NOTE: After forking/using the template to create your vault, feel free to give t
 - [Auto Link Title](https://github.com/zolrath/obsidian-auto-link-title) – automatically fetch website's title upon pasting it into notes
 - [Link Favicons](https://github.com/joethei/obsidian-link-favicon) – automatically render favicons for external links (website), set custom icon for certain links
 - [Copy Block Link](https://github.com/mgmeyers/obsidian-copy-block-link) – get links to text blocks and headings directly from a context menu
-- [Link Headers Directly](https://github.com/Signynt/link-headers-directly) – show only the last header of internal links, and not the whole note hierarchy
-  - works only in [Reading](https://help.obsidian.md/Editing+and+formatting/Edit+and+preview+Markdown#Editor+views) view
+- [Link Headers Directly](https://github.com/Signynt/link-headers-directly) – show only the last header of internal links[^1], and not the whole note hierarchy
 
 
 ## Overhaul *core plugins*
@@ -173,8 +172,7 @@ NOTE: After forking/using the template to create your vault, feel free to give t
 ### Lists
 - [Outliner](https://github.com/vslinko/obsidian-outliner) – improve list [editing](https://github.com/vslinko/obsidian-outliner) experience: move around nested elements, change selection behaviour, and so on
 - [List Callouts](https://github.com/mgmeyers/obsidian-list-callouts) – create "callout" lists: change element's front symbol/icon, add color of them and background
-- [Ordered List Style](https://github.com/erykwalder/obsidian-list-style) – change style of ordered lists from a wide [selection](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type#specifications)
-  - styles apply only in [Reading](https://help.obsidian.md/Editing+and+formatting/Edit+and+preview+Markdown#Editor+views) view
+- [Ordered List Style](https://github.com/erykwalder/obsidian-list-style) – change style of ordered lists[^1] from a wide [selection](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type#specifications)
 - [Checklist Reset](https://github.com/lhansford/obsidian-checklist-reset) – reset state (set to unchecked) of any checklists in opened note
 
 ### Callouts
@@ -191,3 +189,5 @@ NOTE: After forking/using the template to create your vault, feel free to give t
 ### Tables
 - [Advanced Tables](https://github.com/tgrosinger/advanced-tables-obsidian) – manipulate and navigate tables using buttons from new tab, also add spreadsheet formulas
 - [Sheets Extended](https://github.com/NicoNekoru/obsidan-advanced-table-xt) – create vertical headers, change style of table cells and merge them together
+
+[^1]: plugins work only in [Reading](https://help.obsidian.md/Editing+and+formatting/Edit+and+preview+Markdown#Editor+views) view
