@@ -31,8 +31,14 @@
     "recent-files": {
       "icon": "lucide-file-search"
     },
+    "recent-notes-view": {
+      "icon": "lucide-file-clock"
+    },
     "reveal-preview-view": {
       "icon": "lucide-presentation"
+    },
+    "search": {
+      "icon": "lucide-text-search"
     },
     "webviewer-history": {
       "icon": "lucide-history"

@@ -20,7 +20,6 @@
   "periodic-notes",
   "plugins-annotations",
   "open-with-nldates",
-  "recent-files-obsidian",
   "obsidian-copy-block-link",
   "graph-nested-tags",
   "quick-explorer",
@@ -59,5 +58,6 @@
   "inline-math",
   "cycle-through-panes",
   "mrj-jump-to-link",
-  "link-preview"
+  "link-preview",
+  "recent-notes"
 ]

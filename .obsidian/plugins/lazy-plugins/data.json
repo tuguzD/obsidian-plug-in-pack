@@ -358,6 +358,9 @@
       },
       "link-preview": {
         "startupType": "instant"
+      },
+      "recent-notes": {
+        "startupType": "instant"
       }
     }
   }
