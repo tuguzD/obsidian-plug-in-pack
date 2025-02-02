@@ -2,12 +2,7 @@
   "debounceTimeout": 300,
   "ignoreOpenFiles": true,
   "ignoreForceViewAll": true,
-  "folders": [
-    {
-      "folder": "",
-      "viewMode": ""
-    }
-  ],
+  "folders": [],
   "files": [
     {
       "filePattern": "HOME",
