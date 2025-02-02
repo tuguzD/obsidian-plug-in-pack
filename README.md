@@ -182,7 +182,7 @@ NOTE: After forking/using the template to create your vault, feel free to give t
 - [Callout Integrator](https://github.com/Cleoche/obsidian-callout-integrator) – include selected blocks of text in existing callouts using a hotkey (containing "`>`")
 
 ### Maths
-- [Latex Suite](https://github.com/artisticat1/obsidian-latex-suite) – type [LaTeX](https://www.overleaf.com/learn/latex/Mathematical_expressions) quicker using customizable snippets, [conceal](https://github.com/artisticat1/obsidian-latex-suite?tab=readme-ov-file#conceal) LaTeX markup for ease of reading
+- [Latex Suite](https://github.com/artisticat1/obsidian-latex-suite) – type [LaTeX](https://www.overleaf.com/learn/latex/Mathematical_expressions) quicker using customizable snippets, [conceal](https://github.com/artisticat1/obsidian-latex-suite?tab=readme-ov-file#conceal) its markup for ease of editing
 - [Better Math in Callouts & Blockquotes](https://github.com/RyotaUshio/obsidian-math-in-callout) – properly display math formulas in both callouts and blockquotes
 - [No More Flickering Inline Math](https://github.com/RyotaUshio/obsidian-inline-math) – prevent inline math block from flickering with each `Space` key pressed
 
