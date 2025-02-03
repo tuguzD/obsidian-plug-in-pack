@@ -379,6 +379,9 @@
       },
       "statusbar-organizer": {
         "startupType": "instant"
+      },
+      "obsidian-folder-focus-mode": {
+        "startupType": "instant"
       }
     }
   }
