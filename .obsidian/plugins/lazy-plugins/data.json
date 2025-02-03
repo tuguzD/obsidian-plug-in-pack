@@ -394,6 +394,9 @@
       },
       "color-folders-files": {
         "startupType": "instant"
+      },
+      "settings-management": {
+        "startupType": "instant"
       }
     }
   }
