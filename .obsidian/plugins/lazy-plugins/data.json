@@ -391,6 +391,9 @@
       },
       "obsidian-meta-bind-plugin": {
         "startupType": "long"
+      },
+      "color-folders-files": {
+        "startupType": "instant"
       }
     }
   }
