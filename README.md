@@ -142,6 +142,7 @@ NOTE: After forking/using the template to create your vault, feel free to give t
 - [Homepage](https://github.com/mirnovov/obsidian-homepage) – set any note as a "landing" page that will be opened when app launches and/or all tabs are closed
 - [Beautitab](https://github.com/andrewmcgivery/obsidian-beautitab) – replace empty "New tab" with a page containing background, search bar, recent notes/bookmarks
 - [Mouse Navigation](https://github.com/hobeom/obsidian-mouse-navigation) – use gestures while pressing `RMB`: scroll note to top/bottom, navigate forward/backward
+- [Projects](https://github.com/marcusolsson/obsidian-projects) – interact with in-folder notes in different views (table/board/calendar/gallery) created with metadata
 
 ### Information
 - [Reading Time](https://github.com/avr/obsidian-reading-time) – view an estimated reading time (configurable appearance) for an opened note in [Status bar](https://help.obsidian.md/User+interface/Status+bar)
