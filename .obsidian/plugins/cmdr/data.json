@@ -10,21 +10,9 @@
   "statusBar": [],
   "pageHeader": [
     {
-      "id": "file-explorer:reveal-active-file",
-      "icon": "lucide-crosshair",
-      "name": "Files: Reveal current file in navigation",
-      "mode": "any"
-    },
-    {
       "id": "obsidian-version-history-diff:open-git-diff-view",
       "icon": "lucide-github",
       "name": "Version history diff: Show Git Diff view for active file",
-      "mode": "any"
-    },
-    {
-      "id": "quick-tagger:quick-add-tag",
-      "icon": "lucide-tags",
-      "name": "Quick Tagger: Add tag",
       "mode": "any"
     },
     {

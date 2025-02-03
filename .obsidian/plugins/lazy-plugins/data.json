@@ -373,6 +373,9 @@
       },
       "visual-crossing-weather": {
         "startupType": "long"
+      },
+      "multi-properties": {
+        "startupType": "instant"
       }
     }
   }
