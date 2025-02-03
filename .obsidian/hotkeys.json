@@ -346,5 +346,13 @@
       ],
       "key": "Z"
     }
+  ],
+  "better-plugins-manager:manager-view": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "P"
+    }
   ]
 }

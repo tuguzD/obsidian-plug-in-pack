@@ -397,6 +397,9 @@
       },
       "settings-management": {
         "startupType": "instant"
+      },
+      "better-plugins-manager": {
+        "startupType": "disabled"
       }
     }
   }
