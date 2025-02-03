@@ -921,7 +921,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": "1st"
+      "delay": ""
     },
     {
       "id": "plugins-annotations",
@@ -1170,6 +1170,15 @@
       "id": "workspaces-plus",
       "name": "Workspaces Plus",
       "desc": "Quickly switch and manage workspaces",
+      "group": "",
+      "tags": [],
+      "enabled": true,
+      "delay": ""
+    },
+    {
+      "id": "obsidian-projects",
+      "name": "Projects",
+      "desc": "Plain text project planning.",
       "group": "",
       "tags": [],
       "enabled": true,
