@@ -376,6 +376,9 @@
       },
       "multi-properties": {
         "startupType": "instant"
+      },
+      "statusbar-organizer": {
+        "startupType": "instant"
       }
     }
   }

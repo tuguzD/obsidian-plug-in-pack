@@ -31,11 +31,7 @@
   "macros": [],
   "explorer": [],
   "hide": {
-    "statusbar": [
-      "obsidian-discordrpc",
-      "canvas-mindmap",
-      "various-complements"
-    ],
+    "statusbar": [],
     "leftRibbon": [
       "Open today",
       "Open quick switcher",

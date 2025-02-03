@@ -1,0 +1,97 @@
+{
+  "activePreset": "Basic",
+  "activeFullscreenPreset": "Default",
+  "separateFullscreenPreset": true,
+  "presets": {
+    "Basic": {
+      "cmdr-cmdr-adder;1": {
+        "position": 5,
+        "visible": true
+      },
+      "plugin-backlink;1": {
+        "position": 7,
+        "visible": false
+      },
+      "plugin-properties;1": {
+        "position": 8,
+        "visible": false
+      },
+      "plugin-obsidian-cursor-location-plugin;1": {
+        "position": 6,
+        "visible": true
+      },
+      "plugin-canvas-mindmap-mind-map-status-bar;1": {
+        "position": 9,
+        "visible": false
+      },
+      "plugin-obsidian-reading-time;1": {
+        "position": 10,
+        "visible": true
+      },
+      "left-region;1": {
+        "position": 4,
+        "visible": true
+      },
+      "plugin-workspaces-plus-workspace-switcher;1": {
+        "position": 20,
+        "visible": true
+      },
+      "plugin-enhanced-annotations-enhanced-annotations__status-enhanced-annotations__display-none;1": {
+        "position": 11,
+        "visible": false
+      },
+      "plugin-obsidian-git;1": {
+        "position": 1,
+        "visible": true
+      },
+      "plugin-better-word-count;1": {
+        "position": 12,
+        "visible": true
+      },
+      "plugin-editing-toolbar-cMenuToolbar-statusbar-button;1": {
+        "position": 13,
+        "visible": false
+      },
+      "plugin-js-engine;1": {
+        "position": 14,
+        "visible": false
+      },
+      "plugin-obsidian-languagetool-plugin;1": {
+        "position": 15,
+        "visible": true
+      },
+      "plugin-obsidian-discordrpc;1": {
+        "position": 16,
+        "visible": false
+      },
+      "plugin-various-complements;1": {
+        "position": 17,
+        "visible": false
+      },
+      "plugin-obsidian-plugin-update-tracker;1": {
+        "position": 3,
+        "visible": true
+      },
+      "plugin-visual-crossing-weather;1": {
+        "position": 18,
+        "visible": false
+      },
+      "plugin-visual-crossing-weather;2": {
+        "position": 19,
+        "visible": true
+      },
+      "plugin-obsidian-wakatime;1": {
+        "position": 0,
+        "visible": true
+      },
+      "plugin-obsidian-git;2": {
+        "position": 2,
+        "visible": true
+      }
+    }
+  },
+  "presetsOrder": [
+    "Basic"
+  ],
+  "version": "2.1.3"
+}
