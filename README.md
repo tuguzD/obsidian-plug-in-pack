@@ -22,6 +22,8 @@ NOTE: After forking/using the template to create your vault, feel free to give t
 - [Recent Notes](https://github.com/kamil-rudnicki/obsidian-recent-notes) – view an organized timeline of recently edited files (grouped by their modification time)
 - [Paste Image Rename](https://github.com/reorx/obsidian-paste-image-rename) – choose name and location for each file (e.g., images from clipboard) added to vault
 - [Commander](https://github.com/phibr0/obsidian-commander) – add new macros and commands to app menus (ribbon, status/tool/tab bar, editor/file menu)
+- [Status Bar Organizer](https://github.com/Opisek/obsidian-statusbar-organizer) – ...
+- [Settings Management](https://github.com/xhuajin/obsidian-settings-management/blob/master/manifest.json) – ...
 - [Jump to link](https://github.com/mrjackphil/obsidian-jump-to-link) – quickly navigate between links, or jump to any word inside of opened note (via hotkeys)
 - [Link Preview](https://github.com/felipetappata/obsidian-link-preview) – show a preview for external links (without leaving note, unlike when using core [Web viewer](https://help.obsidian.md/plugins/web-viewer))
 </details>
@@ -84,6 +86,7 @@ NOTE: After forking/using the template to create your vault, feel free to give t
 
 ## *Manage plugins* much easier
 - [Lazy Plugin Loader](https://github.com/alangrainger/obsidian-lazy-plugins) – load chosen plugins later to improve speed of `Obsidian` app launch
+- [Better Plugins Manager](https://github.com/0011000000110010/obsidian-manager) – ...
 - [Plugin Update Tracker](https://github.com/swar8080/obsidian-plugin-update-tracker) – show updates for all plugins, browse their release notes and even ignore them
 - [BRAT](https://github.com/TfTHacker/obsidian42-brat) – download plugins that were not listed from in-app plugin search (or beta versions of listed plugins)
 - [Plugins Annotations](https://github.com/alberti42/obsidian-plugins-annotations) – add custom annotation for each plugin to store personal note (e.g., its actual use-case scenario, as labels can't usually provide full info)
@@ -94,6 +97,8 @@ NOTE: After forking/using the template to create your vault, feel free to give t
   - [JS Engine](https://github.com/mProjectsCode/obsidian-js-engine-plugin) – execute `JavaScript` code from a special codeblock (allows plugin above to [run scripts](https://github.com/chrisgurney/obsidian-note-toolbar/wiki/Executing-scripts#script-item-types))
 - [Execute Code](https://github.com/twibiral/obsidian-execute-code) – execute code snippets in codeblocks of notes for locally installed [languages](https://github.com/twibiral/obsidian-execute-code?tab=readme-ov-file#supported-programming-languages-)
 - [Doubleshift](https://github.com/Qwyntex/doubleshift) – run app commands by pressing specified key twice (by default, `Shift` for [Quick switcher](https://help.obsidian.md/Plugins/Quick+switcher))
+- [Visual Crossing Weather](https://github.com/willasm/vc-weather) – ...
+- [Meta Bind](https://github.com/mProjectsCode/obsidian-meta-bind-plugin) – ...
 - [Dataview](https://github.com/blacksmithgu/obsidian-dataview) – treat your vault as a database: parse, [query](https://github.com/blacksmithgu/obsidian-dataview?tab=readme-ov-file#querying) and view data of any notes containing [metadata](https://github.com/blacksmithgu/obsidian-dataview?tab=readme-ov-file#data)
 
 ### Templating
@@ -110,6 +115,8 @@ NOTE: After forking/using the template to create your vault, feel free to give t
 - [Icon Shortcodes](https://github.com/aidenlx/obsidian-icon-shortcodes) – insert emojis/icons (in-app/custom) with fuzzy-searched shortcodes (`:open_book:` → 📖)
 - [Image Converter](https://github.com/xryul/obsidian-image-converter) – convert/compress new images, resize/align and crop/rotate/flip images used in notes
 - [Note Refactor](https://github.com/lynchjames/note-refactor-obsidian) – split any chosen note, or extract selected part of a note into a new/existing one
+- [Multi-Properties](https://github.com/technohiker/obsidian-multi-properties) – ...
+- [Waypoint](https://github.com/IdreesInc/Waypoint) – ...
 
 ### Reading
 - ~~[Continuous Mode](https://github.com/gasparschott/obsidian-continuous-mode)~~ – display all open notes or files (like PDFs) in tab group as a single scrollable document
@@ -117,6 +124,7 @@ NOTE: After forking/using the template to create your vault, feel free to give t
 - [Chord Sheets](https://github.com/olvidalo/obsidian-chord-sheets?tab=readme-ov-file#-autoscroll) – start/stop automatic scroll of an active note, configure scrolling speed on the fly
 - [Mindmap NextGen](https://github.com/james-tindal/obsidian-mindmap-nextgen) – view active note's content as a mindmap, configure its appearance and make screenshots
 - [Media Notes](https://github.com/jemstelos/obsidian-media-notes) – easily pin a video to the note, control its playback and insert configurable timestamps
+- [Abbreviations and Acronyms](https://github.com/dragonish/obsidian-abbreviations) – ...
 - ~~[Rich Foot](https://github.com/jparkerweb/rich-foot)~~ – display backlinks, outlinks, and created/modified dates in a footer of any note (unless ignored)
   - disabled (for now) due to a "flickering" conflict with "Hover Editor" plugin
 
@@ -124,6 +132,7 @@ NOTE: After forking/using the template to create your vault, feel free to give t
 - [Blur](https://github.com/gapmiss/blur) – apply blur effect to portions of text to obfuscate it (non-[Markdown](https://help.obsidian.md/Editing+and+formatting/Basic+formatting+syntax), so works only in `Obsidian` app)
 - [Pixel Banner](https://github.com/jparkerweb/pixel-banner) – make notes more visually appealing by creating a banner image (from vault/Web) at their top
 - [Widgets](https://github.com/rafaelveiga/obsidian-widgets) – add widgets (clock, [countdown](https://github.com/rafaelveiga/obsidian-widgets?tab=readme-ov-file#countdown), counter, quote) to your notes from custom codeblocks
+- [Party](https://github.com/shap-po/obsidian-party) – ...
 
 ### Navigation
 - [Vertical Tabs](https://github.com/oxdc/obsidian-vertical-tabs) – group, organize and efficiently navigate between tabs using a interactable vertical list of them
@@ -142,8 +151,10 @@ NOTE: After forking/using the template to create your vault, feel free to give t
 - [Enhanced Annotations](https://github.com/ycnmhd/obsidian-enhanced-annotations) – view/copy all comments/highlights of an opened note, create new notes from them
 
 ### File explorer
-- [File Color](https://github.com/ecustic/obsidian-file-color) – apply text/background colors (from a [list](https://github.com/ecustic/obsidian-file-color?tab=readme-ov-file#changing-the-palette)) to files and folders directly from core [File explorer](https://help.obsidian.md/Plugins/File+explorer) plugin
+- ~~[File Color](https://github.com/ecustic/obsidian-file-color)~~ – apply text/background colors (from a [list](https://github.com/ecustic/obsidian-file-color?tab=readme-ov-file#changing-the-palette)) to files and folders directly from core [File explorer](https://help.obsidian.md/Plugins/File+explorer) plugin
+- [Color Folders and Files](https://github.com/Mithadon/obsidian-color-folders-files) – ...
 - [Folder notes](https://github.com/LostPaul/obsidian-folder-notes) – attach notes to any folder ("in bulk" via templates), open them from folder items of explorer view
+- [Folder Focus Mode](https://github.com/grochowski/obsidian-folder-focus-mode) – ...
 - [Iconic](https://github.com/gfxholo/iconic) – set custom (colored) emoji/icon for files/folders ("in bulk" via rules) and app menus with their own icons
 - [File Explorer++](https://github.com/kelszo/obsidian-file-explorer-plus) – hide/pin both files and folders (even "in bulk") directly from core [File explorer](https://help.obsidian.md/Plugins/File+explorer) plugin
 
