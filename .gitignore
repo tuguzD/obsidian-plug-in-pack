@@ -1,5 +1,6 @@
 # Exclude certain plugin data (don't expose sensitive data)
 **/todoist-token
+**/visual-crossing-weather/data.json
 **/cursor-positions.json
 **/various-complements/histories.json
 **/text-extractor/cache/**
