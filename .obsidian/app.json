@@ -7,5 +7,6 @@
   "showUnsupportedFiles": true,
   "showInlineTitle": false,
   "spellcheckDictionary": [],
-  "attachmentFolderPath": "./"
+  "attachmentFolderPath": "./",
+  "useMarkdownLinks": true
 }
