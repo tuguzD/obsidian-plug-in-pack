@@ -1,0 +1,49 @@
+{
+  "effectConfigs": {
+    "checkbox": {
+      "effect": "confetti",
+      "target": "element",
+      "count": [],
+      "speed": [],
+      "size": [],
+      "spread": [],
+      "lifetime": [],
+      "colors": [],
+      "shapes": []
+    },
+    "task": {
+      "effect": "confetti",
+      "target": "element",
+      "count": [],
+      "speed": [],
+      "size": [],
+      "spread": [],
+      "lifetime": [],
+      "colors": [],
+      "shapes": []
+    },
+    "dataview": {
+      "effect": "confetti",
+      "target": "element",
+      "count": [],
+      "speed": [],
+      "size": [],
+      "spread": [],
+      "lifetime": [],
+      "colors": [],
+      "shapes": []
+    },
+    "kanban": {
+      "effect": "confetti",
+      "target": "element",
+      "count": [],
+      "speed": [],
+      "size": [],
+      "spread": [],
+      "lifetime": [],
+      "colors": [],
+      "shapes": []
+    }
+  },
+  "customShapes": {}
+}

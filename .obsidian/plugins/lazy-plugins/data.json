@@ -367,6 +367,12 @@
       },
       "insert-multiple-attachments": {
         "startupType": "short"
+      },
+      "obsidian-party": {
+        "startupType": "instant"
+      },
+      "visual-crossing-weather": {
+        "startupType": "long"
       }
     }
   }
