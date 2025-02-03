@@ -49,7 +49,12 @@
     },
     {
       "id": "3rd",
-      "name": "Very long [5s]",
+      "name": "Longer [3s]",
+      "time": 3
+    },
+    {
+      "id": "4th",
+      "name": "Very long (5s)",
       "time": 5
     }
   ],
@@ -61,7 +66,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "4th"
     },
     {
       "id": "advanced-canvas",
@@ -70,7 +75,7 @@
       "group": "canvas",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "2nd"
     },
     {
       "id": "beautitab",
@@ -79,7 +84,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "better-search-views",
@@ -97,7 +102,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "blur",
@@ -133,7 +138,7 @@
       "group": "callout",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "callout-menu",
@@ -142,7 +147,7 @@
       "group": "callout",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "callout-suggestions",
@@ -151,7 +156,7 @@
       "group": "callout",
       "tags": [],
       "enabled": false,
-      "delay": "1st"
+      "delay": "2nd"
     },
     {
       "id": "canvas-card-bg-remover",
@@ -160,7 +165,7 @@
       "group": "canvas",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "canvas-keyboard-pan",
@@ -169,7 +174,7 @@
       "group": "canvas",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "canvas-link-optimizer",
@@ -196,7 +201,7 @@
       "group": "canvas",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "canvas-minimap",
@@ -205,7 +210,7 @@
       "group": "canvas",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "chord-sheets",
@@ -214,7 +219,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "4th"
     },
     {
       "id": "cmdr",
@@ -232,7 +237,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "2nd"
     },
     {
       "id": "color-folders-files",
@@ -250,7 +255,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "continuous-mode",
@@ -286,7 +291,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "double-click-tab",
@@ -313,7 +318,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "2nd"
     },
     {
       "id": "enhanced-annotations",
@@ -340,7 +345,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "2nd"
     },
     {
       "id": "file-explorer-plus",
@@ -358,7 +363,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "folders2graph",
@@ -403,7 +408,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "image-converter",
@@ -412,7 +417,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "4th"
     },
     {
       "id": "inline-math",
@@ -430,7 +435,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "js-engine",
@@ -439,7 +444,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "lazy-plugins",
@@ -457,7 +462,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "link-headers-directly",
@@ -466,7 +471,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "link-preview",
@@ -484,7 +489,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "list-style",
@@ -493,7 +498,7 @@
       "group": "list",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "math-in-callout",
@@ -502,7 +507,7 @@
       "group": "math",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "media-notes",
@@ -511,7 +516,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "mouse-navigation",
@@ -547,7 +552,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "note-refactor-obsidian",
@@ -556,7 +561,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "note-toolbar",
@@ -565,7 +570,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "novel-word-count",
@@ -574,7 +579,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "obsidian-auto-link-title",
@@ -592,7 +597,7 @@
       "group": "list",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "obsidian-copy-block-link",
@@ -601,7 +606,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "obsidian-cursor-location-plugin",
@@ -610,7 +615,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "obsidian-day-and-night",
@@ -619,7 +624,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "obsidian-discordrpc",
@@ -628,7 +633,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "4th"
     },
     {
       "id": "obsidian-doubleshift",
@@ -682,7 +687,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "obsidian-icon-shortcodes",
@@ -691,7 +696,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "2nd"
     },
     {
       "id": "obsidian-languagetool-plugin",
@@ -700,7 +705,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "obsidian-latex-suite",
@@ -709,7 +714,7 @@
       "group": "math",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "2nd"
     },
     {
       "id": "obsidian-limelight",
@@ -727,7 +732,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "obsidian-list-callouts",
@@ -736,7 +741,7 @@
       "group": "list",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "obsidian-meta-bind-plugin",
@@ -745,7 +750,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "4th"
     },
     {
       "id": "obsidian-mindmap-nextgen",
@@ -754,7 +759,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "2nd"
     },
     {
       "id": "obsidian-outliner",
@@ -790,7 +795,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "2nd"
     },
     {
       "id": "obsidian-reading-time",
@@ -835,7 +840,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "obsidian-view-mode-by-frontmatter",
@@ -844,7 +849,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "obsidian-wakatime",
@@ -853,7 +858,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "2nd"
     },
     {
       "id": "obsidian42-brat",
@@ -880,7 +885,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "2nd"
     },
     {
       "id": "open-with-nldates",
@@ -889,7 +894,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "2nd"
     },
     {
       "id": "optimize-canvas-connections",
@@ -898,7 +903,7 @@
       "group": "canvas",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "periodic-notes",
@@ -916,7 +921,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "plugins-annotations",
@@ -952,7 +957,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "recent-notes",
@@ -970,7 +975,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "replace-all",
@@ -1042,7 +1047,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "slides-extended",
@@ -1051,7 +1056,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "4th"
     },
     {
       "id": "statusbar-organizer",
@@ -1087,7 +1092,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "text-extractor",
@@ -1096,7 +1101,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "todoist-sync-plugin",
@@ -1105,7 +1110,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "2nd"
     },
     {
       "id": "typewriter-mode",
@@ -1114,7 +1119,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "various-complements",
@@ -1123,7 +1128,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "vertical-tabs",
@@ -1141,7 +1146,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "4th"
     },
     {
       "id": "waypoint",
@@ -1159,7 +1164,7 @@
       "group": "",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "workspaces-plus",

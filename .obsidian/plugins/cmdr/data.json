@@ -28,7 +28,27 @@
       "mode": "any"
     }
   ],
-  "macros": [],
+  "macros": [
+    {
+      "macro": [
+        {
+          "action": 1,
+          "delay": "1500"
+        },
+        {
+          "action": 0,
+          "commandId": "workspaces-plus:Basic"
+        },
+        {
+          "action": 0,
+          "commandId": "statusbar-organizer:statusbar-organizer-preset-0"
+        }
+      ],
+      "name": "Set workspace (plugins loaded)",
+      "icon": "lucide-app-window",
+      "startup": false
+    }
+  ],
   "explorer": [],
   "hide": {
     "statusbar": [],
