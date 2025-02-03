@@ -382,6 +382,12 @@
       },
       "obsidian-folder-focus-mode": {
         "startupType": "instant"
+      },
+      "abbreviations-mark": {
+        "startupType": "instant"
+      },
+      "waypoint": {
+        "startupType": "instant"
       }
     }
   }

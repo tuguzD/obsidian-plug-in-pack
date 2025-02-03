@@ -1,0 +1,13 @@
+{
+  "useMarkdownExtraSyntax": false,
+  "metadataKeyword": "abbr",
+  "detectAffixes": true,
+  "affixes": "s, es",
+  "markInSourceMode": true,
+  "globalAbbreviations": [
+    {
+      "key": "CSS",
+      "title": "Cascading Style Sheets"
+    }
+  ]
+}

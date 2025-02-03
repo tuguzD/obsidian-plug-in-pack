@@ -1,0 +1,11 @@
+{
+  "id": "abbreviations-mark",
+  "name": "Abbreviations and Acronyms",
+  "version": "1.2.1",
+  "minAppVersion": "0.15.0",
+  "description": "Implements automatic marking of abbreviations and acronyms (terminology).",
+  "author": "dragonish",
+  "authorUrl": "https://github.com/dragonish",
+  "fundingUrl": "https://ko-fi.com/monogamy",
+  "isDesktopOnly": false
+}
