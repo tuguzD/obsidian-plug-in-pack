@@ -1,6 +1,6 @@
 # Exclude certain plugin data (don't expose sensitive data)
 **/todoist-token
-.obsidian/plugins/visual-crossing-weather/data.json
+**/visual-crossing-weather/data.json
 **/cursor-positions.json
 **/various-complements/histories.json
 **/text-extractor/cache/**
