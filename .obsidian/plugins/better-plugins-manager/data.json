@@ -1404,6 +1404,33 @@
       "tags": [],
       "enabled": true,
       "delay": "2nd"
+    },
+    {
+      "id": "image-captions",
+      "name": "Image Captions",
+      "desc": "Adds captions to images when there is alt-text specified",
+      "group": "edit-media",
+      "tags": [],
+      "enabled": true,
+      "delay": ""
+    },
+    {
+      "id": "frontmatter-markdown-links",
+      "name": "Frontmatter Markdown Links",
+      "desc": "Adds support for markdown links in frontmatter",
+      "group": "link",
+      "tags": [],
+      "enabled": true,
+      "delay": ""
+    },
+    {
+      "id": "better-markdown-links",
+      "name": "Better Markdown Links",
+      "desc": "Adds support for angle bracket links and manages relative links properly",
+      "group": "link",
+      "tags": [],
+      "enabled": true,
+      "delay": ""
     }
   ]
 }

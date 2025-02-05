@@ -1,0 +1,11 @@
+{
+  "allowEmptyEmbedAlias": true,
+  "automaticallyConvertNewLinks": true,
+  "automaticallyUpdateLinksOnRenameOrMove": true,
+  "ignoreIncompatibleObsidianSettings": true,
+  "includeAttachmentExtensionToEmbedAlias": false,
+  "useAngleBrackets": true,
+  "useLeadingDot": true,
+  "excludePaths": [],
+  "includePaths": []
+}

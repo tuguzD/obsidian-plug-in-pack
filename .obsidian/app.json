@@ -11,5 +11,6 @@
     "Maths"
   ],
   "attachmentFolderPath": "./",
-  "useMarkdownLinks": true
+  "useMarkdownLinks": true,
+  "newLinkFormat": "relative"
 }
