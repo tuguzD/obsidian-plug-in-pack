@@ -148,6 +148,11 @@
       "id": "default",
       "name": "App features",
       "color": "#8d3458"
+    },
+    {
+      "id": "graph",
+      "name": "Graphs",
+      "color": "#549900"
     }
   ],
   "TAGS": [
@@ -155,11 +160,6 @@
       "id": "search",
       "name": "search",
       "color": "#839400"
-    },
-    {
-      "id": "graph",
-      "name": "graph",
-      "color": "#a000a3"
     },
     {
       "id": "internet",
@@ -502,10 +502,8 @@
       "id": "folders2graph",
       "name": "Folders to Graph",
       "desc": "Display your vault folder structure into your graphs.",
-      "group": "core",
-      "tags": [
-        "graph"
-      ],
+      "group": "graph",
+      "tags": [],
       "enabled": false,
       "delay": ""
     },
@@ -513,10 +511,8 @@
       "id": "graph-nested-tags",
       "name": "Nested tags graph",
       "desc": "Links nested tags in graph view",
-      "group": "core",
-      "tags": [
-        "graph"
-      ],
+      "group": "graph",
+      "tags": [],
       "enabled": true,
       "delay": ""
     },
@@ -1324,9 +1320,7 @@
       "name": "Waypoint",
       "desc": "Easily generate dynamic content maps in your folder notes using waypoints. Enables folders to show up in the graph view and removes the need for messy tags!",
       "group": "edit-file",
-      "tags": [
-        "graph"
-      ],
+      "tags": [],
       "enabled": true,
       "delay": ""
     },
@@ -1362,6 +1356,33 @@
       "name": "Virtual Linker / Glossary",
       "desc": "Automatically creates virtual links for text within your notes that match the titles or aliases of other notes in your vault. Create a glossary-like functionality, show unlinked mentions and transform them to real links.",
       "group": "edit-file",
+      "tags": [],
+      "enabled": true,
+      "delay": ""
+    },
+    {
+      "id": "custom-node-size",
+      "name": "Custom Node Size",
+      "desc": "Customize nodes size for improved graph understanding.",
+      "group": "graph",
+      "tags": [],
+      "enabled": true,
+      "delay": ""
+    },
+    {
+      "id": "persistent-graph",
+      "name": "Persistent Graph",
+      "desc": "Adds commands to save and restore the positions of nodes on the global graph view",
+      "group": "graph",
+      "tags": [],
+      "enabled": true,
+      "delay": ""
+    },
+    {
+      "id": "sync-graph-settings",
+      "name": "Sync Graph Settings",
+      "desc": "This is a plugin for syncing various graph settings to Local Graphs",
+      "group": "graph",
       "tags": [],
       "enabled": true,
       "delay": ""

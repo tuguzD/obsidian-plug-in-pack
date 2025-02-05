@@ -289,22 +289,6 @@
       "key": "Q"
     }
   ],
-  "cycle-through-panes:cycle-through-panes-reverse": [
-    {
-      "modifiers": [
-        "Mod"
-      ],
-      "key": "ArrowLeft"
-    }
-  ],
-  "cycle-through-panes:cycle-through-panes": [
-    {
-      "modifiers": [
-        "Mod"
-      ],
-      "key": "ArrowRight"
-    }
-  ],
   "workspace:next-tab": [
     {
       "modifiers": [
@@ -353,6 +337,22 @@
         "Alt"
       ],
       "key": "P"
+    }
+  ],
+  "cycle-through-panes:cycle-through-panes-reverse": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "ArrowLeft"
+    }
+  ],
+  "cycle-through-panes:cycle-through-panes": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "ArrowRight"
     }
   ]
 }

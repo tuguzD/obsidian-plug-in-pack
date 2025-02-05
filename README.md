@@ -71,7 +71,12 @@ This is just a large collection of already set up plugins and hotkeys… That wa
 
 7. [Tag Wrangler](https://github.com/pjeby/tag-wrangler) <sup>[✅[Tags view](https://help.obsidian.md/Plugins/Tags+view) ON]</sup> – rename (sub)tags “in bulk”, filter search with tags and manage “[Tag Pages](https://github.com/pjeby/tag-wrangler?tab=readme-ov-file#tag-pages)”
 
-8. [Nested tags graph](https://github.com/drPilman/obsidian-graph-nested-tags) / [Folders to Graph](https://github.com/Ratibus11/folders2graph) <sup>[✅[Graph view](https://help.obsidian.md/Plugins/Graph+view) ON]</sup> – link nested tags / show folder structure in graph view (plugins break each other, so choose the one you like)
+### 🌳 Change state of [Graph view](https://help.obsidian.md/Plugins/Graph+view)
+- [Nested tags graph](https://github.com/drPilman/obsidian-graph-nested-tags) / ~~[Folders to Graph](https://github.com/Ratibus11/folders2graph)~~ – link nested tags / show folder structure in graph view
+	- plugins break each other, so choose the one you like the most
+- [Custom Node Size](https://github.com/jackvonhouse/custom-node-size) – overwrite auto-calculated weight (size) of any note’s node inside a local/global graph view
+- [Persistent Graph](https://github.com/Sanqui/obsidian-persistent-graph) – save and (automatically) restore the locations of all nodes in a global graph view
+- [Sync Graph Settings](https://github.com/Xallt/sync-graph-settings) – copy group and color settings from global graph view to your active local one
 
 ### 🔎 [Search](https://help.obsidian.md/Plugins/Search) for text quicker
 - [Omnisearch](https://github.com/scambier/obsidian-omnisearch) – search text in contents of notes and (non-textual) attachments like images, documents, and PDFs 
