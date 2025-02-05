@@ -45,8 +45,6 @@ NOTE: After forking/using the template to create your vault, feel free to give t
 ## Overhaul *core plugins*
 <details> <summary> Add more functionality to core plugins using community ones below: </summary>
 
-- [Periodic Notes](https://github.com/liamcain/obsidian-periodic-notes) <sup>[⚠️[Daily Notes](https://help.obsidian.md/Plugins/Daily+notes) OFF]</sup> – create not just daily, but also weekly, monthly, quarterly and yearly notes!
-
 - [Better Word Count](https://github.com/lukeleppan/better-word-count) <sup>[⚠️[Word Count](https://help.obsidian.md/Plugins/Word+count) OFF]</sup> – collect stats about your whole vault, also customize displaying them
 
 - [Slides Extended](https://github.com/ebullient/obsidian-slides-extended) <sup>[⚠️[Slides](https://help.obsidian.md/Plugins/Slides) OFF]</sup> – create presentations: customize each element and apply themes globally, improve slide navigation, view changes live, switch between different modes, and more
@@ -64,7 +62,16 @@ NOTE: After forking/using the template to create your vault, feel free to give t
 - [Nested tags graph](https://github.com/drPilman/obsidian-graph-nested-tags) / [Folders to Graph](https://github.com/Ratibus11/folders2graph) <sup>[✅[Graph view](https://help.obsidian.md/Plugins/Graph+view) ON]</sup> – link nested tags / show folder structure in graph view (plugins break each other, so choose the one you like)
 </details>
 
-### [Canvas](https://help.obsidian.md/Plugins/Canvas) plugins
+### [Daily notes](https://help.obsidian.md/Plugins/Daily+notes) extensions
+<details> <summary> Core plugin SHOULD be turned OFF (unless issues arise) for community ones below to work: </summary>
+
+- [Periodic Notes](https://github.com/liamcain/obsidian-periodic-notes) – extend core feature by also creating weekly, monthly, quarterly and yearly notes!
+- [Calendar](https://github.com/liamcain/obsidian-calendar-plugin) – navigate between your daily/weekly notes using simple yet customizable calendar view
+- [Natural Language Dates](https://github.com/argenos/nldates-obsidian) – insert link to a daily note by using either natural language or date picker
+- [Open with Natural Language Dates](https://github.com/charliecm/obsidian-open-with-nldates) – quickly open a daily note by typing it in natural language
+</details>
+
+### [Canvas](https://help.obsidian.md/Plugins/Canvas) integrations
 <details> <summary> Core plugin MUST be turned ON for community ones below to work: </summary>
 
 - [Advanced Canvas](https://github.com/Developer-Mike/obsidian-advanced-canvas) – change note/edge styles, auto-resize elements and create presentations from `Canvas` files
@@ -158,11 +165,6 @@ NOTE: After forking/using the template to create your vault, feel free to give t
 - [Folder Focus Mode](https://github.com/grochowski/obsidian-folder-focus-mode) – "focus" on a folder (with its contents) by hiding all other notes in core [File explorer](https://help.obsidian.md/Plugins/File+explorer) plugin
 - [Iconic](https://github.com/gfxholo/iconic) – set custom (colored) emoji/icon for files/folders ("in bulk" via rules) and app menus with their own icons
 - [File Explorer++](https://github.com/kelszo/obsidian-file-explorer-plus) – hide/pin both files and folders (even "in bulk") directly from core [File explorer](https://help.obsidian.md/Plugins/File+explorer) plugin
-
-### Dates
-- [Calendar](https://github.com/liamcain/obsidian-calendar-plugin) – navigate between your daily/weekly notes using simple yet customizable calendar view
-- [Natural Language Dates](https://github.com/argenos/nldates-obsidian) – insert link to a daily note by using either natural language or date picker
-- [Open with Natural Language Dates](https://github.com/charliecm/obsidian-open-with-nldates) – quickly open a daily note by typing it in natural language
 
 ### Search
 - [Omnisearch](https://github.com/scambier/obsidian-omnisearch) – search text in contents of notes and (non-textual) attachments like images, documents and PDFs 
