@@ -97,8 +97,12 @@ NOTE: After forking/using the template to create your vault, feel free to give t
   - [JS Engine](https://github.com/mProjectsCode/obsidian-js-engine-plugin) – execute `JavaScript` code from a special codeblock (allows plugin above to [run scripts](https://github.com/chrisgurney/obsidian-note-toolbar/wiki/Executing-scripts#script-item-types))
 - [Execute Code](https://github.com/twibiral/obsidian-execute-code) – execute code snippets in codeblocks of notes for locally installed [languages](https://github.com/twibiral/obsidian-execute-code?tab=readme-ov-file#supported-programming-languages-)
 - [Doubleshift](https://github.com/Qwyntex/doubleshift) – run app commands by pressing specified key twice (by default, `Shift` for [Quick switcher](https://help.obsidian.md/Plugins/Quick+switcher))
-- [Meta Bind](https://github.com/mProjectsCode/obsidian-meta-bind-plugin) – change note's metadata with inline input fields, metadata displays (view fields), and buttons
+
+### [Properties](https://help.obsidian.md/Editing+and+formatting/Properties) (or note metadata/frontmatter)
 - [Dataview](https://github.com/blacksmithgu/obsidian-dataview) – treat your vault as a database: parse, [query](https://github.com/blacksmithgu/obsidian-dataview?tab=readme-ov-file#querying) and view data of any notes containing [metadata](https://github.com/blacksmithgu/obsidian-dataview?tab=readme-ov-file#data)
+- [Projects](https://github.com/marcusolsson/obsidian-projects) – interact with in-folder notes in different views (table/board/calendar/gallery) created with metadata
+- [Meta Bind](https://github.com/mProjectsCode/obsidian-meta-bind-plugin) – change note's metadata with inline input fields, metadata displays (view fields), and buttons
+- [Multi-Properties](https://github.com/technohiker/obsidian-multi-properties) – add/remove properties for multiple files (from folder, selected or searched) at once
 
 ### Templating
 - [Templater](https://github.com/SilentVoid13/Templater) – insert variables and functions' results into templates, manipulate them with `JavaScript`
@@ -114,7 +118,6 @@ NOTE: After forking/using the template to create your vault, feel free to give t
 - [Icon Shortcodes](https://github.com/aidenlx/obsidian-icon-shortcodes) – insert emojis/icons (in-app/custom) with fuzzy-searched shortcodes (`:open_book:` → 📖)
 - [Image Converter](https://github.com/xryul/obsidian-image-converter) – convert/compress new images, resize/align and crop/rotate/flip images used in notes
 - [Note Refactor](https://github.com/lynchjames/note-refactor-obsidian) – split any chosen note, or extract selected part of a note into a new/existing one
-- [Multi-Properties](https://github.com/technohiker/obsidian-multi-properties) – add/remove properties for multiple files (from folder, selected or searched) at once
 - [Waypoint](https://github.com/IdreesInc/Waypoint) – automatically generate (add/update) tables of contents (link folder note with the regular ones) 
 
 ### Reading
@@ -141,7 +144,6 @@ NOTE: After forking/using the template to create your vault, feel free to give t
 - [Homepage](https://github.com/mirnovov/obsidian-homepage) – set any note as a "landing" page that will be opened when app launches and/or all tabs are closed
 - [Beautitab](https://github.com/andrewmcgivery/obsidian-beautitab) – replace empty "New tab" with a page containing background, search bar, recent notes/bookmarks
 - [Mouse Navigation](https://github.com/hobeom/obsidian-mouse-navigation) – use gestures while pressing `RMB`: scroll note to top/bottom, navigate forward/backward
-- [Projects](https://github.com/marcusolsson/obsidian-projects) – interact with in-folder notes in different views (table/board/calendar/gallery) created with metadata
 
 ### Information
 - [Reading Time](https://github.com/avr/obsidian-reading-time) – view an estimated reading time (configurable appearance) for an opened note in [Status bar](https://help.obsidian.md/User+interface/Status+bar)
