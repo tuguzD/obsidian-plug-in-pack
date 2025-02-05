@@ -13,7 +13,6 @@ NOTE: After forking/using the template to create your vault, feel free to give t
 - [Enhanced Copy](https://github.com/Mara-Li/obsidian-enhanced-copy) – change native copy function behaviour to differ for [reading/editing views](https://help.obsidian.md/Editing+and+formatting/Edit+and+preview+Markdown#Editor+views)
 - [Tab Switcher](https://github.com/Vinzent03/tab-switcher) – ignore groups when switching tabs, navigate tabs in their placement/usage order (via hotkeys)
 - [Remember cursor position](https://github.com/dy-sh/obsidian-remember-cursor-position) – remember notes' cursor and scroll position (edit multiple notes quicker)
-- [Insert Multiple Attachments](https://github.com/mnaoumov/obsidian-insert-multiple-attachments) – allows to insert multiple attachments "in bulk" at the exact time (and not just one)
 </details>
 
 <details> <summary> Others try to add must-have features that feel missing from the app: </summary>
@@ -41,6 +40,11 @@ NOTE: After forking/using the template to create your vault, feel free to give t
 - [Copy Block Link](https://github.com/mgmeyers/obsidian-copy-block-link) – get links to text blocks and headings directly from a context menu
 - [Link Headers Directly](https://github.com/Signynt/link-headers-directly) – show only the last header of internal links[^1], and not the whole note hierarchy
 
+### Actions "in bulk"
+- [Insert Multiple Attachments](https://github.com/mnaoumov/obsidian-insert-multiple-attachments) – allows to insert multiple attachments "in bulk" at the exact time (and not just one)
+- [Multi-Properties](https://github.com/technohiker/obsidian-multi-properties) – add/remove properties for multiple files (from folder, selected or searched) at once
+- [Quick Tagger](https://github.com/Gorkycreator/obsidian-quick-tagger) – add/remove tags of file(s) "in bulk" by calling commands, using hotkeys or context menu
+
 
 ## Overhaul *core plugins*
 <details> <summary> Add more functionality to core plugins using community ones below: </summary>
@@ -58,6 +62,8 @@ NOTE: After forking/using the template to create your vault, feel free to give t
 - [Hover Editor](https://github.com/nothingislost/obsidian-hover-editor) <sup>[✅[Page preview](https://help.obsidian.md/Plugins/Page+preview) ON]</sup> – "turn the hover popover into a full featured [editor instance](https://github.com/nothingislost/obsidian-hover-editor?tab=readme-ov-file#features)"
 
 - [Workspaces Plus](https://github.com/nothingislost/obsidian-workspaces-plus) <sup>[✅[Workspaces](https://help.obsidian.md/Plugins/Workspaces) ON]</sup> – edit and switch workspaces easier, set different themes for each one
+
+- [Tag Wrangler](https://github.com/pjeby/tag-wrangler) <sup>[✅[Tags view](https://help.obsidian.md/Plugins/Tags+view) ON]</sup> – rename (sub)tags "in bulk", filter search with tags and manage "[Tag Pages](https://github.com/pjeby/tag-wrangler?tab=readme-ov-file#tag-pages)"
 
 - [Nested tags graph](https://github.com/drPilman/obsidian-graph-nested-tags) / [Folders to Graph](https://github.com/Ratibus11/folders2graph) <sup>[✅[Graph view](https://help.obsidian.md/Plugins/Graph+view) ON]</sup> – link nested tags / show folder structure in graph view (plugins break each other, so choose the one you like)
 </details>
@@ -114,15 +120,10 @@ NOTE: After forking/using the template to create your vault, feel free to give t
 - [Dataview](https://github.com/blacksmithgu/obsidian-dataview) – treat your vault as a database: parse, [query](https://github.com/blacksmithgu/obsidian-dataview?tab=readme-ov-file#querying) and view data of any notes containing [metadata](https://github.com/blacksmithgu/obsidian-dataview?tab=readme-ov-file#data)
 - [Projects](https://github.com/marcusolsson/obsidian-projects) – interact with in-folder notes in different views (table/board/calendar/gallery) created with metadata
 - [Meta Bind](https://github.com/mProjectsCode/obsidian-meta-bind-plugin) – change note's metadata with inline input fields, metadata displays (view fields), and buttons
-- [Multi-Properties](https://github.com/technohiker/obsidian-multi-properties) – add/remove properties for multiple files (from folder, selected or searched) at once
 
 ### Creating [templates](https://help.obsidian.md/Plugins/Templates)
 - [Templater](https://github.com/SilentVoid13/Templater) – insert variables and functions' results into templates, manipulate them with `JavaScript`
 - [QuickAdd](https://github.com/chhoumann/quickadd) – create notes from templates using custom "[choices](https://quickadd.obsidian.guide/docs/#first-steps)" (templates, captures, macros, multis)
-
-### Managing [tags](https://help.obsidian.md/Editing+and+formatting/Tags)
-- [Tag Wrangler](https://github.com/pjeby/tag-wrangler) – rename (sub)tags "in bulk", filter search with tags and manage "[Tag Pages](https://github.com/pjeby/tag-wrangler?tab=readme-ov-file#tag-pages)"
-- [Quick Tagger](https://github.com/Gorkycreator/obsidian-quick-tagger) – add/remove tags of file(s) "in bulk" by calling commands, using hotkeys or context menu
 
 ### Note editing
 - [Limelight](https://github.com/smikula/obsidian-limelight) – make all opened, but non-active panes dimmer: focus on an actively modified one
