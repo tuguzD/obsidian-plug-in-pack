@@ -71,6 +71,16 @@ NOTE: After forking/using the template to create your vault, feel free to give t
 - [Open with Natural Language Dates](https://github.com/charliecm/obsidian-open-with-nldates) – quickly open a daily note by typing it in natural language
 </details>
 
+### [File explorer](https://help.obsidian.md/Plugins/File+explorer) extensions
+<details> <summary> Change appearance and overall make view more compact (for plugin that CANNOT be turned off): </summary>
+
+- [File Explorer++](https://github.com/kelszo/obsidian-file-explorer-plus) – hide and/or pin both files and folders (even "in bulk") for easier access from core view
+- [Folder Focus Mode](https://github.com/grochowski/obsidian-folder-focus-mode) – "focus" on a folder (with its contents) by hiding all other notes, directly in core view
+- [Folder notes](https://github.com/LostPaul/obsidian-folder-notes) – attach notes to any folder ("in bulk" via templates), open them from folder items in core view
+- [Color Folders and Files](https://github.com/Mithadon/obsidian-color-folders-files) – set text/background colors, change text style for files/folders and store it in presets
+
+</details>
+
 ### [Canvas](https://help.obsidian.md/Plugins/Canvas) integrations
 <details> <summary> Core plugin MUST be turned ON for community ones below to work: </summary>
 
@@ -136,12 +146,13 @@ NOTE: After forking/using the template to create your vault, feel free to give t
 - ~~[Rich Foot](https://github.com/jparkerweb/rich-foot)~~ – display backlinks, outlinks, and created/modified dates in a footer of any note (unless ignored)
   - disabled (for now) due to a "flickering" conflict with "Hover Editor" plugin
 
-### Note appearance
+### Editor appearance
 - [Blur](https://github.com/gapmiss/blur) – apply blur effect to portions of text to obfuscate it (non-[Markdown](https://help.obsidian.md/Editing+and+formatting/Basic+formatting+syntax), so works only in `Obsidian` app)
 - [Pixel Banner](https://github.com/jparkerweb/pixel-banner) – make notes more visually appealing by creating a banner image (from vault/Web) at their top
 - [Widgets](https://github.com/rafaelveiga/obsidian-widgets) – add widgets (clock, [countdown](https://github.com/rafaelveiga/obsidian-widgets?tab=readme-ov-file#countdown), counter, quote) to your notes from custom codeblocks
 - [Colored Tags Wrangler](https://github.com/code-of-chaos/obsidian-colored_tags_wrangler) – assign unique tag colors, then apply them to canvas items, folders and/or notes
 - [Party](https://github.com/shap-po/obsidian-party) – create and customize "particle" effects on certain actions (e.g., completing checkboxes by default)
+- [Iconic](https://github.com/gfxholo/iconic) – set custom (colored) emoji/icon for files/folders ("in bulk" via rules) and app menus with their own icons
 
 ### Navigation
 - [Vertical Tabs](https://github.com/oxdc/obsidian-vertical-tabs) – group, organize and efficiently navigate between tabs using a interactable vertical list of them
@@ -158,13 +169,6 @@ NOTE: After forking/using the template to create your vault, feel free to give t
 - [Occura](https://github.com/Krusty84/obsidian-occura-plugin) – highlight found occurances of text selection, view their total number for an opened note in [Status bar](https://help.obsidian.md/User+interface/Status+bar)
 - [Novel Word Count](https://github.com/isaaclyman/novel-word-count-obsidian) – view [chosen](https://github.com/isaaclyman/novel-word-count-obsidian?tab=readme-ov-file#settings) statistics for a file/folder/vault directly in core [File explorer](https://help.obsidian.md/Plugins/File+explorer) view
 - [Enhanced Annotations](https://github.com/ycnmhd/obsidian-enhanced-annotations) – view/copy all comments/highlights of an opened note, create new notes from them
-
-### File explorer
-- [Color Folders and Files](https://github.com/Mithadon/obsidian-color-folders-files) – set text/background colors, change text style for files/folders and store it all as presets
-- [Folder notes](https://github.com/LostPaul/obsidian-folder-notes) – attach notes to any folder ("in bulk" via templates), open them from folder items of explorer view
-- [Folder Focus Mode](https://github.com/grochowski/obsidian-folder-focus-mode) – "focus" on a folder (with its contents) by hiding all other notes in core [File explorer](https://help.obsidian.md/Plugins/File+explorer) plugin
-- [Iconic](https://github.com/gfxholo/iconic) – set custom (colored) emoji/icon for files/folders ("in bulk" via rules) and app menus with their own icons
-- [File Explorer++](https://github.com/kelszo/obsidian-file-explorer-plus) – hide/pin both files and folders (even "in bulk") directly from core [File explorer](https://help.obsidian.md/Plugins/File+explorer) plugin
 
 ### Search
 - [Omnisearch](https://github.com/scambier/obsidian-omnisearch) – search text in contents of notes and (non-textual) attachments like images, documents and PDFs 
