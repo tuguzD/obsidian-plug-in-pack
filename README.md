@@ -1,4 +1,4 @@
-# 📦 "Plug-in-pack" for 💜[Obsidian](https://obsidian.md) app
+# 📦 “Plug-in-pack” for 💜[Obsidian](https://obsidian.md) app
 
 This is just a large collection of already set up plugins and hotkeys… That was gotten rid of ~~almost~~ any conflicts.
 
