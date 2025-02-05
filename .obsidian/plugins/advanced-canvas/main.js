@@ -2040,6 +2040,7 @@ var DEFAULT_SETTINGS_VALUES = {
   useArrowKeysToChangeSlides: true,
   usePgUpPgDownKeysToChangeSlides: true,
   zoomToSlideWithoutPadding: true,
+  useUnclampedZoomWhilePresenting: false,
   slideTransitionAnimationDuration: 0.5,
   slideTransitionAnimationIntensity: 1.25,
   canvasEncapsulationEnabled: true,
@@ -2351,6 +2352,11 @@ var SETTINGS = {
       zoomToSlideWithoutPadding: {
         label: "Zoom to slide without padding",
         description: "When enabled, the canvas will zoom to the slide without padding.",
+        type: "boolean"
+      },
+      useUnclampedZoomWhilePresenting: {
+        label: "Use unclamped zoom while presenting",
+        description: "When enabled, the zoom will not be clamped while presenting.",
         type: "boolean"
       },
       slideTransitionAnimationDuration: {
@@ -3990,6 +3996,8 @@ var _CanvasHelper = class _CanvasHelper {
     canvas.markViewportChanged();
   }
   static getSmallestAllowedZoomBBox(canvas, bbox) {
+    if (canvas.screenshotting)
+      return bbox;
     if (canvas.canvasRect.width === 0 || canvas.canvasRect.height === 0)
       return bbox;
     const widthZoom = canvas.canvasRect.width / (bbox.maxX - bbox.minX);
@@ -4420,16 +4428,18 @@ var PresentationCanvasExtension = class extends CanvasExtension {
   async animateNodeTransition(canvas, fromNode, toNode) {
     const useCustomZoomFunction = this.plugin.settings.getSetting("zoomToSlideWithoutPadding");
     const animationDurationMs = this.plugin.settings.getSetting("slideTransitionAnimationDuration") * 1e3;
+    const toNodeBBox = CanvasHelper.getSmallestAllowedZoomBBox(canvas, toNode.getBBox());
     if (animationDurationMs > 0 && fromNode) {
       const animationIntensity = this.plugin.settings.getSetting("slideTransitionAnimationIntensity");
-      const currentNodeBBoxEnlarged = BBoxHelper.scaleBBox(fromNode.getBBox(), animationIntensity);
+      const fromNodeBBox = CanvasHelper.getSmallestAllowedZoomBBox(canvas, fromNode.getBBox());
+      const currentNodeBBoxEnlarged = BBoxHelper.scaleBBox(fromNodeBBox, animationIntensity);
       if (useCustomZoomFunction)
         CanvasHelper.zoomToRealBBox(canvas, currentNodeBBoxEnlarged);
       else
         canvas.zoomToBbox(currentNodeBBoxEnlarged);
       await sleep(animationDurationMs / 2);
       if (fromNode.getData().id !== toNode.getData().id) {
-        const nextNodeBBoxEnlarged = BBoxHelper.scaleBBox(toNode.getBBox(), animationIntensity + 0.1);
+        const nextNodeBBoxEnlarged = BBoxHelper.scaleBBox(toNodeBBox, animationIntensity + 0.1);
         if (useCustomZoomFunction)
           CanvasHelper.zoomToRealBBox(canvas, nextNodeBBoxEnlarged);
         else
@@ -4437,11 +4447,10 @@ var PresentationCanvasExtension = class extends CanvasExtension {
         await sleep(animationDurationMs / 2);
       }
     }
-    let nodeBBox = toNode.getBBox();
     if (useCustomZoomFunction)
-      CanvasHelper.zoomToRealBBox(canvas, nodeBBox);
+      CanvasHelper.zoomToRealBBox(canvas, toNodeBBox);
     else
-      canvas.zoomToBbox(nodeBBox);
+      canvas.zoomToBbox(toNodeBBox);
   }
   async startPresentation(canvas, tryContinue = false) {
     if (!tryContinue || this.visitedNodeIds.length === 0) {
@@ -4461,6 +4470,8 @@ var PresentationCanvasExtension = class extends CanvasExtension {
     canvas.wrapperEl.requestFullscreen();
     canvas.wrapperEl.classList.add("presentation-mode");
     canvas.setReadonly(true);
+    if (this.plugin.settings.getSetting("useUnclampedZoomWhilePresenting"))
+      canvas.screenshotting = true;
     canvas.wrapperEl.onkeydown = (e) => {
       if (this.plugin.settings.getSetting("useArrowKeysToChangeSlides")) {
         if (e.key === "ArrowRight")
@@ -4510,6 +4521,8 @@ var PresentationCanvasExtension = class extends CanvasExtension {
     canvas.wrapperEl.onkeydown = null;
     canvas.wrapperEl.onfullscreenchange = null;
     canvas.setReadonly(false);
+    if (this.plugin.settings.getSetting("useUnclampedZoomWhilePresenting"))
+      canvas.screenshotting = false;
     canvas.wrapperEl.classList.remove("presentation-mode");
     if (document.fullscreenElement)
       document.exitFullscreen();
@@ -4554,11 +4567,7 @@ var PresentationCanvasExtension = class extends CanvasExtension {
     if (!fromNode)
       return;
     const toNodeId = this.visitedNodeIds.last();
-    if (!toNodeId)
-      return;
-    let toNode = canvas.nodes.get(toNodeId);
-    if (!toNode)
-      return;
+    let toNode = toNodeId ? canvas.nodes.get(toNodeId) : null;
     if (!toNode) {
       toNode = fromNode;
       this.visitedNodeIds.push(fromNodeId);

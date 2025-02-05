@@ -185,7 +185,8 @@ var pairs = {
 };
 var startPattern = /(<!--|%%|==)/g;
 var endPattern = /(-->|%%|==)/g;
-var blockRegex = /^```/;
+var blockRegex = /```/g;
+var inlineCodeRegex = /`([^`]+)`/g;
 var parseAnnotations = (text2, lineNumber = 0, from = 0, includeEmptyAnnotations = false) => {
   const lines = text2.split("\n");
   const annotations = [];
@@ -198,9 +199,13 @@ var parseAnnotations = (text2, lineNumber = 0, from = 0, includeEmptyAnnotations
     isInsideBlock: false
   };
   for (let i = 0; i < lines.length; i++) {
-    const line = lines[i];
+    let line = lines[i];
     if (blockRegex.test(line)) {
       state.isInsideBlock = !state.isInsideBlock;
+    }
+    if (inlineCodeRegex.test(line)) {
+      line = line.replace(/`([^`]*?)==([^`]*?)`/g, "`$1++$2`");
+      inlineCodeRegex.lastIndex = 0;
     }
     if (!state.isInsideBlock) {
       if (state.multiAnnotationLine) {
@@ -11346,7 +11351,7 @@ function inlineWorker(scriptText) {
 
 // src/editor-plugin/helpers/decorate-annotations/helpers/parse-annotations/parse-annotations.worker.ts
 function Worker2() {
-  return inlineWorker('var E=Object.defineProperty,H=Object.defineProperties;var O=Object.getOwnPropertyDescriptors;var S=Object.getOwnPropertySymbols;var C=Object.prototype.hasOwnProperty,P=Object.prototype.propertyIsEnumerable;var T=(e,t,i)=>t in e?E(e,t,{enumerable:!0,configurable:!0,writable:!0,value:i}):e[t]=i,k=(e,t)=>{for(var i in t||(t={}))C.call(t,i)&&T(e,i,t[i]);if(S)for(var i of S(t))P.call(t,i)&&T(e,i,t[i]);return e},B=(e,t)=>H(e,O(t));var y={"<!--":"-->","==":"==","%%":"%%"},g=/(<!--|%%|==)/g,A=/(-->|%%|==)/g,$=/^```/,F=(e,t=0,i=0,p=!1)=>{let h=e.split(`\n`),b=[],n={multiLineAnnotation:null,line:t,from:i,multiLineStart:"",multiAnnotationLine:!1,isInsideBlock:!1};for(let c=0;c<h.length;c++){let r=h[c];if($.test(r)&&(n.isInsideBlock=!n.isInsideBlock),!n.isInsideBlock){n.multiAnnotationLine?n.multiAnnotationLine=!1:(g.lastIndex=0,A.lastIndex=0);let o=g.exec(r),f;if((o||n.multiLineAnnotation)&&(n.multiLineAnnotation||(A.lastIndex=g.lastIndex),f=A.exec(r)),o&&f){let a=o[1],u=f[1];if(y[a]===u){let l=o.index,s=f.index,m=l+a.length,x=s+u.length;if(l<s){let d=r.substring(m,s),L=/^([^:\\s]+): ?(.+)$/g.exec(d),I=(L?L[2]:d).trim(),R=(L?L[1]:"").trim();if((I||R||p)&&b.push({text:I,label:R,isHighlight:a==="==",position:{from:n.from+l,to:n.from+x,afterFrom:n.from+m,beforeTo:n.from+s},range:{from:{line:n.line,ch:l},to:{line:n.line,ch:x}}}),g.exec(r)!==null){n.multiAnnotationLine=!0,g.lastIndex=A.lastIndex,c=c-1;continue}n.multiLineAnnotation=null}else l===s&&(o=null)}}if(o&&!f){let a=o[1],u=n.from+o.index,l=o.index+a.length,s=r.substring(l),m=/^([^:\\s]+): ?(.+)$/g.exec(s),x=m?m[2]:s,d=(m?m[1]:"").trim();(x||d)&&(n.multiLineAnnotation={label:d,text:[x],isHighlight:a==="==",position:{from:u,afterFrom:n.from+l,beforeTo:-1,to:-1},range:{from:{line:n.line,ch:o.index}}},n.multiLineStart=a)}else if(f&&n.multiLineAnnotation){let a=f[1];if(y[n.multiLineStart]===a){let u=f.index,l=u+a.length;n.multiLineAnnotation.text.push(r.substring(0,u)),n.multiLineAnnotation.position.to=n.from+l,n.multiLineAnnotation.position.beforeTo=n.from+u,n.multiLineAnnotation.range.to={line:n.line,ch:l};let s=n.multiLineAnnotation.text.map(m=>m.trim()).filter(Boolean).join(" ");if((s||p)&&b.push(B(k({},n.multiLineAnnotation),{text:s})),n.multiLineAnnotation=null,n.multiLineStart=null,o){g.lastIndex=A.lastIndex,c=c-1;continue}}}else n.multiLineAnnotation&&n.multiLineAnnotation.text.push(r)}n.line++,n.from+=r.length+1}return b};self.onmessage=function(e){try{self.postMessage({id:e.data.id,payload:F(e.data.payload)})}catch(t){console.error("parseAnnotations",t)}};\n');
+  return inlineWorker('var C=Object.defineProperty,E=Object.defineProperties;var H=Object.getOwnPropertyDescriptors;var S=Object.getOwnPropertySymbols;var O=Object.prototype.hasOwnProperty,P=Object.prototype.propertyIsEnumerable;var T=(e,n,i)=>n in e?C(e,n,{enumerable:!0,configurable:!0,writable:!0,value:i}):e[n]=i,k=(e,n)=>{for(var i in n||(n={}))O.call(n,i)&&T(e,i,n[i]);if(S)for(var i of S(n))P.call(n,i)&&T(e,i,n[i]);return e},B=(e,n)=>E(e,H(n));var y={"<!--":"-->","==":"==","%%":"%%"},g=/(<!--|%%|==)/g,A=/(-->|%%|==)/g,j=/```/g,F=/`([^`]+)`/g,$=(e,n=0,i=0,p=!1)=>{let h=e.split(`\n`),b=[],t={multiLineAnnotation:null,line:n,from:i,multiLineStart:"",multiAnnotationLine:!1,isInsideBlock:!1};for(let c=0;c<h.length;c++){let o=h[c];if(j.test(o)&&(t.isInsideBlock=!t.isInsideBlock),F.test(o)&&(o=o.replace(/`([^`]*?)==([^`]*?)`/g,"`$1++$2`"),F.lastIndex=0),!t.isInsideBlock){t.multiAnnotationLine?t.multiAnnotationLine=!1:(g.lastIndex=0,A.lastIndex=0);let l=g.exec(o),f;if((l||t.multiLineAnnotation)&&(t.multiLineAnnotation||(A.lastIndex=g.lastIndex),f=A.exec(o)),l&&f){let r=l[1],u=f[1];if(y[r]===u){let s=l.index,a=f.index,m=s+r.length,x=a+u.length;if(s<a){let d=o.substring(m,a),L=/^([^:\\s]+): ?(.+)$/g.exec(d),I=(L?L[2]:d).trim(),R=(L?L[1]:"").trim();if((I||R||p)&&b.push({text:I,label:R,isHighlight:r==="==",position:{from:t.from+s,to:t.from+x,afterFrom:t.from+m,beforeTo:t.from+a},range:{from:{line:t.line,ch:s},to:{line:t.line,ch:x}}}),g.exec(o)!==null){t.multiAnnotationLine=!0,g.lastIndex=A.lastIndex,c=c-1;continue}t.multiLineAnnotation=null}else s===a&&(l=null)}}if(l&&!f){let r=l[1],u=t.from+l.index,s=l.index+r.length,a=o.substring(s),m=/^([^:\\s]+): ?(.+)$/g.exec(a),x=m?m[2]:a,d=(m?m[1]:"").trim();(x||d)&&(t.multiLineAnnotation={label:d,text:[x],isHighlight:r==="==",position:{from:u,afterFrom:t.from+s,beforeTo:-1,to:-1},range:{from:{line:t.line,ch:l.index}}},t.multiLineStart=r)}else if(f&&t.multiLineAnnotation){let r=f[1];if(y[t.multiLineStart]===r){let u=f.index,s=u+r.length;t.multiLineAnnotation.text.push(o.substring(0,u)),t.multiLineAnnotation.position.to=t.from+s,t.multiLineAnnotation.position.beforeTo=t.from+u,t.multiLineAnnotation.range.to={line:t.line,ch:s};let a=t.multiLineAnnotation.text.map(m=>m.trim()).filter(Boolean).join(" ");if((a||p)&&b.push(B(k({},t.multiLineAnnotation),{text:a})),t.multiLineAnnotation=null,t.multiLineStart=null,l){g.lastIndex=A.lastIndex,c=c-1;continue}}}else t.multiLineAnnotation&&t.multiLineAnnotation.text.push(o)}t.line++,t.from+=o.length+1}return b};self.onmessage=function(e){try{self.postMessage({id:e.data.id,payload:$(e.data.payload)})}catch(n){console.error("parseAnnotations",n)}};\n');
 }
 
 // src/helpers/worker-promise.ts
