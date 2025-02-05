@@ -1,6 +1,6 @@
 .recent-note-item {
     padding: 10px 12px;
-    margin: 0px 0px;
+    margin: 1px 0px 0px 0px;
     cursor: pointer;
     border-radius: 4px;
     transition: background-color 0.2s ease;
@@ -21,21 +21,27 @@
 .recent-note-date {
     color: var(--text-muted);
     flex-shrink: 0;
+    order: -1;
+}
+.recent-note-date-below {
+    width: 100%;
+    margin-top: 0px;
+    order: 2;
 }
 .recent-note-info {
     display: flex;
-    align-items: center;
-    gap: 8px;
+    align-items: flex-start;
+    gap: 4px 8px;
     color: var(--text-muted);
     font-size: calc(var(--font-text-size) * 0.8);
-    
+    min-height: 1.3em;
 }
 .recent-notes-view h6 {
     top: -14px;
     padding: 6px 0px;
     margin: 26px 0px 0px 0px;
     color: var(--text-muted);
-    font-size: 0.85em;
+    font-size: 0.82em;
     font-weight: 500;
     z-index: 1;
     border-bottom: 1px solid var(--background-modifier-border);
@@ -45,25 +51,32 @@
 }
 
 .recent-note-preview {
+    flex: 1 1 auto;
+    min-width: 0;
+    opacity: 0.6;
+    order: 1;
+}
+
+/* Single line layout */
+.recent-note-preview-line {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    opacity: 0.6;
+    line-height: 1.3;
 }
 
-/* Hover State */
-.recent-note-item:hover {
-    background-color: var(--background-modifier-hover);
+/* Multiple lines layout */
+.recent-note-info.has-multiple-lines {
+    flex-wrap: wrap;
+}
+
+.recent-note-preview.has-multiple-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
 }
 
 /* Active State */
 .recent-note-item.is-active {
-    background-color: var(--interactive-accent);
-    color: var(--text-on-accent);
-}
-.recent-note-item.is-active .recent-note-info {
-    color: var(--text-on-accent);
-}
-.recent-note-item.is-active .recent-note-date {
-    color: var(--text-on-accent);
+    background-color: var(--nav-item-background-active);
 }
