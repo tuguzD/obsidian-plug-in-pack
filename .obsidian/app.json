@@ -6,7 +6,10 @@
   "newFileLocation": "current",
   "showUnsupportedFiles": true,
   "showInlineTitle": false,
-  "spellcheckDictionary": [],
+  "spellcheckDictionary": [
+    "behaviour",
+    "Maths"
+  ],
   "attachmentFolderPath": "./",
   "useMarkdownLinks": true
 }
