@@ -144,6 +144,8 @@ Change appearance and overall make view more compact:
 - [Double Click Tab](https://github.com/Quorafind/Obsidian-Double-Click-Tab) – double-click a tab with a modifier key, moving it to new side pane/window (or just close it)
 - [Homepage](https://github.com/mirnovov/obsidian-homepage) – set any note as a "landing" page that will be opened when app launches and/or all tabs are closed
 - [Beautitab](https://github.com/andrewmcgivery/obsidian-beautitab) – replace empty "New tab" with a page containing background, search bar, recent notes/bookmarks
+- ~~[Rich Foot](https://github.com/jparkerweb/rich-foot) – display backlinks, outlinks, and created/modified dates in a footer of any note (unless ignored)~~
+  - disabled (for now) due to a "flickering" conflict with "Hover Editor" plugin
 
 ### 📄 View *chosen file* faster
 - [Mouse Navigation](https://github.com/hobeom/obsidian-mouse-navigation) – use gestures while pressing `RMB`: scroll note to top/bottom, navigate forward/backward
@@ -213,8 +215,6 @@ Change appearance and overall make view more compact:
 - [Occura](https://github.com/Krusty84/obsidian-occura-plugin) – highlight found occurances of text selection, view their total number for an opened note in [Status bar](https://help.obsidian.md/User+interface/Status+bar)
 - [Novel Word Count](https://github.com/isaaclyman/novel-word-count-obsidian) – view [chosen](https://github.com/isaaclyman/novel-word-count-obsidian?tab=readme-ov-file#settings) statistics for a file/folder/vault directly in core [File explorer](https://help.obsidian.md/Plugins/File+explorer) view
 - [Enhanced Annotations](https://github.com/ycnmhd/obsidian-enhanced-annotations) – view/copy all comments/highlights of an opened note, create new notes from them
-- ~~[Rich Foot](https://github.com/jparkerweb/rich-foot) – display backlinks, outlinks, and created/modified dates in a footer of any note (unless ignored)~~
-  - disabled (for now) due to a "flickering" conflict with "Hover Editor" plugin
 
 
 [^1]: plugins work only in [Reading](https://help.obsidian.md/Editing+and+formatting/Edit+and+preview+Markdown#Editor+views) view
