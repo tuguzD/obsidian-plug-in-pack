@@ -1395,6 +1395,15 @@
       "tags": [],
       "enabled": true,
       "delay": ""
+    },
+    {
+      "id": "pdf-plus",
+      "name": "PDF++",
+      "desc": "The most Obsidian-native PDF annotation tool ever.",
+      "group": "edit-media",
+      "tags": [],
+      "enabled": true,
+      "delay": "2nd"
     }
   ]
 }

@@ -8,9 +8,6 @@ banner-display: cover
 
 Plugins `~{I want}` to test before adding to template:
 
-- Working with PDF files for ~~academic~~ research:
-	- ~~[Annotator](obsidian://show-plugin?id=obsidian-annotator)~~ / [PDF++](obsidian://show-plugin?id=pdf-plus) (annotate PDF contents), …
-	- [Scholar](obsidian://show-plugin?id=scholar) (download PDFs, fetch their data), …
 - Markdown
 	- [Frontmatter Markdown Links](https://github.com/mnaoumov/obsidian-frontmatter-markdown-links), [Better Markdown Links](https://github.com/mnaoumov/obsidian-better-markdown-links)
 - Other

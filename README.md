@@ -8,7 +8,7 @@ This is just a large collection of already set up plugins and hotkeys… That wa
 ## 🔌 *Manage plugins* much easier
 
 > [!TIP]
-> Please, don't be afraid of large amounts of plugins here! There is ***126*** of them, to be exact!
+> Please, don't be afraid of large amounts of plugins here! There is ***132*** of them, to be exact!
 >
 > They are all organized in `groups` and each of them have a `tag` assigned – you can enable them personally or by groups “in bulk” using commands.
 
@@ -169,7 +169,8 @@ Change appearance and overall make view more compact:
 - [Waypoint](https://github.com/IdreesInc/Waypoint) – automatically generate (add/update) tables of contents (link folder note with the regular ones)
 - [Virtual Linker / Glossary](https://github.com/vschroeter/obsidian-virtual-linker) – add virtual links in text (within notes) matching with the titles/aliases of other notes
 
-### 🎞️ Manipulate *media* content
+### 🎞️ Work with *media* content
+- [PDF++](https://github.com/RyotaUshio/obsidian-pdf-plus) – improve built-in PDF viewer, annotate PDFs with highlights just by linking them to text selection
 - [Icon Shortcodes](https://github.com/aidenlx/obsidian-icon-shortcodes) – insert emojis/icons (in-app/custom) with fuzzy-searched shortcodes (`:open_book:` → `📖`)
 - [Image Converter](https://github.com/xryul/obsidian-image-converter) – convert/compress new images, resize/align and crop/rotate/flip images used in notes
 - [Media Notes](https://github.com/jemstelos/obsidian-media-notes) – easily pin a video to the note, control its playback and insert configurable timestamps
