@@ -150,7 +150,23 @@
       "color": "#8d3458"
     }
   ],
-  "TAGS": [],
+  "TAGS": [
+    {
+      "id": "search",
+      "name": "search",
+      "color": "#839400"
+    },
+    {
+      "id": "graph",
+      "name": "graph",
+      "color": "#a000a3"
+    },
+    {
+      "id": "internet",
+      "name": "Internet",
+      "color": "#53b800"
+    }
+  ],
   "DELAYS": [
     {
       "id": "1st",
@@ -164,11 +180,6 @@
     },
     {
       "id": "3rd",
-      "name": "Longer [3s]",
-      "time": 3
-    },
-    {
-      "id": "4th",
       "name": "Very long (5s)",
       "time": 5
     }
@@ -181,7 +192,7 @@
       "group": "style-editor",
       "tags": [],
       "enabled": true,
-      "delay": "4th"
+      "delay": "3rd"
     },
     {
       "id": "advanced-canvas",
@@ -197,7 +208,10 @@
       "name": "Beautitab",
       "desc": "Creates a customizable new tab view with beautiful backgrounds, quotes, search, and more.",
       "group": "navig-app",
-      "tags": [],
+      "tags": [
+        "search",
+        "internet"
+      ],
       "enabled": true,
       "delay": "1st"
     },
@@ -206,7 +220,9 @@
       "name": "Better Search Views",
       "desc": "Outliner-like breadcrumb trees for search, backlinks and embedded queries ",
       "group": "search-text",
-      "tags": [],
+      "tags": [
+        "search"
+      ],
       "enabled": true,
       "delay": ""
     },
@@ -334,7 +350,7 @@
       "group": "navig-file",
       "tags": [],
       "enabled": true,
-      "delay": "4th"
+      "delay": "3rd"
     },
     {
       "id": "cmdr",
@@ -395,7 +411,9 @@
       "name": "Quick Switcher++",
       "desc": "Enhanced Quick Switcher, search open panels, and symbols.",
       "group": "core",
-      "tags": [],
+      "tags": [
+        "search"
+      ],
       "enabled": true,
       "delay": ""
     },
@@ -485,7 +503,9 @@
       "name": "Folders to Graph",
       "desc": "Display your vault folder structure into your graphs.",
       "group": "core",
-      "tags": [],
+      "tags": [
+        "graph"
+      ],
       "enabled": false,
       "delay": ""
     },
@@ -494,7 +514,9 @@
       "name": "Nested tags graph",
       "desc": "Links nested tags in graph view",
       "group": "core",
-      "tags": [],
+      "tags": [
+        "graph"
+      ],
       "enabled": true,
       "delay": ""
     },
@@ -532,7 +554,7 @@
       "group": "edit-media",
       "tags": [],
       "enabled": true,
-      "delay": "4th"
+      "delay": "3rd"
     },
     {
       "id": "inline-math",
@@ -575,7 +597,9 @@
       "name": "Link Favicons",
       "desc": "See the favicon for a linked website. ",
       "group": "link",
-      "tags": [],
+      "tags": [
+        "internet"
+      ],
       "enabled": true,
       "delay": "1st"
     },
@@ -593,7 +617,9 @@
       "name": "Link Preview",
       "desc": "Show a preview of external links on hover",
       "group": "missing",
-      "tags": [],
+      "tags": [
+        "internet"
+      ],
       "enabled": true,
       "delay": ""
     },
@@ -629,7 +655,9 @@
       "name": "Media Notes",
       "desc": "Take notes on YouTube videos and podcasts with media controls and timestamps.",
       "group": "edit-media",
-      "tags": [],
+      "tags": [
+        "internet"
+      ],
       "enabled": true,
       "delay": "1st"
     },
@@ -701,7 +729,9 @@
       "name": "Auto Link Title",
       "desc": "This plugin automatically fetches the titles of links from the web",
       "group": "link",
-      "tags": [],
+      "tags": [
+        "internet"
+      ],
       "enabled": true,
       "delay": ""
     },
@@ -746,9 +776,11 @@
       "name": "Discord Rich Presence",
       "desc": "Update your Discord Status to show your friends what you are working on in Obsidian. With Discord Rich Presence.",
       "group": "third-party",
-      "tags": [],
+      "tags": [
+        "internet"
+      ],
       "enabled": true,
-      "delay": "4th"
+      "delay": "3rd"
     },
     {
       "id": "obsidian-doubleshift",
@@ -782,7 +814,9 @@
       "name": "Git",
       "desc": "Integrate Git version control with automatic backup and other advanced features.",
       "group": "sync",
-      "tags": [],
+      "tags": [
+        "internet"
+      ],
       "enabled": true,
       "delay": ""
     },
@@ -818,7 +852,9 @@
       "name": "LanguageTool Integration",
       "desc": "Inofficial LanguageTool plugin",
       "group": "third-party",
-      "tags": [],
+      "tags": [
+        "internet"
+      ],
       "enabled": true,
       "delay": "1st"
     },
@@ -865,7 +901,7 @@
       "group": "property",
       "tags": [],
       "enabled": true,
-      "delay": "4th"
+      "delay": "3rd"
     },
     {
       "id": "obsidian-mindmap-nextgen",
@@ -908,7 +944,9 @@
       "name": "Plugin Update Tracker",
       "desc": "Know when installed plugins have updates and evaluate the risk of upgrading",
       "group": "plugin",
-      "tags": [],
+      "tags": [
+        "internet"
+      ],
       "enabled": true,
       "delay": "2nd"
     },
@@ -953,7 +991,9 @@
       "name": "Version History Diff",
       "desc": "Diff the version history of the core Sync and File Recovery plugins and Git. Adds a command to open the core Sync version history as well.",
       "group": "sync",
-      "tags": [],
+      "tags": [
+        "internet"
+      ],
       "enabled": true,
       "delay": "1st"
     },
@@ -971,7 +1011,9 @@
       "name": "WakaTime",
       "desc": "Automatic time tracking and metrics generated from your Obsidian usage activity.",
       "group": "third-party",
-      "tags": [],
+      "tags": [
+        "internet"
+      ],
       "enabled": true,
       "delay": "2nd"
     },
@@ -980,7 +1022,9 @@
       "name": "BRAT",
       "desc": "Easily install a beta version of a plugin for testing.",
       "group": "plugin",
-      "tags": [],
+      "tags": [
+        "internet"
+      ],
       "enabled": true,
       "delay": ""
     },
@@ -998,7 +1042,9 @@
       "name": "Omnisearch",
       "desc": "A search engine that just works",
       "group": "search-text",
-      "tags": [],
+      "tags": [
+        "search"
+      ],
       "enabled": true,
       "delay": "2nd"
     },
@@ -1124,7 +1170,9 @@
       "name": "Search In Canvas",
       "desc": "Search text in canvas",
       "group": "canvas",
-      "tags": [],
+      "tags": [
+        "search"
+      ],
       "enabled": true,
       "delay": ""
     },
@@ -1142,7 +1190,9 @@
       "name": "Settings Search",
       "desc": "Globally search settings in Obsidian.md",
       "group": "default",
-      "tags": [],
+      "tags": [
+        "search"
+      ],
       "enabled": true,
       "delay": ""
     },
@@ -1171,7 +1221,7 @@
       "group": "core",
       "tags": [],
       "enabled": true,
-      "delay": "4th"
+      "delay": "3rd"
     },
     {
       "id": "statusbar-organizer",
@@ -1196,7 +1246,9 @@
       "name": "Tag Wrangler",
       "desc": "Rename, merge, toggle, and search tags from the tag pane",
       "group": "core",
-      "tags": [],
+      "tags": [
+        "search"
+      ],
       "enabled": true,
       "delay": ""
     },
@@ -1223,7 +1275,9 @@
       "name": "Todoist Sync",
       "desc": "Materialize Todoist tasks within Obsidian notes.",
       "group": "third-party",
-      "tags": [],
+      "tags": [
+        "internet"
+      ],
       "enabled": true,
       "delay": "2nd"
     },
@@ -1259,16 +1313,20 @@
       "name": "Visual Crossing Weather",
       "desc": "Visual Crossing Weather API for Your Notes",
       "group": "third-party",
-      "tags": [],
+      "tags": [
+        "internet"
+      ],
       "enabled": true,
-      "delay": "4th"
+      "delay": "3rd"
     },
     {
       "id": "waypoint",
       "name": "Waypoint",
       "desc": "Easily generate dynamic content maps in your folder notes using waypoints. Enables folders to show up in the graph view and removes the need for messy tags!",
       "group": "edit-file",
-      "tags": [],
+      "tags": [
+        "graph"
+      ],
       "enabled": true,
       "delay": ""
     },
