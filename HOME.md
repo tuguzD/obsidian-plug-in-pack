@@ -8,5 +8,5 @@ banner-display: cover
 
 Plugins `~{I want}` to test before adding to template:
 
-- [Charts](obsidian://show-plugin?id=obsidian-charts), [Relay](obsidian://show-plugin?id=system3-relay) (collaboration), [Supercharged Links](obsidian://show-plugin?id=supercharged-links-obsidian), …
+- [Supercharged Links](obsidian://show-plugin?id=supercharged-links-obsidian), [Hierarchical Outgoing Links](https://github.com/jasonmotylinski/hierarchical-outgoing-links), [Hierarchical Backlinks](https://github.com/jasonmotylinski/hierarchical-backlinks), [Relay](obsidian://show-plugin?id=system3-relay) (collaboration), …
 - using BRAT: [Auto-`\displaystyle` Inline Math](https://github.com/RyotaUshio/obsidian-auto-displaystyle-inline-math/pull/1), [Breadcrumbs](obsidian://show-plugin?id=breadcrumbs) (navigation)
