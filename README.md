@@ -6,12 +6,13 @@ This is just a large collection of already set up plugins and hotkeys… That wa
 > After forking/using the template to create your vault, feel free to give this file a proper use)
 
 ## 🔌 *Manage plugins* much easier
-> [!TIP]
-> Please, don't be afraid of large amount of plugins here! There is ***125*** of them, to be exact!
->
-> They are all organized in `groups` and each of them have a `tag` assigned – you can enable them personally or by groups "in bulk" using commands.
 
-- [Better Plugins Manager](https://github.com/0011000000110010/obsidian-manager) – delay plugins' startup, filter them by groups/tags, and then toggle them "in bulk"
+> [!TIP]
+> Please, don't be afraid of large amounts of plugins here! There is ***126*** of them, to be exact!
+>
+> They are all organized in `groups` and each of them have a `tag` assigned – you can enable them personally or by groups “in bulk” using commands.
+
+- [Better Plugins Manager](https://github.com/0011000000110010/obsidian-manager) – delay plugins' startup, filter them by groups/tags, and then toggle them “in bulk”
 - [Plugin Update Tracker](https://github.com/swar8080/obsidian-plugin-update-tracker) – show updates for all plugins, browse their release notes and even ignore them
 - [BRAT](https://github.com/TfTHacker/obsidian42-brat) – download plugins that were not listed from in-app plugin search (or beta versions of listed plugins)
 - [Plugins Annotations](https://github.com/alberti42/obsidian-plugins-annotations) – add custom annotation for each plugin to store personal note (e.g., its actual use-case scenario, as labels can't usually provide full info)
@@ -37,7 +38,7 @@ This is just a large collection of already set up plugins and hotkeys… That wa
 
 ### 🪁 Modify *app appearance*
 - [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) – change configuration options provided by some themes and plugins' CSS files
-- [Day and Night](https://github.com/CyberT17/obsidian-day-and-night) – toggle between light/dark mode accodring to schedule (automatically) or manually
+- [Day and Night](https://github.com/CyberT17/obsidian-day-and-night) – toggle between light/dark mode according to schedule (automatically) or manually
 - [Hider](https://github.com/kepano/obsidian-hider) – hide certain parts of `Obsidian` app UI (just like in "[Appearance](https://help.obsidian.md/User+interface/Appearance)" app settings)
 - [Force note View mode](https://github.com/bwydoogh/obsidian-force-view-mode-of-note) – force open certain notes in a view chosen from [reading or editing](https://help.obsidian.md/Editing+and+formatting/Edit+and+preview+Markdown) (preview / source)
 
@@ -48,34 +49,34 @@ This is just a large collection of already set up plugins and hotkeys… That wa
 - [Copy Block Link](https://github.com/mgmeyers/obsidian-copy-block-link) – get links to text blocks and headings directly from a context menu
 - [Link Headers Directly](https://github.com/Signynt/link-headers-directly) – show only the last header of internal links[^1], and not the whole note hierarchy
 
-### 🪄 Perform actions *"in bulk"*
-- [Insert Multiple Attachments](https://github.com/mnaoumov/obsidian-insert-multiple-attachments) – allows to insert multiple attachments "in bulk" at the exact time (and not just one)
+### 🪄 Perform actions *“in bulk”*
+- [Insert Multiple Attachments](https://github.com/mnaoumov/obsidian-insert-multiple-attachments) – allows inserting multiple attachments “in bulk” at the exact time (and not just one)
 - [Multi-Properties](https://github.com/technohiker/obsidian-multi-properties) – add/remove properties for multiple files (from folder, selected or searched) at once
-- [Quick Tagger](https://github.com/Gorkycreator/obsidian-quick-tagger) – add/remove tags of file(s) "in bulk" by calling commands, using hotkeys or context menu
+- [Quick Tagger](https://github.com/Gorkycreator/obsidian-quick-tagger) – add/remove tags of file(s) “in bulk” by calling commands, using hotkeys or context menu
 
 
 ## 🔮 Overhaul *core plugins*
 
 1. [Quick Switcher++](https://github.com/darlal/obsidian-switcher-plus) <sup>[✅[Quick switcher](https://help.obsidian.md/Plugins/Quick+switcher), ✅[Command palette](https://help.obsidian.md/Plugins/Command+palette) ON]</sup> – search, filter results and navigate quicker: switch between multiple modes (Commands, Editor, Symbols, Headings, Related Items, Bookmarks, Workspaces, Vaults)
 
-1. [Hover Editor](https://github.com/nothingislost/obsidian-hover-editor) <sup>[✅[Page preview](https://help.obsidian.md/Plugins/Page+preview) ON]</sup> – "turn the hover popover into a full featured [editor instance](https://github.com/nothingislost/obsidian-hover-editor?tab=readme-ov-file#features)"
+2. [Hover Editor](https://github.com/nothingislost/obsidian-hover-editor) <sup>[✅[Page preview](https://help.obsidian.md/Plugins/Page+preview) ON]</sup> – “turn the hover popover into a full-featured [editor instance](https://github.com/nothingislost/obsidian-hover-editor?tab=readme-ov-file#features)”
 
-1. [Workspaces Plus](https://github.com/nothingislost/obsidian-workspaces-plus) <sup>[✅[Workspaces](https://help.obsidian.md/Plugins/Workspaces) ON]</sup> – edit and switch workspaces easier, set different themes for each one
+3. [Workspaces Plus](https://github.com/nothingislost/obsidian-workspaces-plus) <sup>[✅[Workspaces](https://help.obsidian.md/Plugins/Workspaces) ON]</sup> – edit and switch workspaces easier, set different themes for each one
 
-1. [Slides Extended](https://github.com/ebullient/obsidian-slides-extended) <sup>[⚠️[Slides](https://help.obsidian.md/Plugins/Slides) OFF]</sup> – create presentations: customize each element and apply themes globally, improve slide navigation, view changes live, switch between different modes, and more
+4. [Slides Extended](https://github.com/ebullient/obsidian-slides-extended) <sup>[⚠️[Slides](https://help.obsidian.md/Plugins/Slides) OFF]</sup> – create presentations: customize each element and apply themes globally, improve slide navigation, view changes live, switch between different modes, and more
 
-1. [Slash Commander](https://github.com/alephpiece/obsidian-slash-commander) <sup>[⚠️[Slash commands](https://help.obsidian.md/Plugins/Slash+commands) OFF]</sup> – customize slash command list and show descriptions for each one
+5. [Slash Commander](https://github.com/alephpiece/obsidian-slash-commander) <sup>[⚠️[Slash commands](https://help.obsidian.md/Plugins/Slash+commands) OFF]</sup> – customize slash command list and show descriptions for each one
 
-1. [Better Word Count](https://github.com/lukeleppan/better-word-count) <sup>[⚠️[Word Count](https://help.obsidian.md/Plugins/Word+count) OFF]</sup> – collect stats about your whole vault, also customize displaying them
+6. [Better Word Count](https://github.com/lukeleppan/better-word-count) <sup>[⚠️[Word Count](https://help.obsidian.md/Plugins/Word+count) OFF]</sup> – collect stats about your whole vault, also customize displaying them
 
-1. [Tag Wrangler](https://github.com/pjeby/tag-wrangler) <sup>[✅[Tags view](https://help.obsidian.md/Plugins/Tags+view) ON]</sup> – rename (sub)tags "in bulk", filter search with tags and manage "[Tag Pages](https://github.com/pjeby/tag-wrangler?tab=readme-ov-file#tag-pages)"
+7. [Tag Wrangler](https://github.com/pjeby/tag-wrangler) <sup>[✅[Tags view](https://help.obsidian.md/Plugins/Tags+view) ON]</sup> – rename (sub)tags “in bulk”, filter search with tags and manage “[Tag Pages](https://github.com/pjeby/tag-wrangler?tab=readme-ov-file#tag-pages)”
 
-1. [Nested tags graph](https://github.com/drPilman/obsidian-graph-nested-tags) / [Folders to Graph](https://github.com/Ratibus11/folders2graph) <sup>[✅[Graph view](https://help.obsidian.md/Plugins/Graph+view) ON]</sup> – link nested tags / show folder structure in graph view (plugins break each other, so choose the one you like)
+8. [Nested tags graph](https://github.com/drPilman/obsidian-graph-nested-tags) / [Folders to Graph](https://github.com/Ratibus11/folders2graph) <sup>[✅[Graph view](https://help.obsidian.md/Plugins/Graph+view) ON]</sup> – link nested tags / show folder structure in graph view (plugins break each other, so choose the one you like)
 
 ### 🔎 [Search](https://help.obsidian.md/Plugins/Search) for text quicker
 - [Omnisearch](https://github.com/scambier/obsidian-omnisearch) – search text in contents of notes and (non-textual) attachments like images, documents and PDFs 
   - [Text Extractor](https://github.com/scambier/obsidian-text-extractor) – extract text from (non-textual) attachments (allows plugin above to [use](https://publish.obsidian.md/omnisearch/Images%2C+PDFs%2C+and+non-text+documents) this data for search)
-- [Better Search Views](https://github.com/ivan-lednev/better-search-views) – [decorate](https://github.com/ivan-lednev/better-search-views?tab=readme-ov-file#but-what-does-it-do-exactly) search results (for [Search](https://help.obsidian.md/Plugins/Search) and [Backlinks](https://help.obsidian.md/Plugins/Backlinks)) with breadcrumbs (display an hierarchy)
+- [Better Search Views](https://github.com/ivan-lednev/better-search-views) – [decorate](https://github.com/ivan-lednev/better-search-views?tab=readme-ov-file#but-what-does-it-do-exactly) search results (for [Search](https://help.obsidian.md/Plugins/Search) and [Backlinks](https://help.obsidian.md/Plugins/Backlinks)) with breadcrumbs (display a hierarchy)
 - [Replace All](https://github.com/patrickchiang/obsidian-replace-all) – quickly (undo) replace all occurances of text (in a whole vault) directly from core [Search](https://help.obsidian.md/Plugins/Search) view
 
 ### 📆 Access your [Daily notes](https://help.obsidian.md/Plugins/Daily+notes) <sup>[⚠️ OFF]</sup> easier
@@ -86,9 +87,9 @@ This is just a large collection of already set up plugins and hotkeys… That wa
 
 ### 📂 Extend [File explorer](https://help.obsidian.md/Plugins/File+explorer) capabilities
 Change appearance and overall make view more compact:
-- [File Explorer++](https://github.com/kelszo/obsidian-file-explorer-plus) – hide and/or pin both files and folders (even "in bulk") for easier access from core view
-- [Folder Focus Mode](https://github.com/grochowski/obsidian-folder-focus-mode) – "focus" on a folder (with its contents) by hiding all other notes, directly in core view
-- [Folder notes](https://github.com/LostPaul/obsidian-folder-notes) – attach notes to any folder ("in bulk" via templates), open them from folder items in core view
+- [File Explorer++](https://github.com/kelszo/obsidian-file-explorer-plus) – hide and/or pin both files and folders (even “in bulk” for easier access from core view
+- [Folder Focus Mode](https://github.com/grochowski/obsidian-folder-focus-mode) – “focus” on a folder (with its contents) by hiding all other notes, directly in core view
+- [Folder notes](https://github.com/LostPaul/obsidian-folder-notes) – attach notes to any folder (“in bulk” via templates), open them from folder items in core view
 - [Color Folders and Files](https://github.com/Mithadon/obsidian-color-folders-files) – set text/background colors, change text style for files/folders and store it in presets
 
 ### 🖼️ Integrate new tools for [Canvas](https://help.obsidian.md/Plugins/Canvas)
@@ -96,10 +97,10 @@ Change appearance and overall make view more compact:
 - [Canvas Card Background Remover](https://github.com/luxmargos/obsidian-canvas-card-bg-remover) – remove background from transparent embeds (like images)
 - [Canvas Keyboard Pan](https://github.com/nathonius/obsidian-canvas-pan) – move in Canvas using the keyboard (instead of just mouse wheel)
 - [Canvas Link Optimizer](https://github.com/Qbject/obsidian-canvas-link-optimizer) – display cached (as image) preview of a note/web page to improve performance
-- [Canvas Links](https://github.com/aqav/obsidian-canvas-links) – display links between `Canvas` and `Markdown` file types inside of a new menu
+- [Canvas Links](https://github.com/aqav/obsidian-canvas-links) – display links between `Canvas` and `Markdown` file types inside a new menu
 - [Canvas MindMap](https://github.com/Quorafind/Obsidian-Canvas-MindMap) – add new controls to work with `Canvas` elements as a mindmap tree-like structure
 - [Canvas Minimap](https://github.com/ifree/Obsidian-canvas-minimap) – add minimap that helps to navigate and get an overview of the canvas
-- [Optimize Canvas Connections](https://github.com/felixchenier/obsidian-optimize-canvas-connections) – reconnect notes using their nearest edges to prevent "messy-looking" canvas
+- [Optimize Canvas Connections](https://github.com/felixchenier/obsidian-optimize-canvas-connections) – reconnect notes using their nearest edges to prevent “messy-looking”canvas
 - [Search in Canvas](https://github.com/quorafind/obsidian-search-in-canvas) – search in canvas contents for text and highlight found entries
 
 
@@ -159,7 +160,8 @@ Change appearance and overall make view more compact:
 - [Smart Typography](https://github.com/mgmeyers/obsidian-smart-typography) – convert sets of characters into a single ones, that are useful for text typography
 - [Various Complements](https://github.com/tadashi-aikawa/obsidian-various-complements-plugin) – auto-complete words (like in IDEs) from vault contents and/or custom dictionaries
 - [Note Refactor](https://github.com/lynchjames/note-refactor-obsidian) – split any chosen note, or extract selected part of a note into a new/existing one
-- [Waypoint](https://github.com/IdreesInc/Waypoint) – automatically generate (add/update) tables of contents (link folder note with the regular ones) 
+- [Waypoint](https://github.com/IdreesInc/Waypoint) – automatically generate (add/update) tables of contents (link folder note with the regular ones)
+- [Virtual Linker / Glossary](https://github.com/vschroeter/obsidian-virtual-linker) – add virtual links in text (within notes) matching with the titles/aliases of other notes
 
 ### 🎞️ Manipulate *media* content
 - [Icon Shortcodes](https://github.com/aidenlx/obsidian-icon-shortcodes) – insert emojis/icons (in-app/custom) with fuzzy-searched shortcodes (`:open_book:` → `📖`)
