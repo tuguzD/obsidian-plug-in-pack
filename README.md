@@ -115,6 +115,8 @@ NOTE: After forking/using the template to create your vault, feel free to give t
   - [JS Engine](https://github.com/mProjectsCode/obsidian-js-engine-plugin) – execute `JavaScript` code from a special codeblock (allows plugin above to [run scripts](https://github.com/chrisgurney/obsidian-note-toolbar/wiki/Executing-scripts#script-item-types))
 - [Execute Code](https://github.com/twibiral/obsidian-execute-code) – execute code snippets in codeblocks of notes for locally installed [languages](https://github.com/twibiral/obsidian-execute-code?tab=readme-ov-file#supported-programming-languages-)
 - [Doubleshift](https://github.com/Qwyntex/doubleshift) – run app commands by pressing specified key twice (by default, `Shift` for [Quick switcher](https://help.obsidian.md/Plugins/Quick+switcher))
+- [Chord Sheets](https://github.com/olvidalo/obsidian-chord-sheets?tab=readme-ov-file#-autoscroll) – start/stop automatic scroll of an active note, configure scrolling speed on the fly
+- [Mindmap NextGen](https://github.com/james-tindal/obsidian-mindmap-nextgen) – view active note's content as a mindmap, configure its appearance and make screenshots
 
 ### [Properties](https://help.obsidian.md/Editing+and+formatting/Properties) (or note metadata/frontmatter)
 - [Dataview](https://github.com/blacksmithgu/obsidian-dataview) – treat your vault as a database: parse, [query](https://github.com/blacksmithgu/obsidian-dataview?tab=readme-ov-file#querying) and view data of any notes containing [metadata](https://github.com/blacksmithgu/obsidian-dataview?tab=readme-ov-file#data)
@@ -126,7 +128,6 @@ NOTE: After forking/using the template to create your vault, feel free to give t
 - [QuickAdd](https://github.com/chhoumann/quickadd) – create notes from templates using custom "[choices](https://quickadd.obsidian.guide/docs/#first-steps)" (templates, captures, macros, multis)
 
 ### Note editing
-- [Limelight](https://github.com/smikula/obsidian-limelight) – make all opened, but non-active panes dimmer: focus on an actively modified one
 - [Linter](https://github.com/platers/obsidian-linter) – fix format/style of any notes' content with a set of configurable [rules](https://platers.github.io/obsidian-linter/settings/general-settings), pre-defined or [custom](https://platers.github.io/obsidian-linter/settings/custom-rules)
 - [Editing Toolbar](https://github.com/PKM-er/obsidian-editing-toolbar) – display a set of commands to quickly format/style text selections using [Markdown](https://help.obsidian.md/Editing+and+formatting/Basic+formatting+syntax)
 - [Smart Typography](https://github.com/mgmeyers/obsidian-smart-typography) – convert sets of characters into a single ones, that are useful for text typography
@@ -136,24 +137,19 @@ NOTE: After forking/using the template to create your vault, feel free to give t
 - [Image Converter](https://github.com/xryul/obsidian-image-converter) – convert/compress new images, resize/align and crop/rotate/flip images used in notes
 - [Note Refactor](https://github.com/lynchjames/note-refactor-obsidian) – split any chosen note, or extract selected part of a note into a new/existing one
 - [Waypoint](https://github.com/IdreesInc/Waypoint) – automatically generate (add/update) tables of contents (link folder note with the regular ones) 
-
-### Reading
-- ~~[Continuous Mode](https://github.com/gasparschott/obsidian-continuous-mode)~~ – display all open notes or files (like PDFs) in tab group as a single scrollable document
-  - disabled (for now) due to a "auto-scrolling" conflict with "Scroll Speed" plugin
-- [Chord Sheets](https://github.com/olvidalo/obsidian-chord-sheets?tab=readme-ov-file#-autoscroll) – start/stop automatic scroll of an active note, configure scrolling speed on the fly
-- [Mindmap NextGen](https://github.com/james-tindal/obsidian-mindmap-nextgen) – view active note's content as a mindmap, configure its appearance and make screenshots
 - [Media Notes](https://github.com/jemstelos/obsidian-media-notes) – easily pin a video to the note, control its playback and insert configurable timestamps
-- [Abbreviations and Acronyms](https://github.com/dragonish/obsidian-abbreviations) – auto-mark abbreviations/acronyms (terms) from metadata or global settings
-- ~~[Rich Foot](https://github.com/jparkerweb/rich-foot)~~ – display backlinks, outlinks, and created/modified dates in a footer of any note (unless ignored)
-  - disabled (for now) due to a "flickering" conflict with "Hover Editor" plugin
 
 ### Editor appearance
+- ~~[Continuous Mode](https://github.com/gasparschott/obsidian-continuous-mode)~~ – display all open notes or files (like PDFs) in tab group as a single scrollable document
+  - disabled (for now) due to a "auto-scrolling" conflict with "Scroll Speed" plugin
 - [Blur](https://github.com/gapmiss/blur) – apply blur effect to portions of text to obfuscate it (non-[Markdown](https://help.obsidian.md/Editing+and+formatting/Basic+formatting+syntax), so works only in `Obsidian` app)
+- [Abbreviations and Acronyms](https://github.com/dragonish/obsidian-abbreviations) – auto-mark abbreviations/acronyms (terms) from metadata or global settings
 - [Pixel Banner](https://github.com/jparkerweb/pixel-banner) – make notes more visually appealing by creating a banner image (from vault/Web) at their top
 - [Widgets](https://github.com/rafaelveiga/obsidian-widgets) – add widgets (clock, [countdown](https://github.com/rafaelveiga/obsidian-widgets?tab=readme-ov-file#countdown), counter, quote) to your notes from custom codeblocks
 - [Colored Tags Wrangler](https://github.com/code-of-chaos/obsidian-colored_tags_wrangler) – assign unique tag colors, then apply them to canvas items, folders and/or notes
 - [Party](https://github.com/shap-po/obsidian-party) – create and customize "particle" effects on certain actions (e.g., completing checkboxes by default)
 - [Iconic](https://github.com/gfxholo/iconic) – set custom (colored) emoji/icon for files/folders ("in bulk" via rules) and app menus with their own icons
+- [Limelight](https://github.com/smikula/obsidian-limelight) – make all opened, but non-active panes dimmer: focus on an actively modified one
 
 ### Navigation
 - [Vertical Tabs](https://github.com/oxdc/obsidian-vertical-tabs) – group, organize and efficiently navigate between tabs using a interactable vertical list of them
@@ -170,6 +166,8 @@ NOTE: After forking/using the template to create your vault, feel free to give t
 - [Occura](https://github.com/Krusty84/obsidian-occura-plugin) – highlight found occurances of text selection, view their total number for an opened note in [Status bar](https://help.obsidian.md/User+interface/Status+bar)
 - [Novel Word Count](https://github.com/isaaclyman/novel-word-count-obsidian) – view [chosen](https://github.com/isaaclyman/novel-word-count-obsidian?tab=readme-ov-file#settings) statistics for a file/folder/vault directly in core [File explorer](https://help.obsidian.md/Plugins/File+explorer) view
 - [Enhanced Annotations](https://github.com/ycnmhd/obsidian-enhanced-annotations) – view/copy all comments/highlights of an opened note, create new notes from them
+- ~~[Rich Foot](https://github.com/jparkerweb/rich-foot)~~ – display backlinks, outlinks, and created/modified dates in a footer of any note (unless ignored)
+  - disabled (for now) due to a "flickering" conflict with "Hover Editor" plugin
 
 ### Search
 - [Omnisearch](https://github.com/scambier/obsidian-omnisearch) – search text in contents of notes and (non-textual) attachments like images, documents and PDFs 
