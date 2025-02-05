@@ -8,7 +8,7 @@ This is just a large collection of already set up plugins and hotkeys… That wa
 ## 🔌 *Manage plugins* much easier
 
 > [!TIP]
-> Please, don't be afraid of large amounts of plugins here! There is ***135*** of them, to be exact!
+> Please, don't be afraid of large amounts of plugins here! There is ***136*** of them, to be exact!
 >
 > They are all organized in `groups` and each of them have a `tag` assigned – you can enable them personally or by groups “in bulk” using commands.
 
@@ -115,6 +115,7 @@ Change appearance and overall make view more compact:
 ## 🧩 Integrate *third-party apps*
 - [Discord Rich Presence](https://github.com/lukeleppan/obsidian-discordrpc) – integrate an app into [`Discord`](https://discord.com) status: show vault name, editing file and elapsed time
 - [Visual Crossing Weather](https://github.com/willasm/vc-weather) – display current weather in [Status bar](https://help.obsidian.md/User+interface/Status+bar), add this data into notes (via templates)
+- [Map View](https://github.com/esm7/obsidian-map-view) – interact with a map view: search for locations, apply them to notes and choose custom icons
 - [LanguageTool Integration](https://github.com/Clemens-E/obsidian-languagetool-plugin) – check grammar and spellling for many languages with [`LanguageTool`](https://languagetool.org)
 - [Todoist Sync](https://github.com/jamiebrynes7/obsidian-todoist-plugin) – bidirectional sync with [`Todoist`](https://todoist.com) task manager: create new tasks and complete existing ones
 - [WakaTime](https://github.com/wakatime/obsidian-wakatime) – send metrics, insights, and time tracking from app usage activity to [`WakaTime`](https://wakatime.com) dashboard

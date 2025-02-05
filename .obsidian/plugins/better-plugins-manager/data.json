@@ -1431,6 +1431,17 @@
       "tags": [],
       "enabled": true,
       "delay": ""
+    },
+    {
+      "id": "obsidian-map-view",
+      "name": "Map View",
+      "desc": "An interactive map view.",
+      "group": "third-party",
+      "tags": [
+        "internet"
+      ],
+      "enabled": true,
+      "delay": "3rd"
     }
   ]
 }
