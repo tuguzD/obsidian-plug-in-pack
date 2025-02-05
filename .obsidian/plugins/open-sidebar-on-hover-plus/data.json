@@ -1,0 +1,8 @@
+{
+  "leftSidebar": false,
+  "rightSidebar": false,
+  "syncLeftRight": false,
+  "enforceSameDelay": true,
+  "sidebarDelay": 300,
+  "rightSideBarPixelTrigger": 30
+}

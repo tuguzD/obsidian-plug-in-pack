@@ -1386,6 +1386,15 @@
       "tags": [],
       "enabled": true,
       "delay": ""
+    },
+    {
+      "id": "open-sidebar-on-hover-plus",
+      "name": "Open Sidebar on Hover Plus",
+      "desc": "Opens the sidebars by hovering",
+      "group": "default",
+      "tags": [],
+      "enabled": true,
+      "delay": ""
     }
   ]
 }

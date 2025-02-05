@@ -26,6 +26,7 @@ This is just a large collection of already set up plugins and hotkeys… That wa
 - [Enhanced Copy](https://github.com/Mara-Li/obsidian-enhanced-copy) – change native copy function behaviour to differ for [reading/editing views](https://help.obsidian.md/Editing+and+formatting/Edit+and+preview+Markdown#Editor+views)
 - [Tab Switcher](https://github.com/Vinzent03/tab-switcher) – ignore groups when switching tabs, navigate tabs in their placement/usage order (via hotkeys)
 - [Remember cursor position](https://github.com/dy-sh/obsidian-remember-cursor-position) – remember notes' cursor and scroll position (edit multiple notes quicker)
+- [Open Sidebar on Hover Plus](https://github.com/clairefro/obsidian-open-sidebar-on-hover-plus) – hover over the sidebar area (ribbon or pixels) to expand/collapse your sidebars
 
 ### 🫥 Introduce missing, but *must-have features*
 - [Trash Explorer](https://github.com/proog/obsidian-trash-explorer) – view, restore or remove deleted files (located in app's hidden `.trash` folder)
