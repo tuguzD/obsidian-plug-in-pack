@@ -1,9 +1,21 @@
 # 📦 “Plug-in-pack” for 💜[Obsidian](https://obsidian.md) app
 
-This is just a large collection of already set up plugins and hotkeys… That was gotten rid of ~~almost~~ any conflicts.
+This is just a large collection of already set up plugins and hotkeys… That was crafted to be flawlessly used without ~~almost~~ any conflicts.
 
 > [!NOTE]
-> After forking/using the template to create your vault, feel free to give this file a proper use)
+> After using the template to create your own vault, feel free to give this file a proper use:
+> - describe your future work, motivation and goals…
+> - as well as other important info other users need to know =)
+
+> [!WARNING]
+> Please, ***DO NOT FORK*** this repository if you want to create your own vault (to store your work here), and then update it with new changes from this pack!
+>
+> You cannot change visibility of any of the forked repositories on `GitHub`, so it will stay **public** forever.
+>
+> Instead, you should use this repository as template or clone it (creating unrelated one) and then, if necessary, pull data from this one using this `Git` command (in console):
+> ```
+> git pull https://github.com/tuguzD/obsidian-plug-in-pack.git master:master
+> ```
 
 ## 🔌 *Manage plugins* much easier
 
