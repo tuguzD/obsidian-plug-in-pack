@@ -155,8 +155,22 @@ Change appearance and overall make view more compact:
 > After that, review and discard any changes you don't need in "`Source Control`" tab of the above-mentioned [Git](https://github.com/Vinzent03/obsidian-git) plugin
 > (you can always open it via `Git: Open source control view` command).
 
-> [!IMPORTANT]  
-> ...
+> [!IMPORTANT]
+> You could've already noticed that some files seem to update each time the vault opens, so they have a potential to clutter each commit with meaningless changes.
+>
+> Changes for such files can be ignored locally, for each of your device (but not for the whole repository, like when using `.gitignore`) by updating each file's index using [skip-worktree bit](https://git-scm.com/docs/git-update-index#_skip_worktree_bit).
+> I suggest you to avoid updating files below by running these `Git` commands (in your terminal):
+> ```
+> git update-index --skip-worktree .obsidian\plugins\media-notes\data.json
+> git update-index --skip-worktree .obsidian\plugins\novel-word-count\data.json
+> git update-index --skip-worktree .obsidian\plugins\enhanced-annotations\data.json
+> git update-index --skip-worktree .obsidian\plugins\obsidian-day-and-night\data.json
+> ```
+> > Of course, all of these files can be deleted from the repository, and then added to `.gitignore` file (if you so desire) – this way, they won't be present in repository anymore.
+> >
+> > But I (personally) think that some of these files still provide useful configurations that should not be deleted, as they won't be shared to all the users using this “[Plug-in-pack](<#-plug-in-pack-for-obsidian-app>)” template.
+> 
+> Also, similar commands can be used for some of your personal configurations that you will want to be already set up for each new device (that will receive local copy of this repository), but do not want to be changed thereafter.
 
 
 ## ✨ Add new *powerful features*
