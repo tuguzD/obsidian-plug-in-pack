@@ -5,7 +5,7 @@ This is just a large collection of already set up plugins and hotkeys… That wa
 > [!NOTE]
 > After using the template to create your own vault, feel free to give this file a proper use:
 > - describe your future work, motivation and goals…
-> - as well as other important info other users need to know =)
+> - as well as another important info that others need to know =)
 
 > [!WARNING]
 > If you want to create your own vault (to store your work there), and then update it with new changes from this pack (using `Git`, obviously)...
@@ -13,7 +13,7 @@ This is just a large collection of already set up plugins and hotkeys… That wa
 >
 > You cannot change visibility of forked repositories on `GitHub`, so any of yours will stay **public** forever.
 >
-> Instead, you should use this repository as template or clone it (creating unrelated one) and then, if necessary, pull data from this one using these `Git` commands (in your console/terminal), according to the [source](https://gist.github.com/krlozadan/4b75255b88d7a1504e5e632cb817c3f5):
+> Instead, you should use this repository as template or clone it (creating unrelated one) and then, if necessary, pull **remote changes** (from this one) using these `Git` commands (in your console/terminal) in succession, according to the [source](https://gist.github.com/krlozadan/4b75255b88d7a1504e5e632cb817c3f5):
 > ```
 > git remote add plug-in-pack https://github.com/tuguzD/obsidian-plug-in-pack.git
 > git pull -X theirs plug-in-pack main --allow-unrelated-histories --no-tags --no-commit
