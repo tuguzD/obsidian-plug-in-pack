@@ -12,9 +12,12 @@ This is just a large collection of already set up plugins and hotkeys… That wa
 >
 > You cannot change visibility of any of the forked repositories on `GitHub`, so it will stay **public** forever.
 >
-> Instead, you should use this repository as template or clone it (creating unrelated one) and then, if necessary, pull data from this one using this `Git` command (in console):
+> Instead, you should use this repository as template or clone it (creating unrelated one) and then, if necessary, pull data from this one using these `Git` commands (in your console/terminal), according to the [source](https://gist.github.com/krlozadan/4b75255b88d7a1504e5e632cb817c3f5):
 > ```
-> git pull -X theirs https://github.com/tuguzD/obsidian-plug-in-pack.git main --allow-unrelated-histories
+> git remote add plug-in-pack https://github.com/tuguzD/obsidian-plug-in-pack.git
+> git pull -X theirs plug-in-pack main --allow-unrelated-histories --no-tags
+> git reset HEAD
+> git remote remove plug-in-pack
 > ```
 
 ## 🔌 *Manage plugins* much easier
