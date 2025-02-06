@@ -8,7 +8,7 @@ This is just a large collection of already set up plugins and hotkeys… That wa
 ## 🔌 *Manage plugins* much easier
 
 > [!TIP]
-> Please, don't be afraid of large amounts of plugins here! There is ***138*** of them, to be exact!
+> Please, don't be afraid of large amounts of plugins here! There is ***139*** of them, to be exact!
 >
 > They are all organized in `groups` and each of them have a `tag` assigned – you can enable them personally or by groups “in bulk” using commands.
 
@@ -84,10 +84,11 @@ This is just a large collection of already set up plugins and hotkeys… That wa
 - [Sync Graph Settings](https://github.com/Xallt/sync-graph-settings) – copy group and color settings from global graph view to your active local one
 
 ### 🔎 [Search](https://help.obsidian.md/Plugins/Search) for text quicker
+- [Better Search Views](https://github.com/ivan-lednev/better-search-views) – [decorate](https://github.com/ivan-lednev/better-search-views?tab=readme-ov-file#but-what-does-it-do-exactly) search results (for [Search](https://help.obsidian.md/Plugins/Search) and [Backlinks](https://help.obsidian.md/Plugins/Backlinks)) with breadcrumbs (display a hierarchy)
+- [Replace All](https://github.com/patrickchiang/obsidian-replace-all) – quickly (un)replace all occurrences of text (in a whole vault) directly from core [Search](https://help.obsidian.md/Plugins/Search) view
+- [Text Finder](https://github.com/nyable/obsidian-text-finder) – search/replace active note’s text while editing, highlight matching text and actually jump to it
 - [Omnisearch](https://github.com/scambier/obsidian-omnisearch) – search text in contents of notes and (non-textual) attachments like images, documents, and PDFs 
   - [Text Extractor](https://github.com/scambier/obsidian-text-extractor) – extract text from (non-textual) attachments (allows plugin above to [use](https://publish.obsidian.md/omnisearch/Images%2C+PDFs%2C+and+non-text+documents) this data for search)
-- [Better Search Views](https://github.com/ivan-lednev/better-search-views) – [decorate](https://github.com/ivan-lednev/better-search-views?tab=readme-ov-file#but-what-does-it-do-exactly) search results (for [Search](https://help.obsidian.md/Plugins/Search) and [Backlinks](https://help.obsidian.md/Plugins/Backlinks)) with breadcrumbs (display a hierarchy)
-- [Replace All](https://github.com/patrickchiang/obsidian-replace-all) – quickly (undo) replace all occurrences of text (in a whole vault) directly from core [Search](https://help.obsidian.md/Plugins/Search) view
 
 ### 📆 Access your [Daily notes](https://help.obsidian.md/Plugins/Daily+notes) <sup>[⚠️ OFF]</sup> easier
 - [Periodic Notes](https://github.com/liamcain/obsidian-periodic-notes) – extend core feature by also creating weekly, monthly, quarterly and yearly notes!

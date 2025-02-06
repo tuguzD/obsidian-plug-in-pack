@@ -354,5 +354,15 @@
       ],
       "key": "ArrowRight"
     }
+  ],
+  "global-search:open": [],
+  "text-finder:text-finder-show-find-and-replace": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "F"
+    }
   ]
 }
