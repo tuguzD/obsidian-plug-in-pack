@@ -8,9 +8,10 @@ This is just a large collection of already set up plugins and hotkeys… That wa
 > - as well as other important info other users need to know =)
 
 > [!WARNING]
-> Please, ***DO NOT FORK*** this repository if you want to create your own vault (to store your work here), and then update it with new changes from this pack!
+> If you want to create your own vault (to store your work there), and then update it with new changes from this pack...
+> Please, ***DO NOT FORK*** this repository!
 >
-> You cannot change visibility of any of the forked repositories on `GitHub`, so it will stay **public** forever.
+> You cannot change visibility of forked repositories on `GitHub`, so any of yours will stay **public** forever.
 >
 > Instead, you should use this repository as template or clone it (creating unrelated one) and then, if necessary, pull data from this one using these `Git` commands (in your console/terminal), according to the [source](https://gist.github.com/krlozadan/4b75255b88d7a1504e5e632cb817c3f5):
 > ```
@@ -19,6 +20,8 @@ This is just a large collection of already set up plugins and hotkeys… That wa
 > git reset HEAD
 > git remote remove plug-in-pack
 > ```
+> For other **important** notes for `Git` users, follow [here](https://github.com/tuguzD/obsidian-plug-in-pack?tab=readme-ov-file#-synchronization).
+> 
 
 ## 🔌 *Manage plugins* much easier
 
