@@ -600,15 +600,6 @@
       "delay": "1st"
     },
     {
-      "id": "link-headers-directly",
-      "name": "Link Headers Directly",
-      "desc": "When a header is linked, preview mode will show only the header, and not the note name.",
-      "group": "link",
-      "tags": [],
-      "enabled": true,
-      "delay": "1st"
-    },
-    {
       "id": "link-preview",
       "name": "Link Preview",
       "desc": "Show a preview of external links on hover",
