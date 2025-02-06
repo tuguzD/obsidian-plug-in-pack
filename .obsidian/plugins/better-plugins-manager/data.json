@@ -1430,7 +1430,7 @@
       "group": "link",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "2nd"
     },
     {
       "id": "obsidian-map-view",
@@ -1442,6 +1442,15 @@
       ],
       "enabled": true,
       "delay": "3rd"
+    },
+    {
+      "id": "hierarchical-outgoing-links",
+      "name": "Hierarchical Outgoing Links",
+      "desc": "Displays outgoing links in a hierarchy",
+      "group": "core",
+      "tags": [],
+      "enabled": true,
+      "delay": ""
     }
   ]
 }

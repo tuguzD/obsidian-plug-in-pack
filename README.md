@@ -8,7 +8,7 @@ This is just a large collection of already set up plugins and hotkeys… That wa
 ## 🔌 *Manage plugins* much easier
 
 > [!TIP]
-> Please, don't be afraid of large amounts of plugins here! There is ***136*** of them, to be exact!
+> Please, don't be afraid of large amounts of plugins here! There is ***137*** of them, to be exact!
 >
 > They are all organized in `groups` and each of them have a `tag` assigned – you can enable them personally or by groups “in bulk” using commands.
 
@@ -73,6 +73,8 @@ This is just a large collection of already set up plugins and hotkeys… That wa
 6. [Better Word Count](https://github.com/lukeleppan/better-word-count) <sup>[⚠️[Word Count](https://help.obsidian.md/Plugins/Word+count) OFF]</sup> – collect stats about your whole vault, also customize displaying them
 
 7. [Tag Wrangler](https://github.com/pjeby/tag-wrangler) <sup>[✅[Tags view](https://help.obsidian.md/Plugins/Tags+view) ON]</sup> – rename (sub)tags “in bulk”, filter search with tags and manage “[Tag Pages](https://github.com/pjeby/tag-wrangler?tab=readme-ov-file#tag-pages)”
+
+8. [Hierarchical Outgoing Links](https://github.com/jasonmotylinski/hierarchical-outgoing-links) <sup>[⚠️[Outgoing Links](https://help.obsidian.md/Plugins/Outgoing+links) OFF]</sup> – view note’s outgoing links in hierarchy based on folder structure
 
 ### 🌳 Change state of [Graph view](https://help.obsidian.md/Plugins/Graph+view)
 - [Nested tags graph](https://github.com/drPilman/obsidian-graph-nested-tags) / ~~[Folders to Graph](https://github.com/Ratibus11/folders2graph)~~ – link nested tags / show folder structure in graph view
