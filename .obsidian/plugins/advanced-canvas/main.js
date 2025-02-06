@@ -4957,6 +4957,15 @@ var CommandsCanvasExtension = class extends CanvasExtension {
         (canvas) => canvas.zoomToSelection()
       )
     });
+    this.plugin.addCommand({
+      id: "zoom-to-fit",
+      name: "Zoom to fit",
+      checkCallback: CanvasHelper.canvasCommand(
+        this.plugin,
+        (_canvas) => true,
+        (canvas) => canvas.zoomToFit()
+      )
+    });
     for (const direction of DIRECTIONS) {
       this.plugin.addCommand({
         id: `clone-node-${direction}`,
