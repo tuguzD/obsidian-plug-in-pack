@@ -1451,6 +1451,15 @@
       "tags": [],
       "enabled": true,
       "delay": ""
+    },
+    {
+      "id": "supercharged-links-obsidian",
+      "name": "Supercharged Links",
+      "desc": "Add properties and menu options to links and style them!",
+      "group": "style-editor",
+      "tags": [],
+      "enabled": true,
+      "delay": "1st"
     }
   ]
 }

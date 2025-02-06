@@ -8,7 +8,7 @@ This is just a large collection of already set up plugins and hotkeys… That wa
 ## 🔌 *Manage plugins* much easier
 
 > [!TIP]
-> Please, don't be afraid of large amounts of plugins here! There is ***137*** of them, to be exact!
+> Please, don't be afraid of large amounts of plugins here! There is ***138*** of them, to be exact!
 >
 > They are all organized in `groups` and each of them have a `tag` assigned – you can enable them personally or by groups “in bulk” using commands.
 
@@ -213,6 +213,7 @@ Change appearance and overall make view more compact:
 - [Iconic](https://github.com/gfxholo/iconic) – set custom (colored) emoji/icon for files/folders (“in bulk” via rules) and app menus with their own icons
 - [Limelight](https://github.com/smikula/obsidian-limelight) – make all opened, but non-active panes dimmer: focus on an actively modified one
 - [Colored Tags Wrangler](https://github.com/code-of-chaos/obsidian-colored_tags_wrangler) – assign unique tag colors, then apply them to canvas items, folders and/or notes
+- [Supercharged Links](https://github.com/mdelobelle/obsidian_supercharged_links) – style links to a note based on its metadata: add colors, emojis, or other styles (e.g., text)
 - [Party](https://github.com/shap-po/obsidian-party) – create and customize “particle” effects on certain actions (e.g., completing checkboxes by default)
 - [Abbreviations and Acronyms](https://github.com/dragonish/obsidian-abbreviations) – auto-mark abbreviations/acronyms (terms) from metadata or global settings
 - ~~[Continuous Mode](https://github.com/gasparschott/obsidian-continuous-mode) – display all open notes or files (like PDFs) in tab group as a single scrollable document~~
