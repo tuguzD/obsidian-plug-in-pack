@@ -14,7 +14,7 @@ This is just a large collection of already set up plugins and hotkeys… That wa
 > You cannot change visibility of forked repositories on `GitHub`, so any of yours will stay **public** forever.
 > Instead, you should use this repository as template or clone it (creating unrelated one).
 >
-> For further info on how to sync your vault with new changes from this “[Plug-in-pack](#-plug-in-pack-for-obsidian-app)”, as well as other important information regarding [`Git`](https://git-scm.com) users, follow [here](#-synchronization).
+> For further info on how to sync your vault with new changes from this “[Plug-in-pack](<#-plug-in-pack-for-obsidian-app>)”, as well as other important information regarding [`Git`](https://git-scm.com) users, follow [here](<#-synchronization>).
 
 ## 🔌 *Manage plugins* much easier
 
