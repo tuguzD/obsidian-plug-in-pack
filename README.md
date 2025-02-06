@@ -141,7 +141,7 @@ Change appearance and overall make view more compact:
   - should be ⚠️DISABLED on mobile devices, use separate [`Git Sync`](https://github.com/ViscousPot/GitSync) app instead
 
 > [!TIP]
-> If you want to update your own repository (containing your vault and work) with **remote changes** from this one, you can pull all of them using these `Git` commands (in your console/terminal) in succession, according to the [source](https://gist.github.com/krlozadan/4b75255b88d7a1504e5e632cb817c3f5):
+> If you want to update your own repository (containing your vault and work) with **remote changes** from this one, you can pull all of them using these `Git` commands (in your terminal) in succession, according to [source](https://gist.github.com/krlozadan/4b75255b88d7a1504e5e632cb817c3f5):
 > ```
 > git remote add plug-in-pack https://github.com/tuguzD/obsidian-plug-in-pack.git
 > git pull -X theirs plug-in-pack main --allow-unrelated-histories --no-tags --no-commit
