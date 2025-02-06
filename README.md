@@ -8,7 +8,7 @@ This is just a large collection of already set up plugins and hotkeys… That wa
 > - as well as other important info other users need to know =)
 
 > [!WARNING]
-> If you want to create your own vault (to store your work there), and then update it with new changes from this pack...
+> If you want to create your own vault (to store your work there), and then update it with new changes from this pack (using `Git`, obviously)...
 > Please, ***DO NOT FORK*** this repository!
 >
 > You cannot change visibility of forked repositories on `GitHub`, so any of yours will stay **public** forever.
