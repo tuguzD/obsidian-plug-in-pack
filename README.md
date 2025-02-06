@@ -20,7 +20,7 @@ This is just a large collection of already set up plugins and hotkeys… That wa
 > git reset HEAD
 > git remote remove plug-in-pack
 > ```
-> For other **important** notes for `Git` users, follow [here](https://github.com/tuguzD/obsidian-plug-in-pack?tab=readme-ov-file#-synchronization).
+> For other **important** notes for `Git` users, follow [here](#-synchronization).
 > 
 
 ## 🔌 *Manage plugins* much easier
