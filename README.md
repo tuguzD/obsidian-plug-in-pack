@@ -14,7 +14,7 @@ This is just a large collection of already set up plugins and hotkeys… That wa
 >
 > Instead, you should use this repository as template or clone it (creating unrelated one) and then, if necessary, pull data from this one using this `Git` command (in console):
 > ```
-> git pull https://github.com/tuguzD/obsidian-plug-in-pack.git master:master
+> git pull -X theirs https://github.com/tuguzD/obsidian-plug-in-pack.git main --allow-unrelated-histories
 > ```
 
 ## 🔌 *Manage plugins* much easier
