@@ -1469,6 +1469,15 @@
       "tags": [],
       "enabled": true,
       "delay": ""
+    },
+    {
+      "id": "backlink-cache",
+      "name": "Backlink Cache",
+      "desc": "Stores backlink cache to speed up `app.metadataCache.getBacklinksForFile`",
+      "group": "link",
+      "tags": [],
+      "enabled": true,
+      "delay": ""
     }
   ]
 }

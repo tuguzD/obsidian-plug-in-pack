@@ -8,7 +8,7 @@ This is just a large collection of already set up plugins and hotkeys… That wa
 ## 🔌 *Manage plugins* much easier
 
 > [!TIP]
-> Please, don't be afraid of large amounts of plugins here! There is ***139*** of them, to be exact!
+> Please, don't be afraid of large amounts of plugins here! There is ***140*** of them, to be exact!
 >
 > They are all organized in `groups` and each of them have a `tag` assigned – you can enable them personally or by groups “in bulk” using commands.
 
@@ -45,7 +45,8 @@ This is just a large collection of already set up plugins and hotkeys… That wa
 
 ### 🔗 Work with [*links*](https://help.obsidian.md/Linking+notes+and+files/Internal+links) quicker
 - [Links](https://github.com/mii-key/obsidian-links) – add A LOT of context menu actions for link creation, editing, conversion and removal/deletion from note
-- [Auto Link Title](https://github.com/zolrath/obsidian-auto-link-title) – automatically fetch website’s title upon pasting it into notes
+- [Auto Link Title](https://github.com/zolrath/obsidian-auto-link-title) – automatically fetch website’s title for existing external links or new ones (when pasting them)
+- [Backlink Cache](https://github.com/mnaoumov/obsidian-backlink-cache) – improve performance for any plugins that work with backlinks (by maintaining their cache)
 - [Link Favicons](https://github.com/joethei/obsidian-link-favicon) – automatically render favicons for external links (website), set custom icon for certain links
 - [Copy Block Link](https://github.com/mgmeyers/obsidian-copy-block-link) – get links to text blocks and headings directly from a context menu
 - [Link Headers Directly](https://github.com/Signynt/link-headers-directly) – show only the last header of internal links[^1], and not the whole note hierarchy
