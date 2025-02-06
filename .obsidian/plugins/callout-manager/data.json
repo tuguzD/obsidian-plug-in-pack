@@ -1,7 +1,32 @@
 {
   "callouts": {
     "custom": [],
-    "settings": {}
+    "settings": {
+      "tip": [
+        {
+          "changes": {
+            "icon": "lucide-lightbulb",
+            "color": "68, 207, 110"
+          }
+        }
+      ],
+      "important": [
+        {
+          "changes": {
+            "icon": "lucide-message-square-warning",
+            "color": "168, 130, 255"
+          }
+        }
+      ],
+      "caution": [
+        {
+          "changes": {
+            "icon": "lucide-alert-octagon",
+            "color": "251, 70, 76"
+          }
+        }
+      ]
+    }
   },
   "calloutDetection": {
     "obsidian": true,
