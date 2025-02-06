@@ -12,16 +12,9 @@ This is just a large collection of already set up plugins and hotkeys… That wa
 > Please, ***DO NOT FORK*** this repository!
 >
 > You cannot change visibility of forked repositories on `GitHub`, so any of yours will stay **public** forever.
+> Instead, you should use this repository as template or clone it (creating unrelated one).
 >
-> Instead, you should use this repository as template or clone it (creating unrelated one) and then, if necessary, pull **remote changes** (from this one) using these `Git` commands (in your console/terminal) in succession, according to the [source](https://gist.github.com/krlozadan/4b75255b88d7a1504e5e632cb817c3f5):
-> ```
-> git remote add plug-in-pack https://github.com/tuguzD/obsidian-plug-in-pack.git
-> git pull -X theirs plug-in-pack main --allow-unrelated-histories --no-tags --no-commit
-> git reset HEAD
-> git remote remove plug-in-pack
-> ```
-> For other **important** notes for `Git` users, follow [here](#-synchronization).
-> 
+> For further info on how to sync your vault with new changes from this “[Plug-in-pack](#-plug-in-pack-for-obsidian-app)”, as well as other important information regarding [`Git`](https://git-scm.com) users, follow [here](#-synchronization).
 
 ## 🔌 *Manage plugins* much easier
 
@@ -146,6 +139,21 @@ Change appearance and overall make view more compact:
   - also supports [`Git`](https://git-scm.com) VCS history (using the next plugin below)
 - [Git](https://github.com/Vinzent03/obsidian-git) – store remote copy of your vault in a `GitHub` repository, which also allows sync between different devices
   - should be ⚠️DISABLED on mobile devices, use separate [`Git Sync`](https://github.com/ViscousPot/GitSync) app instead
+
+> [!TIP]
+> If you want to update your own repository (containing your vault and work) with **remote changes** from this one, you can pull all of them using these `Git` commands (in your console/terminal) in succession, according to the [source](https://gist.github.com/krlozadan/4b75255b88d7a1504e5e632cb817c3f5):
+> ```
+> git remote add plug-in-pack https://github.com/tuguzD/obsidian-plug-in-pack.git
+> git pull -X theirs plug-in-pack main --allow-unrelated-histories --no-tags --no-commit
+> git reset HEAD
+> git remote remove plug-in-pack
+> ```
+> > Please note that for above commands to actually work (and not fail silently), your vault should not contain any uncommited changes to files that are pulled from this (remote) repository.
+> >
+> > So, you should either commit or discard YOUR changes to avoid encountering any unecessary issues.
+> 
+> After that, review and discard any changes you don't need in "`Source Control`" tab of the above-mentioned [Git](https://github.com/Vinzent03/obsidian-git) plugin
+> (you can always open it via `Git: Open source control view` command).
 
 > [!IMPORTANT]  
 > ...
