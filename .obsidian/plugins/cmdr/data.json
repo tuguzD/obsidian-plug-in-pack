@@ -74,7 +74,10 @@
       "QuickAdd",
       "Recent notes",
       "Visual Crossing Weather",
-      "List abbreviations"
+      "List abbreviations",
+      "PDF++: Toggle auto-copy",
+      "PDF++: Toggle auto-focus",
+      "PDF++: Toggle auto-paste"
     ]
   },
   "spacing": "12",

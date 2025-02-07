@@ -766,7 +766,7 @@
       "tags": [
         "internet"
       ],
-      "enabled": true,
+      "enabled": false,
       "delay": "3rd"
     },
     {
@@ -842,7 +842,7 @@
       "tags": [
         "internet"
       ],
-      "enabled": true,
+      "enabled": false,
       "delay": "1st"
     },
     {
@@ -1001,7 +1001,7 @@
       "tags": [
         "internet"
       ],
-      "enabled": true,
+      "enabled": false,
       "delay": "2nd"
     },
     {
@@ -1265,7 +1265,7 @@
       "tags": [
         "internet"
       ],
-      "enabled": true,
+      "enabled": false,
       "delay": "2nd"
     },
     {
@@ -1303,7 +1303,7 @@
       "tags": [
         "internet"
       ],
-      "enabled": true,
+      "enabled": false,
       "delay": "3rd"
     },
     {
@@ -1431,7 +1431,7 @@
       "tags": [
         "internet"
       ],
-      "enabled": true,
+      "enabled": false,
       "delay": "3rd"
     },
     {
