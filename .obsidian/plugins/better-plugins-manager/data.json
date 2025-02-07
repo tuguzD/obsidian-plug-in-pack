@@ -1477,7 +1477,7 @@
       "group": "edit-file",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "2nd"
     },
     {
       "id": "shiki-highlighter",
@@ -1486,7 +1486,7 @@
       "group": "style-file",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     }
   ]
 }
