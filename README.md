@@ -140,6 +140,12 @@ Change appearance and overall make view more compact:
 - [Git](https://github.com/Vinzent03/obsidian-git) – store remote copy of your vault in a `GitHub` repository, which also allows sync between different devices
   - should be ⚠️DISABLED on mobile devices, use separate [`Git Sync`](https://github.com/ViscousPot/GitSync) app instead
 
+> [!NOTE]
+> All commands related to `Git` VCS can be called by using plugin command directly from [Obsidian](https://obsidian.md) app:
+> `Git: Raw command`.
+>
+> On the other hand, `Git` commands cannot be called "in bulk" this way, so it is suggested to work from system terminal.
+
 > [!TIP]
 > If you want to update your own repository (containing your vault and work) with **remote changes** from this one, you can pull all of them using these `Git` commands (in your terminal) in succession, according to [source](https://gist.github.com/krlozadan/4b75255b88d7a1504e5e632cb817c3f5):
 > ```
@@ -148,7 +154,11 @@ Change appearance and overall make view more compact:
 > git reset HEAD
 > git remote remove plug-in-pack
 > ```
-> > Please note that for above commands to actually work (and not fail silently), your vault should not contain any uncommited changes to files that are pulled from this (remote) repository.
+> Alternatively, you can just call the custom command from the [Status bar](https://help.obsidian.md/User+interface/Status+bar) (or hide it with [Status Bar Organizer](https://github.com/Opisek/obsidian-statusbar-organizer)):
+>
+> ![image](https://github.com/user-attachments/assets/bca8e810-9feb-4dff-8e93-a2dc3d69742d)
+> 
+> > Please note that for all above to actually work (and not fail silently), your vault should not contain any uncommited changes to files that are pulled from this (remote) repository.
 > >
 > > So, you should either commit or discard YOUR changes to avoid encountering any unecessary issues.
 > 
@@ -166,7 +176,7 @@ Change appearance and overall make view more compact:
 > git update-index --skip-worktree .obsidian\plugins\enhanced-annotations\data.json
 > git update-index --skip-worktree .obsidian\plugins\obsidian-day-and-night\data.json
 > ```
-> > Of course, all of these files can be deleted from the repository, and then added to `.gitignore` file (if you so desire) – this way, they won’t be present in repository anymore.
+> > Of course, all of these files can be deleted from the repository, and then added to `.gitignore` file (if you so desire) – this way, they won’t be present in it anymore.
 > >
 > > But I (personally) think that some of these files still provide useful configurations that should not be deleted, as they won’t be shared to all the users of this “[Plug-in-pack](<#-plug-in-pack-for-obsidian-app>)” template.
 > 
