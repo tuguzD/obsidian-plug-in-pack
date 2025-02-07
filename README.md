@@ -19,7 +19,7 @@ This is just a large collection of already set up plugins and hotkeys… That wa
 ## 🔌 *Manage plugins* much easier
 
 > [!TIP]
-> Please, don't be afraid of large amounts of plugins here! There is ***139*** of them, to be exact!
+> Please, don't be afraid of large amounts of plugins here! There is ***140*** of them, to be exact!
 >
 > They are all organized in `groups` and each of them have a `tag` assigned – you can enable them personally or by groups “in bulk” using commands.
 
