@@ -947,15 +947,6 @@
       "delay": ""
     },
     {
-      "id": "obsidian-smart-typography",
-      "name": "Smart Typography",
-      "desc": "Converts quotes to curly quotes, dashes to em dashes, and periods to ellipses",
-      "group": "edit-file",
-      "tags": [],
-      "enabled": true,
-      "delay": ""
-    },
-    {
       "id": "obsidian-style-settings",
       "name": "Style Settings",
       "desc": "Offers controls for adjusting theme, plugin, and snippet CSS variables.",
@@ -1475,6 +1466,15 @@
       "name": "Shell commands",
       "desc": "You can predefine system commands that you want to run frequently, and assign hotkeys for them. For example open external applications. Automatic execution is also supported, and execution via URI links.",
       "group": "new",
+      "tags": [],
+      "enabled": true,
+      "delay": ""
+    },
+    {
+      "id": "enhanced-symbols-prettifier",
+      "name": "Enhanced Symbols Prettifier",
+      "desc": "Replace/substitute the symbols with actual symbols you commonly type. It also works for emojis shortcuts, abbreviations, greek letters, math symbols or other snippets/aliases you define",
+      "group": "edit-file",
       "tags": [],
       "enabled": true,
       "delay": ""

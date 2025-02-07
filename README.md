@@ -180,7 +180,7 @@ Change appearance and overall make view more compact:
 
 
 ## ✏️ Perform complex *note editing* tasks
-- [Smart Typography](https://github.com/mgmeyers/obsidian-smart-typography) – convert sets of characters into a single one, that are useful for text typography
+- [Enhanced Symbols Prettifier](https://github.com/noam-sc/obsidian-enhanced-symbols-prettifier) – convert sets of characters into a single one, that are useful for text typography
 - [Various Complements](https://github.com/tadashi-aikawa/obsidian-various-complements-plugin) – auto-complete words (like in IDEs) from vault contents and/or custom dictionaries
 - [Note Refactor](https://github.com/lynchjames/note-refactor-obsidian) – split any chosen note, or extract selected part of a note into a new/existing one
 - [Waypoint](https://github.com/IdreesInc/Waypoint) – automatically generate (add/update) tables of contents (link folder note with the regular ones)
