@@ -33,7 +33,7 @@
       "shells": {
         "win32": "PowerShell.exe"
       },
-      "alias": "Sync with \"Plug-in-pack\"       ",
+      "alias": "Sync with \"Plug-in-pack\"",
       "icon": "lucide-arrow-down-01",
       "confirm_execution": true,
       "ignore_error_codes": [],
