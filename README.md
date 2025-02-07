@@ -141,10 +141,9 @@ Change appearance and overall make view more compact:
   - should be ⚠️DISABLED on mobile devices, use separate [`Git Sync`](https://github.com/ViscousPot/GitSync) app instead
 
 > [!NOTE]
-> All commands related to `Git` VCS can be called by using plugin command directly from [Obsidian](https://obsidian.md) app:
-> `Git: Raw command`.
+> All `Git` commands can be called directly from [Obsidian](https://obsidian.md) app with plugin command: `Git: Raw command`.
 >
-> On the other hand, `Git` commands cannot be called "in bulk" this way, so it is suggested to work from system terminal.
+> On the other hand, they can’t be called ”in bulk” this way, so it’s suggested to work from system terminal.
 
 > [!TIP]
 > If you want to update your own repository (containing your vault and work) with **remote changes** from this one, you can pull all of them using these `Git` commands (in your terminal) in succession, according to [source](https://gist.github.com/krlozadan/4b75255b88d7a1504e5e632cb817c3f5):
