@@ -148,6 +148,7 @@ Change appearance and overall make view more compact:
 - [Note Toolbar](https://github.com/chrisgurney/obsidian-note-toolbar) – create context-aware [toolbars](https://github.com/chrisgurney/obsidian-note-toolbar/wiki/Examples) containing commands, file links, menus and scripts
   - [JS Engine](https://github.com/mProjectsCode/obsidian-js-engine-plugin) – execute `JavaScript` code from a special code block (allows plugin above to [run scripts](https://github.com/chrisgurney/obsidian-note-toolbar/wiki/Executing-scripts#script-item-types))
 - [Execute Code](https://github.com/twibiral/obsidian-execute-code) – execute code snippets in code blocks of notes for locally installed [languages](https://github.com/twibiral/obsidian-execute-code?tab=readme-ov-file#supported-programming-languages-)
+- [Shell commands](https://github.com/Taitava/obsidian-shellcommands) – execute shell commands (on desktop) with app’s commands or automatically (via it’s events)
 - [Mindmap NextGen](https://github.com/james-tindal/obsidian-mindmap-nextgen) – view active note’s content as a mindmap, configure its appearance and make screenshots
 - [Widgets](https://github.com/rafaelveiga/obsidian-widgets) – add widgets (clock, [countdown](https://github.com/rafaelveiga/obsidian-widgets?tab=readme-ov-file#countdown), counter, quote) to your notes from custom code blocks
 
