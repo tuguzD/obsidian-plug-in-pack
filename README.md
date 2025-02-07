@@ -233,9 +233,9 @@ Change appearance and overall make view more compact:
 
 ### 🖌️ Make *file contents* more appealing
 - [Blur](https://github.com/gapmiss/blur) – apply blur effect to portions of text to obfuscate it (non-[Markdown](https://help.obsidian.md/Editing+and+formatting/Basic+formatting+syntax), so works only in `Obsidian` app)
-- ~~[Pixel Banner](https://github.com/jparkerweb/pixel-banner) – make notes more visually appealing by creating a banner image (from vault/Web) at their top~~
-	- disabled (for now) due to lags when writing in Editing mode or scrolling in Reading mode
-- [Code Styler](https://github.com/mayurankv/Obsidian-Code-Styler) – apply styles/themes to codeblocks and inline code, or customize them to your liking
+- [Pixel Banner](https://github.com/jparkerweb/pixel-banner) – make notes more visually appealing by creating a banner image (from vault/Web) at their top
+- ~~[Code Styler](https://github.com/mayurankv/Obsidian-Code-Styler) – apply styles/themes to codeblocks and inline code, or customize them to your liking~~
+  - disabled (for now) due to lags when writing in Editing mode or scrolling in Reading mode
 
 
 ## 📊 Collect new *information* about your work
