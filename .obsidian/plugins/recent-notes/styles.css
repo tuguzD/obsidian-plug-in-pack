@@ -11,12 +11,12 @@
 }
 
 .recent-note-title {
-    font-size: calc(var(--font-text-size) * 0.95);
+    font-size: var(--nav-item-size);
     font-weight: 600;
     margin-bottom: 0px;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow: clip;
 }
 .recent-note-date {
     color: var(--text-muted);
@@ -33,7 +33,7 @@
     align-items: flex-start;
     gap: 4px 8px;
     color: var(--text-muted);
-    font-size: calc(var(--font-text-size) * 0.8);
+    font-size: calc(var(--nav-item-size) * 0.9);
     min-height: 1.3em;
 }
 .recent-notes-view h6 {
@@ -41,7 +41,7 @@
     padding: 6px 0px;
     margin: 26px 0px 0px 0px;
     color: var(--text-muted);
-    font-size: 0.82em;
+    font-size: calc(var(--nav-item-size) * 0.9);
     font-weight: 500;
     z-index: 1;
     border-bottom: 1px solid var(--background-modifier-border);
@@ -60,7 +60,7 @@
 /* Single line layout */
 .recent-note-preview-line {
     overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow: clip;
     white-space: nowrap;
     line-height: 1.3;
 }
