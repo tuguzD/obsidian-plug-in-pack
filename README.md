@@ -141,7 +141,7 @@ Change appearance and overall make view more compact:
   - should be ⚠️DISABLED on mobile devices, use separate [`Git Sync`](https://github.com/ViscousPot/GitSync) app instead
 
 > [!NOTE]
-> All `Git` commands can be called directly from [Obsidian](https://obsidian.md) app with plugin command: `Git: Raw command`.
+> All `Git` commands can be called directly from [Obsidian](https://obsidian.md) app with [Git](https://github.com/Vinzent03/obsidian-git) plugin command: `Git: Raw command`.
 >
 > On the other hand, they can’t be called ”in bulk” this way, so it’s suggested to work from system terminal.
 
