@@ -19,7 +19,7 @@ This is just a large collection of already set up plugins and hotkeys… That wa
 ## 🔌 *Manage plugins* much easier
 
 > [!TIP]
-> Please, don't be afraid of large amounts of plugins here! There is ***140*** of them, to be exact!
+> Please, don't be afraid of large amounts of plugins here! There is ***141*** of them, to be exact!
 >
 > They are all organized in `groups` and each of them have a `tag` assigned – you can enable them personally or by groups “in bulk” using commands.
 
@@ -234,6 +234,7 @@ Change appearance and overall make view more compact:
 ### 🖌️ Make *file contents* more appealing
 - [Blur](https://github.com/gapmiss/blur) – apply blur effect to portions of text to obfuscate it (non-[Markdown](https://help.obsidian.md/Editing+and+formatting/Basic+formatting+syntax), so works only in `Obsidian` app)
 - [Pixel Banner](https://github.com/jparkerweb/pixel-banner) – make notes more visually appealing by creating a banner image (from vault/Web) at their top
+-  [Shiki Highlighter](https://github.com/mProjectsCode/obsidian-shiki-plugin) – apply styles/themes to codeblocks: show line numbers and highlighting, set custom headers
 - ~~[Code Styler](https://github.com/mayurankv/Obsidian-Code-Styler) – apply styles/themes to codeblocks and inline code, or customize them to your liking~~
   - disabled (for now) due to lags when writing in Editing mode or scrolling in Reading mode
 

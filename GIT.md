@@ -9,8 +9,8 @@
 
 If you want to update your own repository (containing your vault and work) with **remote changes** from this one, you can pull all of them using these `Git` commands (in your terminal) in succession, according to [source](https://gist.github.com/krlozadan/4b75255b88d7a1504e5e632cb817c3f5):
 
-```git
-git remote add plug-in-pack https://github.com/tuguzD/obsidian-plug-in-pack.git
+```shell title="➕ Get changes from template remote (no history)" frame="code" showLineNumbers wrap
+git remote add plug-in-pack "https://github.com/tuguzD/obsidian-plug-in-pack.git"
 git pull -X theirs plug-in-pack main --allow-unrelated-histories --no-tags --no-commit --no-rebase
 git reset HEAD
 git remote remove plug-in-pack
@@ -33,11 +33,11 @@ As you could’ve already noticed, some files seem to update each time the vault
 
 Changes for such files can be ignored locally, for each of your device (but not for the whole repository, like when using `.gitignore`) by updating each file’s index using [skip-worktree bit](https://git-scm.com/docs/git-update-index#_skip_worktree_bit). I suggest you to avoid updating files below by running these `Git` commands:
 
-```git
-git update-index --skip-worktree .obsidian\plugins\media-notes\data.json
-git update-index --skip-worktree .obsidian\plugins\novel-word-count\data.json
-git update-index --skip-worktree .obsidian\plugins\enhanced-annotations\data.json
-git update-index --skip-worktree .obsidian\plugins\obsidian-day-and-night\data.json
+```shell title="🫥 Don't collect changes from these files" frame="code" showLineNumbers wrap
+git update-index --skip-worktree ".obsidian\plugins\media-notes\data.json"
+git update-index --skip-worktree ".obsidian\plugins\novel-word-count\data.json"
+git update-index --skip-worktree ".obsidian\plugins\enhanced-annotations\data.json"
+git update-index --skip-worktree ".obsidian\plugins\obsidian-day-and-night\data.json"
 ```
 
 > [!IMPORTANT]

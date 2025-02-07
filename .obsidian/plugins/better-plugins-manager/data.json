@@ -1478,6 +1478,15 @@
       "tags": [],
       "enabled": true,
       "delay": ""
+    },
+    {
+      "id": "shiki-highlighter",
+      "name": "Shiki Highlighter",
+      "desc": "Highlight code blocks with Shiki.",
+      "group": "style-file",
+      "tags": [],
+      "enabled": true,
+      "delay": ""
     }
   ]
 }
