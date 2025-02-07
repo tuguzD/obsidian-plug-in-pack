@@ -2,8 +2,8 @@
   "dualConfigs": false,
   "showConsoleLog": false,
   "desktop": {
-    "shortDelaySeconds": 0.5,
-    "longDelaySeconds": 2,
+    "shortDelaySeconds": 1,
+    "longDelaySeconds": 3,
     "delayBetweenPlugins": 40,
     "defaultStartupType": "instant",
     "showDescriptions": false,
@@ -33,7 +33,7 @@
         "startupType": "instant"
       },
       "obsidian-cursor-location-plugin": {
-        "startupType": "instant"
+        "startupType": "short"
       },
       "dataview": {
         "startupType": "short"
@@ -54,13 +54,13 @@
         "startupType": "short"
       },
       "folder-notes": {
-        "startupType": "short"
+        "startupType": "instant"
       },
       "folders2graph": {
         "startupType": "disabled"
       },
       "obsidian-footnotes": {
-        "startupType": "instant"
+        "startupType": "short"
       },
       "obsidian-git": {
         "startupType": "instant"
@@ -72,7 +72,7 @@
         "startupType": "instant"
       },
       "hotkey-helper": {
-        "startupType": "instant"
+        "startupType": "short"
       },
       "link-favicon": {
         "startupType": "short"
@@ -81,7 +81,7 @@
         "startupType": "short"
       },
       "obsidian-linter": {
-        "startupType": "short"
+        "startupType": "long"
       },
       "nldates-obsidian": {
         "startupType": "short"
@@ -93,7 +93,7 @@
         "startupType": "short"
       },
       "open-with-nldates": {
-        "startupType": "instant"
+        "startupType": "short"
       },
       "obsidian-outliner": {
         "startupType": "instant"
@@ -114,13 +114,13 @@
         "startupType": "instant"
       },
       "darlal-switcher-plus": {
-        "startupType": "instant"
+        "startupType": "short"
       },
       "recent-files-obsidian": {
         "startupType": "instant"
       },
       "remember-cursor-position": {
-        "startupType": "short"
+        "startupType": "instant"
       },
       "replace-all": {
         "startupType": "instant"
@@ -141,7 +141,7 @@
         "startupType": "instant"
       },
       "cycle-through-panes": {
-        "startupType": "instant"
+        "startupType": "short"
       },
       "tag-wrangler": {
         "startupType": "instant"
@@ -150,7 +150,7 @@
         "startupType": "short"
       },
       "obsidian-wakatime": {
-        "startupType": "long"
+        "startupType": "short"
       },
       "workspaces-plus": {
         "startupType": "instant"
@@ -162,7 +162,7 @@
         "startupType": "short"
       },
       "omnisearch": {
-        "startupType": "long"
+        "startupType": "short"
       },
       "text-extractor": {
         "startupType": "short"
@@ -186,7 +186,7 @@
         "startupType": "disabled"
       },
       "obsidian42-brat": {
-        "startupType": "instant"
+        "startupType": "short"
       },
       "blur": {
         "startupType": "instant"
@@ -243,7 +243,7 @@
         "startupType": "short"
       },
       "obsidian-reading-time": {
-        "startupType": "instant"
+        "startupType": "short"
       },
       "enhanced-copy": {
         "startupType": "instant"
@@ -255,13 +255,13 @@
         "startupType": "long"
       },
       "code-styler": {
-        "startupType": "long"
+        "startupType": "disabled"
       },
       "double-click-tab": {
         "startupType": "instant"
       },
       "obsidian-doubleshift": {
-        "startupType": "instant"
+        "startupType": "short"
       },
       "note-toolbar": {
         "startupType": "short"
@@ -270,7 +270,7 @@
         "startupType": "short"
       },
       "image-converter": {
-        "startupType": "long"
+        "startupType": "short"
       },
       "callout-integrator": {
         "startupType": "instant"
@@ -291,7 +291,7 @@
         "startupType": "instant"
       },
       "pexels-banner": {
-        "startupType": "short"
+        "startupType": "instant"
       },
       "callout-manager": {
         "startupType": "instant"
@@ -369,7 +369,7 @@
         "startupType": "short"
       },
       "obsidian-party": {
-        "startupType": "instant"
+        "startupType": "short"
       },
       "visual-crossing-weather": {
         "startupType": "long"
@@ -399,7 +399,61 @@
         "startupType": "instant"
       },
       "better-plugins-manager": {
-        "startupType": "disabled"
+        "startupType": "short"
+      },
+      "backlink-cache": {
+        "startupType": "short"
+      },
+      "better-markdown-links": {
+        "startupType": "short"
+      },
+      "custom-node-size": {
+        "startupType": "instant"
+      },
+      "enhanced-symbols-prettifier": {
+        "startupType": "short"
+      },
+      "frontmatter-markdown-links": {
+        "startupType": "short"
+      },
+      "hierarchical-outgoing-links": {
+        "startupType": "instant"
+      },
+      "image-captions": {
+        "startupType": "instant"
+      },
+      "obsidian-map-view": {
+        "startupType": "long"
+      },
+      "open-sidebar-on-hover-plus": {
+        "startupType": "instant"
+      },
+      "pdf-plus": {
+        "startupType": "long"
+      },
+      "persistent-graph": {
+        "startupType": "instant"
+      },
+      "obsidian-projects": {
+        "startupType": "long"
+      },
+      "obsidian-shellcommands": {
+        "startupType": "short"
+      },
+      "shiki-highlighter": {
+        "startupType": "long"
+      },
+      "supercharged-links-obsidian": {
+        "startupType": "instant"
+      },
+      "sync-graph-settings": {
+        "startupType": "instant"
+      },
+      "text-finder": {
+        "startupType": "short"
+      },
+      "virtual-linker": {
+        "startupType": "instant"
       }
     }
   }

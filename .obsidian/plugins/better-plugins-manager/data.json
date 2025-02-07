@@ -4,7 +4,7 @@
   "ITEM_STYLE": "alwaysExpand",
   "GROUP_STYLE": "a",
   "TAG_STYLE": "b",
-  "DELAY": true,
+  "DELAY": false,
   "FADE_OUT_DISABLED_PLUGINS": true,
   "COMMAND_ITEM": false,
   "COMMAND_GROUP": true,

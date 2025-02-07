@@ -23,12 +23,11 @@ This is just a large collection of already set up plugins and hotkeys… That wa
 >
 > They are all organized in `groups` and each of them have a `tag` assigned – you can enable them personally or by groups “in bulk” using commands.
 
-- [Better Plugins Manager](https://github.com/0011000000110010/obsidian-manager) – delay plugins’ startup, filter them by groups/tags, and then toggle them “in bulk”
+- [Better Plugins Manager](https://github.com/0011000000110010/obsidian-manager) – assign/filter plugins with groups/tags, toggle “in bulk” or one by one (via commands)
+- [Lazy Plugin Loader](https://github.com/alangrainger/obsidian-lazy-plugins) – load chosen plugins later to improve speed of `Obsidian` app launch
 - [Plugin Update Tracker](https://github.com/swar8080/obsidian-plugin-update-tracker) – show updates for all plugins, browse their release notes and even ignore them
 - [BRAT](https://github.com/TfTHacker/obsidian42-brat) – download plugins that aren’t (yet) listed in official plugin portal (or beta versions of listed plugins)
 - [Plugins Annotations](https://github.com/alberti42/obsidian-plugins-annotations) – add custom annotation for each plugin to store personal note (e.g., its actual use-case scenario, as labels can’t usually provide full info)
-- ~~[Lazy Plugin Loader](https://github.com/alangrainger/obsidian-lazy-plugins) – load chosen plugins later to improve speed of `Obsidian` app launch~~
-  - disabled (for now) as there is a more powerful “Better Plugins Manager” plugin
 
 ## ❤️ Improve *default app* features
 - [Settings Search](https://github.com/javalent/settings-search) – perform search among all settings, including: application, core and community plugins
