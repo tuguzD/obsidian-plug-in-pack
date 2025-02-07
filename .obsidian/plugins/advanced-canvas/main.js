@@ -3634,9 +3634,13 @@ var MetadataCachePatcher = class extends Patcher {
         this.trigger("resolved");
       }),
       registerInternalLinkAC: (_next) => function(canvasName, from, to) {
-        var _a, _b, _c, _d;
-        const fromFileHash = (_b = (_a = this.fileCache[from]) == null ? void 0 : _a.hash) != null ? _b : HashHelper.hash(from);
-        const fromFileMetadataCache = (_c = this.metadataCache[fromFileHash]) != null ? _c : { v: 1 };
+        var _a, _b, _c, _d, _e;
+        if (from === to)
+          return;
+        if (!["md", "canvas"].includes((_a = PathHelper.extension(from)) != null ? _a : ""))
+          return;
+        const fromFileHash = (_c = (_b = this.fileCache[from]) == null ? void 0 : _b.hash) != null ? _c : HashHelper.hash(from);
+        const fromFileMetadataCache = (_d = this.metadataCache[fromFileHash]) != null ? _d : { v: 1 };
         this.metadataCache[fromFileHash] = {
           ...fromFileMetadataCache,
           links: [
@@ -3651,7 +3655,7 @@ var MetadataCachePatcher = class extends Patcher {
         };
         this.resolvedLinks[from] = {
           ...this.resolvedLinks[from],
-          [to]: (((_d = this.resolvedLinks[from]) == null ? void 0 : _d[to]) || 0) + 1
+          [to]: (((_e = this.resolvedLinks[from]) == null ? void 0 : _e[to]) || 0) + 1
         };
       }
     });
