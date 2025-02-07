@@ -25,8 +25,7 @@
       "icon": "lucide-table-properties"
     },
     "beautitab-react-view": {
-      "icon": "lucide-mouse-pointer-square-dashed",
-      "color": "gray"
+      "icon": "lucide-file-image"
     },
     "recent-files": {
       "icon": "lucide-file-search"
@@ -46,8 +45,7 @@
   },
   "fileIcons": {
     "GIT.md": {
-      "icon": "lucide-github",
-      "color": "gray"
+      "icon": "lucide-github"
     },
     "HOME.md": {
       "icon": "lucide-home",
@@ -57,18 +55,6 @@
       "icon": "lucide-book-marked",
       "color": "orange"
     },
-    "Tests": {
-      "icon": "lucide-test-tube-diagonal",
-      "unsynced": [
-        "054d7ed642df09e6"
-      ],
-      "color": "green"
-    },
-    "Tests/Tests.md": {
-      "icon": "lucide-test-tube-diagonal",
-      "color": "green"
-    }
-  },
   "bookmarkIcons": {},
   "tagIcons": {},
   "propertyIcons": {},
