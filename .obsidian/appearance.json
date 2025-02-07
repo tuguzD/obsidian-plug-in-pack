@@ -5,6 +5,7 @@
   "accentColor": "",
   "showRibbon": true,
   "enabledCssSnippets": [
-    "obsidian-blur-plugin"
+    "obsidian-blur-plugin",
+    "supercharged-links-gen"
   ]
 }
