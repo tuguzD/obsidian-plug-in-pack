@@ -31,7 +31,7 @@ After that, review and discard any changes you don’t need in ”`Source Contro
 
 As you could’ve already noticed, some files seem to update each time the vault opens, so they have a potential to clutter each commit with meaningless changes.
 
-Changes for such files can be ignored locally, for each of your device (but not for the whole repository, like when using `.gitignore`) by updating each file’s index using [skip-worktree bit](https://git-scm.com/docs/git-update-index#_skip_worktree_bit). I suggest you to avoid updating files below by running these `Git` commands (in your terminal):
+Changes for such files can be ignored locally, for each of your device (but not for the whole repository, like when using `.gitignore`) by updating each file’s index using [skip-worktree bit](https://git-scm.com/docs/git-update-index#_skip_worktree_bit). I suggest you to avoid updating files below by running these `Git` commands:
 
 ```git
 git update-index --skip-worktree .obsidian\plugins\media-notes\data.json
