@@ -45,6 +45,10 @@
     }
   },
   "fileIcons": {
+    "GIT.md": {
+      "icon": "lucide-github",
+      "color": "gray"
+    },
     "HOME.md": {
       "icon": "lucide-home",
       "color": "yellow"
