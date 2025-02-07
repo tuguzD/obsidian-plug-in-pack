@@ -25,7 +25,7 @@
       "icon": "lucide-table-properties"
     },
     "beautitab-react-view": {
-      "icon": "lucide-file-image"
+      "icon": "lucide-file-plus-2"
     },
     "recent-files": {
       "icon": "lucide-file-search"
@@ -54,7 +54,8 @@
     "README.md": {
       "icon": "lucide-book-marked",
       "color": "orange"
-    },
+    }
+  },
   "bookmarkIcons": {},
   "tagIcons": {},
   "propertyIcons": {},
