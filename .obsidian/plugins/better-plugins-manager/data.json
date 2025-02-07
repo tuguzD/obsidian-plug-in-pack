@@ -367,7 +367,7 @@
       "desc": "Style and customize codeblocks and inline code in both editing mode and reading mode.",
       "group": "style-file",
       "tags": [],
-      "enabled": true,
+      "enabled": false,
       "delay": "2nd"
     },
     {
