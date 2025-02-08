@@ -85,7 +85,7 @@ This is just a large collection of already set up plugins and hotkeys… That wa
 
 7. [Tag Wrangler](https://github.com/pjeby/tag-wrangler) <sup>[✅[Tags view](https://help.obsidian.md/Plugins/Tags+view) ON]</sup> – rename (sub)tags “in bulk”, filter search with tags and manage “[Tag Pages](https://github.com/pjeby/tag-wrangler?tab=readme-ov-file#tag-pages)”
 
-8. 💻 [Hierarchical Outgoing Links](https://github.com/jasonmotylinski/hierarchical-outgoing-links) <sup>[⚠️[Outgoing Links](https://help.obsidian.md/Plugins/Outgoing+links) OFF]</sup> – view note’s outgoing links in hierarchy based on folder structure
+8. 💻 [Hierarchical Outgoing Links](https://github.com/jasonmotylinski/hierarchical-outgoing-links) <sup>[⚠️[Outgoing Links](https://help.obsidian.md/Plugins/Outgoing+links) OFF]</sup> – view note’s outgoing links in (folder structure) hierarchy
 
 ### 🌳 Change state of [Graph view](https://help.obsidian.md/Plugins/Graph+view)
 - [Nested tags graph](https://github.com/drPilman/obsidian-graph-nested-tags) / ~~[Folders to Graph](https://github.com/Ratibus11/folders2graph)~~ – link nested tags / show folder structure in graph view
@@ -128,7 +128,7 @@ Change appearance and overall make view more compact:
 
 ## 🧩 Integrate *third-party apps*
 - [Visual Crossing Weather](https://github.com/willasm/vc-weather) – display current weather in [Status bar](https://help.obsidian.md/User+interface/Status+bar), add this data into notes (via templates)
-- 💻 [Discord Rich Presence](https://github.com/lukeleppan/obsidian-discordrpc) – integrate an app into [`Discord`](https://discord.com) status: show vault name, editing file and elapsed time
+- 💻 [Discord Rich Presence](https://github.com/lukeleppan/obsidian-discordrpc) – integrate stats into [`Discord`](https://discord.com) status: show vault name, editing file and elapsed time
 - 💻 [WakaTime](https://github.com/wakatime/obsidian-wakatime) – send metrics, insights, and time tracking from app usage activity to [`WakaTime`](https://wakatime.com) dashboard
 - [Map View](https://github.com/esm7/obsidian-map-view) – interact with a map view: search for locations, apply them to notes and choose custom icons
 - [LanguageTool Integration](https://github.com/Clemens-E/obsidian-languagetool-plugin) – check grammar and spellling for many languages with [`LanguageTool`](https://languagetool.org)
@@ -148,8 +148,8 @@ Change appearance and overall make view more compact:
 - [Note Toolbar](https://github.com/chrisgurney/obsidian-note-toolbar) – create context-aware [toolbars](https://github.com/chrisgurney/obsidian-note-toolbar/wiki/Examples) containing commands, file links, menus and scripts
   - [JS Engine](https://github.com/mProjectsCode/obsidian-js-engine-plugin) – execute `JavaScript` code from a special code block (allows plugin above to [run scripts](https://github.com/chrisgurney/obsidian-note-toolbar/wiki/Executing-scripts#script-item-types))
 - 💻 [Execute Code](https://github.com/twibiral/obsidian-execute-code) – execute code snippets in code blocks of notes for locally installed [languages](https://github.com/twibiral/obsidian-execute-code?tab=readme-ov-file#supported-programming-languages-)
-- 💻 [Shell commands](https://github.com/Taitava/obsidian-shellcommands) – execute shell commands (on desktop) with app’s commands or automatically (via it’s events)
-- 💻 [Mindmap NextGen](https://github.com/james-tindal/obsidian-mindmap-nextgen) – view active note’s content as a mindmap, configure its appearance and make screenshots
+- 💻 [Shell commands](https://github.com/Taitava/obsidian-shellcommands) – execute shell instructions automatically (via it’s events) or with app’s commands
+- 💻 [Mindmap NextGen](https://github.com/james-tindal/obsidian-mindmap-nextgen) – view notes’ content as a mindmap, configure its appearance and make screenshots
 - [Widgets](https://github.com/rafaelveiga/obsidian-widgets) – add widgets (clock, [countdown](https://github.com/rafaelveiga/obsidian-widgets?tab=readme-ov-file#countdown), counter, quote) to your notes from custom code blocks
 
 ### 🎚️ Manipulate [properties](https://help.obsidian.md/Editing+and+formatting/Properties) (or note metadata/frontmatter)
@@ -164,7 +164,7 @@ Change appearance and overall make view more compact:
 
 ## 🧭 Improve *navigation* between your files
 - [Vertical Tabs](https://github.com/oxdc/obsidian-vertical-tabs) – group, organize and efficiently navigate between tabs using an interactable vertical list of them
-- 💻 [Quick Explorer](https://github.com/pjeby/quick-explorer) – make breadcrumbs interactable: view vault contents, navigate it and quickly preview any note
+- 💻 [Quick Explorer](https://github.com/pjeby/quick-explorer) – make breadcrumbs interactable: navigate vault contents and quickly preview any note
 - [Double Click Tab](https://github.com/Quorafind/Obsidian-Double-Click-Tab) – double-click a tab with a modifier key, moving it to new side pane/window (or just close it)
 - [Homepage](https://github.com/mirnovov/obsidian-homepage) – set any note as a “landing” page that will be opened when app launches and/or all tabs are closed
 - [Beautitab](https://github.com/andrewmcgivery/obsidian-beautitab) – replace empty “New tab” with a page containing background, search bar, recent notes/bookmarks
