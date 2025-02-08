@@ -25,7 +25,7 @@ After launching your vault for the first time, be sure to switch to `Basic` work
 2. 💻 [Better Plugins Manager](https://github.com/0011000000110010/obsidian-manager) – create plugin groups/tags: delay, filter and toggle them “in bulk” (via commands)
 
 > [!TIP]
-> Please, don‘t be afraid of large amount of plugins here (***141*** of them, to be exact)!
+> Please, don‘t be afraid of large amount of plugins here (***142*** of them, to be exact)!
 > You can reliably turn them on/off, as well as delay their startup with the help of plugins above.
 >
 > Moreover, some of the most “performance-taxing“ plugins are not designed for `Mobile`. For more on the differences of working with different devices, follow [here](<./NOTES.md#-use-plugins-on-various-devices>).
@@ -258,9 +258,10 @@ Change appearance and overall make view more compact:
 ## 📊 Collect new *information* about your work
 
 - [Reading Time](https://github.com/avr/obsidian-reading-time) – view an estimated reading time (configurable appearance) for an opened note in [Status bar](https://help.obsidian.md/User+interface/Status+bar)
-- 💻 [Cursor Location](https://github.com/spslater/obsidian-cursor-location-plugin) – view current cursor location (character and line number) for an opened note in [Status bar](https://help.obsidian.md/User+interface/Status+bar)
 - [Occura](https://github.com/Krusty84/obsidian-occura-plugin) – highlight found occurrences of text selection, view their total number for an opened note in [Status bar](https://help.obsidian.md/User+interface/Status+bar)
 - [Novel Word Count](https://github.com/isaaclyman/novel-word-count-obsidian) – view [chosen](https://github.com/isaaclyman/novel-word-count-obsidian?tab=readme-ov-file#settings) statistics for a file/folder/vault directly in core [File explorer](https://help.obsidian.md/Plugins/File+explorer) view
+- [External Links](https://github.com/jivimberg/external-links) – view all note‘s external links, and also where (in what other notes) it is used
+- 💻 [Cursor Location](https://github.com/spslater/obsidian-cursor-location-plugin) – view current cursor location (character and line number) for an opened note in [Status bar](https://help.obsidian.md/User+interface/Status+bar)
 - 💻 [Enhanced Annotations](https://github.com/ycnmhd/obsidian-enhanced-annotations) – view/copy all comments/highlights of an opened note, create new notes from them
 
 [^1]: plugins work only in [Reading](https://help.obsidian.md/Editing+and+formatting/Edit+and+preview+Markdown#Editor+views) view

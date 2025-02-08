@@ -454,6 +454,9 @@
       },
       "virtual-linker": {
         "startupType": "disabled"
+      },
+      "external-links": {
+        "startupType": "disabled"
       }
     }
   },

@@ -1487,6 +1487,15 @@
       "tags": [],
       "enabled": true,
       "delay": "3rd"
+    },
+    {
+      "id": "external-links",
+      "name": "External Links",
+      "desc": "List external links and discover which notes reference them.",
+      "group": "info",
+      "tags": [],
+      "enabled": true,
+      "delay": "1st"
     }
   ]
 }
