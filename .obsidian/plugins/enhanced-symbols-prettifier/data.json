@@ -4,8 +4,7 @@
       "replaced": "->",
       "value": "→",
       "group": "Arrows",
-      "disabled": false,
-      "count": 3
+      "disabled": false
     },
     "<-": {
       "replaced": "<-",
@@ -35,8 +34,7 @@
       "replaced": "=/=",
       "value": "≠",
       "group": "Mathematical Operators",
-      "disabled": false,
-      "count": 1
+      "disabled": false
     },
     "~=": {
       "replaced": "~=",
@@ -227,8 +225,7 @@
       "replaced": "...",
       "value": "…",
       "group": "Miscellaneous",
-      "disabled": false,
-      "count": 8
+      "disabled": false
     },
     "sqrt": {
       "replaced": "sqrt",
@@ -240,8 +237,7 @@
       "replaced": "pi",
       "value": "π",
       "group": "Mathematical Operators",
-      "disabled": false,
-      "count": 1
+      "disabled": false
     },
     "inf": {
       "replaced": "inf",
@@ -289,8 +285,7 @@
       "replaced": "epsilon",
       "value": "ε",
       "group": "Greek Letters",
-      "disabled": false,
-      "count": 1
+      "disabled": false
     },
     "<=": {
       "replaced": "<=",
@@ -301,29 +296,25 @@
       "replaced": "\"",
       "value": "“",
       "disabled": false,
-      "group": "Miscellaneous",
-      "count": 7
+      "group": "Miscellaneous"
     },
     "'": {
       "replaced": "'",
       "value": "‘",
       "disabled": false,
-      "group": "Miscellaneous",
-      "count": 3
+      "group": "Miscellaneous"
     },
     "---": {
       "replaced": "---",
       "value": "—",
       "disabled": false,
-      "group": "Miscellaneous",
-      "count": 5
+      "group": "Miscellaneous"
     },
     "--": {
       "replaced": "--",
       "value": "–",
       "disabled": false,
-      "group": "Miscellaneous",
-      "count": 3
+      "group": "Miscellaneous"
     },
     "1/2": {
       "replaced": "1/2",
@@ -437,8 +428,7 @@
       "replaced": "1^",
       "value": "¹",
       "disabled": false,
-      "group": "Superscript",
-      "count": 1
+      "group": "Superscript"
     },
     "2^": {
       "replaced": "2^",
@@ -618,8 +608,7 @@
       "replaced": "-_",
       "value": "₋",
       "disabled": false,
-      "group": "Subscript",
-      "count": 1
+      "group": "Subscript"
     },
     "=_": {
       "replaced": "=_",

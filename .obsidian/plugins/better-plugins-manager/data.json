@@ -756,7 +756,7 @@
       "group": "style-app",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "obsidian-discordrpc",
@@ -767,7 +767,7 @@
         "internet"
       ],
       "enabled": true,
-      "delay": "2nd"
+      "delay": "3rd"
     },
     {
       "id": "obsidian-doubleshift",
@@ -1295,7 +1295,7 @@
         "internet"
       ],
       "enabled": true,
-      "delay": "2nd"
+      "delay": "3rd"
     },
     {
       "id": "waypoint",
@@ -1486,7 +1486,7 @@
       "group": "style-file",
       "tags": [],
       "enabled": true,
-      "delay": "2nd"
+      "delay": "3rd"
     }
   ]
 }
