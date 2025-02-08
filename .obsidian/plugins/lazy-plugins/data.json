@@ -429,7 +429,7 @@
         "startupType": "instant"
       },
       "pdf-plus": {
-        "startupType": "disabled"
+        "startupType": "long"
       },
       "persistent-graph": {
         "startupType": "instant"
