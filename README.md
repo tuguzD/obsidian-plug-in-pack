@@ -7,27 +7,28 @@ This is just a large collection of already set up plugins and hotkeys… That wa
 > - describe your future work, motivation and goals…
 > - as well as another important info that others need to know =)
 
-> [!WARNING]
+> [!WARNING]-
 > If you want to create your own vault (to store your work there), and then update it with new changes from this pack (using `Git`, obviously)...
 > Please, ***DO NOT FORK*** this repository!
 >
 > You cannot change visibility of forked repositories on `GitHub`, so any of yours will stay **public** forever.
 > Instead, you should use this repository as template or clone it (creating unrelated one).
 >
-> For further information on how to sync your vault with new changes from this “[Plug-in-pack](<#-plug-in-pack-for-obsidian-app>)”, as well as other important notices regarding [`Git`](https://git-scm.com) users, follow [here](<./GIT.md>).
+> For further information on how to sync your vault with new changes from this “[Plug-in-pack](<#-plug-in-pack-for-obsidian-app>)”, as well as other important notices regarding [`Git`](https://git-scm.com) users, follow [here](<./NOTES.md#📑 Simplify your work with Git>).
 
 ## 🔌 *Manage plugins* much easier
+1. [Lazy Plugin Loader](https://github.com/alangrainger/obsidian-lazy-plugins) – load certain plugins later (with a custom delay) to improve speed of `Obsidian` app launch
+2. 💻 [Better Plugins Manager](https://github.com/0011000000110010/obsidian-manager) – create plugin groups/tags: delay, filter and toggle them “in bulk” (via commands)
 
 > [!TIP]
-> Please, don't be afraid of large amounts of plugins here! There is ***141*** of them, to be exact!
->
-> They are all organized in `groups` and each of them have a `tag` assigned – you can enable them personally or by groups “in bulk” using commands.
+> Please, don‘t be afraid of large amount of plugins here (***141*** of them, to be exact)!
+> You can reliably turn them on/off, as well as delay their startup with the help of plugins above.
+> 
+> Moreover, some of the most “performance-taxing“ plugins are not designed for `Mobile`. For more on the differences of working with different devices, follow [here](<./NOTES.md#Use plugins on various devices>).
 
-- [Better Plugins Manager](https://github.com/0011000000110010/obsidian-manager) – assign/filter plugins with groups/tags, toggle “in bulk” or one by one (via commands)
-- [Lazy Plugin Loader](https://github.com/alangrainger/obsidian-lazy-plugins) – load chosen plugins later to improve speed of `Obsidian` app launch
-- [Plugin Update Tracker](https://github.com/swar8080/obsidian-plugin-update-tracker) – show updates for all plugins, browse their release notes and even ignore them
-- [BRAT](https://github.com/TfTHacker/obsidian42-brat) – download plugins that aren’t (yet) listed in official plugin portal (or beta versions of listed plugins)
-- [Plugins Annotations](https://github.com/alberti42/obsidian-plugins-annotations) – add custom annotation for each plugin to store personal note (e.g., its actual use-case scenario, as labels can’t usually provide full info)
+3. [Plugin Update Tracker](https://github.com/swar8080/obsidian-plugin-update-tracker) – show updates for all plugins, browse their release notes and even ignore themes 
+4. [BRAT](https://github.com/TfTHacker/obsidian42-brat) – download plugins that aren’t (yet) listed in official plugin portal (or beta versions of listed plugins)
+5. [Plugins Annotations](https://github.com/alberti42/obsidian-plugins-annotations) – add custom annotation for each plugin to store personal note (e.g., its actual use-case scenario, as labels can’t usually provide full info)
 
 ## ❤️ Improve *default app* features
 - [Settings Search](https://github.com/javalent/settings-search) – perform search among all settings, including: application, core and community plugins
@@ -36,20 +37,20 @@ This is just a large collection of already set up plugins and hotkeys… That wa
 - [Enhanced Copy](https://github.com/Mara-Li/obsidian-enhanced-copy) – change native copy function behaviour to differ for [reading/editing views](https://help.obsidian.md/Editing+and+formatting/Edit+and+preview+Markdown#Editor+views)
 - [Tab Switcher](https://github.com/Vinzent03/tab-switcher) – ignore groups when switching tabs, navigate tabs in their placement/usage order (via hotkeys)
 - [Remember cursor position](https://github.com/dy-sh/obsidian-remember-cursor-position) – remember notes’ cursor and scroll position (edit multiple notes quicker)
-- [Open Sidebar on Hover Plus](https://github.com/clairefro/obsidian-open-sidebar-on-hover-plus) – hover over the sidebar area (ribbon or pixels) to expand/collapse your sidebars
+- 💻 [Open Sidebar on Hover Plus](https://github.com/clairefro/obsidian-open-sidebar-on-hover-plus) – hover over the sidebar area (ribbon or pixels) to expand/collapse your sidebars
 
 ### 🫥 Introduce missing, but *must-have features*
 - [Trash Explorer](https://github.com/proog/obsidian-trash-explorer) – view, restore or remove deleted files (located in app’s hidden `.trash` folder)
 - [Recent Notes](https://github.com/kamil-rudnicki/obsidian-recent-notes) – view an organized timeline of recently edited files (grouped by their modification time)
 - [Paste Image Rename](https://github.com/reorx/obsidian-paste-image-rename) – choose name and location for each file (e.g., images from clipboard) added to vault
 - [Commander](https://github.com/phibr0/obsidian-commander) – add new macros and commands to app menus (ribbon, status/tool/tab bar, editor/file menu)
-- [Status Bar Organizer](https://github.com/Opisek/obsidian-statusbar-organizer) – rearrange elements of a [Status bar](https://help.obsidian.md/User+interface/Status+bar), (un)hide them and save (for later use) as presets
-- [Settings Management](https://github.com/xhuajin/obsidian-settings-management) – filter (in)active plugins/hotkeys/snippets from app’s [Settings](https://help.obsidian.md/Files+and+folders/How+Obsidian+stores+data#Vault+settings), view them in a grid layout
+- 💻 [Status Bar Organizer](https://github.com/Opisek/obsidian-statusbar-organizer) – rearrange elements of a [Status bar](https://help.obsidian.md/User+interface/Status+bar), (un)hide them and save (for later use) as presets
+- 💻 [Settings Management](https://github.com/xhuajin/obsidian-settings-management) – filter (in)active plugins/hotkeys/snippets from app’s [Settings](https://help.obsidian.md/Files+and+folders/How+Obsidian+stores+data#Vault+settings), view them in a grid layout
 - [Link Preview](https://github.com/felipetappata/obsidian-link-preview) – show a preview for external links (without leaving note, unlike when using core [Web viewer](https://help.obsidian.md/plugins/web-viewer))
 
 ### 🪁 Modify *app appearance*
 - [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) – change configuration options provided by some themes and plugins’ CSS files
-- [Day and Night](https://github.com/CyberT17/obsidian-day-and-night) – toggle between light/dark mode according to schedule (automatically) or manually
+- 💻 [Day and Night](https://github.com/CyberT17/obsidian-day-and-night) – toggle between light/dark mode according to schedule (automatically) or manually
 - [Hider](https://github.com/kepano/obsidian-hider) – hide certain parts of `Obsidian` app UI (just like in “[Appearance](https://help.obsidian.md/User+interface/Appearance)” app settings)
 - [Force note View mode](https://github.com/bwydoogh/obsidian-force-view-mode-of-note) – force open certain notes in a view chosen from [reading or editing](https://help.obsidian.md/Editing+and+formatting/Edit+and+preview+Markdown) (preview/source)
 
@@ -74,9 +75,9 @@ This is just a large collection of already set up plugins and hotkeys… That wa
 
 2. [Hover Editor](https://github.com/nothingislost/obsidian-hover-editor) <sup>[✅[Page preview](https://help.obsidian.md/Plugins/Page+preview) ON]</sup> – “turn the hover popover into a full-featured [editor instance](https://github.com/nothingislost/obsidian-hover-editor?tab=readme-ov-file#features)”
 
-3. [Workspaces Plus](https://github.com/nothingislost/obsidian-workspaces-plus) <sup>[✅[Workspaces](https://help.obsidian.md/Plugins/Workspaces) ON]</sup> – edit and switch workspaces easier, set different themes for each one
+3. 💻 [Workspaces Plus](https://github.com/nothingislost/obsidian-workspaces-plus) <sup>[✅[Workspaces](https://help.obsidian.md/Plugins/Workspaces) ON]</sup> – edit and switch workspaces easier, set different themes for each one
 
-4. [Slides Extended](https://github.com/ebullient/obsidian-slides-extended) <sup>[⚠️[Slides](https://help.obsidian.md/Plugins/Slides) OFF]</sup> – create presentations: customize each element and apply themes globally, improve slide navigation, view changes live, switch between different modes, and more
+4. 💻 [Slides Extended](https://github.com/ebullient/obsidian-slides-extended) <sup>[⚠️[Slides](https://help.obsidian.md/Plugins/Slides) OFF]</sup> – create presentations: customize each element and apply themes globally, improve slide navigation, view changes live, switch between different modes, and more
 
 5. [Slash Commander](https://github.com/alephpiece/obsidian-slash-commander) <sup>[⚠️[Slash commands](https://help.obsidian.md/Plugins/Slash+commands) OFF]</sup> – customize slash command list and show descriptions for each one
 
@@ -84,7 +85,7 @@ This is just a large collection of already set up plugins and hotkeys… That wa
 
 7. [Tag Wrangler](https://github.com/pjeby/tag-wrangler) <sup>[✅[Tags view](https://help.obsidian.md/Plugins/Tags+view) ON]</sup> – rename (sub)tags “in bulk”, filter search with tags and manage “[Tag Pages](https://github.com/pjeby/tag-wrangler?tab=readme-ov-file#tag-pages)”
 
-8. [Hierarchical Outgoing Links](https://github.com/jasonmotylinski/hierarchical-outgoing-links) <sup>[⚠️[Outgoing Links](https://help.obsidian.md/Plugins/Outgoing+links) OFF]</sup> – view note’s outgoing links in hierarchy based on folder structure
+8. 💻 [Hierarchical Outgoing Links](https://github.com/jasonmotylinski/hierarchical-outgoing-links) <sup>[⚠️[Outgoing Links](https://help.obsidian.md/Plugins/Outgoing+links) OFF]</sup> – view note’s outgoing links in hierarchy based on folder structure
 
 ### 🌳 Change state of [Graph view](https://help.obsidian.md/Plugins/Graph+view)
 - [Nested tags graph](https://github.com/drPilman/obsidian-graph-nested-tags) / ~~[Folders to Graph](https://github.com/Ratibus11/folders2graph)~~ – link nested tags / show folder structure in graph view
@@ -116,8 +117,8 @@ Change appearance and overall make view more compact:
 ### 🖼️ Integrate new tools for [Canvas](https://help.obsidian.md/Plugins/Canvas)
 - [Advanced Canvas](https://github.com/Developer-Mike/obsidian-advanced-canvas) – change note/edge styles, auto-resize elements and create presentations from `Canvas` files
 - [Canvas Card Background Remover](https://github.com/luxmargos/obsidian-canvas-card-bg-remover) – remove background from transparent embeds (like images)
-- [Canvas Keyboard Pan](https://github.com/nathonius/obsidian-canvas-pan) – move in Canvas using the keyboard (instead of just mouse wheel)
-- [Canvas Link Optimizer](https://github.com/Qbject/obsidian-canvas-link-optimizer) – display cached (as image) preview of a note/web page to improve performance
+- 💻 [Canvas Keyboard Pan](https://github.com/nathonius/obsidian-canvas-pan) – move in Canvas using the keyboard (instead of just mouse wheel)
+- 💻 [Canvas Link Optimizer](https://github.com/Qbject/obsidian-canvas-link-optimizer) – display cached (as image) preview of a note/web page to improve performance
 - [Canvas Links](https://github.com/aqav/obsidian-canvas-links) – display links between `Canvas` and `Markdown` file types inside a new menu
 - [Canvas MindMap](https://github.com/Quorafind/Obsidian-Canvas-MindMap) – add new controls to work with `Canvas` elements as a mindmap tree-like structure
 - [Canvas Minimap](https://github.com/ifree/Obsidian-canvas-minimap) – add minimap that helps to navigate and get an overview of the canvas
@@ -126,12 +127,12 @@ Change appearance and overall make view more compact:
 
 
 ## 🧩 Integrate *third-party apps*
-- [Discord Rich Presence](https://github.com/lukeleppan/obsidian-discordrpc) – integrate an app into [`Discord`](https://discord.com) status: show vault name, editing file and elapsed time
+- 💻 [Discord Rich Presence](https://github.com/lukeleppan/obsidian-discordrpc) – integrate an app into [`Discord`](https://discord.com) status: show vault name, editing file and elapsed time
 - [Visual Crossing Weather](https://github.com/willasm/vc-weather) – display current weather in [Status bar](https://help.obsidian.md/User+interface/Status+bar), add this data into notes (via templates)
 - [Map View](https://github.com/esm7/obsidian-map-view) – interact with a map view: search for locations, apply them to notes and choose custom icons
 - [LanguageTool Integration](https://github.com/Clemens-E/obsidian-languagetool-plugin) – check grammar and spellling for many languages with [`LanguageTool`](https://languagetool.org)
 - [Todoist Sync](https://github.com/jamiebrynes7/obsidian-todoist-plugin) – bidirectional sync with [`Todoist`](https://todoist.com) task manager: create new tasks and complete existing ones
-- [WakaTime](https://github.com/wakatime/obsidian-wakatime) – send metrics, insights, and time tracking from app usage activity to [`WakaTime`](https://wakatime.com) dashboard
+- 💻 [WakaTime](https://github.com/wakatime/obsidian-wakatime) – send metrics, insights, and time tracking from app usage activity to [`WakaTime`](https://wakatime.com) dashboard
 
 ### 💾 Synchronization
 - [Version History Diff](https://github.com/kometenstaub/obsidian-version-history-diff) – display diffs for core [File recovery](https://help.obsidian.md/Plugins/File+recovery) plugin and [`Obsidian Sync`](https://help.obsidian.md/Obsidian+Sync/Introduction+to+Obsidian+Sync) paid service
@@ -139,16 +140,16 @@ Change appearance and overall make view more compact:
 - [Git](https://github.com/Vinzent03/obsidian-git) – store remote copy of your vault in a `GitHub` repository, which also allows sync between different devices
   - should be ⚠️DISABLED on mobile devices, use separate [`Git Sync`](https://github.com/ViscousPot/GitSync) app instead
 
-> For important notices regarding [`Git`](https://git-scm.com) users, follow [here](<./GIT.md>).
+> For important notices regarding [`Git`](https://git-scm.com) users, follow [here](<./NOTES.md#📑 Simplify your work with Git>).
 
 
 ## ✨ Add new *powerful features*
 - [Doubleshift](https://github.com/Qwyntex/doubleshift) – run app commands by pressing specified key twice (e.g., `Shift` for [Quick switcher](https://help.obsidian.md/Plugins/Quick+switcher))
 - [Note Toolbar](https://github.com/chrisgurney/obsidian-note-toolbar) – create context-aware [toolbars](https://github.com/chrisgurney/obsidian-note-toolbar/wiki/Examples) containing commands, file links, menus and scripts
   - [JS Engine](https://github.com/mProjectsCode/obsidian-js-engine-plugin) – execute `JavaScript` code from a special code block (allows plugin above to [run scripts](https://github.com/chrisgurney/obsidian-note-toolbar/wiki/Executing-scripts#script-item-types))
-- [Execute Code](https://github.com/twibiral/obsidian-execute-code) – execute code snippets in code blocks of notes for locally installed [languages](https://github.com/twibiral/obsidian-execute-code?tab=readme-ov-file#supported-programming-languages-)
-- [Shell commands](https://github.com/Taitava/obsidian-shellcommands) – execute shell commands (on desktop) with app’s commands or automatically (via it’s events)
-- [Mindmap NextGen](https://github.com/james-tindal/obsidian-mindmap-nextgen) – view active note’s content as a mindmap, configure its appearance and make screenshots
+- 💻 [Execute Code](https://github.com/twibiral/obsidian-execute-code) – execute code snippets in code blocks of notes for locally installed [languages](https://github.com/twibiral/obsidian-execute-code?tab=readme-ov-file#supported-programming-languages-)
+- 💻 [Shell commands](https://github.com/Taitava/obsidian-shellcommands) – execute shell commands (on desktop) with app’s commands or automatically (via it’s events)
+- 💻 [Mindmap NextGen](https://github.com/james-tindal/obsidian-mindmap-nextgen) – view active note’s content as a mindmap, configure its appearance and make screenshots
 - [Widgets](https://github.com/rafaelveiga/obsidian-widgets) – add widgets (clock, [countdown](https://github.com/rafaelveiga/obsidian-widgets?tab=readme-ov-file#countdown), counter, quote) to your notes from custom code blocks
 
 ### 🎚️ Manipulate [properties](https://help.obsidian.md/Editing+and+formatting/Properties) (or note metadata/frontmatter)
@@ -163,7 +164,7 @@ Change appearance and overall make view more compact:
 
 ## 🧭 Improve *navigation* between your files
 - [Vertical Tabs](https://github.com/oxdc/obsidian-vertical-tabs) – group, organize and efficiently navigate between tabs using an interactable vertical list of them
-- [Quick Explorer](https://github.com/pjeby/quick-explorer) – make breadcrumbs interactable: view vault contents, navigate it and quickly preview any note 
+- 💻 [Quick Explorer](https://github.com/pjeby/quick-explorer) – make breadcrumbs interactable: view vault contents, navigate it and quickly preview any note
 - [Double Click Tab](https://github.com/Quorafind/Obsidian-Double-Click-Tab) – double-click a tab with a modifier key, moving it to new side pane/window (or just close it)
 - [Homepage](https://github.com/mirnovov/obsidian-homepage) – set any note as a “landing” page that will be opened when app launches and/or all tabs are closed
 - [Beautitab](https://github.com/andrewmcgivery/obsidian-beautitab) – replace empty “New tab” with a page containing background, search bar, recent notes/bookmarks
@@ -171,7 +172,7 @@ Change appearance and overall make view more compact:
   - disabled (for now) due to a “flickering” conflict with “Hover Editor” plugin
 
 ### 📄 View *chosen file* faster
-- [Mouse Navigation](https://github.com/hobeom/obsidian-mouse-navigation) – use gestures while pressing `RMB`: scroll note to top/bottom, navigate forward/backward
+- 💻 [Mouse Navigation](https://github.com/hobeom/obsidian-mouse-navigation) – use gestures while pressing `RMB`: scroll note to top/bottom, navigate forward/backward
 - [Chord Sheets](https://github.com/olvidalo/obsidian-chord-sheets?tab=readme-ov-file#-autoscroll) – start/stop automatic scroll of an active note, configure scrolling speed on the fly
 - [Typewriter Mode](https://github.com/davisriedel/obsidian-typewriter-mode) – enable typewriter scrolling, so that current line (cursor) stays at fixed position of a view
 - [Dynamic Outline](https://github.com/theopavlove/obsidian-dynamic-outline) – view a floating table of contents for an opened note (without the need to open any [Sidebars](https://help.obsidian.md/User+interface/Sidebar))
@@ -190,7 +191,7 @@ Change appearance and overall make view more compact:
 - [Image Captions](https://github.com/alangrainger/obsidian-image-captions) – add captions (custom/filename) underneath the images, and even apply [Markdown](https://help.obsidian.md/Editing+and+formatting/Basic+formatting+syntax) to them
 - [Icon Shortcodes](https://github.com/aidenlx/obsidian-icon-shortcodes) – insert emojis/icons (in-app/custom) with fuzzy-searched shortcodes (`:open_book:` → `📖`)
 - [Image Converter](https://github.com/xryul/obsidian-image-converter) – convert/compress new images, resize/align and crop/rotate/flip images used in notes
-- [Media Notes](https://github.com/jemstelos/obsidian-media-notes) – easily pin a video to the note, control its playback and insert configurable timestamps
+- 💻 [Media Notes](https://github.com/jemstelos/obsidian-media-notes) – easily pin a video to the note, control its playback and insert configurable timestamps
 
 
 ## 〽️ Simplify *Markdown [formatting](https://help.obsidian.md/Editing+and+formatting/Basic+formatting+syntax)*
@@ -240,10 +241,10 @@ Change appearance and overall make view more compact:
 
 ## 📊 Collect new *information* about your work
 - [Reading Time](https://github.com/avr/obsidian-reading-time) – view an estimated reading time (configurable appearance) for an opened note in [Status bar](https://help.obsidian.md/User+interface/Status+bar)
-- [Cursor Location](https://github.com/spslater/obsidian-cursor-location-plugin) – view current cursor location (character and line number) for an opened note in [Status bar](https://help.obsidian.md/User+interface/Status+bar)
+- 💻 [Cursor Location](https://github.com/spslater/obsidian-cursor-location-plugin) – view current cursor location (character and line number) for an opened note in [Status bar](https://help.obsidian.md/User+interface/Status+bar)
 - [Occura](https://github.com/Krusty84/obsidian-occura-plugin) – highlight found occurrences of text selection, view their total number for an opened note in [Status bar](https://help.obsidian.md/User+interface/Status+bar)
 - [Novel Word Count](https://github.com/isaaclyman/novel-word-count-obsidian) – view [chosen](https://github.com/isaaclyman/novel-word-count-obsidian?tab=readme-ov-file#settings) statistics for a file/folder/vault directly in core [File explorer](https://help.obsidian.md/Plugins/File+explorer) view
-- [Enhanced Annotations](https://github.com/ycnmhd/obsidian-enhanced-annotations) – view/copy all comments/highlights of an opened note, create new notes from them
+- 💻 [Enhanced Annotations](https://github.com/ycnmhd/obsidian-enhanced-annotations) – view/copy all comments/highlights of an opened note, create new notes from them
 
 
 [^1]: plugins work only in [Reading](https://help.obsidian.md/Editing+and+formatting/Edit+and+preview+Markdown#Editor+views) view

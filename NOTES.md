@@ -1,3 +1,22 @@
+# 🚞 Use plugins on various devices
+
+Due to [Better Plugins Manager](https://github.com/0011000000110010/obsidian-manager) plugin not being able to work on [some devices](https://help.obsidian.md/Getting+started/Use+the+mobile+app), there are some differences in working with plugins depending on your current one:
+- on 💻[Desktop](https://obsidian.md) (`Windows` / `Mac` / `Linux`), loading is controlled by [Better Plugins Manager](https://github.com/0011000000110010/obsidian-manager)
+  - choosing right delay is generally harder, as the app doesn't track startup time correctly
+  - but the result is slightly faster, while allowing toggling lots of plugins “in bulk” (to quickly change work modes)
+- on 📱[Mobile](https://obsidian.md/mobile) (`Android` / `iOS`), plugin load/delay is controlled by [Lazy Plugin Loader](https://github.com/alangrainger/obsidian-lazy-plugins)
+  - you cannot use features related to groups/tags, as well as toggle them using commands,
+  - but you generally need less plugins on a less powerful machine
+
+> [!IMPORTANT]
+> But how is that really done, technically speaking?
+> 
+> Firstly, [Lazy Plugin Loader](https://github.com/alangrainger/obsidian-lazy-plugins) launches and then determines user's device type:
+> - if it's a `Desktop`, just the [Better Plugins Manager](https://github.com/0011000000110010/obsidian-manager) plugin is instantly launched (with global/desktop configuration), that then will launch all other ones (with a delay) on its own using its settings,
+>  
+> - if it's not, then the mobile configuration is chosen, and all other plugins will be loaded using [Lazy Plugin Loader](https://github.com/alangrainger/obsidian-lazy-plugins) settings.
+
+
 # 📑 Simplify your work with [Git](https://git-scm.com)
 
 > [!TIP]

@@ -44,12 +44,13 @@
     }
   },
   "fileIcons": {
-    "GIT.md": {
-      "icon": "lucide-github"
-    },
     "HOME.md": {
       "icon": "lucide-home",
       "color": "yellow"
+    },
+    "NOTES.md": {
+      "icon": "lucide-info",
+      "color": "cyan"
     },
     "README.md": {
       "icon": "lucide-book-marked",

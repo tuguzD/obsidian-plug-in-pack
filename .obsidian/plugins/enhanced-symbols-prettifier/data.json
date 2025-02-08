@@ -228,7 +228,7 @@
       "value": "…",
       "group": "Miscellaneous",
       "disabled": false,
-      "count": 3
+      "count": 8
     },
     "sqrt": {
       "replaced": "sqrt",
@@ -302,13 +302,14 @@
       "value": "“",
       "disabled": false,
       "group": "Miscellaneous",
-      "count": 5
+      "count": 7
     },
     "'": {
       "replaced": "'",
       "value": "‘",
       "disabled": false,
-      "group": "Miscellaneous"
+      "group": "Miscellaneous",
+      "count": 3
     },
     "---": {
       "replaced": "---",
