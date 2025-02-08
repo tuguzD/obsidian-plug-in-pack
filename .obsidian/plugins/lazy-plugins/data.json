@@ -458,8 +458,8 @@
     }
   },
   "mobile": {
-    "shortDelaySeconds": 1,
-    "longDelaySeconds": 3,
+    "shortDelaySeconds": 2,
+    "longDelaySeconds": 5,
     "delayBetweenPlugins": 40,
     "defaultStartupType": "instant",
     "showDescriptions": false,
@@ -789,7 +789,7 @@
         "startupType": "disabled"
       },
       "todoist-sync-plugin": {
-        "startupType": "long"
+        "startupType": "disabled"
       },
       "obsidian-trash-explorer": {
         "startupType": "instant"
@@ -828,7 +828,7 @@
         "startupType": "short"
       },
       "visual-crossing-weather": {
-        "startupType": "long"
+        "startupType": "disabled"
       },
       "multi-properties": {
         "startupType": "instant"
