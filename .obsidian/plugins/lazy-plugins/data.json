@@ -507,7 +507,7 @@
         "startupType": "instant"
       },
       "editing-toolbar": {
-        "startupType": "short"
+        "startupType": "disabled"
       },
       "obsidian-file-color": {
         "startupType": "short"
@@ -522,7 +522,7 @@
         "startupType": "short"
       },
       "obsidian-git": {
-        "startupType": "instant"
+        "startupType": "disabled"
       },
       "obsidian-hider": {
         "startupType": "instant"
@@ -693,7 +693,7 @@
         "startupType": "short"
       },
       "obsidian-limelight": {
-        "startupType": "instant"
+        "startupType": "disabled"
       },
       "chord-sheets": {
         "startupType": "long"
@@ -825,7 +825,7 @@
         "startupType": "disabled"
       },
       "insert-multiple-attachments": {
-        "startupType": "short"
+        "startupType": "disabled"
       },
       "obsidian-party": {
         "startupType": "short"
