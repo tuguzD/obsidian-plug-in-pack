@@ -7,14 +7,14 @@ This is just a large collection of already set up plugins and hotkeys… That wa
 > - describe your future work, motivation and goals…
 > - as well as another important info that others need to know =)
 
-> [!WARNING]-
+> [!WARNING]
 > If you want to create your own vault (to store your work there), and then update it with new changes from this pack (using `Git`, obviously)...
 > Please, ***DO NOT FORK*** this repository!
 >
 > You cannot change visibility of forked repositories on `GitHub`, so any of yours will stay **public** forever.
 > Instead, you should use this repository as template or clone it (creating unrelated one).
 >
-> For further information on how to sync your vault with new changes from this “[Plug-in-pack](<#-plug-in-pack-for-obsidian-app>)”, as well as other important notices regarding [`Git`](https://git-scm.com) users, follow [here](<./NOTES.md#📑 Simplify your work with Git>).
+> For further information on how to sync your vault with new changes from this pack, as well as other important notices regarding [`Git`](https://git-scm.com) users, follow [here](<./NOTES.md#-simplify-your-work-with-git>).
 
 ## 🔌 *Manage plugins* much easier
 1. [Lazy Plugin Loader](https://github.com/alangrainger/obsidian-lazy-plugins) – load certain plugins later (with a custom delay) to improve speed of `Obsidian` app launch
@@ -24,7 +24,7 @@ This is just a large collection of already set up plugins and hotkeys… That wa
 > Please, don‘t be afraid of large amount of plugins here (***141*** of them, to be exact)!
 > You can reliably turn them on/off, as well as delay their startup with the help of plugins above.
 > 
-> Moreover, some of the most “performance-taxing“ plugins are not designed for `Mobile`. For more on the differences of working with different devices, follow [here](<./NOTES.md#Use plugins on various devices>).
+> Moreover, some of the most “performance-taxing“ plugins are not designed for `Mobile`. For more on the differences of working with different devices, follow [here](<./NOTES.md#-use-plugins-on-various-devices>).
 
 3. [Plugin Update Tracker](https://github.com/swar8080/obsidian-plugin-update-tracker) – show updates for all plugins, browse their release notes and even ignore themes 
 4. [BRAT](https://github.com/TfTHacker/obsidian42-brat) – download plugins that aren’t (yet) listed in official plugin portal (or beta versions of listed plugins)
@@ -45,7 +45,7 @@ This is just a large collection of already set up plugins and hotkeys… That wa
 - [Paste Image Rename](https://github.com/reorx/obsidian-paste-image-rename) – choose name and location for each file (e.g., images from clipboard) added to vault
 - [Commander](https://github.com/phibr0/obsidian-commander) – add new macros and commands to app menus (ribbon, status/tool/tab bar, editor/file menu)
 - 💻 [Status Bar Organizer](https://github.com/Opisek/obsidian-statusbar-organizer) – rearrange elements of a [Status bar](https://help.obsidian.md/User+interface/Status+bar), (un)hide them and save (for later use) as presets
-- 💻 [Settings Management](https://github.com/xhuajin/obsidian-settings-management) – filter (in)active plugins/hotkeys/snippets from app’s [Settings](https://help.obsidian.md/Files+and+folders/How+Obsidian+stores+data#Vault+settings), view them in a grid layout
+- 💻 [Settings Management](https://github.com/xhuajin/obsidian-settings-management) – filter (in)active plugins/hotkeys/snippets from app’s [Settings](https://help.obsidian.md/Files+and+folders/How+Obsidian+stores+data#Vault+settings), view them in a grid
 - [Link Preview](https://github.com/felipetappata/obsidian-link-preview) – show a preview for external links (without leaving note, unlike when using core [Web viewer](https://help.obsidian.md/plugins/web-viewer))
 
 ### 🪁 Modify *app appearance*
@@ -127,12 +127,12 @@ Change appearance and overall make view more compact:
 
 
 ## 🧩 Integrate *third-party apps*
-- 💻 [Discord Rich Presence](https://github.com/lukeleppan/obsidian-discordrpc) – integrate an app into [`Discord`](https://discord.com) status: show vault name, editing file and elapsed time
 - [Visual Crossing Weather](https://github.com/willasm/vc-weather) – display current weather in [Status bar](https://help.obsidian.md/User+interface/Status+bar), add this data into notes (via templates)
+- 💻 [Discord Rich Presence](https://github.com/lukeleppan/obsidian-discordrpc) – integrate an app into [`Discord`](https://discord.com) status: show vault name, editing file and elapsed time
+- 💻 [WakaTime](https://github.com/wakatime/obsidian-wakatime) – send metrics, insights, and time tracking from app usage activity to [`WakaTime`](https://wakatime.com) dashboard
 - [Map View](https://github.com/esm7/obsidian-map-view) – interact with a map view: search for locations, apply them to notes and choose custom icons
 - [LanguageTool Integration](https://github.com/Clemens-E/obsidian-languagetool-plugin) – check grammar and spellling for many languages with [`LanguageTool`](https://languagetool.org)
 - [Todoist Sync](https://github.com/jamiebrynes7/obsidian-todoist-plugin) – bidirectional sync with [`Todoist`](https://todoist.com) task manager: create new tasks and complete existing ones
-- 💻 [WakaTime](https://github.com/wakatime/obsidian-wakatime) – send metrics, insights, and time tracking from app usage activity to [`WakaTime`](https://wakatime.com) dashboard
 
 ### 💾 Synchronization
 - [Version History Diff](https://github.com/kometenstaub/obsidian-version-history-diff) – display diffs for core [File recovery](https://help.obsidian.md/Plugins/File+recovery) plugin and [`Obsidian Sync`](https://help.obsidian.md/Obsidian+Sync/Introduction+to+Obsidian+Sync) paid service
@@ -140,7 +140,7 @@ Change appearance and overall make view more compact:
 - [Git](https://github.com/Vinzent03/obsidian-git) – store remote copy of your vault in a `GitHub` repository, which also allows sync between different devices
   - should be ⚠️DISABLED on mobile devices, use separate [`Git Sync`](https://github.com/ViscousPot/GitSync) app instead
 
-> For important notices regarding [`Git`](https://git-scm.com) users, follow [here](<./NOTES.md#📑 Simplify your work with Git>).
+> For important notices regarding [`Git`](https://git-scm.com) users, follow [here](<./NOTES.md#-simplify-your-work-with-git>).
 
 
 ## ✨ Add new *powerful features*
