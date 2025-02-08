@@ -20,13 +20,13 @@
       "id": "obsidian-version-history-diff:open-git-diff-view",
       "icon": "lucide-github",
       "name": "Version history diff: Show Git Diff view for active file",
-      "mode": "any"
+      "mode": "desktop"
     },
     {
       "id": "slides-extended:open-preview",
       "icon": "lucide-presentation",
       "name": "Slides Extended: Show slide preview",
-      "mode": "any"
+      "mode": "desktop"
     },
     {
       "id": "widgets:add-widget",

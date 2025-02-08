@@ -7,5 +7,6 @@
   "enabledCssSnippets": [
     "obsidian-blur-plugin",
     "supercharged-links-gen"
-  ]
+  ],
+  "showViewHeader": true
 }
