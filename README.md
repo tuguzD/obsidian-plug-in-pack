@@ -30,7 +30,7 @@ After launching your vault for the first time, be sure to switch to `Basic` work
 >
 > Moreover, some of the most “performance-taxing“ plugins are not designed for `Mobile`. For more on the differences of working with different devices, follow [here](<./NOTES.md#-use-plugins-on-various-devices>).
 
-3. [Plugin Update Tracker](https://github.com/swar8080/obsidian-plugin-update-tracker) – show updates for all plugins, browse their release notes and even ignore themes
+3. [Plugin Update Tracker](https://github.com/swar8080/obsidian-plugin-update-tracker) – show updates for all plugins, browse their release notes and even ignore them
 4. [BRAT](https://github.com/TfTHacker/obsidian42-brat) – download plugins that aren’t (yet) listed in official plugin portal (or beta versions of listed plugins)
 5. [Plugins Annotations](https://github.com/alberti42/obsidian-plugins-annotations) – add custom annotation for each plugin to store personal note (e.g., its actual use-case scenario, as labels can’t usually provide full info)
 

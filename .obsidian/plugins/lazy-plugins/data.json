@@ -654,7 +654,7 @@
         "startupType": "instant"
       },
       "occura-word-highlighter": {
-        "startupType": "instant"
+        "startupType": "disabled"
       },
       "search-in-canvas": {
         "startupType": "instant"
@@ -912,6 +912,9 @@
         "startupType": "short"
       },
       "virtual-linker": {
+        "startupType": "instant"
+      },
+      "external-links": {
         "startupType": "instant"
       }
     }
