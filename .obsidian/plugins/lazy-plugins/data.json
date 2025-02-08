@@ -489,16 +489,16 @@
         "startupType": "instant"
       },
       "obsidian-cursor-location-plugin": {
-        "startupType": "short"
+        "startupType": "disabled"
       },
       "dataview": {
         "startupType": "short"
       },
       "obsidian-day-and-night": {
-        "startupType": "short"
+        "startupType": "disabled"
       },
       "obsidian-discordrpc": {
-        "startupType": "long"
+        "startupType": "disabled"
       },
       "dynamic-outline": {
         "startupType": "instant"
@@ -567,7 +567,7 @@
         "startupType": "instant"
       },
       "quick-explorer": {
-        "startupType": "instant"
+        "startupType": "disabled"
       },
       "darlal-switcher-plus": {
         "startupType": "short"
@@ -606,10 +606,10 @@
         "startupType": "short"
       },
       "obsidian-wakatime": {
-        "startupType": "short"
+        "startupType": "disabled"
       },
       "workspaces-plus": {
-        "startupType": "instant"
+        "startupType": "disabled"
       },
       "templater-obsidian": {
         "startupType": "short"
@@ -624,7 +624,7 @@
         "startupType": "short"
       },
       "enhanced-annotations": {
-        "startupType": "instant"
+        "startupType": "disabled"
       },
       "scroll-speed": {
         "startupType": "instant"
@@ -657,7 +657,7 @@
         "startupType": "instant"
       },
       "obsidian-mindmap-nextgen": {
-        "startupType": "long"
+        "startupType": "disabled"
       },
       "advanced-canvas": {
         "startupType": "short"
@@ -666,7 +666,7 @@
         "startupType": "instant"
       },
       "canvas-keyboard-pan": {
-        "startupType": "instant"
+        "startupType": "disabled"
       },
       "optimize-canvas-connections": {
         "startupType": "instant"
@@ -675,7 +675,7 @@
         "startupType": "instant"
       },
       "canvas-link-optimizer": {
-        "startupType": "instant"
+        "startupType": "disabled"
       },
       "canvas-links": {
         "startupType": "instant"
@@ -708,7 +708,7 @@
         "startupType": "instant"
       },
       "execute-code": {
-        "startupType": "long"
+        "startupType": "disabled"
       },
       "code-styler": {
         "startupType": "disabled"
@@ -777,7 +777,7 @@
         "startupType": "short"
       },
       "media-notes": {
-        "startupType": "long"
+        "startupType": "disabled"
       },
       "obsidian-view-mode-by-frontmatter": {
         "startupType": "short"
@@ -786,7 +786,7 @@
         "startupType": "long"
       },
       "slides-extended": {
-        "startupType": "long"
+        "startupType": "disabled"
       },
       "todoist-sync-plugin": {
         "startupType": "long"
@@ -795,7 +795,7 @@
         "startupType": "instant"
       },
       "mouse-navigation": {
-        "startupType": "instant"
+        "startupType": "disabled"
       },
       "obsidian-icon-shortcodes": {
         "startupType": "long"
@@ -834,7 +834,7 @@
         "startupType": "instant"
       },
       "statusbar-organizer": {
-        "startupType": "instant"
+        "startupType": "disabled"
       },
       "obsidian-folder-focus-mode": {
         "startupType": "instant"
@@ -852,7 +852,7 @@
         "startupType": "instant"
       },
       "settings-management": {
-        "startupType": "instant"
+        "startupType": "disabled"
       },
       "better-plugins-manager": {
         "startupType": "disabled"
@@ -873,7 +873,7 @@
         "startupType": "short"
       },
       "hierarchical-outgoing-links": {
-        "startupType": "instant"
+        "startupType": "disabled"
       },
       "image-captions": {
         "startupType": "instant"
@@ -882,7 +882,7 @@
         "startupType": "long"
       },
       "open-sidebar-on-hover-plus": {
-        "startupType": "instant"
+        "startupType": "disabled"
       },
       "pdf-plus": {
         "startupType": "long"
@@ -894,7 +894,7 @@
         "startupType": "long"
       },
       "obsidian-shellcommands": {
-        "startupType": "instant"
+        "startupType": "disabled"
       },
       "shiki-highlighter": {
         "startupType": "long"
