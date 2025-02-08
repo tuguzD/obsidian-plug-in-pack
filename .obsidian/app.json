@@ -12,5 +12,6 @@
   ],
   "attachmentFolderPath": "./",
   "useMarkdownLinks": true,
-  "newLinkFormat": "relative"
+  "newLinkFormat": "relative",
+  "mobilePullAction": "darlal-switcher-plus:switcher-plus:open-commands"
 }
