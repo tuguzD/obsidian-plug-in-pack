@@ -7,6 +7,9 @@ This is just a large collection of already set up plugins and hotkeys… That wa
 > - describe your future work, motivation and goals…
 > - as well as another important info that others need to know =)
 
+After launching your vault for the first time, be sure to switch to `Basic` workspace, created to showcase basic layout:
+<img src="https://github.com/user-attachments/assets/a1b572e3-1d57-48c4-a904-7ff7ed8f5af0" alt="Switching workspace from Status bar" width="496">
+
 > [!WARNING]
 > If you want to create your own vault (to store your work there), and then update it with new changes from this pack (using `Git`, obviously)…
 > Please, ***DO NOT FORK*** this repository!
