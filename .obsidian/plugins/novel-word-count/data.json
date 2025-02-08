@@ -61,7 +61,7 @@
     "charsPerPageIncludesWhitespace": false,
     "characterCountType": "AllCharacters",
     "pageCountType": "ByWords",
-    "includeDirectories": "!README, !GIT",
+    "includeDirectories": "!README, !NOTES",
     "excludeComments": true,
     "excludeCodeBlocks": true,
     "excludeNonVisibleLinkPortions": true,
