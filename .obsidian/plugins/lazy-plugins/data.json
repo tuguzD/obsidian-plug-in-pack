@@ -1,5 +1,5 @@
 {
-  "dualConfigs": false,
+  "dualConfigs": true,
   "showConsoleLog": false,
   "desktop": {
     "shortDelaySeconds": 1,
