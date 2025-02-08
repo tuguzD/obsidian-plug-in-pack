@@ -4,7 +4,7 @@
   "ITEM_STYLE": "alwaysExpand",
   "GROUP_STYLE": "a",
   "TAG_STYLE": "b",
-  "DELAY": false,
+  "DELAY": true,
   "FADE_OUT_DISABLED_PLUGINS": true,
   "COMMAND_ITEM": false,
   "COMMAND_GROUP": true,
@@ -192,7 +192,7 @@
       "group": "style-editor",
       "tags": [],
       "enabled": true,
-      "delay": "3rd"
+      "delay": ""
     },
     {
       "id": "advanced-canvas",
@@ -201,7 +201,7 @@
       "group": "canvas",
       "tags": [],
       "enabled": true,
-      "delay": "2nd"
+      "delay": "1st"
     },
     {
       "id": "beautitab",
@@ -269,7 +269,7 @@
       "group": "callout",
       "tags": [],
       "enabled": true,
-      "delay": "1st"
+      "delay": ""
     },
     {
       "id": "callout-menu",
@@ -278,7 +278,7 @@
       "group": "callout",
       "tags": [],
       "enabled": true,
-      "delay": "1st"
+      "delay": ""
     },
     {
       "id": "callout-suggestions",
@@ -287,7 +287,7 @@
       "group": "callout",
       "tags": [],
       "enabled": false,
-      "delay": "2nd"
+      "delay": ""
     },
     {
       "id": "canvas-card-bg-remover",
@@ -296,7 +296,7 @@
       "group": "canvas",
       "tags": [],
       "enabled": true,
-      "delay": "1st"
+      "delay": ""
     },
     {
       "id": "canvas-keyboard-pan",
@@ -305,7 +305,7 @@
       "group": "canvas",
       "tags": [],
       "enabled": true,
-      "delay": "1st"
+      "delay": ""
     },
     {
       "id": "canvas-link-optimizer",
@@ -332,7 +332,7 @@
       "group": "canvas",
       "tags": [],
       "enabled": true,
-      "delay": "1st"
+      "delay": ""
     },
     {
       "id": "canvas-minimap",
@@ -350,7 +350,7 @@
       "group": "navig-file",
       "tags": [],
       "enabled": true,
-      "delay": "3rd"
+      "delay": "2nd"
     },
     {
       "id": "cmdr",
@@ -368,7 +368,7 @@
       "group": "style-file",
       "tags": [],
       "enabled": false,
-      "delay": "2nd"
+      "delay": ""
     },
     {
       "id": "color-folders-files",
@@ -404,7 +404,7 @@
       "group": "default",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "darlal-switcher-plus",
@@ -415,7 +415,7 @@
         "search"
       ],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "dataview",
@@ -424,7 +424,7 @@
       "group": "property",
       "tags": [],
       "enabled": true,
-      "delay": "1st"
+      "delay": ""
     },
     {
       "id": "double-click-tab",
@@ -451,7 +451,7 @@
       "group": "markdown",
       "tags": [],
       "enabled": true,
-      "delay": "2nd"
+      "delay": "1st"
     },
     {
       "id": "enhanced-annotations",
@@ -496,7 +496,7 @@
       "group": "explorer",
       "tags": [],
       "enabled": true,
-      "delay": "1st"
+      "delay": ""
     },
     {
       "id": "folders2graph",
@@ -532,7 +532,7 @@
       "group": "default",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "iconic",
@@ -550,7 +550,7 @@
       "group": "edit-media",
       "tags": [],
       "enabled": true,
-      "delay": "3rd"
+      "delay": "1st"
     },
     {
       "id": "inline-math",
@@ -585,7 +585,7 @@
       "desc": "Load plugins with a delay on startup, so that you can get your app startup down into the sub-second loading time.",
       "group": "plugin",
       "tags": [],
-      "enabled": false,
+      "enabled": true,
       "delay": ""
     },
     {
@@ -626,7 +626,7 @@
       "group": "list",
       "tags": [],
       "enabled": true,
-      "delay": "1st"
+      "delay": ""
     },
     {
       "id": "math-in-callout",
@@ -646,7 +646,7 @@
         "internet"
       ],
       "enabled": true,
-      "delay": "1st"
+      "delay": "2nd"
     },
     {
       "id": "mouse-navigation",
@@ -738,7 +738,7 @@
       "group": "link",
       "tags": [],
       "enabled": true,
-      "delay": "1st"
+      "delay": ""
     },
     {
       "id": "obsidian-cursor-location-plugin",
@@ -756,7 +756,7 @@
       "group": "style-app",
       "tags": [],
       "enabled": true,
-      "delay": "1st"
+      "delay": ""
     },
     {
       "id": "obsidian-discordrpc",
@@ -766,8 +766,8 @@
       "tags": [
         "internet"
       ],
-      "enabled": false,
-      "delay": "3rd"
+      "enabled": true,
+      "delay": "2nd"
     },
     {
       "id": "obsidian-doubleshift",
@@ -776,7 +776,7 @@
       "group": "new",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "obsidian-folder-focus-mode",
@@ -794,7 +794,7 @@
       "group": "markdown",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "obsidian-git",
@@ -842,7 +842,7 @@
       "tags": [
         "internet"
       ],
-      "enabled": false,
+      "enabled": true,
       "delay": "1st"
     },
     {
@@ -852,7 +852,7 @@
       "group": "math",
       "tags": [],
       "enabled": true,
-      "delay": "2nd"
+      "delay": "1st"
     },
     {
       "id": "obsidian-limelight",
@@ -870,7 +870,7 @@
       "group": "markdown",
       "tags": [],
       "enabled": true,
-      "delay": "1st"
+      "delay": "2nd"
     },
     {
       "id": "obsidian-list-callouts",
@@ -888,7 +888,7 @@
       "group": "property",
       "tags": [],
       "enabled": true,
-      "delay": "3rd"
+      "delay": "2nd"
     },
     {
       "id": "obsidian-mindmap-nextgen",
@@ -915,7 +915,7 @@
       "group": "style-editor",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "obsidian-paste-image-rename",
@@ -944,7 +944,7 @@
       "group": "info",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "obsidian-style-settings",
@@ -992,8 +992,8 @@
       "tags": [
         "internet"
       ],
-      "enabled": false,
-      "delay": "2nd"
+      "enabled": true,
+      "delay": "1st"
     },
     {
       "id": "obsidian42-brat",
@@ -1004,7 +1004,7 @@
         "internet"
       ],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "occura-word-highlighter",
@@ -1024,7 +1024,7 @@
         "search"
       ],
       "enabled": true,
-      "delay": "2nd"
+      "delay": "1st"
     },
     {
       "id": "open-with-nldates",
@@ -1033,7 +1033,7 @@
       "group": "daily",
       "tags": [],
       "enabled": true,
-      "delay": "2nd"
+      "delay": "1st"
     },
     {
       "id": "optimize-canvas-connections",
@@ -1042,7 +1042,7 @@
       "group": "canvas",
       "tags": [],
       "enabled": true,
-      "delay": "1st"
+      "delay": ""
     },
     {
       "id": "periodic-notes",
@@ -1114,7 +1114,7 @@
       "group": "default",
       "tags": [],
       "enabled": true,
-      "delay": "1st"
+      "delay": ""
     },
     {
       "id": "replace-all",
@@ -1199,7 +1199,7 @@
       "group": "core",
       "tags": [],
       "enabled": true,
-      "delay": "3rd"
+      "delay": "2nd"
     },
     {
       "id": "statusbar-organizer",
@@ -1256,7 +1256,7 @@
       "tags": [
         "internet"
       ],
-      "enabled": false,
+      "enabled": true,
       "delay": "2nd"
     },
     {
@@ -1294,8 +1294,8 @@
       "tags": [
         "internet"
       ],
-      "enabled": false,
-      "delay": "3rd"
+      "enabled": true,
+      "delay": "2nd"
     },
     {
       "id": "waypoint",
@@ -1331,7 +1331,7 @@
       "group": "property",
       "tags": [],
       "enabled": true,
-      "delay": "1st"
+      "delay": "2nd"
     },
     {
       "id": "virtual-linker",
@@ -1403,7 +1403,7 @@
       "group": "link",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "better-markdown-links",
@@ -1412,7 +1412,7 @@
       "group": "link",
       "tags": [],
       "enabled": true,
-      "delay": "2nd"
+      "delay": "1st"
     },
     {
       "id": "obsidian-map-view",
@@ -1422,8 +1422,8 @@
       "tags": [
         "internet"
       ],
-      "enabled": false,
-      "delay": "3rd"
+      "enabled": true,
+      "delay": "2nd"
     },
     {
       "id": "hierarchical-outgoing-links",
@@ -1441,7 +1441,7 @@
       "group": "style-editor",
       "tags": [],
       "enabled": true,
-      "delay": "1st"
+      "delay": ""
     },
     {
       "id": "text-finder",
@@ -1450,7 +1450,7 @@
       "group": "search-text",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "backlink-cache",
@@ -1459,7 +1459,7 @@
       "group": "link",
       "tags": [],
       "enabled": true,
-      "delay": ""
+      "delay": "1st"
     },
     {
       "id": "obsidian-shellcommands",
@@ -1477,7 +1477,7 @@
       "group": "edit-file",
       "tags": [],
       "enabled": true,
-      "delay": "2nd"
+      "delay": "1st"
     },
     {
       "id": "shiki-highlighter",
@@ -1486,7 +1486,7 @@
       "group": "style-file",
       "tags": [],
       "enabled": true,
-      "delay": "1st"
+      "delay": "2nd"
     }
   ]
 }
