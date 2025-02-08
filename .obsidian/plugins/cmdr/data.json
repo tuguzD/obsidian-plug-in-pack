@@ -12,7 +12,7 @@
       "id": "obsidian-shellcommands:shell-command-sync",
       "icon": "lucide-arrow-down-01",
       "name": "Execute (shell command): Sync with \"Plug-in-pack\"",
-      "mode": "any"
+      "mode": "desktop"
     }
   ],
   "pageHeader": [
@@ -32,7 +32,7 @@
       "id": "widgets:add-widget",
       "icon": "lucide-app-window-mac",
       "name": "Widgets: Add widget",
-      "mode": "any"
+      "mode": "desktop"
     }
   ],
   "macros": [
