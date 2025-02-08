@@ -438,7 +438,7 @@
         "startupType": "long"
       },
       "obsidian-shellcommands": {
-        "startupType": "short"
+        "startupType": "instant"
       },
       "shiki-highlighter": {
         "startupType": "long"

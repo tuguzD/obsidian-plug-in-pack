@@ -26,7 +26,6 @@
   "canvas-card-bg-remover",
   "canvas-keyboard-pan",
   "canvas-mindmap",
-  "cmdr",
   "color-folders-files",
   "double-click-tab",
   "dynamic-outline",
@@ -66,5 +65,7 @@
   "folder-notes",
   "remember-cursor-position",
   "pexels-banner",
-  "open-sidebar-on-hover-plus"
+  "open-sidebar-on-hover-plus",
+  "cmdr",
+  "obsidian-shellcommands"
 ]

@@ -84,7 +84,8 @@
       "List abbreviations",
       "PDF++: Toggle auto-copy",
       "PDF++: Toggle auto-focus",
-      "PDF++: Toggle auto-paste"
+      "PDF++: Toggle auto-paste",
+      "Shell commands: Custom variables"
     ]
   },
   "spacing": "12",
