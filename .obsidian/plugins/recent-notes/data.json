@@ -1,0 +1,14 @@
+{
+  "maxNotesToShow": 100,
+  "showMarkdownFiles": true,
+  "showImageFiles": false,
+  "showPDFFiles": false,
+  "showAudioFiles": false,
+  "showVideoFiles": false,
+  "showCanvasFiles": true,
+  "showCSVFiles": false,
+  "excludedFolders": [],
+  "excludedFiles": [],
+  "previewLines": 2,
+  "pinnedNotes": []
+}
