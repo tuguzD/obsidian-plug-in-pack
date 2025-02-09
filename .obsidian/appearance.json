@@ -6,8 +6,7 @@
   "showRibbon": true,
   "enabledCssSnippets": [
     "obsidian-blur-plugin",
-    "supercharged-links-gen",
-    "status-bar-mobile"
+    "supercharged-links-gen"
   ],
   "showViewHeader": true
 }

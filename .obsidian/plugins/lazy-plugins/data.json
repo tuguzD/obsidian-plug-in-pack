@@ -861,7 +861,7 @@
         "startupType": "disabled"
       },
       "backlink-cache": {
-        "startupType": "short"
+        "startupType": "disabled"
       },
       "better-markdown-links": {
         "startupType": "short"
@@ -915,6 +915,9 @@
         "startupType": "instant"
       },
       "external-links": {
+        "startupType": "instant"
+      },
+      "obsidian-group-snippets": {
         "startupType": "instant"
       }
     }

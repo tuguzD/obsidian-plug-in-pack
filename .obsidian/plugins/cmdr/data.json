@@ -7,14 +7,7 @@
   "leftRibbon": [],
   "rightRibbon": [],
   "titleBar": [],
-  "statusBar": [
-    {
-      "id": "obsidian-shellcommands:shell-command-sync",
-      "icon": "lucide-arrow-down-01",
-      "name": "Execute (shell command): Sync with \"Plug-in-pack\"",
-      "mode": "desktop"
-    }
-  ],
+  "statusBar": [],
   "pageHeader": [
     {
       "id": "obsidian-version-history-diff:open-git-diff-view",
@@ -58,7 +51,13 @@
   ],
   "explorer": [],
   "hide": {
-    "statusbar": [],
+    "statusbar": [
+      "various-complements",
+      "canvas-mindmap",
+      "js-engine",
+      "properties",
+      "backlink"
+    ],
     "leftRibbon": [
       "Open today",
       "Open quick switcher",

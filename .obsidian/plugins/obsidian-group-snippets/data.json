@@ -1,0 +1,33 @@
+{
+  "groups": [
+    {
+      "name": "phone",
+      "snippets": [
+        {
+          "snippetName": "status-bar-mobile",
+          "enabled": false
+        }
+      ],
+      "active": false,
+      "themeLinked": "",
+      "colorScheme": "both",
+      "support": "isPhone"
+    },
+    {
+      "name": "tablet",
+      "snippets": [
+        {
+          "snippetName": "status-bar-mobile",
+          "enabled": true
+        }
+      ],
+      "active": false,
+      "themeLinked": "",
+      "colorScheme": "both",
+      "support": "isTablet"
+    }
+  ],
+  "enabledTheme": "",
+  "isDarkTheme": true,
+  "log": "none"
+}

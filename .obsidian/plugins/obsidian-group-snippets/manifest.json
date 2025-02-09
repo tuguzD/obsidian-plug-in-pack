@@ -1,0 +1,11 @@
+{
+	"id": "obsidian-group-snippets",
+	"name": "Group Snippets",
+	"version": "1.10.3",
+	"minAppVersion": "0.16.0",
+	"description": "Create folder of snippets to activate them in one click !",
+	"author": "Mara-Li",
+	"authorUrl": "https://github.com/Mara-Li",
+	"isDesktopOnly": false,
+	"fundingUrl": "https://ko-fi.com/mara__li"
+}
