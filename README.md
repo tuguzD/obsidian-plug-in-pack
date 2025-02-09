@@ -25,7 +25,7 @@ After launching your vault for the first time, be sure to switch to `Basic` work
 2. 💻 [Better Plugins Manager](https://github.com/0011000000110010/obsidian-manager) – create plugin groups/tags: delay, filter and toggle them “in bulk” (via commands)
 
 > [!TIP]
-> Please, don‘t be afraid of large amount of plugins here (***142*** of them, to be exact)!
+> Please, don‘t be afraid of large amount of plugins here (***143*** of them, to be exact)!
 > You can reliably turn them on/off, as well as delay their startup with the help of plugins above.
 >
 > Moreover, some of the most “performance-taxing“ plugins are not designed for `Mobile`. For more on the differences of working with different devices, follow [here](<./NOTES.md#-use-plugins-on-various-devices>).
@@ -57,6 +57,7 @@ After launching your vault for the first time, be sure to switch to `Basic` work
 ### 🪁 Modify *app appearance*
 
 - [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) – change configuration options provided by some themes and plugins’ CSS files
+- [Group Snippets](https://github.com/Mara-Li/obsidian-group-snippets) – group multiple CSS snippets, set their state individually and then “toggle” groups “in bulk”
 - 💻 [Day and Night](https://github.com/CyberT17/obsidian-day-and-night) – toggle between light/dark mode according to schedule (automatically) or manually
 - [Hider](https://github.com/kepano/obsidian-hider) – hide certain parts of `Obsidian` app UI (just like in “[Appearance](https://help.obsidian.md/User+interface/Appearance)” app settings)
 - [Force note View mode](https://github.com/bwydoogh/obsidian-force-view-mode-of-note) – force open certain notes in a view chosen from [reading or editing](https://help.obsidian.md/Editing+and+formatting/Edit+and+preview+Markdown) (preview/source)

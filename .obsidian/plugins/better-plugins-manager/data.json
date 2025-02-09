@@ -1496,6 +1496,15 @@
       "tags": [],
       "enabled": true,
       "delay": "1st"
+    },
+    {
+      "id": "obsidian-group-snippets",
+      "name": "Group Snippets",
+      "desc": "Create folder of snippets to activate them in one click !",
+      "group": "style-app",
+      "tags": [],
+      "enabled": true,
+      "delay": ""
     }
   ]
 }

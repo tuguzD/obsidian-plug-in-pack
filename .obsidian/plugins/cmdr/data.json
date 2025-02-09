@@ -7,7 +7,14 @@
   "leftRibbon": [],
   "rightRibbon": [],
   "titleBar": [],
-  "statusBar": [],
+  "statusBar": [
+    {
+      "id": "obsidian-shellcommands:shell-command-sync",
+      "icon": "lucide-arrow-down-01",
+      "name": "Execute (shell command): Sync with \"Plug-in-pack\"",
+      "mode": "desktop"
+    }
+  ],
   "pageHeader": [
     {
       "id": "obsidian-version-history-diff:open-git-diff-view",

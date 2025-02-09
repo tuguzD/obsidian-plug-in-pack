@@ -457,6 +457,9 @@
       },
       "external-links": {
         "startupType": "disabled"
+      },
+      "obsidian-group-snippets": {
+        "startupType": "disabled"
       }
     }
   },
