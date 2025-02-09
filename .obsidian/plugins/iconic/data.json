@@ -27,6 +27,9 @@
     "beautitab-react-view": {
       "icon": "lucide-file-plus-2"
     },
+    "file-tree-view": {
+      "icon": "lucide-panel-bottom-close"
+    },
     "recent-files": {
       "icon": "lucide-file-search"
     },

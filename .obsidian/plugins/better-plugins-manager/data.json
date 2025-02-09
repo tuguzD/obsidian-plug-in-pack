@@ -1505,6 +1505,15 @@
       "tags": [],
       "enabled": true,
       "delay": ""
+    },
+    {
+      "id": "file-tree-alternative",
+      "name": "File Tree Alternative",
+      "desc": "This plugin allows you to have an alternative file tree view.",
+      "group": "explorer",
+      "tags": [],
+      "enabled": true,
+      "delay": ""
     }
   ]
 }

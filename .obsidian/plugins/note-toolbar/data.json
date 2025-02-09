@@ -1,4 +1,5 @@
 {
+  "emptyViewToolbar": null,
   "export": {
     "includeIcons": true,
     "replaceVars": true,
@@ -14,5 +15,5 @@
   "toolbarProp": "toolbar",
   "toolbars": [],
   "version": 20240727.1,
-  "whatsnew_version": 1.17
+  "whatsnew_version": 1.18
 }

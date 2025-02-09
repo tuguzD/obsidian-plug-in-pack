@@ -25,7 +25,7 @@ After launching your vault for the first time, be sure to switch to `Basic` work
 2. 💻 [Better Plugins Manager](https://github.com/0011000000110010/obsidian-manager) – create plugin groups/tags: delay, filter and toggle them “in bulk” (via commands)
 
 > [!TIP]
-> Please, don‘t be afraid of large amount of plugins here (***143*** of them, to be exact)!
+> Please, don‘t be afraid of large amount of plugins here (***144*** of them, to be exact)!
 > You can reliably turn them on/off, as well as delay their startup with the help of plugins above.
 >
 > Moreover, some of the most “performance-taxing“ plugins are not designed for `Mobile`. For more on the differences of working with different devices, follow [here](<./NOTES.md#-use-plugins-on-various-devices>).
@@ -120,6 +120,7 @@ Change appearance and overall make view more compact:
 - [Folder Focus Mode](https://github.com/grochowski/obsidian-folder-focus-mode) – “focus” on a folder (with its contents) by hiding all other notes, directly in core view
 - [Folder notes](https://github.com/LostPaul/obsidian-folder-notes) – attach notes to any folder (“in bulk” via templates), open them from folder items in core view
 - [Color Folders and Files](https://github.com/Mithadon/obsidian-color-folders-files) – set text/background colors, change text style for files/folders and store it in presets
+- [File Tree Alternative](https://github.com/ozntel/file-tree-alternative) – use new tab: divide files (filter/focus/(un)collapse) and notes (pin/filter/search) into 2 views
 
 ### 🖼️ Integrate new tools for [Canvas](https://help.obsidian.md/Plugins/Canvas)
 

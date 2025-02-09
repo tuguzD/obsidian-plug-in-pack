@@ -460,6 +460,9 @@
       },
       "obsidian-group-snippets": {
         "startupType": "disabled"
+      },
+      "file-tree-alternative": {
+        "startupType": "disabled"
       }
     }
   },

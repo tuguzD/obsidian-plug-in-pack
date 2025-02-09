@@ -1,6 +1,6 @@
 {
   "activePreset": "Basic",
-  "activeFullscreenPreset": "Default",
+  "activeFullscreenPreset": "Basic",
   "separateFullscreenPreset": true,
   "presets": {
     "Basic": {

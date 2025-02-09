@@ -6,11 +6,11 @@
         "type": "split",
         "children": [
           {
-            "id": "87c047ed653d4789",
+            "id": "fac552cc38cae5da",
             "type": "tabs",
             "children": [
               {
-                "id": "fb5937444c27ba05",
+                "id": "bfe7b91c01c734d0",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
@@ -69,6 +69,16 @@
                   },
                   "icon": "lucide-folder-closed",
                   "title": "Files"
+                }
+              },
+              {
+                "id": "5a349df327bafec0",
+                "type": "leaf",
+                "state": {
+                  "type": "file-tree-view",
+                  "state": {},
+                  "icon": "sheets-in-box",
+                  "title": "File Tree"
                 }
               },
               {
@@ -141,6 +151,21 @@
                 }
               },
               {
+                "id": "24d2f5bedfc1d5e8",
+                "type": "leaf",
+                "state": {
+                  "type": "tag",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "useHierarchy": true,
+                    "showSearch": false,
+                    "searchQuery": ""
+                  },
+                  "icon": "lucide-tags",
+                  "title": "Tags"
+                }
+              },
+              {
                 "id": "79418ea42fbb6d73",
                 "type": "leaf",
                 "state": {
@@ -155,7 +180,7 @@
           }
         ],
         "direction": "horizontal",
-        "width": 341.5
+        "width": 343.5
       },
       "right": {
         "id": "c40a130a818295e1",
@@ -164,8 +189,18 @@
           {
             "id": "b9c37a9ed48bf901",
             "type": "tabs",
-            "dimension": 61.099137931034484,
+            "dimension": 60.775862068965516,
             "children": [
+              {
+                "id": "af17b037b043fbd3",
+                "type": "leaf",
+                "state": {
+                  "type": "annotations-outline",
+                  "state": {},
+                  "icon": "message-square",
+                  "title": "Enhanced Annotations"
+                }
+              },
               {
                 "id": "0378d32ae6e83c62",
                 "type": "leaf",
@@ -182,28 +217,13 @@
                 }
               },
               {
-                "id": "af17b037b043fbd3",
+                "id": "f029f121bfc41c09",
                 "type": "leaf",
                 "state": {
-                  "type": "annotations-outline",
+                  "type": "external-links-view",
                   "state": {},
-                  "icon": "message-square",
-                  "title": "Enhanced Annotations"
-                }
-              },
-              {
-                "id": "24d2f5bedfc1d5e8",
-                "type": "leaf",
-                "state": {
-                  "type": "tag",
-                  "state": {
-                    "sortOrder": "frequency",
-                    "useHierarchy": true,
-                    "showSearch": false,
-                    "searchQuery": ""
-                  },
-                  "icon": "lucide-tags",
-                  "title": "Tags"
+                  "icon": "link-2",
+                  "title": "External Links"
                 }
               },
               {
@@ -216,12 +236,13 @@
                   "title": "Source Control"
                 }
               }
-            ]
+            ],
+            "currentTab": 1
           },
           {
             "id": "57f3dcfa2c7c4e84",
             "type": "tabs",
-            "dimension": 38.900862068965516,
+            "dimension": 39.224137931034484,
             "children": [
               {
                 "id": "fcf16252da970e3f",
@@ -286,6 +307,7 @@
                 "state": {
                   "type": "backlink",
                   "state": {
+                    "file": "README.md",
                     "collapseAll": false,
                     "extraContext": false,
                     "sortOrder": "alphabetical",
@@ -295,7 +317,7 @@
                     "unlinkedCollapsed": true
                   },
                   "icon": "links-coming-in",
-                  "title": "Backlinks"
+                  "title": "Backlinks for README"
                 }
               },
               {
@@ -316,6 +338,7 @@
       },
       "left-ribbon": {
         "hiddenItems": {
+          "obsidian-shellcommands:Shell commands: Custom variables": false,
           "better-plugins-manager:Plugin Manager": false,
           "switcher:Open quick switcher": true,
           "homepage:Open homepage": false,
@@ -324,33 +347,31 @@
           "command-palette:Open command palette": true,
           "obsidian-git:Open Git source control": true,
           "workspaces:Manage workspace layouts": true,
-          "obsidian42-brat:BRAT": true,
           "quick-tagger:Add tag to current note": true,
           "quick-tagger:Remove tag from current note": true,
           "graph:Open graph view": false,
           "obsidian-trash-explorer:Open trash explorer": false,
           "recent-notes:Recent notes": false,
+          "callout-manager:Insert Callout": false,
+          "abbreviations-mark:List abbreviations": false,
           "periodic-notes:Open today": false,
           "workspaces-plus:Manage workspaces": false,
+          "obsidian42-brat:BRAT": false,
           "widgets:Add widget": false,
           "obsidian-day-and-night:Toggle Theme": false,
-          "obsidian-projects:Open projects": false,
           "quickadd:QuickAdd": false,
           "templater-obsidian:Templater": false,
-          "callout-manager:Insert Callout": false,
+          "obsidian-projects:Open projects": false,
+          "slides-extended:Show slide preview": false,
           "iconic:Open rulebook": false,
           "pdf-plus:PDF++: Toggle auto-copy": false,
           "pdf-plus:PDF++: Toggle auto-focus": false,
           "pdf-plus:PDF++: Toggle auto-paste": false,
-          "omnisearch:Omnisearch": false,
-          "abbreviations-mark:List abbreviations": false,
-          "obsidian-map-view:Open map view": false,
-          "slides-extended:Show slide preview": false,
-          "visual-crossing-weather:Visual Crossing Weather": false
+          "omnisearch:Omnisearch": false
         }
       },
-      "active": "fb5937444c27ba05",
-      "mtime": "2025-02-06T14:59:09+03:00",
+      "active": "bfe7b91c01c734d0",
+      "mtime": "2025-02-09T18:41:40+03:00",
       "workspaces-plus:settings-v1": {
         "explorerFoldState": []
       }
