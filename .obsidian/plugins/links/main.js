@@ -2915,12 +2915,13 @@ var ObsidianLinksSettingTab = class extends import_obsidian6.PluginSettingTab {
     });
     this.setSettingHelpLink(settingAppendMdExtension, this.getFullDocUrl("convert-to-markdown-link"));
     containerEl.createEl("h3", { text: "Context menu" });
-    new import_obsidian6.Setting(containerEl).setName("Edit link text").setDesc("").addToggle((toggle) => {
+    const settingEditLinkText = new import_obsidian6.Setting(containerEl).setName("Edit link text").setDesc("").addToggle((toggle) => {
       toggle.setValue(this.plugin.settings.contexMenu.editLinkText).onChange(async (value) => {
         this.plugin.settings.contexMenu.editLinkText = value;
         await this.plugin.saveSettings();
       });
     });
+    this.setSettingHelpLink(settingEditLinkText, this.getFullDocUrl("edit-link-text"));
     new import_obsidian6.Setting(containerEl).setName("Set link text").setDesc("").addToggle((toggle) => {
       toggle.setValue(this.plugin.settings.contexMenu.setLinkText).onChange(async (value) => {
         this.plugin.settings.contexMenu.setLinkText = value;
