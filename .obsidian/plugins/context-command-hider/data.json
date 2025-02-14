@@ -1,0 +1,10 @@
+{
+  "hideTitles": [
+    "Replace...",
+    "Find...",
+    "Remove icon",
+    "Add file property",
+    "/(.*)Quick explorer(.*)/",
+    "/(.*)Lint(.*)/"
+  ]
+}

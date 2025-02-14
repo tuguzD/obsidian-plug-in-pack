@@ -1518,6 +1518,15 @@
       "tags": [],
       "enabled": true,
       "delay": ""
+    },
+    {
+      "id": "context-command-hider",
+      "name": "Context Command Hider",
+      "desc": "Hide any command from the right-click menu.",
+      "group": "",
+      "tags": [],
+      "enabled": true,
+      "delay": ""
     }
   ]
 }

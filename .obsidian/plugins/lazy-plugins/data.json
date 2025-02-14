@@ -463,6 +463,9 @@
       },
       "file-tree-alternative": {
         "startupType": "disabled"
+      },
+      "context-command-hider": {
+        "startupType": "disabled"
       }
     }
   },

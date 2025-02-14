@@ -356,7 +356,26 @@
     }
   ],
   "global-search:open": [],
+  "editor:open-search-replace": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "R"
+    }
+  ],
+  "templater-obsidian:replace-in-file-templater": [],
   "text-finder:text-finder-show-find-and-replace": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "R"
+    }
+  ],
+  "various-complements:reload-custom-dictionaries": [],
+  "text-finder:text-finder-show-find": [
     {
       "modifiers": [
         "Mod",
