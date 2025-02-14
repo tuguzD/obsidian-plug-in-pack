@@ -1,4 +1,8 @@
 {
+  "PERSISTENCE": true,
+  "FILTER_TAG": "",
+  "FILTER_GROUP": "",
+  "FILTER_DELAY": "",
   "LANGUAGE": "en",
   "CENTER": false,
   "ITEM_STYLE": "alwaysExpand",
