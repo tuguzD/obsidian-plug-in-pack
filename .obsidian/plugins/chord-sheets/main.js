@@ -10191,6 +10191,7 @@ function makeChordDiagram(instrument, chordToken, width2 = 100, position2 = 0) {
   const numStrings = instrumentChordDb.main.strings;
   const numFrets = instrumentChordDb.main.fretsOnChord;
   if (chordToken.chord.userDefinedChord !== void 0) {
+    const highestFret = Array.from(chordToken.chord.userDefinedChord.frets).map((f) => parseInt(f)).filter((f) => !isNaN(f)).sort((a, b) => b - a)[0];
     renderChordDiagram({
       containerEl,
       userDefinedChord: chordToken.chord.userDefinedChord,
@@ -10198,7 +10199,7 @@ function makeChordDiagram(instrument, chordToken, width2 = 100, position2 = 0) {
       numPositions: 1,
       position: 0,
       numStrings,
-      numFrets,
+      numFrets: Math.max(numFrets, highestFret),
       chordName: chordToken.chordSymbol.value,
       width: width2
     });
@@ -13720,5 +13721,3 @@ var enharmonicToggleIcon = `<g>
   * BUILT: Mon Jun 12 2023 10:34:51 GMT+0200 (Central European Summer Time)
   *)
 */
-
-/* nosourcemap */
