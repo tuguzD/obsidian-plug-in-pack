@@ -10,6 +10,7 @@
   "showMoreButtons": true,
   "useTabEditing": true,
   "zenMode": false,
+  "showActiveTabsInZenMode": true,
   "enableTabZoom": true,
   "enhancedKeyboardTabSwitch": true,
   "alwaysOpenInNewTab": false,
@@ -21,6 +22,11 @@
   "deduplicateSameGroupTabs": true,
   "deduplicateSidebarTabs": true,
   "deduplicatePopupTabs": true,
+  "linkedFolderLimit": 5,
+  "linkedFolderSortStrategy": "fileNameAToZ",
+  "columnViewMinWidth": 300,
+  "continuousViewShowMetadata": false,
+  "continuousViewShowBacklinks": false,
   "backgroundMode": false,
   "installationID": "SFqkLdBZtbiIae8BGos1d"
 }
