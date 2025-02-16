@@ -164,9 +164,92 @@ function getAbbreviationInstance(input) {
   }
   return null;
 }
-function queryAbbreviationTitle(text, abbrList, lineStart = 1, affixList = []) {
-  let res = null;
-  let affixRes = null;
+function findAllIndexes(str, word) {
+  if (word.length === 0) {
+    return [];
+  }
+  const indexes = [];
+  let startIndex = 0;
+  while (startIndex < str.length) {
+    const index = str.indexOf(word, startIndex);
+    if (index === -1) {
+      break;
+    }
+    indexes.push(index);
+    startIndex = index + 1;
+  }
+  return indexes;
+}
+function queryOverlap(left, right) {
+  const leftStart = left.index;
+  const leftEnd = left.index + left.text.length;
+  const rightStart = right.index;
+  const rightEnd = right.index + right.text.length;
+  if (leftStart === rightStart && leftEnd === rightEnd) {
+    return "same";
+  } else if (leftStart <= rightStart && leftEnd >= rightEnd) {
+    return "contain";
+  } else if (leftStart >= rightStart && leftEnd <= rightEnd) {
+    return "included";
+  } else if (leftEnd > rightStart && leftStart < rightEnd) {
+    return "intersection";
+  }
+  return "unrelated";
+}
+function selectNonOverlappingItems(list) {
+  const res = [];
+  if (list.length === 0) {
+    return [];
+  }
+  const highestPriorityIndex = list.reduce(
+    (lastIndex, element, currentIndex) => {
+      if (element.abbrPos < 0) {
+        return currentIndex;
+      }
+      return lastIndex;
+    },
+    0
+  );
+  for (let i = highestPriorityIndex; i >= 0; i--) {
+    let add = true;
+    for (const resItem of res) {
+      const overlapState = queryOverlap(resItem, list[i]);
+      if (overlapState !== "unrelated") {
+        add = false;
+        break;
+      }
+    }
+    if (add) {
+      res.push({
+        index: list[i].index,
+        text: list[i].text,
+        title: list[i].title
+      });
+    }
+  }
+  for (let j = highestPriorityIndex + 1; j < list.length; j++) {
+    let add = true;
+    for (const resItem of res) {
+      const overlapState = queryOverlap(resItem, list[j]);
+      if (overlapState !== "unrelated") {
+        add = false;
+        break;
+      }
+    }
+    if (add) {
+      res.push({
+        index: list[j].index,
+        text: list[j].text,
+        title: list[j].title
+      });
+    }
+  }
+  return res;
+}
+function queryAbbreviationTitle(text, abbrList, lineStart = 1, affixList = [], detectCJK = false) {
+  let fullRes = null;
+  let affixFullRes = null;
+  let cjkRes = [];
   let detectAffixes = affixList.length > 0;
   for (let i = abbrList.length - 1; i >= 0; i--) {
     const abbr = abbrList[i];
@@ -174,7 +257,7 @@ function queryAbbreviationTitle(text, abbrList, lineStart = 1, affixList = []) {
       continue;
     }
     if (text === abbr.key) {
-      res = abbr.title;
+      fullRes = abbr.title;
       if (abbr.type === "extra") {
         if (abbr.position <= lineStart) {
           break;
@@ -182,27 +265,69 @@ function queryAbbreviationTitle(text, abbrList, lineStart = 1, affixList = []) {
       } else {
         break;
       }
-    } else if (detectAffixes) {
-      let match = false;
-      for (const affix of affixList) {
-        if (text === abbr.key + affix) {
-          affixRes = abbr.title;
-          match = true;
-          break;
+    } else {
+      if (detectAffixes) {
+        let affixMatch = false;
+        for (const affix of affixList) {
+          if (text === abbr.key + affix) {
+            affixFullRes = abbr.title;
+            affixMatch = true;
+            break;
+          }
         }
-      }
-      if (match) {
-        if (abbr.type === "extra") {
-          if (abbr.position <= lineStart) {
+        if (affixMatch) {
+          if (abbr.type === "extra") {
+            if (abbr.position <= lineStart) {
+              detectAffixes = false;
+            }
+          } else {
             detectAffixes = false;
           }
-        } else {
-          detectAffixes = false;
+        }
+      }
+      if (detectCJK && fullRes == null && affixFullRes == null) {
+        const indexes = findAllIndexes(text, abbr.key);
+        for (const index of indexes) {
+          let add = true;
+          cjkRes = cjkRes.filter((item) => {
+            const overlapState = queryOverlap(item, {
+              index,
+              text: abbr.key
+            });
+            if (overlapState === "same") {
+              if (item.abbrPos > 0) {
+                return false;
+              } else {
+                add = false;
+              }
+            } else if (overlapState === "included") {
+              return false;
+            } else if (overlapState === "contain") {
+              add = false;
+            }
+            return true;
+          });
+          if (add) {
+            cjkRes.push({
+              index,
+              text: abbr.key,
+              title: abbr.title,
+              abbrPos: abbr.type === "extra" ? abbr.position - lineStart : -1
+            });
+          }
         }
       }
     }
   }
-  return res != null ? res : affixRes;
+  if (fullRes != null) {
+    return fullRes;
+  } else if (affixFullRes != null) {
+    return affixFullRes;
+  } else if (cjkRes.length > 0) {
+    const res = selectNonOverlappingItems(cjkRes).filter((item) => item.title).sort((a, b) => a.index - b.index);
+    return res.length > 0 ? res : "";
+  }
+  return "";
 }
 function isAbbreviationsEmpty(abbr) {
   if (abbr.length === 0) {
@@ -239,12 +364,18 @@ function calcAbbrListFromFrontmatter(frontmatter, keyword) {
 }
 
 // components/dom.ts
-function replaceWordWithAbbr(node, abbrList, lineStart = 1, affixList = []) {
+function replaceWordWithAbbr(node, abbrList, lineStart = 1, affixList = [], detectCJK = false) {
   var _a;
   if (["DEL", "EM", "MARK", "STRONG"].includes(node.nodeName)) {
     const childNodes = node.childNodes;
     for (let i = 0; i < childNodes.length; i++) {
-      replaceWordWithAbbr(childNodes[i], abbrList, lineStart, affixList);
+      replaceWordWithAbbr(
+        childNodes[i],
+        abbrList,
+        lineStart,
+        affixList,
+        detectCJK
+      );
     }
   }
   if (node.nodeType !== Node.TEXT_NODE) {
@@ -262,9 +393,33 @@ function replaceWordWithAbbr(node, abbrList, lineStart = 1, affixList = []) {
           word.text,
           abbrList,
           lineStart,
-          affixList
+          affixList,
+          detectCJK
         );
-        if (abbrTitle) {
+        if (Array.isArray(abbrTitle)) {
+          let lastIndex = 0;
+          for (const item of abbrTitle) {
+            if (item.index > lastIndex) {
+              fragment.appendChild(
+                document.createTextNode(
+                  word.text.substring(lastIndex, item.index)
+                )
+              );
+            }
+            const abbr = fragment.createEl("abbr", {
+              cls: abbrClassName,
+              title: item.title,
+              text: item.text
+            });
+            fragment.appendChild(abbr);
+            lastIndex = item.index + item.text.length;
+          }
+          if (lastIndex < word.text.length) {
+            fragment.appendChild(
+              document.createTextNode(word.text.substring(lastIndex))
+            );
+          }
+        } else if (abbrTitle) {
           const abbr = fragment.createEl("abbr", {
             cls: abbrClassName,
             title: abbrTitle,
@@ -279,7 +434,7 @@ function replaceWordWithAbbr(node, abbrList, lineStart = 1, affixList = []) {
     (_a = node.parentNode) == null ? void 0 : _a.replaceChild(fragment, node);
   }
 }
-function handlePreviewMarkdown(element, abbrList, affixList = []) {
+function handlePreviewMarkdown(element, abbrList, affixList = [], detectCJK = false) {
   if (isAbbreviationsEmpty(abbrList)) {
     return;
   }
@@ -288,11 +443,11 @@ function handlePreviewMarkdown(element, abbrList, affixList = []) {
     const childNodes = ele.childNodes;
     for (let i = 0; i < childNodes.length; i++) {
       const node = childNodes[i];
-      replaceWordWithAbbr(node, abbrList, 1, affixList);
+      replaceWordWithAbbr(node, abbrList, 1, affixList, detectCJK);
     }
   }
 }
-function handlePreviewMarkdownExtra(context, element, abbrList, affixList = []) {
+function handlePreviewMarkdownExtra(context, element, abbrList, affixList = [], detectCJK = false) {
   if (isAbbreviationsEmpty(abbrList)) {
     return;
   }
@@ -312,7 +467,7 @@ function handlePreviewMarkdownExtra(context, element, abbrList, affixList = []) 
     const childNodes = ele.childNodes;
     for (let i = 0; i < childNodes.length; i++) {
       const node = childNodes[i];
-      replaceWordWithAbbr(node, abbrList, lineStart, affixList);
+      replaceWordWithAbbr(node, abbrList, lineStart, affixList, detectCJK);
     }
   }
 }
@@ -676,11 +831,12 @@ var MarkBuffer = class {
 
 // common/conversion.ts
 var Conversion = class extends Base {
-  constructor(abbreviations, skipExtraDefinition, affixList = []) {
+  constructor(abbreviations, skipExtraDefinition, affixList = [], detectCJK = false) {
     super();
     this.abbreviations = abbreviations;
     this.skipExtraDefinition = skipExtraDefinition;
     this.affixList = affixList;
+    this.detectCJK = detectCJK;
     this.mark = new MarkBuffer();
   }
   /**
@@ -736,26 +892,33 @@ var Conversion = class extends Base {
           return;
         }
       }
+      const results = [];
       const words = this.mark.handler(text);
-      callback(
-        words.map((word) => {
-          const abbrTitle = queryAbbreviationTitle(
-            word.text,
-            this.abbreviations,
-            lineStart,
-            this.affixList
-          );
-          if (abbrTitle) {
-            return {
-              index: word.position,
-              text: word.text,
-              title: abbrTitle
-            };
+      words.forEach((word) => {
+        const abbrTitle = queryAbbreviationTitle(
+          word.text,
+          this.abbreviations,
+          lineStart,
+          this.affixList,
+          this.detectCJK
+        );
+        if (Array.isArray(abbrTitle)) {
+          for (const item of abbrTitle) {
+            results.push({
+              index: word.position + item.index,
+              text: item.text,
+              title: item.title
+            });
           }
-          return null;
-        }).filter((v) => v !== null),
-        false
-      );
+        } else if (abbrTitle) {
+          results.push({
+            index: word.position,
+            text: word.text,
+            title: abbrTitle
+          });
+        }
+      });
+      callback(results, false);
       return;
     } else {
       if (this.state === "metadata") {
@@ -865,7 +1028,8 @@ var AbbrViewPlugin = class {
         const conversion = new Conversion(
           parser.abbreviations,
           pluginData.useMarkdownExtraSyntax,
-          pluginData.suffixes
+          pluginData.suffixes,
+          pluginData.detectCJK
         );
         for (let i = 1; i < doc.lines + 1; i++) {
           const line = doc.line(i);
@@ -905,7 +1069,8 @@ var AbbrViewPlugin = class {
       handlePreviewMarkdown(
         view.dom,
         parser.abbreviations,
-        pluginData.suffixes
+        pluginData.suffixes,
+        pluginData.detectCJK
       );
     } else {
       view.dispatch({
@@ -1006,7 +1171,7 @@ function lineMarkupFormatter(content, marks) {
   }
   return results.join("");
 }
-function contentFormatter(content, globalAbbreviations, metadataKeyword, useMarkdownExtraSyntax, affixList) {
+function contentFormatter(content, globalAbbreviations, metadataKeyword, useMarkdownExtraSyntax, affixList, detectCJK = false) {
   const results = [];
   const parser = new Parser(globalAbbreviations, metadataKeyword, {
     metadata: true,
@@ -1024,7 +1189,8 @@ function contentFormatter(content, globalAbbreviations, metadataKeyword, useMark
   const conversion = new Conversion(
     parser.abbreviations,
     useMarkdownExtraSyntax,
-    affixList
+    affixList,
+    detectCJK
   );
   let lastDefinitionState = false;
   for (let i = 0; i < lines.length; i++) {
@@ -1062,6 +1228,7 @@ function contentFormatter(content, globalAbbreviations, metadataKeyword, useMark
 var DEFAULT_SETTINGS = {
   useMarkdownExtraSyntax: false,
   metadataKeyword: "abbr",
+  detectCJK: false,
   detectAffixes: false,
   affixes: "",
   markInSourceMode: false,
@@ -1096,7 +1263,7 @@ var AbbrPlugin = class extends import_obsidian5.Plugin {
           }
         );
         parser.readAbbreviationsFromCache(context.frontmatter);
-        const file = this.app.workspace.getActiveFile();
+        const file = this.getActiveFile(context.sourcePath);
         if (file) {
           const sourceContent = await this.app.vault.cachedRead(file);
           sourceContent.split("\n").forEach((line, index) => {
@@ -1107,14 +1274,15 @@ var AbbrPlugin = class extends import_obsidian5.Plugin {
           context,
           element,
           parser.abbreviations,
-          this.getAffixList()
+          this.getAffixList(),
+          this.settings.detectCJK
         );
       } else {
         let frontmatter = context.frontmatter;
         if (this.settings.metadataKeyword) {
           if (!frontmatter) {
             if (element.classList.contains("table-cell-wrapper") || element.classList.contains("markdown-rendered")) {
-              const file = this.app.workspace.getActiveFile();
+              const file = this.getActiveFile(context.sourcePath);
               if (file) {
                 frontmatter = (_a = this.app.metadataCache.getFileCache(file)) == null ? void 0 : _a.frontmatter;
               }
@@ -1122,7 +1290,12 @@ var AbbrPlugin = class extends import_obsidian5.Plugin {
           }
         }
         const abbrList = this.getAbbrList(frontmatter);
-        handlePreviewMarkdown(element, abbrList, this.getAffixList());
+        handlePreviewMarkdown(
+          element,
+          abbrList,
+          this.getAffixList(),
+          this.settings.detectCJK
+        );
       }
     });
     this.registerEvent(
@@ -1130,7 +1303,8 @@ var AbbrPlugin = class extends import_obsidian5.Plugin {
         "changed",
         (0, import_obsidian5.debounce)(
           (file) => {
-            if (this.settings.metadataKeyword && file && file === this.app.workspace.getActiveFile()) {
+            var _a;
+            if (this.settings.metadataKeyword && file && file.path === ((_a = this.getActiveFile()) == null ? void 0 : _a.path)) {
               this.rerenderPreviewMarkdown(file);
             }
           },
@@ -1267,7 +1441,7 @@ var AbbrPlugin = class extends import_obsidian5.Plugin {
       ...other
     };
     if (metadataKeyword) {
-      const file = this.app.workspace.getActiveFile();
+      const file = this.getActiveFile();
       if (file) {
         data.frontmatterCache = (_a = this.app.metadataCache.getFileCache(file)) == null ? void 0 : _a.frontmatter;
       }
@@ -1277,8 +1451,15 @@ var AbbrPlugin = class extends import_obsidian5.Plugin {
   getAffixList() {
     return this.settings.detectAffixes ? getAffixList(this.settings.affixes) : void 0;
   }
+  getActiveFile(sourcePath) {
+    if (sourcePath) {
+      return this.app.vault.getFileByPath(sourcePath);
+    } else {
+      return this.app.workspace.getActiveFile();
+    }
+  }
   async copyAndFormatContent() {
-    const activeFile = this.app.workspace.getActiveFile();
+    const activeFile = this.getActiveFile();
     if (activeFile) {
       const content = await this.app.vault.cachedRead(activeFile);
       const formatContent = contentFormatter(
@@ -1286,7 +1467,8 @@ var AbbrPlugin = class extends import_obsidian5.Plugin {
         this.settings.globalAbbreviations,
         this.settings.metadataKeyword,
         this.settings.useMarkdownExtraSyntax,
-        this.getAffixList()
+        this.getAffixList(),
+        this.settings.detectCJK
       );
       try {
         await navigator.clipboard.writeText(formatContent);
@@ -1330,7 +1512,7 @@ var AbbrPlugin = class extends import_obsidian5.Plugin {
     var _a, _b;
     let abbrList = [];
     let selectedText = "";
-    const file = this.app.workspace.getActiveFile();
+    const file = this.getActiveFile();
     if (file) {
       const frontmatter = (_a = this.app.metadataCache.getFileCache(file)) == null ? void 0 : _a.frontmatter;
       if (this.settings.useMarkdownExtraSyntax) {
@@ -1372,7 +1554,7 @@ var AbbrPlugin = class extends import_obsidian5.Plugin {
     }
     const metadataKeyword = this.settings.metadataKeyword;
     if (metadataKeyword) {
-      const file = this.app.workspace.getActiveFile();
+      const file = this.getActiveFile();
       if (file) {
         this.app.fileManager.processFrontMatter(file, (frontmatter) => {
           if (typeof frontmatter === "object" && frontmatter) {
@@ -1462,6 +1644,24 @@ var AbbrSettingTab = class extends import_obsidian5.PluginSettingTab {
         await this.plugin.saveSettings();
       });
     });
+    const detectCJKSetting = new import_obsidian5.Setting(containerEl).setName(
+      "Enable abbreviation detection for languages not separated by spaces"
+    ).addToggle((toggle) => {
+      toggle.setValue(this.plugin.settings.detectCJK).onChange(async (value) => {
+        this.plugin.settings.detectCJK = value;
+        await this.plugin.saveSettings();
+      });
+    });
+    const detectCJKDesc = document.createDocumentFragment();
+    detectCJKDesc.append(
+      "Detect abbreviations in languages that do not use spaces for word segmentation, such as ",
+      createEl("abbr", {
+        text: "CJK",
+        title: "Chinese, Japanese, Korean"
+      }),
+      "."
+    );
+    detectCJKSetting.descEl.appendChild(detectCJKDesc);
     const globalAbbreviationsSetting = new import_obsidian5.Setting(containerEl).setName("Global abbreviations").addButton((button) => {
       button.setButtonText("Manage abbreviations").onClick(() => {
         this.displayGlobalAbbreviations();
@@ -1564,5 +1764,3 @@ function manageGlobalAbbreviations(plugin, containerEl, header) {
 //! empty line
 //! Delay trigger rerender
 //! Rerender
-
-/* nosourcemap */
