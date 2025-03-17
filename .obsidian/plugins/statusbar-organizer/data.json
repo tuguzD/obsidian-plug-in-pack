@@ -95,6 +95,10 @@
       "plugin-editing-toolbar-editingToolbar-statusbar-button;1": {
         "position": 23,
         "visible": true
+      },
+      "plugin-obsidian-git-obsidian-git-statusbar-idle;1": {
+        "position": 24,
+        "visible": true
       }
     }
   },
