@@ -104,7 +104,7 @@ var EventHelper = class {
       );
       this.cancelToken(countToken);
       await this.plugin.updateDisplayedCounts(file);
-      await this.plugin.saveSettings();
+      this.plugin.saveSettingsDebounced();
     }, 500);
     this.plugin.registerEvent(
       this.app.metadataCache.on("changed", async (file) => {
@@ -1825,6 +1825,8 @@ var NovelWordCountPlugin = class extends import_obsidian5.Plugin {
   constructor(app, manifest) {
     super(app, manifest);
     this.debugHelper = new DebugHelper();
+    this.FIVE_MINUTES = 5 * 60 * 1e3;
+    this.saveSettingsDebounced = (0, import_obsidian5.debounce)(this.saveSettings, this.FIVE_MINUTES, false);
     this.fileHelper = new FileHelper(this.app, this);
     this.eventHelper = new EventHelper(
       this,
@@ -1898,6 +1900,7 @@ var NovelWordCountPlugin = class extends import_obsidian5.Plugin {
   }
   // SETTINGS
   async saveSettings() {
+    this.debugHelper.debug("Saving to data.json.");
     await this.saveData(this.savedData);
   }
   // PUBLIC
@@ -2017,5 +2020,3 @@ var NovelWordCountPlugin = class extends import_obsidian5.Plugin {
     container.toggleClass(folderPrefix + folderAlignment, true);
   }
 };
-
-/* nosourcemap */

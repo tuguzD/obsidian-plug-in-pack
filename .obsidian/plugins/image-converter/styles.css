@@ -864,6 +864,115 @@ html[data-theme='dark'] {
 }
 
 
+
+
+
+
+
+
+
+
+/* --------------- CAPTIONS SETTINGS ------------------------------ */
+/* ----------------------------------------------------------------------- */
+
+/* --- Section Container --- */
+.image-converter-settings-tab .image-caption-settings-section {
+    display: flex;
+    /* align-items: center; */
+    gap: 10px;
+    /* margin-bottom: 10px; */
+    cursor: pointer;
+    flex-direction: column;
+}
+
+
+/* --- Section Header (Clickable Toggle Area) --- */
+.image-converter-settings-tab .image-caption-settings-section .settings-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 8px 0;
+}
+
+
+.image-converter-settings-tab .image-caption-settings-section .settings-section-title {
+    /* flex-grow: 1; */
+    margin-left: 0.5em;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.image-converter-settings-tab .image-caption-settings-section .settings-section-toggle-button {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+
+/* --- Chevron Icon --- */
+.image-converter-settings-tab .image-caption-settings-section .settings-section-chevron-icon {
+    margin-right: 5px;
+    transition: transform 0.2s ease;
+}
+
+
+/* --- HIDE CHEVRON WHEN IMAGE ALIGNMENT IS DISABLED --- */
+.image-converter-settings-tab .image-caption-settings-section:not(.image-caption-enabled) .settings-section-chevron-icon {
+    /* Refined selector */
+    display: none;
+    /* Hide chevron when image alignment section is disabled */
+}
+
+
+/* --- Indentation for Settings within Section --- */
+.image-converter-settings-tab .image-caption-settings-section .setting-item {
+    padding-left: 1.5em;
+    border-top: none;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* --- Hide Settings when Section is Collapsed --- */
+.image-converter-settings-tab .image-caption-settings-section.settings-section-collapsed>*:not(.settings-section-header) {
+    display: none;
+}
+
+.settings-section-clarification-text {
+    margin-left: 19px;
+    color: var(--text-muted);
+    font-size: var(--font-ui-smaller);
+    padding-top: var(--size-4-1);
+    line-height: var(--line-height-tight);
+}
+
+/* ----------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* MODAL WINDOW - each drop */
 /* FILENAME--------------------------------------------------------------------------- */
 .image-converter-preset-selection-modal {
@@ -1030,39 +1139,70 @@ html[data-theme='dark'] {
 
 
 /* ------------------------------- */
-
 .image-converter-contextmenu-input-group {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 2px;
+    position: relative; /* Added */
 }
 
-.image-converter-contextmenu-icon-container {
-    display: flex;
-    align-items: center;
+/* New style for labels */
+.image-converter-contextmenu-input-group label {
+    min-width: 53px; /* Fixed width for all labels */
+    text-align: left; /* Right-align the labels */
+    padding-right: 2px; /* Space between label and input */
 }
 
+/* Updated input styles */
+.image-converter-contextmenu-dimensions-input,
 .image-converter-contextmenu-name-input,
-.image-converter-contextmenu-path-input {
-    flex-grow: 1;
-    padding: 4px;
+.image-converter-contextmenu-path-input,
+.image-converter-contextmenu-caption-input {
+    flex: 1;
+    min-width: 0; /* Prevents flex items from overflowing */
+    padding: 4px 8px;
     border: 1px solid var(--background-modifier-border);
     border-radius: 4px;
     background-color: var(--background-secondary);
     color: var(--text-normal);
+    height: 28px; /* Consistent height */
 }
 
-.image-converter-contextmenu-disabled {
-    background-color: var(--background-modifier-hover);
-    color: var(--text-muted);
-    cursor: not-allowed;
+/* Add hover state for inputs */
+.image-converter-contextmenu-dimensions-input:hover,
+.image-converter-contextmenu-name-input:hover,
+.image-converter-contextmenu-path-input:hover,
+.image-converter-contextmenu-caption-input:hover {
+    border-color: var(--background-modifier-border-hover);
 }
 
-.image-converter-contextmenu-buttons {
-    display: flex;
-    gap: 4px;
+/* Add focus state for inputs */
+.image-converter-contextmenu-dimensions-input:focus,
+.image-converter-contextmenu-name-input:focus,
+.image-converter-contextmenu-path-input:focus,
+.image-converter-contextmenu-caption-input:focus {
+    border-color: var(--interactive-accent);
+    box-shadow: 0 0 0 2px var(--background-modifier-border-focus);
+    outline: none;
 }
 
+.image-converter-contextmenu-input-group .image-converter-contextmenu-dimensions-input {
+    max-width: 85px
+}
+/* Updated container style */
+.image-converter-contextmenu-info-container {
+    display: grid;
+    grid-template-columns: minmax(200px, 1fr) auto; /* Minimum width for inputs */
+    gap: var(--size-4-1);
+    /* padding: 8px;  */
+    cursor: var(--cursor);
+    font-size: var(--font-ui-small);
+    border-radius: var(--radius-s);
+    white-space: nowrap;
+    transition: background-color 0.15s ease;
+}
+
+/* Update button style */
 .image-converter-contextmenu-button {
     display: flex;
     align-items: center;
@@ -1070,27 +1210,67 @@ html[data-theme='dark'] {
     padding: 4px;
     cursor: pointer;
     border-radius: 4px;
-    /* margin-top: 8px; */
     grid-column: 2;
-    grid-row: 1 / span 2;
+    grid-row: 1 / span 4;
     color: var(--text-normal);
+    width: 28px; /* Fixed width */
+    align-self: stretch; /* Makes button fill entire height */
+    transition: background-color 0.15s ease, color 0.15s ease;
 }
-
 
 .image-converter-contextmenu-button:hover {
-    background-color: var(--background-modifier-hover);
+    background-color: var(--interactive-accent);
+    color: var(--text-on-accent);
 }
 
-.image-converter-contextmenu-info-container {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: var(--size-4-2);
-    /* padding: var(--size-4-1) var(--size-4-2); */
-    cursor: var(--cursor);
-    font-size: var(--font-ui-small);
-    border-radius: var(--radius-s);
-    white-space: nowrap;
+/* Optional: Style for the icon containers */
+.image-converter-contextmenu-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px; /* Fixed width */
 }
+
+/* Add disabled state styles */
+.image-converter-contextmenu-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: var(--background-modifier-form-field);
+}
+
+
+.image-converter-contextmenu-dimension-inputs {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+}
+
+.image-converter-contextmenu-dimension-input {
+    width: 60px;
+    padding: 4px 8px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background-color: var(--background-secondary);
+    color: var(--text-normal);
+    height: 28px;
+    -moz-appearance: textfield; /* Removes arrows in Firefox */
+}
+
+/* Remove arrows from number inputs */
+.image-converter-contextmenu-dimension-input::-webkit-outer-spin-button,
+.image-converter-contextmenu-dimension-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Style the multiplication symbol */
+.image-converter-contextmenu-dimension-inputs > span {
+    color: var(--text-muted);
+    font-size: 0.9em;
+}
+
+
 
 /* ------------------------------------------------------------------ */
 /* -------------------IMAGE ANNOTATION ------------------------------ */
@@ -2334,6 +2514,7 @@ html[data-theme='dark'] {
 .markdown-source-view.mod-cm6 {
 
     /* Left alignment WITH wrapping */
+    .image-wrap.image-position-left
     .image-wrap.image-position-left {
         float: left !important; /* !important to override Obsidian */
         margin: 0 1em 0.5em 0 !important;
@@ -2379,11 +2560,21 @@ html[data-theme='dark'] {
         /* For the image itself */
     }
 
+    .image-captions-figure {
+        margin: 0;
+        padding: 2px;
+        display: inline-table;
+        border-radius: 2px;
+    }
+
+
+
     /* Center alignment for internal embeds */
     .internal-embed.image-embed.image-position-center {
         text-align: center !important;
     }
 }
+
 
 /* ------------------------ Reading Mode Styles --------------------------------------*/
 .markdown-reading-view {
@@ -2518,4 +2709,3 @@ html[data-theme='dark'] {
     border: 1px solid var(--background-modifier-border);
     border-radius: 5px;
 }
-

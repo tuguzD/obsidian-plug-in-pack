@@ -8,12 +8,20 @@
   },
   "folderMappings": [],
   "icon": "circle-ellipsis",
+  "onboarding": {},
   "ribbonAction": "toolbar",
   "scriptingEnabled": true,
   "showEditInFabMenu": true,
+  "showToolbarIn": {
+    "audio": false,
+    "canvas": false,
+    "image": false,
+    "pdf": false,
+    "video": false
+  },
   "showToolbarInFileMenu": false,
   "toolbarProp": "toolbar",
   "toolbars": [],
-  "version": 20240727.1,
-  "whatsnew_version": 1.18
+  "version": 20250302.1,
+  "whatsnew_version": 1.2
 }
