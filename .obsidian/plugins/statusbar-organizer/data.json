@@ -91,11 +91,15 @@
       "cmdr-clickable-icon;1": {
         "position": 3,
         "visible": true
+      },
+      "plugin-editing-toolbar-editingToolbar-statusbar-button;1": {
+        "position": 23,
+        "visible": true
       }
     }
   },
   "presetsOrder": [
     "Basic"
   ],
-  "version": "2.1.3"
+  "version": "2.1.4"
 }

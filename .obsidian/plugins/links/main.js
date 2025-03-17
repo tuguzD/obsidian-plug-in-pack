@@ -2929,18 +2929,20 @@ var ObsidianLinksSettingTab = class extends import_obsidian6.PluginSettingTab {
       });
     });
     this.setSettingHelpLink(settingSetLinkText, this.getFullDocUrl("set-link-text"));
-    new import_obsidian6.Setting(containerEl).setName("Set link text from clipboard").setDesc("").addToggle((toggle) => {
+    const settingSetLinkTextFromClipboard = new import_obsidian6.Setting(containerEl).setName("Set link text from clipboard").setDesc("").addToggle((toggle) => {
       toggle.setValue(this.plugin.settings.contexMenu.setLinkTextFromClipboard).onChange(async (value) => {
         this.plugin.settings.contexMenu.setLinkTextFromClipboard = value;
         await this.plugin.saveSettings();
       });
     });
-    new import_obsidian6.Setting(containerEl).setName("Edit link destination").setDesc("").addToggle((toggle) => {
+    this.setSettingHelpLink(settingSetLinkTextFromClipboard, this.getFullDocUrl("set-link-text-from-clipboard"));
+    const settingEditLinkDestination = new import_obsidian6.Setting(containerEl).setName("Edit link destination").setDesc("").addToggle((toggle) => {
       toggle.setValue(this.plugin.settings.contexMenu.editLinkDestination).onChange(async (value) => {
         this.plugin.settings.contexMenu.editLinkDestination = value;
         await this.plugin.saveSettings();
       });
     });
+    this.setSettingHelpLink(settingEditLinkDestination, this.getFullDocUrl("edit-link-destination"));
     const setLinkDestinationFromClipboardContextMenuSetting = new import_obsidian6.Setting(containerEl).setName("Set link destination from clipboard").setDesc("").addToggle((toggle) => {
       toggle.setValue(this.plugin.settings.contexMenu.setLinkDestinationFromClipboard).onChange(async (value) => {
         this.plugin.settings.contexMenu.setLinkDestinationFromClipboard = value;
@@ -3167,6 +3169,12 @@ var ObsidianLinksSettingTab = class extends import_obsidian6.PluginSettingTab {
       });
     });
     this.setSettingHelpLink(settingCopyLinkToElement, this.getFullInsiderDocUrl("copy-link-to-element.md"));
+    new import_obsidian6.Setting(containerEl).setName("Set link destination from clipboard").setDesc("Sets destination of a link from clipboard").addToggle((toggle) => {
+      toggle.setValue(this.plugin.settings.ffSetLinkDestinationFromClipbard).onChange(async (value) => {
+        this.plugin.settings.ffSetLinkDestinationFromClipbard = value;
+        await this.plugin.saveSettings();
+      });
+    });
   }
 };
 
@@ -4732,7 +4740,7 @@ var SetLinkDestinationFromClipboardCommand = class extends ConvertToMdlinkComman
       return true;
     }
     (async () => {
-      var _a, _b, _c, _d, _e;
+      var _a, _b, _c, _d, _e, _f, _g;
       const noteText = editor.getValue();
       const cursorOffset = editor.posToOffset(editor.getCursor("from"));
       const links = findLinks(noteText, 1 /* Markdown */ | 2 /* Wiki */, cursorOffset, cursorOffset);
@@ -4742,6 +4750,7 @@ var SetLinkDestinationFromClipboardCommand = class extends ConvertToMdlinkComman
       }
       const link = links[0];
       const clipboardText = await this.obsidianProxy.clipboardReadText();
+      let clipboardTextProcessed = false;
       let linkDestination = clipboardText;
       if (this.obsidianProxy.settings.ffObsidianUrlSupport) {
         if (linkDestination.startsWith("obsidian://open?vault=")) {
@@ -4752,9 +4761,16 @@ var SetLinkDestinationFromClipboardCommand = class extends ConvertToMdlinkComman
               const filePath = url.searchParams.get("file");
               if (filePath) {
                 linkDestination = filePath + (getFileExtension(filePath) ? "" : ".md");
+                clipboardTextProcessed = true;
               }
             }
           }
+        }
+      }
+      if (!clipboardTextProcessed) {
+        const links2 = findLinks(clipboardText, 65535 /* All */);
+        if ((links2 == null ? void 0 : links2.length) > 0 && ((_c = links2[0].destination) == null ? void 0 : _c.content)) {
+          linkDestination = (_d = links2[0].destination) == null ? void 0 : _d.content;
         }
       }
       let destinationStartOffset;
@@ -4773,17 +4789,17 @@ var SetLinkDestinationFromClipboardCommand = class extends ConvertToMdlinkComman
             destinationStartOffset = destinationEndOffset = link.position.start + (link.text ? link.text.content.length : 0) + (link.embedded ? 2 : 1) + 2;
             break;
           default:
-            (_c = this.callback) == null ? void 0 : _c.call(this, null, void 0);
+            (_e = this.callback) == null ? void 0 : _e.call(this, null, void 0);
             return;
         }
       }
       if (((link == null ? void 0 : link.type) & (1 /* Markdown */ | 2 /* Wiki */)) != 0) {
-        if ((link == null ? void 0 : link.type) === 1 /* Markdown */ && (!((_d = link.destination) == null ? void 0 : _d.content) || !link._destinationInAngleBrackets) && linkDestination.indexOf(" ") >= 0) {
+        if ((link == null ? void 0 : link.type) === 1 /* Markdown */ && (!((_f = link.destination) == null ? void 0 : _f.content) || !link._destinationInAngleBrackets) && linkDestination.indexOf(" ") >= 0) {
           linkDestination = `<${linkDestination}>`;
         }
         editor.replaceRange(linkDestination, editor.offsetToPos(destinationStartOffset), editor.offsetToPos(destinationEndOffset));
         editor.setCursor(editor.offsetToPos(destinationStartOffset + linkDestination.length));
-        (_e = this.callback) == null ? void 0 : _e.call(this, null, void 0);
+        (_g = this.callback) == null ? void 0 : _g.call(this, null, void 0);
       }
     })();
   }

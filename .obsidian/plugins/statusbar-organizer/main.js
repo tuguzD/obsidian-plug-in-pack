@@ -276,6 +276,7 @@ async function initializeRows(plugin, settingsContainer) {
     entry.appendChild(handle);
     const formattedName = row.name.replace(/^plugin-(obsidian-)?/, "").split("-").map((x) => x.charAt(0).toUpperCase() + x.slice(1)).join(" ") + (nameCollisions[row.name] ? ` (${row.index})` : "");
     const titleSpan = document.createElement("span");
+    titleSpan.addClass("statusbar-organizer-row-title");
     titleSpan.textContent = formattedName;
     entry.appendChild(titleSpan);
     const previewSpan = document.createElement("span");
@@ -642,7 +643,7 @@ function upgrade(settings) {
     version = ver(0, 0, 0);
   }
   getUpgradeList(upgrades, version).forEach((x) => x.upgrade(settings));
-  settings.version = "2.1.3";
+  settings.version = "2.1.4";
 }
 registerUpdate(ver(2, 0, 0), (settings) => {
   const oldSettings = settings;
@@ -669,7 +670,7 @@ var DEFAULT_SETTINGS = {
     "Default": {}
   },
   presetsOrder: ["Default"],
-  version: "2.1.3"
+  version: "2.1.4"
 };
 var StatusBarOrganizer = class extends import_obsidian4.Plugin {
   async onload() {
@@ -705,5 +706,3 @@ var StatusBarSettingTab = class extends import_obsidian4.PluginSettingTab {
     return showSettings(this.plugin, containerEl);
   }
 };
-
-/* nosourcemap */

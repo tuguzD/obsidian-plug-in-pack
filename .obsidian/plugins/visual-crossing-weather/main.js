@@ -5300,7 +5300,7 @@ var VCWPlugin = class extends import_obsidian5.Plugin {
           let link = l1Alerts[0].link;
           if (link != null) {
             if (link.startsWith("http://") || link.startsWith("https://")) {
-              window.open(`${l1Alerts[0].link}`);
+              window.open(link);
             } else {
               new import_obsidian5.Notice("A valid link was not returned with this weather alert");
             }
@@ -5318,7 +5318,7 @@ var VCWPlugin = class extends import_obsidian5.Plugin {
           let link = l2Alerts[0].link;
           if (link != null) {
             if (link.startsWith("http://") || link.startsWith("https://")) {
-              window.open(`${l1Alerts[0].link}`);
+              window.open(link);
             } else {
               new import_obsidian5.Notice("A valid link was not returned with this weather alert");
             }
@@ -5336,7 +5336,7 @@ var VCWPlugin = class extends import_obsidian5.Plugin {
           let link = l3Alerts[0].link;
           if (link != null) {
             if (link.startsWith("http://") || link.startsWith("https://")) {
-              window.open(`${l1Alerts[0].link}`);
+              window.open(link);
             } else {
               new import_obsidian5.Notice("A valid link was not returned with this weather alert");
             }
@@ -5354,7 +5354,7 @@ var VCWPlugin = class extends import_obsidian5.Plugin {
           let link = l4Alerts[0].link;
           if (link != null) {
             if (link.startsWith("http://") || link.startsWith("https://")) {
-              window.open(`${l1Alerts[0].link}`);
+              window.open(link);
             } else {
               new import_obsidian5.Notice("A valid link was not returned with this weather alert");
             }
@@ -5372,7 +5372,7 @@ var VCWPlugin = class extends import_obsidian5.Plugin {
           let link = l5Alerts[0].link;
           if (link != null) {
             if (link.startsWith("http://") || link.startsWith("https://")) {
-              window.open(`${l1Alerts[0].link}`);
+              window.open(link);
             } else {
               new import_obsidian5.Notice("A valid link was not returned with this weather alert");
             }
@@ -5717,6 +5717,9 @@ ${alerts[i][0].description}`, { placement: "top" });
             sbCycled = true;
           }
           ;
+        } else {
+          let sb1WithDate = await this.setCurrentDateTime(formattedSBTemplate1);
+          statusbarEl.setText(sb1WithDate);
         }
         ;
       } else {
@@ -6302,5 +6305,3 @@ ${alerts[i][0].description}`, { placement: "top" });
     file == null ? void 0 : file.vault.modify(file, withDate);
   }
 };
-
-/* nosourcemap */
