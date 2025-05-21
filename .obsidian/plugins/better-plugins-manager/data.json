@@ -1527,6 +1527,16 @@
       "tags": [],
       "enabled": true,
       "delay": ""
+    },
+    {
+      "id": "new-note-fixer",
+      "name": "New Note Fixer",
+      "desc": "Unifies the way non-existing notes are created when clicking on their links.",
+      "group": "",
+      "tags": [],
+      "enabled": true,
+      "delay": "",
+      "note": ""
     }
   ]
 }

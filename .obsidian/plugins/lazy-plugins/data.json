@@ -466,6 +466,9 @@
       },
       "context-command-hider": {
         "startupType": "disabled"
+      },
+      "new-note-fixer": {
+        "startupType": "disabled"
       }
     }
   },
