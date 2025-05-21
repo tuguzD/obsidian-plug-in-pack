@@ -1,4 +1,5 @@
 {
+  "debugEnabled": false,
   "emptyViewToolbar": null,
   "export": {
     "includeIcons": true,
@@ -8,7 +9,12 @@
   },
   "folderMappings": [],
   "icon": "circle-ellipsis",
+  "keepPropsState": false,
   "onboarding": {},
+  "recentFiles": [
+    "HOME.md",
+    "NOTES.md"
+  ],
   "ribbonAction": "toolbar",
   "scriptingEnabled": true,
   "showEditInFabMenu": true,
@@ -22,6 +28,6 @@
   "showToolbarInFileMenu": false,
   "toolbarProp": "toolbar",
   "toolbars": [],
-  "version": 20250302.1,
+  "version": 20250313.1,
   "whatsnew_version": 1.2
 }
