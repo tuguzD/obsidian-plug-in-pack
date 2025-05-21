@@ -3,5 +3,6 @@
     "eng",
     "rus"
   ],
-  "rightClickMenu": true
+  "rightClickMenu": true,
+  "useSystemOCR": false
 }

@@ -27,6 +27,8 @@
   "columnViewMinWidth": 300,
   "continuousViewShowMetadata": false,
   "continuousViewShowBacklinks": false,
+  "missionControlViewZoomFactor": 0.5,
+  "disablePointerInMissionControlView": true,
   "backgroundMode": false,
   "installationID": "SFqkLdBZtbiIae8BGos1d"
 }

@@ -672,7 +672,7 @@ var EnhancedSymbolsPrettifierSettingsTab = class extends import_obsidian.PluginS
     );
   }
   displayFinder(containerEl) {
-    const excluded_shortcuts = this.plugin.settings.exclusions || [];
+    const excluded_shortcuts = [...this.plugin.settings.exclusions || []];
     for (const key in this.plugin.settings.replacements) {
       const replacement = this.plugin.settings.replacements[key];
       excluded_shortcuts.push(replacement.replaced);
@@ -1117,7 +1117,8 @@ var EnhancedSymbolsPrettifier = class extends import_obsidian2.Plugin {
   isCursorInUnwantedBlocks(editor) {
     const unwantedBlocks = [
       /(^|[^`])(`[^`\n]+`)([^`]|$)/,
-      /```\w*\s*[\s\S]*?```/
+      /```\w*\s*[\s\S]*?```/,
+      /\$(?:[^$\\]|\\.)+\$/
     ];
     return unwantedBlocks.filter((unwantedBlock) => {
       const searchCursor = new SearchCursor(
@@ -1135,5 +1136,3 @@ var EnhancedSymbolsPrettifier = class extends import_obsidian2.Plugin {
     }).length !== 0;
   }
 };
-
-/* nosourcemap */
