@@ -1,4 +1,7 @@
 {
+  "pixelBannerPlusEmail": "",
+  "pixelBannerPlusApiKey": "",
+  "pixelBannerPlusEnabled": false,
   "apiProvider": "all",
   "pexelsApiKey": "",
   "pixabayApiKey": "",
@@ -8,16 +11,16 @@
   "imageOrientation": "landscape",
   "numberOfImages": 10,
   "defaultKeywords": "nature, abstract, landscape, technology, art, cityscape, wildlife, ocean, mountains, forest, space, architecture, food, travel, science, music, sports, fashion, business, education, health, culture, history, weather, transportation, industry, people, animals, plants, patterns",
-  "yPosition": 50,
   "xPosition": 50,
+  "yPosition": 50,
   "customBannerField": [
     "banner"
   ],
-  "customYPositionField": [
-    "banner-y, y"
-  ],
   "customXPositionField": [
     "banner-x, x"
+  ],
+  "customYPositionField": [
+    "banner-y, y"
   ],
   "customContentStartField": [
     "content-start"
@@ -27,6 +30,12 @@
   ],
   "customImageRepeatField": [
     "banner-repeat"
+  ],
+  "customBannerMaxWidthField": [
+    "banner-max-width"
+  ],
+  "customBannerAlignmentField": [
+    "banner-align"
   ],
   "customBannerHeightField": [
     "banner-height"
@@ -46,8 +55,14 @@
   "customBannerIconField": [
     "icon"
   ],
+  "customBannerIconImageField": [
+    "icon-image"
+  ],
   "customBannerIconSizeField": [
     "icon-size"
+  ],
+  "customBannerIconRotateField": [
+    "icon-rotate"
   ],
   "customBannerIconXPositionField": [
     "icon-x"
@@ -76,6 +91,12 @@
   "customBannerIconVeritalOffsetField": [
     "icon-y"
   ],
+  "customBannerIconImageAlignmentField": [
+    "banner-icon-image-alignment"
+  ],
+  "customFlagColorField": [
+    "pixel-banner-flag-color"
+  ],
   "folderImages": [],
   "contentStartPosition": 150,
   "imageDisplay": "cover",
@@ -86,19 +107,22 @@
   "borderRadius": 17,
   "showPinIcon": true,
   "pinnedImageFolder": "pixel-banner-images",
-  "showReleaseNotes": true,
-  "lastVersion": "2.21.2",
+  "showReleaseNotes": false,
+  "lastVersion": "3.5.1",
   "showRefreshIcon": true,
-  "showViewImageIcon": false,
-  "showSetTargetXYPosition": false,
+  "showViewImageIcon": true,
   "hidePixelBannerFields": false,
   "hidePropertiesSectionIfOnlyBanner": false,
   "titleColor": "var(--inline-title-color)",
   "enableImageShuffle": false,
   "hideEmbeddedNoteTitles": false,
   "hideEmbeddedNoteBanners": false,
-  "showSelectImageIcon": false,
+  "showBannerInPopoverPreviews": true,
+  "showSelectImageIcon": true,
+  "selectImageIconOpacity": 50,
+  "selectImageIconFlag": "finish-line",
   "defaultSelectImagePath": "",
+  "defaultSelectIconPath": "",
   "useShortPath": true,
   "bannerGap": 12,
   "bannerIconSize": 70,
@@ -110,5 +134,9 @@
   "bannerIconPaddingX": "0",
   "bannerIconPaddingY": "0",
   "bannerIconBorderRadius": "17",
-  "bannerIconVeritalOffset": "0"
+  "bannerIconVeritalOffset": "0",
+  "bannerIconImageAlignment": "left",
+  "openTargetingModalAfterSelectingBannerOrIcon": false,
+  "enableDailyGame": false,
+  "showSetTargetXYPosition": false
 }
