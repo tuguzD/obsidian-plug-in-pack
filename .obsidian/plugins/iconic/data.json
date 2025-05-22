@@ -30,6 +30,9 @@
     "file-tree-view": {
       "icon": "lucide-panel-bottom-close"
     },
+    "obsidian-leaflet-map-view": {
+      "icon": "obsidian-leaflet-plugin-icon-map"
+    },
     "recent-files": {
       "icon": "lucide-file-search"
     },
