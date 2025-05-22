@@ -11,7 +11,10 @@
   "icon": "circle-ellipsis",
   "keepPropsState": false,
   "onboarding": {},
-  "recentFiles": [],
+  "recentFiles": [
+    "README.md",
+    "HOME.md"
+  ],
   "ribbonAction": "toolbar",
   "scriptingEnabled": true,
   "showEditInFabMenu": true,
