@@ -8,9 +8,10 @@
 	display:block !important;
 	overflow-y:scroll;
 }
-.workspace-tabs.is_continuous_mode:not(.mod-stacked):not(.is_disable_scroll) .workspace-tab-container
+.workspace-tabs.is_continuous_mode.is_smooth_scroll:not(.mod-stacked) .workspace-tab-container,
+.workspace-tabs.is_continuous_mode.is_smooth_scroll:not(.mod-stacked) .pdf-viewer-container
 {
-	!scroll-behavior:smooth;
+	scroll-behavior:smooth;
 }
 .workspace-tabs.is_continuous_mode:not(.mod-stacked) .workspace-leaf
 {
@@ -18,6 +19,12 @@
 	display:flex !important;
 	height:auto !important;
 	min-height:fit-content !important;
+}
+/* Fixes for Unitade plugin/Monaco Editor */
+.workspace-tabs.is_continuous_mode:not(.mod-stacked) .workspace-leaf:has(.workspace-leaf-content[data-type="codeview"])
+{
+	contain:strict !important;
+	height:100% !important;
 }
 .workspace-tabs.is_continuous_mode:not(.mod-stacked) .workspace-leaf .view-content .cm-sizer,
 .workspace-tabs.is_continuous_mode:not(.mod-stacked) .workspace-leaf .view-content .cm-content,
@@ -73,7 +80,7 @@
 }
 .workspace-split:is(.mod-left-split,.mod-right-split) .workspace-tabs.is_continuous_mode:not(.hide_note_titles) .view-header :is(.view-header-left,.view-actions),
 .workspace-split:is(.mod-left-split,.mod-right-split) .workspace-tabs.is_continuous_mode:not(.hide_note_titles) .workspace-leaf-content:is([data-type="all-properties"],[data-type="bookmarks"]) .view-header,
-.hide_pins .workspace-tab-header-status-icon.mod-pinned
+.temp_pinned .workspace-tab-header-status-icon.mod-pinned
 {
 	display:none !important;
 }
@@ -178,7 +185,7 @@
 }
 .workspace-tabs.is_continuous_mode .workspace-leaf.mod-active + .workspace-leaf::before 
 {
-	border-top:1px solid var(--continuous-mode-border-color) !important;
+	border-top:2px solid var(--continuous-mode-border-color) !important;
 }
 .workspace-tabs.is_continuous_mode .workspace-leaf:not(.mod-active)::before,
 .workspace-split:is(.mod-left-split,.mod-right-split) .workspace-tabs.is_continuous_mode .workspace-leaf.mod-active .workspace-leaf-content:is([data-type="tag"]) .nav-header::after
@@ -199,6 +206,16 @@
 { 
 	border-bottom:1px solid var(--continuous-mode-border-color) !important;
 	position:relative;
+}
+
+.workspace-split:is(.mod-left-split,.mod-right-split) .workspace-tabs.is_continuous_mode .workspace-leaf:not(.mod-active) .view-header,
+.workspace-split:is(.mod-left-split,.mod-right-split) .workspace-tabs.is_continuous_mode:not(.mod-stacked):not(.is_compact_mode) .workspace-leaf:not(.mod-active) .nav-header:not(:has( + .view-header))
+{
+	border-bottom:1px dotted  var(--continuous-mode-border-color) !important;
+}
+.workspace-split:is(.mod-left-split,.mod-right-split) .workspace-tabs.is_continuous_mode:not(.hide_note_titles) .workspace-leaf:not(.mod-active) .workspace-leaf-content:is([data-type="all-properties"],[data-type="file-explorer"],[data-type="bookmarks"],[data-type="tag"]) .nav-header::before
+{
+	border-bottom:2px dotted  var(--continuous-mode-border-color) !important;
 }
 
 /* HIDE LEAF HEADERS */
@@ -245,11 +262,12 @@
 	content:'• ';
 	color:var(--text-normal);
 }
-.setting-item.hidden
+.setting-item.hidden,.setting-item.next-hidden
 {
 	display:none;
 }
-.setting-item:has(.checkbox-container.is-enabled) + .setting-item.hidden
+.setting-item:has(.checkbox-container.is-enabled) + .setting-item.hidden, 
+.setting-item:has(.checkbox-container.is-enabled) + .setting-item.hidden + .setting-item.next-hidden
 { 
 	display:flex;
 }
@@ -472,7 +490,6 @@
 	transform:scale(0.33);
 	transform-origin:top;
 }
-
 /* EXPERIMENTAL: unset position:relative in editor leaves to allow active line scrollTo in full height of tab group */
 /* allows getting y-scroll position of active editor line */
 /* 

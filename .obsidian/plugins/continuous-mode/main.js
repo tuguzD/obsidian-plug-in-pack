@@ -1,7 +1,6 @@
 /* eslint-disable no-fallthrough */
 /* jshint esversion: 6 */
 
-
 'use strict';
 
 let obsidian = require('obsidian');
@@ -10,20 +9,20 @@ let DEFAULT_SETTINGS = {
 	'allowSingleClickOpenFolder': 		false,
 	'allowSingleClickOpenFolderAction':	'disabled',
 	'alwaysHideNoteHeaders':			false,
-	'alwaysOpenInContinuousMode':		false,
-	'compactModeTabGroupIds':			[],
 	'defaultSortOrder':					'alphabetical',
 //	'disableScrollRootItemsIntoView':	false,
-//	'disableScrollSidebarsIntoView':	false,
 	'disableWarnings':					false,
 	'enableScrollIntoView':				true,
 	'enableSmoothScroll':				true,
+	'enableTypewriterScroll':			true,
 	'excludedNames':					[],
 	'extraFileTypes':					[],
 	'includeBlockLinks':				false,
 	'includeEmbeddedFiles':				false,
 	'includedFileTypes':				['markdown'],
+	'indexFilesAtTop':					true,
 	"maximumItemsToOpen":				'0',
+	'navigateInPlace':					false,
 	'onlyShowFileName':					false,
 	'tabGroupIds':						[],
 };
@@ -62,6 +61,11 @@ class ContinuousModePlugin extends obsidian.Plugin {
 		const getTabGroupById = (id) =>		{ return getAllTabGroups()?.find( tab_group => tab_group.id === id ); }			// get tab group by id, not dataset-tab-group-id
 		const getTabHeaderIndex = (e) =>	{ return Array.from(e.target.parentElement.children).indexOf(e.target); }
 		const getActiveLeaf = () =>			{ return workspace.activeTabGroup.children?.find( child => child.tabHeaderEl?.className?.includes('active')) ?? workspace.activeTabGroup.children?.[0]; }
+		const getLeafByFile = (file) =>		{ 
+			let found;
+			workspace.iterateRootLeaves( leaf => { if (leaf.view.file === file) { found = leaf } }) 
+			return found;
+		}
 		const getActiveEditor = () =>		{ return workspace.activeEditor?.editor; }
 		const getActiveCursor = () =>		{ return getActiveEditor()?.getCursor('anchor'); }
 		const getAnchorOffset = () =>		{ return document.getSelection().anchorOffset; }
@@ -73,8 +77,9 @@ class ContinuousModePlugin extends obsidian.Plugin {
 			sel.addRange(range);
 		}
 		const getDocumentLinks = (file,leaf) => {																										// get document links
-			let document_links = (this.app.metadataCache.getFileCache(file).links)?.map( link => link?.link ) || [];									// get document links from metadata cache
-			let document_embeds = (this.app.metadataCache.getFileCache(file)?.embeds)?.map( link => link?.link ) || [];									// get document embeds from metadata cache
+			if ( !file ) { return }
+			let document_links = (this.app.metadataCache?.getFileCache(file)?.links)?.map( link => link?.link ) || [];									// get document links from metadata cache
+			let document_embeds = (this.app.metadataCache?.getFileCache(file)?.embeds)?.map( link => link?.link ) || [];									// get document embeds from metadata cache
 			if ( this.settings.includeEmbeddedFiles === true ) { document_links = document_links.concat(document_embeds); }								// concat doc links & embedded files
 			let query_links, query_block_links = [];
 			let query_blocks = leaf.view?.editor?.containerEl?.querySelectorAll('.block-language-folder-overview,.block-language-dataview,.internal-query .search-result-container'); // query blocks
@@ -89,29 +94,32 @@ class ContinuousModePlugin extends obsidian.Plugin {
 		}
 		const getFilesFromLinks = (document_links) => {																									// get files from links
 			let files = [];
-			document_links.forEach( link => {
-				files.push(this.app.vault.getFileByPath(link) || this.app.metadataCache.getFirstLinkpathDest(link,''))
-			})
+			if ( document_links ) {
+				document_links.forEach( link => {
+					files.push(this.app.vault.getFileByPath(link) || this.app.metadataCache.getFirstLinkpathDest(link,''))
+				})
+			}
 			return files;
 		}
 		const getFilesFromSearchResults = () => {
 			let items = [];
-			workspace.getLeavesOfType('search')[0].view.dom.vChildren._children.forEach( item => items.push(item.file) )
+			if ( workspace.getLeavesOfType('search')[0] && workspace.getLeavesOfType('search')[0].view?.dom?.vChildren?._children ) {
+				workspace.getLeavesOfType('search')[0].view.dom.vChildren._children.forEach( item => items.push(item.file) )
+			}
 			return items
 		}
 		const findDuplicateLeaves = (leaves) => {
 		  const seen = [], duplicateLeaves = [];
 			leaves.forEach(leaf => {
-				if ( !seen.includes(leaf.view.file) ) { seen.push(leaf.view.file); } else { duplicateLeaves.push(leaf); }
+				if ( !seen.includes(leaf.view.file) ) { seen.push(leaf); } else { duplicateLeaves.push(leaf); }
 			});
-			return duplicateLeaves;
+			return [seen,duplicateLeaves];
 		}
 		const isVisible = (el) => {																														// determine if a scrollable el is visible
 		    const rect = el.getBoundingClientRect();
 			return ( rect.top >= el.offsetHeight && rect.bottom <= (window.innerHeight - el.offsetHeight || document.documentElement.clientHeight - el.offsetHeight) );
 		}
 		const inlineTitleIsVisible = () => { return getActiveLeaf()?.view?.inlineTitleEl?.offsetHeight > 0; }
-		const isContinuousMode = () => { return workspace.activeTabGroup.containerEl.classList.contains('is_continuous_mode'); }
 		const isCompactMode = (active_leaf) => { 
 			return active_leaf ? active_leaf.parent.containerEl.classList.contains('is_compact_mode') : !!workspace.rootSplit.containerEl.querySelectorAll('.is_compact_mode').length; 
 		}
@@ -119,10 +127,10 @@ class ContinuousModePlugin extends obsidian.Plugin {
 		const activateLeafThenDetach = async (leafToActivate, leafToDetach, timeout) => {
 			let _a;
 			await activateLeaf(leafToActivate, timeout);
-			leafToDetach.setPinned(false);
-			if ( Array.isArray(leafToDetach) ) { ( _a = leafToDetach.pop() ) == null ? void 0 : _a?.detach(); } else { leafToDetach?.detach(); }
+			leafToDetach?.setPinned(false);
+			if ( Array.isArray(leafToDetach) ) { ( _a = leafToDetach.pop() ) === null ? void 0 : _a?.detach(); } else { leafToDetach?.detach(); }
 		}
-		const activateLeaf = (leaf, timeout, bool) => {
+		const activateLeaf = async (leaf, timeout, bool) => {
 			return delayedPromise( timeout, () => {
 				workspace.setActiveLeaf(leaf, { focus: true });
 				if ( bool ) { leaf?.containerEl?.click(); leaf?.tabHeaderEl?.click(); }
@@ -138,6 +146,15 @@ class ContinuousModePlugin extends obsidian.Plugin {
 		}
 		/*-----------------------------------------------*/
 		// HOUSEKEEPING
+		const setPinnedLeaves = () => {
+			workspace.iterateAllLeaves( leaf => {
+				if ( leaf.pinned === false ) { 
+					leaf.containerEl.classList.add('temp_pinned'); leaf.tabHeaderEl.classList.add('temp_pinned'); leaf.setPinned(true);					// pin all unpinned leaves, add class
+				} else {
+					leaf.containerEl.classList.add('pinned');																							// add class for originally pinned leaves
+				}
+			});
+		}
 		const resetPinnedLeaves = () => {
 			workspace.iterateAllLeaves( leaf => {
 				switch(true) {																							// unpin all tabs, except originally pinned tabs
@@ -148,42 +165,27 @@ class ContinuousModePlugin extends obsidian.Plugin {
 				}
 			});
 		}
-		const updateSavedIds = ( (tab_group_id,type,action) => {																		// prune saved ids
+		const updateSavedIds = async (restore) => {																		// prune saved ids
 			let app_id = this.app.appId, tab_group_ids = []; getAllTabGroups().forEach( tab_group => tab_group_ids.push(app_id+'_'+tab_group.id) );
-			let saved_continuous_mode_ids = this.settings.tabGroupIds, 				filtered_continuous_mode_ids = [];
-			let saved_compact_mode_ids 	  = this.settings.compactModeTabGroupIds,	filtered_compact_mode_ids    = [];
+			let saved_ids = this.settings.tabGroupIds, id_to_save = '', mode = '', filtered_ids = [];
 			switch(true) {
-				case tab_group_id === undefined:																						// on active leaf change, prune saved ids
-					saved_continuous_mode_ids.forEach( saved_id => {
-						if (saved_id.split('_')[0] === app_id && tab_group_ids.includes(saved_id) || saved_id.split('_')[0] !== app_id) {
-							filtered_continuous_mode_ids.push(saved_id) 
-						}
+				case restore === false:																													// remove ids
+					filtered_ids = saved_ids.filter( (saved_id) => { 
+						if ( saved_id.split('_')[0] === app_id && tab_group_ids.includes(saved_id.slice(0,-3)) ) { return false } else { return true }	// remove id or preserve ids from other vaults
+					} );																																		break;
+				default:																																// add ids
+					getAllTabGroups().forEach( tab_group => {
+						if ( tab_group.containerEl.classList.contains('is_continuous_mode') ) { mode = '@0' } else { return }
+						if ( tab_group.containerEl.classList.contains('is_compact_mode') ) { mode = '@1' }
+						if ( tab_group.containerEl.classList.contains('is_semi_compact_mode') ) { mode = '@2' }
+						id_to_save = [app_id,tab_group.id,mode].join('_');
+						filtered_ids.push(id_to_save);
 					});
-					saved_compact_mode_ids.forEach( saved_id => {
-						if (saved_id.split('_')[0] === app_id && tab_group_ids.includes(saved_id.slice(0,-1)) || saved_id.split('_')[0] !== app_id) {
-							filtered_compact_mode_ids.push(saved_id) 
-						}
-					});
-					this.settings.tabGroupIds = [...new Set(filtered_continuous_mode_ids)];			
-					this.settings.compactModeTabGroupIds = [...new Set(filtered_compact_mode_ids)];			
-					this.saveSettings();																						break;	// save the settings
-				case ( /continuous/.test(type) ):
-					if ( action === true ) {
-						saved_continuous_mode_ids.push(tab_group_id);																				// add id
-						filtered_continuous_mode_ids = saved_continuous_mode_ids;
-					} else {
-						filtered_continuous_mode_ids = saved_continuous_mode_ids.filter( saved_tab_id => !saved_tab_id.includes(tab_group_id) );	// remove id
-					}
-					this.settings.tabGroupIds = [...new Set(filtered_continuous_mode_ids)];										break;
-				case ( /compact_mode/.test(type) ):
-					filtered_compact_mode_ids = saved_compact_mode_ids.filter( 
-						saved_tab_id => !(saved_tab_id.slice(0,-1)).includes(tab_group_id.slice(0,-1))									// mode can be compact or semi_compact, so just remove id
-					);
-					if ( action === undefined || action === true ) { filtered_compact_mode_ids.push(tab_group_id); }					// add id
-					this.settings.compactModeTabGroupIds = [...new Set(filtered_compact_mode_ids)];								break;
+					saved_ids.forEach( saved_id => { if ( saved_id.split('_')[0] !== app_id ) { filtered_ids.push(saved_id) } });		// need to merge or preserve saved ids from other vaults
 			}
+			this.settings.tabGroupIds = [...new Set(filtered_ids)];
 			this.saveSettings();																										// save the settings
-		});
+		};
 		/*-----------------------------------------------*/
 		// ICONS
 		const icons = {
@@ -200,69 +202,50 @@ class ContinuousModePlugin extends obsidian.Plugin {
 		  });
 		};
 		/*-----------------------------------------------*/
-		// TOGGLE CONTINUOUS MODE obsidian.debounce( () => {
-		const toggleContinuousMode = (tab_group_id,bool) => {
-			let id = tab_group_id?.split('_')?.[1];
-			let tab_group = getTabGroupById(id);
-			if ( bool === undefined ) { bool = ( tab_group.containerEl.classList?.contains('is_continuous_mode') ? false : true ) }
-			if ( !tab_group || this.app.appId !== tab_group_id?.split('_')?.[0] )											{ return }
-			switch(true) {
-				case tab_group.containerEl?.classList?.contains('is_continuous_mode') && bool !== true:									// remove continuous mode
-					workspace.activeTabGroup.children.forEach(leaf => { 
-						leaf.containerEl.querySelectorAll('.continuous_mode_open_links_button').forEach( btn => btn?.remove() );
-						if ( !leaf.containerEl.classList.contains('mod-active') ) { leaf.containerEl.style.display = 'none'; }
-					});
-					tab_group.containerEl?.classList?.remove('is_continuous_mode','is_compact_mode','is_semi_compact_mode','hide_note_titles','show_note_titles','only_show_file_name', 'is_disable_scroll');	break;
-				default:																												// add continuous mode (e.g., on app launch)
-					tab_group.containerEl?.classList?.add('is_continuous_mode');														// add continuous mode class
-					if ( this.settings.alwaysHideNoteHeaders === true && !tab_group.containerEl?.classList?.contains('show_note_titles') ) {
-						tab_group.containerEl?.classList?.add('hide_note_titles');
-					} else {
-						tab_group.containerEl?.classList?.add('show_note_titles');
-					}
-					if ( this.settings.enableScrollIntoView === false ) { tab_group.containerEl?.classList?.add('is_disable_scroll') }
-					if ( this.settings.onlyShowFileName === true ) { tab_group.containerEl?.classList?.add('only_show_file_name'); }	break;
-			}
-			updateSavedIds(tab_group_id,'continuous',bool);
+		// TOGGLE CONTINUOUS MODE
+		const toggleContinuousMode = (tab_group_ids,restore,mode) => {
+			if ( tab_group_ids.length === 0 ) { return }
+			tab_group_ids.forEach( tab_group_id => {
+				let current_app_id = tab_group_id.split('_')[0], current_tab_group_id = tab_group_id.split('_')[1], current_mode = tab_group_id.split('_')[2] || mode || '@0';
+				if ( this.app.appId !== current_app_id ) 											{ return }	// if not in current vault
+				if ( this.app.appId === current_app_id && !getTabGroupById(current_tab_group_id) )	{ restore = false; /* if tab group not found, remove id from settings */ }
+				let tab_group = getTabGroupById(current_tab_group_id);
+				if ( restore === undefined ) { restore = ( tab_group.containerEl.classList?.contains('is_continuous_mode') ? false : true ) }
+				let mode_class = ( mode === '@1' || /\@1/.test(tab_group_id) ? 'is_compact_mode' : mode === '@2' || /\@2/.test(tab_group_id) ? 'is_semi_compact_mode' : 'is_continuous_mode' )
+				switch(true) {
+					case restore === false:
+						switch(true) {
+							case ( /\@0/.test(mode) ):																									// remove continuous mode
+								tab_group.containerEl?.classList?.remove('is_continuous_mode','is_compact_mode','is_semi_compact_mode');				// remove classes
+								tab_group.containerEl?.classList?.remove('hide_note_titles','show_note_titles','only_show_file_name', 'is_enable_scroll', 'is_smooth_scroll','is_typewriter_scroll');
+								tab_group.containerEl.querySelectorAll('.continuous_mode_open_links_button').forEach( btn => btn?.remove() );	break;	// remove document links buttons
+							case ( /\@1|\@2/.test(mode) ):																								// remove compact mode, preserve continuous mode
+								tab_group.containerEl?.classList?.remove('is_compact_mode','is_semi_compact_mode');								break;
+						}																														break;
+					default:																															// add continuous mode (e.g., on app launch)
+						tab_group.containerEl?.classList?.add('is_continuous_mode');																	// add continuous mode classes
+						if ( /\@1|\@2/.test(mode) || /\@1|\@2/.test(tab_group_id) ) { 
+							tab_group.containerEl?.classList?.remove('is_compact_mode','is_semi_compact_mode'); tab_group.containerEl?.classList?.add(mode_class); // add compact mode class
+						}																
+						if ( this.settings.alwaysHideNoteHeaders === true && !tab_group.containerEl?.classList?.contains('show_note_titles') ) {
+							tab_group.containerEl?.classList?.add('hide_note_titles');
+						} else {
+							tab_group.containerEl?.classList?.add('show_note_titles');
+						}
+						if ( this.settings.enableScrollIntoView === false ) { tab_group.containerEl?.classList?.add('is_enable_scroll') }
+						if ( this.settings.enableSmoothScroll === true ) { tab_group.containerEl?.classList?.add('is_smooth_scroll') }
+						if ( this.settings.enableTypewriterScroll === true ) { tab_group.containerEl?.classList?.add('is_typewriter_scroll') }
+						if ( this.settings.onlyShowFileName === true ) { tab_group.containerEl?.classList?.add('only_show_file_name'); }	break;
+				}
+				updateSavedIds(restore);
+			})
 		}
-		// TOGGLE COMPACT MODE
-		const toggleCompactMode = obsidian.debounce( (tab_group_id,bool1,bool2) => { // bool1 === false ? compact mode : semi-compact mode; bool2 === true ? restore compact mode : null
-			let mode = ( bool1 === false || tab_group_id.endsWith('–') ? 'is_compact_mode' : 'is_semi_compact_mode' );
-			let mode_id = ( bool2 === true && /\+$|-$]/m.test(tab_group_id) ? tab_group_id.slice(-1) : bool1 === false ? '–' : '+' );	// get tab group id compact mode suffix
-			tab_group_id = ( tab_group_id?.endsWith('–') || tab_group_id?.endsWith('+') ? tab_group_id?.slice(0,-1) : tab_group_id);	// remove mode_id from tab_group_id
-			let tab_group = getTabGroupById(tab_group_id.split('_')[1]) || getTabGroupById(workspace.rootSplit.children[0].id);
-			if ( !tab_group || this.app.appId !== tab_group_id.split('_')?.[0] ) 											{ return }
-			switch(true) {
-				case tab_group.containerEl.classList?.contains(mode) && bool2 !== true:													// toggle compact mode off
-					tab_group.containerEl?.classList?.remove('is_compact_mode','is_semi_compact_mode');							break;	// remove compact mode classes
-				case tab_group_id && bool2 === true:																					// on startup, add compact mode (initContinuousMode())
-				case !tab_group.containerEl.classList.contains(mode):																	// toggle compact mode on
-					if ( !tab_group.containerEl.classList.contains('is_continuous_mode') ) { toggleContinuousMode(tab_group_id,true) }	// toggle on continuous mode if necessary
-					tab_group.containerEl.classList.remove('is_compact_mode','is_semi_compact_mode');
-					tab_group.containerEl.classList.add(mode);																	break;	// toggle compact_mode classes
-			}
-			updateSavedIds(tab_group_id + mode_id,mode,bool2);																			// update saved ids
-		},0);
 		/*-----------------------------------------------*/
 		// INITIALIZE CONTINUOUS MODE
-		const initContinuousMode = obsidian.debounce( () => {
+		const initContinuousMode = () => {
 			addIcons();
-			if ( this.settings.tabGroupIds.length > 0 ) {																				// if there are any saved tabGroupIds...
-				this.settings.tabGroupIds.forEach( tab_group_id => {																	// for each id...
-					if ( this.app.appId === tab_group_id?.split('_')[0] ) {																// if the tabgroup belongs to the current app (window)...
- 						toggleContinuousMode(tab_group_id,true);																		// restore continuous mode
-					}
-				});
-			}
-			if ( this.settings.compactModeTabGroupIds.length > 0 ) {																	// if there are any saved tabGroupIds...
-				this.settings.compactModeTabGroupIds?.forEach( tab_group_id => {														// for each id...
-					if ( tab_group_id.startsWith(this.app.appId) ) {																	// if the tabgroup belongs to the current app (window)...
-						toggleCompactMode(tab_group_id,tab_group_id.endsWith('+'),true);												// restore compact or semi-compact mode
-					}
-				});
-			}
-		},250);
-		workspace.onLayoutReady( async () => { initContinuousMode(); });																// initial initialization
+			toggleContinuousMode(this.settings.tabGroupIds,true);																			// restore continuous mode
+		};
 		/*-----------------------------------------------*/
 		// DRAG TAB HEADERS to Rearrange Leaves on dragstart
 		const onTabHeaderDragEnd = (e,initial_tab_header_index) => {
@@ -278,76 +261,77 @@ class ContinuousModePlugin extends obsidian.Plugin {
 			let moved = leaves.splice(initial_tab_header_index,1);																		// get the moved leave
 			let rearranged = leaves.toSpliced(final_tab_header_index,0,moved[0]);														// move the moved leaf into position
 			leaves_container.setChildrenInPlace(rearranged);																			// replace tab container content with rearranged leaves
-			workspace.activeTabGroup?.tabHeaderEls[final_tab_header_index]?.click();														// confirm drag and focus leaf by clicking tab
+			workspace.activeTabGroup?.tabHeaderEls[final_tab_header_index]?.click();													// confirm drag and focus leaf by clicking tab
 		}
 		/*-----------------------------------------------*/
 		// SCROLL ACTIVE ITEMS INTO VIEW
-		const scrollRootItems = (target) => {
+		const scrollRootItems = (e,target) => { 
+			if ( this.settings.enableScrollIntoView === false ) { return; }
 			let behavior = ( this.settings.enableSmoothScroll === false || this.settings.enableScrollIntoView === false ? 'instant' : 'smooth' );
 			let workspaceTabs = target.closest('.workspace-tabs');
-			let activeLeaf = workspaceTabs.querySelector('.workspace-leaf.mod-active') || getActiveLeaf();
-			let workspaceTabsHeader = workspaceTabs.querySelector('.workspace-tab-header-container');
-			workspaceTabs.querySelector('.workspace-tab-container').scrollTo({top:activeLeaf.offsetTop - workspaceTabsHeader.offsetHeight,behavior:behavior}); 	// scroll leaf into view
-			scrollTabHeader(); 																									// scroll tab into view
+			let activeLeaf = target || workspaceTabs?.querySelector('.workspace-leaf.mod-active') || getActiveLeaf();
+			let workspaceTabsHeader = workspaceTabs?.querySelector('.workspace-tab-header-container');
+			workspaceTabs?.querySelector('.workspace-tab-container')?.scrollTo({top:activeLeaf.offsetTop - workspaceTabsHeader?.offsetHeight,behavior:behavior}); 	// scroll leaf into view
+			scrollTabHeader(e); 																										// scroll tab into view
 		}
-		const scrollTabHeader = () => {
+		const scrollTabHeader = (e) => {
 			if ( this.settings.enableScrollIntoView === false ) { return }
-			let tabsContainer = workspace.activeTabGroup.tabHeaderContainerEl.querySelector('.workspace-tab-header-container-inner');
-			tabsContainer.scrollTo({left:(getActiveLeaf().tabHeaderEl.offsetLeft - getActiveLeaf().tabHeaderEl.offsetWidth),behavior:'smooth'});
+			let tabHeaderEl = ( e ===  null ? workspace.getMostRecentLeaf().tabHeaderEl : workspace.getActiveViewOfType(obsidian.View).leaf.tabHeaderEl )
+			let tabsContainer = tabHeaderEl.parentElement;
+			tabsContainer.scrollTo({left:(tabHeaderEl.offsetLeft - tabHeaderEl.offsetWidth),behavior:'smooth'});
 		}
 		const scrollToActiveLine = (e,el) => {
-			if ( this.settings.enableScrollIntoView === false ) { return }
-			let offset = 0, behavior = ( ( this.settings.enableSmoothScroll === false || /page/i.test(e.key) ) ? 'instant' : 'smooth' )
+			if ( this.settings.enableScrollIntoView === false || this.settings.enableTypewriterScroll === false ) { return }
+			let offset = 0, behavior = ( ( this.settings.enableSmoothScroll === false || /page/i.test(e?.key) ) ? 'instant' : 'smooth' )
 			switch(true) {
 				case ( /metadata-/.test(el?.className) ):																				// scroll metadata/properties
-				case ( /metadata-/.test(e.target.className) ):																			// scroll metadata/properties
+				case ( /metadata-/.test(e?.target.className) ):																			// scroll metadata/properties
 					getActiveEditor()?.containerEl?.querySelector('.cm-active')?.classList?.remove('cm-active');							// deselect editor active line
 					switch(true) {
 						case el !== undefined:
 							el?.focus();
 							workspace.activeTabGroup.tabsContainerEl.scrollTo(
-								{top:getActiveLeaf().containerEl.offsetTop - workspace.activeTabGroup.tabHeaderContainerEl.offsetHeight 
+								{ top:getActiveLeaf().containerEl.offsetTop - workspace.activeTabGroup.tabHeaderContainerEl.offsetHeight 
 								- getActiveLeaf().containerEl.querySelector('.metadata-properties-heading').offsetTop 
-								- workspace.activeTabGroup.containerEl.offsetHeight/2, behavior:behavior});
+								- workspace.activeTabGroup.containerEl.offsetHeight/2, behavior:behavior });
 							break;
-						default: 					document.activeElement.scrollIntoView({behavior:behavior,block:'center'});
+						default:			document.activeElement.scrollIntoView({behavior:behavior,block:'center'});
 					}									
 					break;
 				default:																												// scroll editor
 					offset = ( workspace.activeEditor !== null 
-						? getActiveLeaf().containerEl.offsetTop + getActiveLeaf().containerEl.querySelector('.cm-active')?.offsetTop - workspace.activeTabGroup.containerEl.offsetHeight/2 
+						? getActiveLeaf().containerEl.offsetTop + getActiveLeaf().containerEl.querySelector('.cm-active')?.offsetTop + getActiveLeaf().containerEl.querySelector('.view-header').offsetHeight - workspace.activeTabGroup.containerEl.offsetHeight/2 
 						: getActiveLeaf().containerEl.offsetTop - getActiveLeaf().tabHeaderEl.closest('.workspace-tab-header-container').offsetHeight
 					);
 					workspace.activeTabGroup.tabsContainerEl.scrollTo({top:offset,behavior:behavior});
 			}
 		}
 		const scrollSideBarItems = (target) => {
-			if ( this.settings.enableScrollIntoView === false ) { return }
-			let file_explorer = workspace.getLeavesOfType('file-explorer')[0];
-			let adjust_height = (file_explorer.containerEl.parentElement.offsetHeight/2) - file_explorer.containerEl.querySelector('.nav-header').offsetHeight;	// center focused item
-			let file_explorer_item = file_explorer.containerEl.querySelector('.tree-item-self:is(.is-selected,.has-focus,.is-active)');
-			let type = ( /workspace-tab-header|nav-header|view-header-title-container|nav-buttons-container/.test(target?.className) ? 'leaf' : 'item' );
-			let workspaceTabs = target?.closest('.workspace-tabs');
-			let workspaceTabsContainer = workspaceTabs?.querySelector('.workspace-tab-container');
-			let scrollEl = ( type === 'leaf' ? workspaceTabs.querySelector('.workspace-leaf.mod-active') : file_explorer_item );
+			let type = ( /workspace-leaf|workspace-tab-header|nav-header|view-header-title-container|nav-buttons-container/.test(target?.className) ? 'leaf' : 'item' );
+			let workspace_tabs = target?.closest('.workspace-tabs.mod-active.is_continuous_mode');
+			if ( this.settings.enableScrollIntoView === false || workspace_tabs === null ) { return }
+			let workspace_tabsContainer = workspace_tabs?.querySelector('.workspace-tab-container');
+			let scrollEl = ( type === 'leaf' ? workspace_tabs.querySelector('.workspace-leaf.mod-active') : target );
+			let active_leaf = workspace_tabs.querySelector('.workspace-leaf.mod-active');
+			let adjust_height = (active_leaf.parentElement.offsetHeight/2) - active_leaf.querySelector('.nav-header')?.offsetHeight || 0;	// center focused item
 			switch(true) {
-				case ( /workspace-leaf-content/.test(target.className) && target.dataset.type === 'search' ):
-					workspaceTabsContainer.scrollTo({top:workspace.activeLeaf.containerEl.offsetTop - workspaceTabs.querySelector('.workspace-tab-header-container').offsetHeight,behavior:'smooth'});
+				case ( /workspace-leaf-content/.test(target?.className) && target?.dataset.type === 'search' ):
+					workspace_tabsContainer.scrollTo({top:workspace.activeLeaf.containerEl.offsetTop - workspace_tabs.querySelector('.workspace-tab-header-container').offsetHeight,behavior:'smooth'});
 					break;
 				case type === 'leaf':	
-					workspaceTabsContainer.scrollTo({top:scrollEl.offsetTop - workspaceTabs.querySelector('.workspace-tab-header-container').offsetHeight,behavior:'smooth'});
+					workspace_tabsContainer.scrollTo({top:scrollEl.offsetTop - workspace_tabs.querySelector('.workspace-tab-header-container').offsetHeight,behavior:'smooth'});
 					break;
-				case type === 'item' && file_explorer_item !== null && !isVisible(file_explorer_item):				// only scroll if item is not visible
-					workspaceTabsContainer.scrollTo({top:scrollEl.offsetTop - adjust_height,behavior:'smooth'});
+				case type === 'item' && target !== null && !isVisible(target):				// only scroll if item is not visible
+					target.scrollIntoView({behavior:'smooth',block:'center'});
 					break;
 			}
 		}
-		const scrollItemsIntoView = obsidian.debounce( (e,el) => {
+		const scrollItemsIntoView = obsidian.debounce( async (e,el) => {
 			let target = ( el ? el : /body/i.test(e?.target?.tagName) ? workspace.getActiveViewOfType(obsidian.View).containerEl : e?.target || e?.containerEl );
 			if ( target === undefined || target.closest('.is_continuous_mode') === null ) { return }										// ignore e.target ancestor is not in continuous mode
 			switch(true) {
 				case ( target.closest('.mod-sidedock.mod-left-split,.mod-sidedock.mod-right-split') !== null ):	scrollSideBarItems(target);	break;	// scroll sidebar items
-				case ( /workspace-tab-header|workspace-leaf/.test(target.className) ):							scrollRootItems(target);	break;	// scroll leaf into view
+				case ( /workspace-tab-header|workspace-leaf/.test(target.className) ):		scrollRootItems(e,target);						break;	// scroll leaf into view
 				default:							 										scrollTabHeader();	scrollToActiveLine(e);		break;	// scroll active line into view
 			}
 		},0);
@@ -358,15 +342,19 @@ class ContinuousModePlugin extends obsidian.Plugin {
 			const is_last_line = () => {
 				return getActiveCursor()?.ch === getActiveEditor()?.getLine(getActiveEditor()?.lastLine()).length && getActiveCursor()?.line === ( getActiveEditor()?.lastLine() ); 
 			}
-			switch(true) {																														// Ignore arrow navigation function in these cases:
+			switch(true) {																																// Ignore arrow navigation function in these cases:
+				case workspace.leftSplit.containerEl.querySelector('.workspace-leaf.mod-active .tree-item:has(.is-selected,.has-focus,.is-active)') !== null:
+				case workspace.rightSplit.containerEl.querySelector('.workspace-leaf.mod-active .tree-item:has(.is-selected,.has-focus,.is-active)') !== null:
+					el = ( workspace.leftSplit.containerEl.querySelector('.workspace-leaf.mod-active .tree-item:has(.is-selected,.has-focus,.is-active)') !== null 
+						? workspace.leftSplit.containerEl.querySelector('.workspace-leaf.mod-active .tree-item:has(.is-selected,.has-focus,.is-active)') 
+						: workspace.rightSplit.containerEl.querySelector('.workspace-leaf.mod-active .tree-item:has(.is-selected,.has-focus,.is-active)') );
+																														scrollSideBarItems(el);	return;	// scroll focused left/right split item into view
 				case !active_leaf.parent.containerEl.classList.contains('is_continuous_mode'): 													return; // not in continuous mode
 				case isCompactMode():			compactModeNavigation(e,active_leaf,activeTabGroupChildren);									return;	// use compact mode navigation
 				case e.target.closest('.view-header') !== null:																							// allow arrows in note headers
 				case getActiveLeaf()?.containerEl?.closest('.mod-root') === null && !getActiveEditor()?.hasFocus():										// not in editor
 				case e.target.querySelector('.canvas-node.is-focused') && /Arrow/.test(e.key): 															// editing canvas
 				case e.target.querySelector('.workspace-leaf-content[data-set="graph"]') && /Arrow/.test(e.key) && e.shiftKey:					return;	// graph active; use shift key to move graph
-				case workspace.leftSplit.containerEl.querySelector('.tree-item-self.nav-file-title.is-selected.has-focus') !== null:
-					scrollSideBarItems(workspace.leftSplit.containerEl.querySelector('.tree-item-self.nav-file-title.is-selected.has-focus'));	return;	// scroll focused file explorer item into view
 			}
 			e.preventDefault();
 			switch(e.key) {
@@ -406,7 +394,7 @@ class ContinuousModePlugin extends obsidian.Plugin {
 							active_leaf.containerEl.querySelector('iframe').contentWindow.scrollBy({top:-250,left:0,behavior:'smooth'});		break;
 						case ( /pdf/.test(active_leaf.view.getViewType() ) ):
 							switch(true) {
-								case e.key === 'ArrowLeft':												pdfPageNavigation(e);					return;	// pdf page navigation
+								case e.key === 'ArrowLeft':																						return;	// pdf page navigation
 								case e.key === 'ArrowUp':																								// pdf navigation up arrow to previous leaf
 									active_leaf.view.viewer?.containerEl?.querySelector('.pdf-toolbar')?.blur();
 									active_leaf.view.viewer.containerEl.querySelector('.focused_pdf_page')?.classList.remove('focused_pdf_page');		// nobreak
@@ -419,10 +407,12 @@ class ContinuousModePlugin extends obsidian.Plugin {
 						case getAnchorOffset() === 0 && e.target === active_leaf.view.inlineTitleEl &&	e.key === 'ArrowUp':
 						case getActiveLeaf().getViewState().state.mode === 'preview' && e.key !== 'ArrowLeft':											// leaf is in preview mode
 						case ( !/markdown/.test(active_leaf.getViewState().type) ):																		// nobreak; leaf is empty (new tab)
-							if ( active_leaf.containerEl.previousSibling !== null ) {																	// if not first leaf
-								e.preventDefault();																										// prevent up arrow when leaf becomes active
-								workspace.setActiveLeaf(activeTabGroupChildren[activeTabGroupChildren.indexOf(active_leaf) - 1],{focus:true});			// make previous leaf active 
-								getActiveEditor()?.setCursor({line:getActiveEditor()?.lastLine(),ch:getActiveEditor()?.lastLine()?.length - 1});return;	// select last char if editor
+							switch(true) {
+								case this.settings.navigateInPlace === true:														navigateInPlace(e);	return; // navigate in place; return
+								case active_leaf.containerEl.previousSibling !== null:																			// if not first leaf
+									e.preventDefault();																											// prevent up arrow when leaf activates
+									workspace.setActiveLeaf(activeTabGroupChildren[activeTabGroupChildren.indexOf(active_leaf) - 1],{focus:true});				// make previous leaf active 
+									getActiveEditor()?.setCursor({line:getActiveEditor()?.lastLine(),ch:getActiveEditor()?.lastLine()?.length - 1});	return;	// select last char if editor
 							}
 					}																															break;
 				case 'ArrowDown':	case 'ArrowRight': case 'PageDown':
@@ -450,7 +440,7 @@ class ContinuousModePlugin extends obsidian.Plugin {
 							active_leaf.containerEl.querySelector('iframe').contentWindow.scrollBy({top:250,left:0,behavior:'smooth'});			break;
 						case ( /pdf/.test(active_leaf.view.getViewType() ) ):
 							switch(true) {
-								case e.key === 'ArrowRight':											pdfPageNavigation(e);					return;	// pdf page navigation
+								case e.key === 'ArrowRight':																					return;	// pdf page navigation
 								case e.key === 'ArrowDown':																								// pdf navigation down arrow to next leaf
 									active_leaf.view.viewer?.containerEl?.querySelector('.pdf-toolbar')?.blur();
 									active_leaf.view.viewer.containerEl.querySelector('.focused_pdf_page')?.classList.remove('focused_pdf_page');		// nobreak
@@ -458,20 +448,24 @@ class ContinuousModePlugin extends obsidian.Plugin {
 						case is_last_line() && e.key !== 'ArrowRight':
 						case getActiveLeaf().getViewState().state.mode === 'preview' && e.key !== 'ArrowRight':											// leaf is in preview mode
 						case ( !/markdown/.test(active_leaf.getViewState().type) ):
-							workspace.setActiveLeaf((activeTabGroupChildren[activeTabGroupChildren.indexOf(active_leaf) + 1] || active_leaf),{focus:true});	// make next leaf active
-							getSelection()?.removeAllRanges();
-							if ( getActiveLeaf().getViewState().state.mode !== 'preview' ) {
-								switch(true) {
-									case inlineTitleIsVisible(): e.preventDefault();
-										getActiveLeaf().view?.inlineTitleEl.focus();
-										selectAll(getActiveLeaf().view?.inlineTitleEl);		
-										el = getActiveLeaf().view?.inlineTitleEl;																break;	// focus inline-title
-									case !inlineTitleIsVisible() && getActiveLeaf().containerEl.querySelector('.metadata-properties-heading') !== null:
-										getActiveLeaf().containerEl.querySelector('.metadata-properties-heading').focus();
-										el = getActiveLeaf().containerEl.querySelector('.metadata-properties-heading');							break;	// focus metadata heading
-									default:	getActiveEditor()?.setCursor({line:0,ch:0}); 															// select first line, first char
+							switch(true) {
+								case this.settings.navigateInPlace === true:												navigateInPlace(e);	return;	// navigate in place
+								default:
+									workspace.setActiveLeaf((activeTabGroupChildren[activeTabGroupChildren.indexOf(active_leaf) + 1] || active_leaf),{focus:true});	// make next leaf active
+									getSelection()?.removeAllRanges();
+									if ( getActiveLeaf().getViewState().state.mode !== 'preview' ) {
+										switch(true) {
+											case inlineTitleIsVisible(): e.preventDefault();
+												getActiveLeaf().view?.inlineTitleEl.focus();
+												selectAll(getActiveLeaf().view?.inlineTitleEl);		
+												el = getActiveLeaf().view?.inlineTitleEl;														break;	// focus inline-title
+											case !inlineTitleIsVisible() && getActiveLeaf().containerEl.querySelector('.metadata-properties-heading') !== null:
+												getActiveLeaf().containerEl.querySelector('.metadata-properties-heading').focus();
+												el = getActiveLeaf().containerEl.querySelector('.metadata-properties-heading');					break;	// focus metadata heading
+											default:	getActiveEditor()?.setCursor({line:0,ch:0}); 													// select first line, first char
+										}
+									}
 								}
-							}
 					}																															break;
 			}
 			sleep(0).then( () => { scrollItemsIntoView(e,el); });
@@ -481,46 +475,37 @@ class ContinuousModePlugin extends obsidian.Plugin {
 			let incr = ( /Down|Right/.test(e.key) ? 1 : -1 ), index = activeTabGroupChildren.indexOf(active_leaf) + incr;
 			let next_leaf = ( activeTabGroupChildren[index] ? activeTabGroupChildren[index] : incr === 1 ? activeTabGroupChildren[0] : activeTabGroupChildren[activeTabGroupChildren.length - 1]);
 			delete active_leaf.containerEl.querySelector('iframe')?.scrolling;
-			openInRightSplit(e,next_leaf);																							// open file in right split
+			openInRightSplit(e,next_leaf);																								// open file in right split
 			scrollItemsIntoView(e,next_leaf.containerEl);
 		}
-		// PDF PAGE NAVIGATION
-		const pdfPageNavigation = (e) => {
-			let focused_pdf_page = getActiveLeaf().view.viewer.containerEl.querySelector('.focused_pdf_page');
-			let pdf_pages = getActiveLeaf().view.viewer.child.pdfViewer.pdfViewer._pages;
-			let activeTabGroupChildren = workspace.activeTabGroup.children;
-			let scroll_top = 0;
-			switch(true) {
-				case ( e.key === 'ArrowRight' ):
-					switch(true) {
-						case focused_pdf_page === null:					 pdf_pages[0].div.classList.add('focused_pdf_page'); 					break;	// add class to first page
-						case focused_pdf_page.nextSibling !== null: 	 focused_pdf_page.nextSibling.classList.add('focused_pdf_page');				// add class to next page
-																		 focused_pdf_page.classList.remove('focused_pdf_page');					break;	// remove class from previous page
-						case focused_pdf_page.nextSibling === null:		 focused_pdf_page.classList.remove('focused_pdf_page');							// remove class from last page
-							 workspace.setActiveLeaf((activeTabGroupChildren?.[activeTabGroupChildren?.indexOf(getActiveLeaf()) + 1] || getActiveLeaf()),{focus:true});	// focus next leaf
-																																				break;
-					}																															break;
-				case ( e.key === 'ArrowLeft' ):
-					switch(true) {
-						case focused_pdf_page === null:					 pdf_pages[pdf_pages.length - 1].div.classList.add('focused_pdf_page');	break;	// add class to last page
-						case focused_pdf_page.previousSibling !== null:	 focused_pdf_page.previousSibling.classList.add('focused_pdf_page');			// add class to previous page
-																		 focused_pdf_page.classList.remove('focused_pdf_page');					break;	// remove class from last page
-						case focused_pdf_page.previousSibling === null:	 focused_pdf_page.classList.remove('focused_pdf_page');							// remove class from first page
-							 workspace.setActiveLeaf((activeTabGroupChildren?.[activeTabGroupChildren?.indexOf(getActiveLeaf()) - 1] || getActiveLeaf()),{focus:true});	// focus previous leaf
-																																				break;
-					}																															break;
-			}
-			scroll_top = (getActiveLeaf().view.viewer?.containerEl?.querySelector('.focused_pdf_page')?.offsetTop || 0) + getActiveLeaf().containerEl?.querySelector('.pdf-toolbar')?.offsetHeight;
-			getActiveLeaf().containerEl?.querySelector('.pdf-container')?.scrollTo({left:0,top:scroll_top,behavior:'smooth'});
-			getActiveLeaf().view.viewer?.containerEl?.querySelector('.pdf-toobar')?.click();	// needed to focus pdf viewer and enable proper page navigation by arrow keys
+		const navigateInPlace = (e,direction) => {																						// navigate in place
+			let tree = workspace.getLeavesOfType('file-explorer')[0].view.tree;
+			direction = ( direction !== undefined ? direction : e.key === 'ArrowUp' ? 'backwards' : 'forwards' );
+			tree.setFocusedItem(tree.view.activeDom);
+			sleep(100).then(() => { 
+				tree.changeFocusedItem(direction);																						// change the focused explorer item
+				switch(true) {
+					case tree.focusedItem.file instanceof obsidian.TFile:
+						workspace.getMostRecentLeaf().openFile(tree.focusedItem.file,{focus:true});										// open the focused explorer item
+						workspace.setActiveLeaf(workspace.getMostRecentLeaf());													break;	// set the active leaf
+					case tree.focusedItem.file instanceof obsidian.TFolder:
+						if ( workspace.app.plugins.enabledPlugins.values().find( (value) => value === 'smooth-explorer') ) {
+							// workspace.getMostRecentLeaf().detach();		// close most recent leaf > otherwise tree can't be navigated, but must ensure that new leaf is opened in continuous mode
+							tree.selectItem(tree.focusedItem);
+							tree.setFocusedItem(tree.focusedItem);
+							workspace.setActiveLeaf(tree.view.leaf);
+						}																										break;
+				}
+			})
 		}
 		/*-----------------------------------------------*/
 		// OPEN ITEMS IN CONTINUOUS MODE getAllTabGroups
 		const openItemsInContinuousMode = async (items,action,type) => {
-			if ( !items ) { return }
-			let active_leaf, new_leaf, recent_leaf = workspace.getMostRecentLeaf(), direction, bool; 
+			if ( !items ) { resetPinnedLeaves(); return }
+			let active_leaf, new_leaf, recent_leaf = workspace.getMostRecentLeaf(), direction, bool, dupe = null, last_opened_leaf = null, found = null, index = null; 
 			let open_files = [], open_leaves = [], included_extensions = [];
 			recent_leaf?.parent?.children?.forEach( child => { open_files.push(child?.view?.file); open_leaves.push(child) });			// get open files in active tab group
+			let duplicateLeaves = findDuplicateLeaves(open_leaves);
 			let appended_leaf = ( items.length === 1 ? open_leaves.find( open_leaf => items[0] === open_leaf.view.file ) : null );
 			let extensions = { 
 				markdown:	['md'],
@@ -537,101 +522,90 @@ class ContinuousModePlugin extends obsidian.Plugin {
 					&& included_extensions.includes( item.extension ) 																				// remove items included by extension
 					&& !this.settings.excludedNames.includes( item.basename +'.'+ item.extension )													// remove items excluded by name
 			);
-			// warnings:
-			switch(true) {
+			switch(true) {																															// warnings:
 				case (/replace/.test(action)) && this.settings.disableWarnings !== true 
-					&& !window.confirm('You are about to replace all items in the active split. Are you sure you want to do this?'):		return;	// confirm replace open notes
-				case items.length > 99 && !window.confirm('You are about to open '+ items.length +'. Are you sure you want to do this?'):	return;	// warn on opening > 99 notes
-				case items.length === 0:  	activateLeafThenDetach(workspace.getActiveViewOfType(obsidian.View).leaf, workspace.getActiveViewOfType(obsidian.View).leaf,0);
-					return alert(type === 'document links' ? 'No document links found.' : 
-						'No readable files found.\nCheck the Settings to see if you have included any specific file types to be opened in Continuous Mode.');	// alert no items found
+					&& !window.confirm('You are about to replace all items in the active split. Are you sure you want to do this? (This warning can be disabled in the settings.)'): 
+																														resetPinnedLeaves(); return; // confirm
+				case items.length > 99 && this.settings.disableWarnings !== true 
+					&& !window.confirm('You are about to open '+ items.length +'. Are you sure you want to do this? (This warning can be disabled in the settings.)'):
+																														resetPinnedLeaves(); return;// warn on opening > 99 notes
+				case items.length === 0:
+					alert(type === 'document links' ? 'No document links found.' : 
+						'No readable files found.\nCheck the Settings to see if you have included any specific file types to be opened in Continuous Mode.'); 
+																														resetPinnedLeaves(); return; // alert no items found
 			}
 			switch(true) {
 				case ( /replace/i.test(action) ):
 					workspace.setActiveLeaf(recent_leaf,{focus:true});
 					switch(true) {
 						case appended_leaf !== null:																				// open single file ==> close all open leaves except appended leaf
-							workspace.activeTabGroup.children.forEach( child => { if ( child !== appended_leaf ) { activateLeafThenDetach(child,child,10); } });		
-							workspace.activeTabGroup.containerEl.classList.remove('hide_pins');
-							resetPinnedLeaves(); 																					// reset pinned status
-							break;
+							workspace.activeTabGroup.children.forEach( child => { if ( child !== appended_leaf ) { activateLeafThenDetach(child,child,0); } });			break;
 						default:																									// open folder/multiple files ==> close all open leaves
-							workspace.activeTabGroup.children.forEach( child => { activateLeafThenDetach(child,child,0); });				break;
+							workspace.activeTabGroup.children.forEach( child => {activateLeafThenDetach(child,child,0);});	break;
 					}																										break;
-				case ( /append/.test(action) ):																						// append folder items to active tab group
-					if ( type === 'file' ) {
-						findDuplicateLeaves(open_leaves).forEach( leaf => { activateLeafThenDetach(workspace.getLeafById(leaf.id),workspace.getLeafById(leaf.id),100) } );	// close dupe notes
-					}
-					items = items.filter( item => !open_files.includes(item) );														// no dupe notes
-					workspace.iterateAllLeaves( child => { sleep(0).then( () => { child.setPinned(false); }); });
-					switch(true) {
-						case ( /append_compact/.test(action) ):
-							workspace.setActiveLeaf(workspace.rootSplit.children[0].children[0],{focus:true});				break;	// set active leaf
-						case ( /append/.test(action) ):
-							if ( /compact/.test(workspace.activeTabGroup.containerEl.className) ) { 
-								workspace.activeTabGroup.containerEl.classList.remove('is_compact_mode','is_semi_compact_mode'); 
-							}																								break;
-						default:
-//case  items.length === 1 && open_files.includes(items[0]): 	 
-// 	active_leaf === recent_leaf.parent.children.filter( child => items[0] === child.view.file )
-// 	resetPinnedLeaves(); workspace.setActiveLeaf(active_leaf,{focus:true}); 
-// 	console.log(recent_leaf);
-// 				return;
-							workspace.setActiveLeaf(appended_leaf,{focus:true}); 													// set single appended leaf to active
-							scrollRootItems(appended_leaf.containerEl);														break;	// scroll single appended leaf into view
-					}																										break;
+				case ( /append/.test(action) ):																						// append items in active tab group
+					if ( items.length > 1 ) { items = items.filter( item => !open_files.includes(item) ); }					break;	// no dupe notes
 				default:																											// open items in new splits L/R/U/D
-					if ( isCompactMode() ) {
-						makeFirstLeafInRightSplitActive(workspace.rootSplit.children[1]);											// prevent use of compact mode left root split
-						recent_leaf = workspace.getActiveViewOfType(obsidian.View).leaf;
-					}
 					switch(true) {
 						case (/down/.test(action)):							direction = 'horizontal';	bool = false; 		break;
 						case (/up/.test(action)):							direction = 'horizontal';	bool = true;		break;
 						case (/left/.test(action)):							direction = 'vertical';		bool = true;		break;
 						case (/right/.test(action)):						direction = 'vertical';		bool = false;		break;
 					}
-					new_leaf = workspace.createLeafBySplit(recent_leaf,direction,bool);
-					workspace.setActiveLeaf(workspace.getLeafById(new_leaf.id),{focus:true});
+					new_leaf = workspace.createLeafBySplit(workspace.getMostRecentLeaf(),direction,bool);
+					workspace.setActiveLeaf(new_leaf,{focus:true});
+					workspace.getActiveViewOfType(obsidian.View).leaf.openFile(items[0],{active:true});
 			}
-			// sort items:
-			let sort_order = (																														// get sort order
-				/query block links|document links|longform/i.test(type) ? 'none' 																	// open doc links, etc. in their listed order
-				: /search/.test(type) ? workspace.getLeavesOfType('search')[0].view.dom.sortOrder													// open search results in search order
-				: this.settings.defaultSortOrder !== undefined && this.settings.defaultSortOrder !== 'disabled' ? this.settings.defaultSortOrder	// use default sort order from settings
-				: type === undefined ? 'alphabetical' 
-				: workspace.getLeavesOfType('file-explorer')[0].view.sortOrder 
-			);
-			switch(sort_order) {
-				case 'alphabetical':			items.sort((a,b) => (a.basename).localeCompare(b.basename,navigator.language,{sensitivity:'base',numeric:true}));	break;
-				case 'alphabeticalReverse':		items.sort((a,b) => (b.basename).localeCompare(a.basename,navigator.language,{sensitivity:'base',numeric:true}));	break;
-				case 'byModifiedTime':			items.sort((a,b) => b?.stat.mtime - a?.stat.mtime);																	break;
-				case 'byModifiedTimeReverse':	items.sort((a,b) => a?.stat.mtime - b?.stat.mtime);																	break;
-				case 'byCreatedTime':			items.sort((a,b) => b?.stat.ctime - a?.stat.ctime);																	break;
-				case 'byCreatedTimeReverse':	items.sort((a,b) => a?.stat.ctime - b?.stat.ctime);																	break;
-				case 'none':																																		break;	// no sort
-			}
-			// open sorted items:
-			workspace.activeTabGroup.containerEl.classList.add('hide_pins');
-			workspace.activeTabGroup.containerEl.dataset.sort_order = sort_order;										// set data-sort_order
-			const openItems = async (items) => {
-				let maximumItemsToOpen = ( this.settings.maximumItemsToOpen < 1 || this.settings.maximumItemsToOpen === undefined ? Infinity : this.settings.maximumItemsToOpen );
-				let first_leaf;
-				for ( let i = 0; i < maximumItemsToOpen && i < items.length; i++ ) {									// limit number of items to open
-					active_leaf = workspace.getLeaf();																	// open new tab/leaf
-					active_leaf.openFile(items[i]);																		// open file
-					active_leaf.setPinned(true);																		// pin each new tab/leaf to stop Obsidian reusing it to open next file in loop
-					if ( i === 0 ) { first_leaf = active_leaf }
-				}
-				if ( !isContinuousMode() )							{ toggleContinuousMode(this.app.appId +'_'+ workspace.activeTabGroup?.id,true); }
-				if ( !isCompactMode() && /compact/.test(action) )	{ toggleCompactMode( this.app.appId +'_'+ workspace.rootSplit.children[0].children[0].id,/semi/.test(action),true); }
+			let first_leaf = null;
+			const openItems = async (items) => { 
+				let maximumItemsToOpen = ( this.settings.maximumItemsToOpen < 1 || this.settings.maximumItemsToOpen === undefined ? Infinity : this.settings.maximumItemsToOpen ), sort_order;
+				switch(true) {
+					case items.length <= 1:																																		
+							if ( getLeafByFile(items[0]) ) {																		// prevent dupes
+								found = getLeafByFile(items[0]);
+								workspace.setActiveLeaf(found); found?.tabHeaderEl?.click();										// set already opened leaf active
+							} else {
+								workspace.setActiveLeaf(workspace.getLeaf('tab'),{focus:true});										// or if not dupe open item in new tab
+								workspace.getActiveViewOfType(obsidian.View).leaf.openFile(items[0],{active:true});					// make new tab active
+							}
+							first_leaf = workspace.getActiveViewOfType(obsidian.View).leaf;																						break;
+					default:
+						sort_order = (																															// get sort order
+							/query block links|document links|longform/i.test(type) ? 'none' 																	// open links, etc. in listed order
+							: /search/.test(type) ? workspace.getLeavesOfType('search')[0].view.dom.sortOrder													// open search results in search order
+							: this.settings.defaultSortOrder !== undefined && this.settings.defaultSortOrder !== 'disabled' ? this.settings.defaultSortOrder	// use default sort order from settings
+							: type === undefined ? 'alphabetical' 
+							: workspace.getLeavesOfType('file-explorer')[0].view.sortOrder 
+						);
+						switch(sort_order) {
+							case 'alphabetical':			items.sort((a,b) => (a.basename).localeCompare(b.basename,navigator.language,{sensitivity:'base',numeric:true}));	break;
+							case 'alphabeticalReverse':		items.sort((a,b) => (b.basename).localeCompare(a.basename,navigator.language,{sensitivity:'base',numeric:true}));	break;
+							case 'byModifiedTime':			items.sort((a,b) => b?.stat.mtime - a?.stat.mtime);																	break;
+							case 'byModifiedTimeReverse':	items.sort((a,b) => a?.stat.mtime - b?.stat.mtime);																	break;
+							case 'byCreatedTime':			items.sort((a,b) => b?.stat.ctime - a?.stat.ctime);																	break;
+							case 'byCreatedTimeReverse':	items.sort((a,b) => a?.stat.ctime - b?.stat.ctime);																	break;
+							case 'none':																																		break;	// no sort
+						}
+						// open sorted items:
+						workspace.activeTabGroup.containerEl.dataset.sort_order = sort_order;							// set data-sort_order
+						if ( this.settings.indexFilesAtTop === true ) {
+							index = items.find( item => ( /index/.test(item.basename) && /md/.test(item.extension)) || item.basename === item.parent.name ); 
+							if ( index ) { items.splice(items.indexOf(index),1); items.unshift(index); }					// move index file to beginning
+						}
+						for ( let i = 0; i < maximumItemsToOpen && i < items.length; i++ ) {							// limit number of items to open
+							active_leaf = workspace.getLeaf();															// open new tab/leaf
+							active_leaf.openFile(items[i]);																// open file
+							active_leaf.setPinned(true);																// pin each new tab/leaf to stop Obsidian reusing it to open next file in loop
+							if ( i === 0 ) { 
+								first_leaf = active_leaf; 
+							}
+						}
 				workspace.activeTabGroup.children.forEach( child => { if ( child.getViewState().type === 'empty' ) { activateLeafThenDetach(child,child,0); }  });	// remove empty leaf
-				workspace.activeTabGroup.containerEl.classList.remove('hide_pins');										// remove class
-				resetPinnedLeaves(); 																					// reset pinned status
-				activateLeaf(first_leaf,0,true);																		// hacky workaround: call activateLeaf twice
-				activateLeaf(first_leaf,1000,true);																		// activate the first leaf
+				}
+				let mode = ( /semi_compact/.test(action) ? '@2' : /compact/.test(action) ? '@1' : '@0' )
+				if ( !/is_continuous_mode/.test(first_leaf.parent.containerEl.className) ) { toggleContinuousMode([this.app.appId +'_'+ first_leaf.parent.id],true,mode); }
 			}
-			openItems(items);
+			openItems(items).then(resetPinnedLeaves()).then(activateLeaf(first_leaf,500,true));							// open items, then reset pins, then activate first leaf
 		 }
 		 // end openItemsInContinuousMode
 		/*-----------------------------------------------*/
@@ -684,21 +658,14 @@ class ContinuousModePlugin extends obsidian.Plugin {
 				case typeof e.target.className === 'string' && e.target?.className?.includes('metadata-'):												break;
 				case e.target.classList.contains('continuous_mode_open_links_button'):																			// nobreak
 				case e.target.closest('.continuous_mode_open_links_button') !== null:												showLinksMenu(e);	break;	// open links in continuous mode
-				case e.target.closest('.workspace-tabs.is_compact_mode') !== null 														// compact mode: open in right split on tab click
+				case e.target.closest('.workspace-tabs.is_compact_mode') !== null 																		// compact mode: open in right split on tab click
 					&& e.target.closest('.workspace-tab-header-new-tab') === null && e.target.closest('.workspace-tab-header-tab-list') === null:
 						active_compact_leaf = workspace.getActiveViewOfType(obsidian.View)?.leaf;
 						if ( active_compact_leaf.parent.containerEl.classList.contains('is_compact_mode') ) { openInRightSplit(e,active_compact_leaf); }
 						scrollItemsIntoView(e,active_compact_leaf.containerEl);
 						workspace.setActiveLeaf(active_compact_leaf,{focus:true})
 					break;
-				case ( e.target.closest('.nav-file.tree-item') !== null && this.settings.allowSingleClickOpenFolder === true ) 			// open file explorer files on single click
-					&& !e.altKey && !e.ctrlKey && !e.shiftKey && e.button !== 2
-					&& action !== 'disabled':
-					sleep(0).then( () => {
-						path = e.target.closest('.nav-file-title').dataset.path, items = this.app.vault.getFileByPath(path);
-						openItemsInContinuousMode([items],action,'file'); 
-					});																																	break;
-				case ( /nav-folder/.test(e.target.classList) && this.settings.allowSingleClickOpenFolder === true )  		// open file explorer folders on single click
+				case ( /nav-folder-title/.test(e.target.className) && this.settings.allowSingleClickOpenFolder === true )  								// open file explorer folders on single click
 						&& e.target.closest('.nav-folder-collapse-indicator') === null && e.target.closest('.collapse-icon') === null
 						&& !e.altKey && !e.ctrlKey && !e.shiftKey && e.button !== 2
 						&& action !== 'disabled':
@@ -711,9 +678,6 @@ class ContinuousModePlugin extends obsidian.Plugin {
 						active_leaf = workspace.activeTabGroup.children.find(child => child.tabHeaderEl.className.includes('is-active'));
 						workspace.setActiveLeaf(active_leaf,{focus:true}); 
 					});																																			// nobreak
-// 				case ( e.target.closest('.workspace-leaf')?.classList.contains('mod-active') 
-// 						&& e.target.closest('.workspace-tabs')?.classList.contains('is_continuous_mode') 
-// 						&& !/view-header-title|inline-title|cm-line|cm-header|cm-preview|cm-embed/.test(e.target.className)):
 				case ( /workspace-tab-header|nav-header|view-header-title-container/.test(e.target.className) 
 						&& workspace.activeTabGroup.containerEl.classList.contains('is_continuous_mode') 
 						&& !/view-header-title|inline-title/.test(e.target.className)):
@@ -722,32 +686,34 @@ class ContinuousModePlugin extends obsidian.Plugin {
 			}
 		});
 		this.registerDomEvent(document,'mousedown', (e) => {
+			let action = this.settings.allowSingleClickOpenFolderAction, path = '', items = null, active_leaf, active_compact_leaf;
+			const testStr = /open or append .+ in active tab group|replace active tab group|open .+ in new split|compact mode:/i;
 			switch(true) {
-				case ( e.target.closest('.nav-file.tree-item') !== null 
-					&& this.settings.allowSingleClickOpenFolder === true ) 
-					&& !e.altKey && !e.ctrlKey && !e.shiftKey && e.button !== 2:																		break;
+				case ( e.target.classList.contains('menu-item-title') && testStr.test(e.target.innerText) ):	setPinnedLeaves();						break; // CM menu items
+				case ( /nav-folder-title/.test(e.target.className) && this.settings.allowSingleClickOpenFolder === true && !e.altKey && !e.ctrlKey && !e.shiftKey && e.button !== 2 ):
+					setPinnedLeaves();
+					e.target.closest('.nav-folder-title').addEventListener('click',function(e) { e.preventDefault();											// prevent default toggle folder collapse
+						sleep(250).then(()=>{ workspace.getLeavesOfType('file-explorer')[0].view?.tree?.view?.activeDom?.parent?.setCollapsed(false); });		// uncollapse folder
+					});																																	break;
+				case ( /nav-file-title/.test(e.target.className) && this.settings.allowSingleClickOpenFolder === true ) && !e.altKey && !e.ctrlKey && !e.shiftKey && e.button !== 2:
+					e.target.addEventListener('click',function(e) { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); })
+					sleep(0).then( () => {
+						path = e.target.closest('.nav-file-title').dataset?.path, items = this.app.vault.getFileByPath(path);
+						setPinnedLeaves();
+						openItemsInContinuousMode([items],action,'file'); 
+					});																																	break;
 				case e.target.closest('.workspace-tabs.is_compact_mode') !== null 
 					&& e.target.closest('.workspace-tab-header-new-tab') === null && e.target.closest('.workspace-tab-header-tab-list') === null:		break;
 				case (e.buttons === 2 || e.ctrlKey) && e.target.closest('.longform-explorer') !== null:		getLongformItems(e);						break;	// show longform menu
 			}
 		});
 		this.registerDomEvent(document,'mouseup', (e) => {
-			const testStr = /open or append .+ in active tab group|replace active tab group|open .+ in new split|compact mode:/i;
 			switch(true) {
-				case ( /Toggle Compact Mode/.test(e.target.innerText) ):																						// from Tab Group Menu
 				case this.settings.allowSingleClickOpenFolder === false:
+				case this.settings.allowSingleClickOpenFolderAction === 'disabled':
+				case ( /Toggle Compact Mode/.test(e.target.innerText) ):																						// from Tab Group Menu
+				case ( /mark_open_files/.test(e.target.className) ):																							// compatibility with mark-open-file plugin
 				case e.altKey || e.ctrlKey || e.shiftKey || e.button === 2:																				break;	// do nothing
-				case ( e.target.classList.contains('menu-item-title') && testStr.test(e.target.innerText) ):													// nobreak; CM menu items
- 				case ( /nav-folder/.test(e.target.classList)																						// file explorer folders
- 					&& e.target.closest('.nav-folder-collapse-indicator') === null && e.target.closest('.collapse-icon') === null ): 
-				case ( e.target.closest('.nav-file.tree-item') !== null ):																						// nobreak; file explorer files
-						workspace.iterateAllLeaves( leaf => {
-							if ( leaf.pinned !== true ) { 
-								leaf.setPinned(true); leaf.containerEl.classList.add('temp_pinned'); leaf.tabHeaderEl.classList.add('temp_pinned');				// pin all unpinned leaves, add class
-							} else {
-								leaf.containerEl.classList.add('pinned');																						// mark originally pinned leaves
-							}
-						});																																break;
 			}
 		});
 		this.registerDomEvent(window,'mouseover', (e) => {
@@ -775,7 +741,7 @@ class ContinuousModePlugin extends obsidian.Plugin {
 			}
 		});
 		this.registerDomEvent(window,'keydown', (e) => {
-			if ( /pageup|pagedown|arrow/i.test(e.key) && !e.altKey && !e.ctrlKey && !e.metaKey && !e.shiftKey ) {
+			if ( /pageup|pagedown|arrow/i.test(e.key) && !e.altKey && !e.ctrlKey && !e.metaKey && !e.shiftKey && !/input|textarea/.test(e.target.tagName.toLowerCase() ) ) {
 				leafArrowNavigation(e);
 			}
 		});	
@@ -795,7 +761,7 @@ class ContinuousModePlugin extends obsidian.Plugin {
 					.setIcon('scroll-text')
 					.setChecked( tab_group_classList?.contains('is_continuous_mode') ? true : false )
 					.onClick(async () => { 
-						toggleContinuousMode(tab_group_id || this.app.appId +'_'+ workspace.activeTabGroup.id);
+						toggleContinuousMode([tab_group_id] || [this.app.appId +'_'+ workspace.activeTabGroup.id],( tab_group_classList?.contains('is_continuous_mode') ? false : true ),'@0');
 					})
 				})
 				.addSeparator()
@@ -806,7 +772,7 @@ class ContinuousModePlugin extends obsidian.Plugin {
 						// .setDisabled( tab_group_classList.contains('is_continuous_mode') ? false : true )
 						.setChecked( tab_group_classList?.contains('is_compact_mode') ? true : false )
 						.onClick(async () => {
-							toggleCompactMode(tab_group_id,false,( tab_group_classList?.contains('is_compact_mode') ? false : true ));
+							toggleContinuousMode([tab_group_id] || [this.app.appId +'_'+ workspace.activeTabGroup.id],true,'@1');
 						})
 					}
 				})
@@ -817,7 +783,7 @@ class ContinuousModePlugin extends obsidian.Plugin {
 						// .setDisabled( tab_group_classList.contains('is_continuous_mode') ? false : true )
 						.setChecked( tab_group_classList?.contains('is_semi_compact_mode') ? true : false )
 						.onClick(async () => {
-							toggleCompactMode(tab_group_id,true,( tab_group_classList?.contains('is_semi_compact_mode') ? false : true ));
+							toggleContinuousMode([tab_group_id] || [this.app.appId +'_'+ workspace.activeTabGroup.id],true,'@2');
 						})
 					}
 				})
@@ -1068,38 +1034,45 @@ class ContinuousModePlugin extends obsidian.Plugin {
 			})
 		);
 		// OTHER EVENTS
+		workspace.onLayoutReady( async () => { initContinuousMode(); });																				// init on reload
 		this.registerEvent(
 			this.app.workspace.on('layout-change', () => {
-			//	initContinuousMode();
+				initContinuousMode();
 			})
 		);
 		this.registerEvent(
-			this.app.workspace.on('active-leaf-change', () => {
-				updateSavedIds();
+			this.app.workspace.on('active-leaf-change', (e) => {
+				if ( workspace.getActiveViewOfType(obsidian.View).getViewType() === 'file-explorer' ) {
+					scrollItemsIntoView(null,workspace.getMostRecentLeaf().containerEl);				// scroll into view when selecting items in file explorer (compatibility with "smooth-explorer")
+				}
 			})
 		);
 		/*-----------------------------------------------*/
-		// ADD COMMAND PALETTE ITEMS
-		
-		['active','left','right'].forEach( side => {													// add commands: toggle continuous mode in active tab group, left/right sidebars
+		// ADD COMMAND PALETTE ITEMS		
+		['active','left','right','root'].forEach( side => {												// add commands: toggle continuous mode in active tab group, left/right sidebars
+			const toggleCM = (tab_group) => { 
+				toggleContinuousMode([this.app.appId +'_'+ tab_group.id],( tab_group.containerEl.classList?.contains('is_continuous_mode') ? false : true ),'@0') 
+			}
 			this.addCommand({
-				id: 	( side === 'active' ? 'toggle-continuous-mode-active' : 'toggle-continuous-mode-in-'+side+'-sidebar' ),
-				name:	( side === 'active' ? 'Toggle Continuous Mode in active tab group' : 'Toggle Continuous Mode in '+side+' sidebar' ),
+				id: 	( side === 'active' ? 'toggle-continuous-mode-active' : side === 'root' ? 'toggle-continuous-mode-in-root-tab-groups' : 'toggle-continuous-mode-in-'+side+'-sidebar' ),
+				name:	( side === 'active' ? 'Toggle Continuous Mode in active tab group' : side === 'root' ? 'Toggle Continuous Mode in root tab groups' : 'Toggle Continuous Mode in '+side+' sidebar'),
 				callback: () => {
 					switch(side) {
-						case 'left':	getTabGroupsRecursively(workspace.leftSplit).forEach( tab_group => toggleContinuousMode(this.app.appId +'_'+ tab_group.id) );	break;
-						case 'right':	getTabGroupsRecursively(workspace.rightSplit).forEach( tab_group => toggleContinuousMode(this.app.appId +'_'+ tab_group.id) );	break;
-						default: 		toggleContinuousMode(this.app.appId +'_'+ workspace.activeTabGroup.id);
+						case 'left':	getTabGroupsRecursively(workspace.leftSplit).forEach( tab_group => toggleCM(tab_group) );		break;
+						case 'right':	getTabGroupsRecursively(workspace.rightSplit).forEach( tab_group => toggleCM(tab_group) );		break;
+						case 'root':	getTabGroupsRecursively(workspace.rootSplit).forEach( tab_group => toggleCM(tab_group) );		break;
+						default: 		toggleCM(workspace.activeTabGroup); 
 					}
 				}
 			});
 			this.addCommand({																			// add command: toggle display of leaf headers
-				id: 	( side === 'active' ? 'toggle-headers-active-tab-group' : 'toggle-headers-in-'+side+'-sidebar' ),
-				name:	( side === 'active' ? 'Toggle visibility of note titles in active tab group' : 'Toggle visibility of note titles '+side+' sidebar' ),
+				id: 	( side === 'active' ? 'toggle-headers-active-tab-group' : side === 'root' ? 'toggle-headers-in-root-tab-groups' : 'toggle-headers-in-'+side+'-sidebar' ),
+				name:	( side === 'active' ? 'Toggle visibility of note titles in active tab group' : side === 'root' ? 'Toggle visibility of note titles in root tab groups' : 'Toggle visibility of note titles '+side+' sidebar' ),
 				callback: () => {
 					switch(side) {
 						case 'left':	workspace.leftSplit.containerEl.querySelectorAll('.workspace-tabs').forEach( tab_group => tab_group.classList.toggle('hide_note_titles') );		break;
 						case 'right':	workspace.rightSplit.containerEl.querySelectorAll('.workspace-tabs').forEach( tab_group => tab_group.classList.toggle('hide_note_titles') );	break;
+						case 'root':	workspace.rootSplit.containerEl.querySelectorAll('.workspace-tabs').forEach( tab_group => tab_group.classList.toggle('hide_note_titles') );		break;
 						default: 		workspace.activeTabGroup.containerEl.classList.toggle('hide_note_titles');
 					}
 				},
@@ -1108,12 +1081,12 @@ class ContinuousModePlugin extends obsidian.Plugin {
 		this.addCommand({																				// add command: toggle compact mode
 			id: 	( 'toggle-compact-mode'),
 			name:	( 'Toggle compact mode' ),
-			callback: () => { toggleCompactMode(this.app.appId +'_'+ workspace.rootSplit?.children[0]?.id,false) }
+			callback: () => { toggleContinuousMode([this.app.appId +'_'+ workspace.rootSplit?.children[0]?.id],!/is_compact/.test(workspace.rootSplit?.children[0]?.containerEl.className),'@1') }
 		});
 		this.addCommand({																				// add command: toggle semi-compact mode
 			id: 	( 'toggle-semi-compact-mode'),
 			name:	( 'Toggle semi-compact mode' ),
-			callback: () => { toggleCompactMode(this.app.appId +'_'+ workspace.rootSplit?.children[0]?.id,true) }
+			callback: () => { toggleContinuousMode([this.app.appId +'_'+ workspace.rootSplit?.children[0]?.id],!/is_semi_compact/.test(workspace.rootSplit?.children[0]?.containerEl.className),'@2') }
 		});
 		['left','right','up','down','append','replace'].forEach( action => {							// add commands: open selected file explorer items in Continuous Mode
 			this.addCommand({
@@ -1124,6 +1097,7 @@ class ContinuousModePlugin extends obsidian.Plugin {
 					if ( !items ) { 
 						alert('No file explorer item selected') 
 					} else {
+						setPinnedLeaves();
 						openItemsInContinuousMode(items,'open_'+action,'folder'); 
 					}
 				},
@@ -1141,11 +1115,10 @@ class ContinuousModePlugin extends obsidian.Plugin {
 					callback: () => { 
 						let items;
 						switch(true) {
-/////////////////////////////////////////
-							case type === 'document links': items = getFilesFromLinks(getDocumentLinks(workspace.getActiveViewOfType(obsidian.View).leaf.view.file,workspace.getActiveViewOfType(obsidian.View).leaf));	break;
-//							case type === 'document links': items = getFilesFromLinks(getDocumentLinks(getActiveLeaf().view.file,getActiveLeaf()));	break;
+							case type === 'document links': items = getFilesFromLinks(getDocumentLinks(workspace.getActiveViewOfType(obsidian.View).leaf.view.file,workspace.getActiveViewOfType(obsidian.View).leaf)) || void 0;	break;
 							case type === 'search results': items = getFilesFromSearchResults();													break;
 						}
+						setPinnedLeaves();
 						openItemsInContinuousMode(items,action,type);
 					}
 				});
@@ -1164,13 +1137,21 @@ class ContinuousModePlugin extends obsidian.Plugin {
 				}
 			});
 		});
-		this.addCommand({
-			id: 'compact-mode-open-selected-note-in-right-split',
-			name: 'Compact Mode: Open selected note in right split',
-			callback: () => {
-			}
+// 		this.addCommand({
+// 			id: 'compact-mode-open-selected-note-in-right-split',
+// 			name: 'Compact Mode: Open selected note in right split',
+// 			callback: () => {
+// 			}
+// 		});
+		['previous','next'].forEach( direction => {
+			this.addCommand({
+				id: 'open-'+ direction +'-file-explorer-item-in-place',
+				name: 'Open '+ direction +' File Explorer item in place',
+				callback: () => {
+					navigateInPlace(null,( direction === 'previous' ? 'backwards' : 'forwards'))
+				}
+			});
 		});
-
     } 
     // end onload
 	/*-----------------------------------------------*/
@@ -1179,7 +1160,7 @@ class ContinuousModePlugin extends obsidian.Plugin {
 		let tab_groups = this.app.workspace.containerEl.querySelectorAll('.workspace-tabs');
 		tab_groups.forEach( 
 			el => {
-				el?.classList?.remove('is_continuous_mode','hide_note_titles','is_compact_mode','is_semi_compact_mode','only_show_file_name');
+				el?.classList?.remove('is_continuous_mode','hide_note_titles','is_compact_mode','is_semi_compact_mode','only_show_file_name','is_enable_scroll','is_smooth_scroll','is_typewriter_scroll');
 				delete el?.dataset?.sort_order; 
 				el?.querySelectorAll('.continuous_mode_open_links_button').forEach(btn => btn?.remove() );
 			}
@@ -1204,12 +1185,6 @@ let ContinuousModeSettings = class extends obsidian.PluginSettingTab {
 		const { containerEl } = this;
 		containerEl.empty();
         containerEl.createEl("h1", {}, (el) => {el.innerHTML = 'Continuous Mode'; });
-		new obsidian.Setting(containerEl).setName('Always open new splits in Continuous Mode').setDesc('')
-			.addToggle( A => A.setValue(this.plugin.settings.alwaysOpenInContinuousMode)
-			.onChange(async (value) => {
-				this.plugin.settings.alwaysOpenInContinuousMode = value;
-				await this.plugin.saveSettings();
-		}));
         this.containerEl.createEl("h2", { text: 'Opening Multiple Items in Continuous Mode' })
         this.containerEl.createEl("div", { text: 'You can open multiple items in Continuous Mode via commands in the command palette or the contextual menus available in various parts of the Obsidian UI. Contextual menus are available in File Explorer items, Search Results, File Menu, Tab Menu, and the Editor Menu. The settings below allow you to control which items are opened, how many are opened at a time, and their sort order, among other things.', cls: 'setting-item-description' })
 		new obsidian.Setting(containerEl).setName('Filter included file types and items').setDesc('Select file types and items to include when using the “Open in Continuous Mode” commands and contextual menu items. (Note: toggling off these settings does not prevent any of these file types from being opened manually.)').setClass("cm-setting-indent-no-bullet");
@@ -1267,7 +1242,33 @@ let ContinuousModeSettings = class extends obsidian.PluginSettingTab {
 				this.plugin.settings.includeBlockLinks = value;
 				await this.plugin.saveSettings();
 		}));
-		new obsidian.Setting(containerEl).setName('Maximum number of items to open at one time').setDesc('Leave empty (or set to 0) to open all items at once. Otherwise, setting a value here allows you to incrementally open the items in a folder (or search results or document links) by repeatedly selecting “Open or append items in Continuous Mode.” Useful for dealing with folders containing a large number of items.')
+        new obsidian.Setting(containerEl).setName('Allow single click to open File Explorer items in Continuous Mode').setDesc('Enable this setting to make it possible to open the items in the File Explorer with a single click. Set the default single click action below.')
+        	.addToggle( (A) => A.setValue(this.plugin.settings.allowSingleClickOpenFolder)
+        	.onChange(async (value) => {
+        		this.plugin.settings.allowSingleClickOpenFolder = value;
+        		await this.plugin.saveSettings();
+        }));
+		new obsidian.Setting(containerEl).setName('Set default single-click action:').setClass("cm-setting-indent").setClass('hidden')
+			.addDropdown((dropDown) => {
+				dropDown.addOption("disabled", "—");
+				dropDown.addOption("append", "Append file explorer items in active tab group");
+				dropDown.addOption("replace", "Replace active tab group with file explorer items");
+				dropDown.addOption("open_left", "Open file explorer items in new split left");
+				dropDown.addOption("open_right", "Open file explorer items in new split right");
+				dropDown.addOption("open_up", "Open file explorer items in new split up");
+				dropDown.addOption("open_down", "Open file explorer items in new split down");
+				dropDown.addOption("append_compact_mode", "Compact Mode: Append file explorer items in left split");
+				dropDown.addOption("replace_compact_mode", "Compact Mode: Replace left split with file explorer items");
+				dropDown.addOption("append_compact_mode_semi", "Semi-compact Mode: Append file explorer items in left split");
+				dropDown.addOption("replace_compact_mode_semi", "Semi-compact Mode: Replace left split with file explorer items");
+				dropDown.setValue( ( this.plugin.settings.allowSingleClickOpenFolderAction === undefined || this.plugin.settings.allowSingleClickOpenFolder === false ? 'disabled' : this.plugin.settings.allowSingleClickOpenFolderAction ) )
+				dropDown.onChange(async (value) => {
+					this.plugin.settings.allowSingleClickOpenFolderAction = value;
+					if ( value !== 'disabled' ) { this.plugin.settings.allowSingleClickOpenFolder = true; }
+					await this.plugin.saveSettings();
+		  });
+		});
+		new obsidian.Setting(containerEl).setName('Maximum number of items to open at one time').setDesc('Leave empty (or set to 0) to open all items at once. Otherwise, setting a value here allows you to incrementally open the items in a folder (or search results or document links) by repeatedly selecting “Open or append items in Continuous Mode.” Useful for dealing with folders containing a large number of items. (Note: The “single click” action above must be set to one of the “Append” options.)')
 			.addText((A) => A.setPlaceholder("").setValue(this.plugin.settings.maximumItemsToOpen?.toString() || '')
 			.onChange(async (value) => {
 				if ( isNaN(Number(value)) || !Number.isInteger(Number(value)) ) { 
@@ -1293,36 +1294,23 @@ let ContinuousModeSettings = class extends obsidian.PluginSettingTab {
 					await this.plugin.saveSettings();
 		  });
 		});
-        new obsidian.Setting(containerEl).setName('Allow single click to open File Explorer items in Continuous Mode').setDesc('Enable this setting to make it possible to open the items in the File Explorer with a single click. Set the default single click action below.')
-        	.addToggle( (A) => A.setValue(this.plugin.settings.allowSingleClickOpenFolder)
-        	.onChange(async (value) => {
-        		this.plugin.settings.allowSingleClickOpenFolder = value;
-        		await this.plugin.saveSettings();
-        }));
-		new obsidian.Setting(containerEl).setName('Set default single-click action:').setClass("cm-setting-indent")
-			.addDropdown((dropDown) => {
-				dropDown.addOption("disabled", "—");
-				dropDown.addOption("append", "Append file explorer items in active tab group");
-				dropDown.addOption("replace", "Replace active tab group with file explorer items");
-				dropDown.addOption("open_left", "Open file explorer items in new split left");
-				dropDown.addOption("open_right", "Open file explorer items in new split right");
-				dropDown.addOption("open_up", "Open file explorer items in new split up");
-				dropDown.addOption("open_down", "Open file explorer items in new split down");
-				dropDown.addOption("append_compact_mode", "Compact Mode: Append file explorer items in left split");
-				dropDown.addOption("replace_compact_mode", "Compact Mode: Replace left split with file explorer items");
-				dropDown.addOption("append_compact_mode_semi", "Semi-compact Mode: Append file explorer items in left split");
-				dropDown.addOption("replace_compact_mode_semi", "Semi-compact Mode: Replace left split with file explorer items");
-				dropDown.setValue( ( this.plugin.settings.allowSingleClickOpenFolderAction === undefined || this.plugin.settings.allowSingleClickOpenFolder === false ? 'disabled' : this.plugin.settings.allowSingleClickOpenFolderAction ) )
-				dropDown.onChange(async (value) => {
-					this.plugin.settings.allowSingleClickOpenFolderAction = value;
-					if ( value !== 'disabled' ) { this.plugin.settings.allowSingleClickOpenFolder = true; }
-					await this.plugin.saveSettings();
-		  });
-		});
+		new obsidian.Setting(containerEl).setName('Index files at top').setDesc('If the directory contains an “index.md” file or a file with the same name as the directory itself, place it at the top of the opened files, regardless of the sort order.').setClass("cm-setting-indent")
+			.addToggle( A => A.setValue(this.plugin.settings.indexFilesAtTop)
+			.onChange(async (value) => {
+				this.plugin.settings.indexFilesAtTop = value;
+				await this.plugin.saveSettings();
+		}));
+
         this.containerEl.createEl("h2", { text: 'About Compact Mode and Semi-Compact Mode' });
         this.containerEl.createEl("div", {text: 'Compact and Semi-Compact Mode show previews of your notes in the left split, similar to the second side-pane previews in apps like Evernote, Bear Notes, Simplenote, Apple Notes, etc. Notes can be navigated up and down with the arrow keys as in Continuous Mode, but in Compact Mode, the selected note will be opened in the right split; in Semi-Compact Mode, the selected note will be expanded in place for editing, leaving the other notes in compact view.', cls: 'setting-item-description' });
-        this.containerEl.createEl("div", {text: 'Note: You may wish to disable the Obsidian editor setting “Always focus new tabs” to allow continuous arrow navigation of Compact Mode items.', cls: 'setting-item-description' });
+        this.containerEl.createEl("div", {text: '(Note: You may wish to disable the Obsidian editor setting “Always focus new tabs” to allow continuous arrow navigation of Compact Mode items.)', cls: 'setting-item-description' });
         this.containerEl.createEl("h2", { text: "Other Settings" });
+		new obsidian.Setting(containerEl).setName('Allow Continuous Mode navigate in place:').setDesc('If this setting is enabled, using the arrow up/down keys when the cursor is in the first or last line respectively of the active editor will open the previous or next file (as listed in the File Explorer) in the same tab.')
+			.addToggle( A => A.setValue(this.plugin.settings.navigateInPlace)
+			.onChange(async (value) => {
+				this.plugin.settings.navigateInPlace = value;
+				await this.plugin.saveSettings();
+		}));
 		new obsidian.Setting(containerEl).setName('Always hide note headers').setDesc('Never show the note header when opening items in Continuous Mode.')
 			.addToggle( A => A.setValue(this.plugin.settings.alwaysHideNoteHeaders)
 			.onChange(async (value) => {
@@ -1351,26 +1339,42 @@ let ContinuousModeSettings = class extends obsidian.PluginSettingTab {
 			.addToggle( A => A.setValue(this.plugin.settings.enableScrollIntoView)
 			.onChange(async (value) => {
 				this.plugin.settings.enableScrollIntoView = value;
+				let tab_groups = this.app.workspace.rootSplit.containerEl.querySelectorAll('.workspace-tabs.is_continuous_mode');
+				if ( value === true ) {
+					tab_groups?.forEach( tab_group => {
+						tab_group.classList?.add('is_enable_scroll');
+						if ( this.plugin.settings.enableSmoothScroll === true ) { tab_group => tab_group.classList?.add('is_smooth_scroll') }
+						if ( this.plugin.settings.enableTypewriterScroll === true ) { tab_group => tab_group.classList?.add('is_typewriter_scroll') }
+					})
+				} else {
+					tab_groups?.forEach( tab_group => tab_group.classList?.remove('is_enable_scroll','is_smooth_scroll','is_typewriter_scroll') )
+				}
 				await this.plugin.saveSettings();
 		}));
-		new obsidian.Setting(containerEl).setName('Use smooth scrolling').setClass('hidden').setDesc('Only available when scroll-into-view is enabled.')
+		new obsidian.Setting(containerEl).setName('Use smooth scrolling').setClass("cm-setting-indent").setClass('hidden').setDesc('Only available when scroll-into-view is enabled.')
 			.addToggle( A => A.setValue(this.plugin.settings.enableSmoothScroll)
 			.onChange(async (value) => {
 				this.plugin.settings.enableSmoothScroll = value;
+				let tab_groups = this.app.workspace.rootSplit.containerEl.querySelectorAll('.workspace-tabs.is_continuous_mode');
+				if ( value === true ) {
+					tab_groups?.forEach( tab_group => tab_group.classList?.add('is_smooth_scroll') )
+				} else {
+					tab_groups?.forEach( tab_group => tab_group.classList?.remove('is_smooth_scroll') )
+				}
 				await this.plugin.saveSettings();
 		}));
-// 		new obsidian.Setting(containerEl).setName('Disable scroll active note into view').setDesc('If you find the plugin’s default scroll behavior on arrow navigation (which keeps the insertion point more or less centered by line/paragraph, similar to “typewriter mode”) distracting, enable this setting. Clicking tab headers will still scroll notes into view.')
-// 			.addToggle( A => A.setValue(this.plugin.settings.enableScrollIntoView === false ? false : this.plugin.settings.disableScrollRootItemsIntoView)
-// 			.onChange(async (value) => {
-// 				this.plugin.settings.disableScrollRootItemsIntoView = value;
-// 				await this.plugin.saveSettings();
-// 		}));
-// 		new obsidian.Setting(containerEl).setName('Disable scroll sidebar items into view').setDesc('Don’t scroll sidebar tree items into view when an item is selected or becomes active.')
-// 			.addToggle( A => A.setValue(this.plugin.settings.disableScrollSidebarsIntoView)
-// 			.onChange(async (value) => {
-// 				this.plugin.settings.disableScrollSidebarsIntoView = value;
-// 				await this.plugin.saveSettings();
-// 		}));
+		new obsidian.Setting(containerEl).setName('Enable typewriter scrolling').setClass("cm-setting-indent").setClass('next-hidden').setDesc('Only available when scroll-into-view is enabled.')
+			.addToggle( A => A.setValue(this.plugin.settings.enableTypewriterScroll)
+			.onChange(async (value) => {
+				this.plugin.settings.enableTypewriterScroll = value;
+				let tab_groups = this.app.workspace.rootSplit.containerEl.querySelectorAll('.workspace-tabs.is_continuous_mode');
+				if ( value === true ) {
+					tab_groups?.forEach( tab_group => tab_group.classList?.add('is_typewriter_scroll') )
+				} else {
+					tab_groups?.forEach( tab_group => tab_group.classList?.remove('is_typewriter_scroll') )
+				}
+				await this.plugin.saveSettings();
+		}));
 		new obsidian.Setting(containerEl).setName('Disable warnings').setDesc('Don’t warn when replacing active tab group with folder contents or opening in compact view.')
 			.addToggle( A => A.setValue(this.plugin.settings.disableWarnings)
 			.onChange(async (value) => {
