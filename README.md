@@ -71,7 +71,7 @@ After launching your vault for the first time, be sure to switch to `Basic` work
 - [Copy Block Link](https://github.com/mgmeyers/obsidian-copy-block-link) – get links to text blocks/headings directly from a context menu (plain or embedded)
 - [Frontmatter Markdown Links](https://github.com/mnaoumov/obsidian-frontmatter-markdown-links) – support some new ways to write [Markdown](https://help.obsidian.md/Editing+and+formatting/Basic+formatting+syntax) links in note’s frontmatter
 - [Better Markdown Links](https://github.com/mnaoumov/obsidian-better-markdown-links) – auto-generate links with angle brackets, properly manage links with relative paths
-- [New Note Fixer](https://github.com/mnaoumov/obsidian-new-note-fixer) – consistently create non-existing notes (by clicking on their links) and respect vault settings
+- [New Note Fixer](https://github.com/mnaoumov/obsidian-new-note-fixer) – consistently create non-existing notes (when clicking on their links) by respecting vault settings
 
 ### 🪄 Perform actions *“in bulk”*
 
