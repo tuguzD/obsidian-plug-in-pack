@@ -12,7 +12,7 @@ After launching your vault for the first time, be sure to switch to `Basic` work
 
 > [!WARNING]
 > If you want to create your own vault (to store your work there), and then update it with new changes from this pack (using `Git`, obviously)…
-> Please, ***DO NOT FORK*** this repository!
+> Please, ***DO NOT FORK*** this repository! (doing that for contribution is OK, though)
 >
 > You cannot change visibility of forked repositories on `GitHub`, so any of yours will stay **public** forever.
 > Instead, you should use this repository as template or clone it (creating unrelated one).
@@ -79,6 +79,9 @@ After launching your vault for the first time, be sure to switch to `Basic` work
 - [Quick Tagger](https://github.com/Gorkycreator/obsidian-quick-tagger) – add/remove tags of file(s) “in bulk” by calling commands, using hotkeys or context menu
 
 ## 🔮 Overhaul *core plugins*
+
+Some community plugins require specified core plugins to work (so they have to be `✅ENABLED`)...
+While others replace them completely (so they must be `⚠️DISABLED`):
 
 1. [Quick Switcher++](https://github.com/darlal/obsidian-switcher-plus) <sup>[✅[Quick switcher](https://help.obsidian.md/Plugins/Quick+switcher), ✅[Command palette](https://help.obsidian.md/Plugins/Command+palette) ON]</sup> – search, filter results and navigate quicker: switch between multiple modes (Commands, Editor, Symbols, Headings, Related Items, Bookmarks, Workspaces, Vaults)
 2. [Hover Editor](https://github.com/nothingislost/obsidian-hover-editor) <sup>[✅[Page preview](https://help.obsidian.md/Plugins/Page+preview) ON]</sup> – “turn the hover popover into a full-featured [editor instance](https://github.com/nothingislost/obsidian-hover-editor?tab=readme-ov-file#features)”

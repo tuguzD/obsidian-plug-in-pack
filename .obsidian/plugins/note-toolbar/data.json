@@ -11,10 +11,7 @@
   "icon": "circle-ellipsis",
   "keepPropsState": false,
   "onboarding": {},
-  "recentFiles": [
-    "HOME.md",
-    "NOTES.md"
-  ],
+  "recentFiles": [],
   "ribbonAction": "toolbar",
   "scriptingEnabled": true,
   "showEditInFabMenu": true,
