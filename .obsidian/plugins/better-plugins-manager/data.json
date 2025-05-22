@@ -162,6 +162,11 @@
       "id": "navig-map",
       "name": "Map navigation",
       "color": "#3c0faa"
+    },
+    {
+      "id": "command",
+      "name": "Commands",
+      "color": "#762323"
     }
   ],
   "TAGS": [
@@ -365,7 +370,7 @@
       "id": "cmdr",
       "name": "Commander",
       "desc": "Customize your workspace by adding commands everywhere, create Macros and supercharge your mobile toolbar.",
-      "group": "missing",
+      "group": "command",
       "tags": [],
       "enabled": true,
       "delay": ""
@@ -706,7 +711,7 @@
       "id": "note-toolbar",
       "name": "Note Toolbar",
       "desc": "Add customizable toolbars to your notes.",
-      "group": "new",
+      "group": "command",
       "tags": [],
       "enabled": true,
       "delay": "1st"
@@ -782,7 +787,7 @@
       "id": "obsidian-doubleshift",
       "name": "Doubleshift",
       "desc": "Open the command palette by pressing Shift (or any other key) twice like in IntelliJ and create your own shortcuts",
-      "group": "new",
+      "group": "command",
       "tags": [],
       "enabled": true,
       "delay": "1st"
@@ -1465,7 +1470,7 @@
       "id": "obsidian-shellcommands",
       "name": "Shell commands",
       "desc": "You can predefine system commands that you want to run frequently, and assign hotkeys for them. For example open external applications. Automatic execution is also supported, and execution via URI links.",
-      "group": "new",
+      "group": "command",
       "tags": [],
       "enabled": true,
       "delay": ""
@@ -1519,7 +1524,7 @@
       "id": "context-command-hider",
       "name": "Context Command Hider",
       "desc": "Hide any command from the right-click menu.",
-      "group": "",
+      "group": "command",
       "tags": [],
       "enabled": true,
       "delay": ""

@@ -1,6 +1,6 @@
 # 📦 “Plug-in-pack” for 💜[Obsidian](https://obsidian.md) app
 
-This is just a large collection of already set up plugins and hotkeys… That was crafted to be flawlessly used without ~~almost~~ any conflicts.
+This is just a large collection of already set up [plugins](https://help.obsidian.md/glossary#Plugin) and [hotkeys](https://help.obsidian.md/hotkeys)… That was crafted to be flawlessly used without ~~almost~~ any conflicts.
 
 > [!NOTE]
 > After using the template to create your own vault, feel free to give this file a proper use:
@@ -49,7 +49,6 @@ After launching your vault for the first time, be sure to switch to `Basic` work
 - [Trash Explorer](https://github.com/proog/obsidian-trash-explorer) – view, restore or remove deleted files (located in app’s hidden `.trash` folder)
 - [Recent Notes](https://github.com/kamil-rudnicki/obsidian-recent-notes) – view an organized timeline of recently edited files (grouped by their modification time)
 - [Paste Image Rename](https://github.com/reorx/obsidian-paste-image-rename) – choose name and location for each file (e.g., images from clipboard) added to vault
-- [Commander](https://github.com/phibr0/obsidian-commander) – add new macros and commands to app menus (ribbon, status/tool/tab bar, editor/file menu)
 - 💻 [Status Bar Organizer](https://github.com/Opisek/obsidian-statusbar-organizer) – rearrange elements of a [Status bar](https://help.obsidian.md/User+interface/Status+bar), (un)hide them and save (for later use) as presets
 - 💻 [Settings Management](https://github.com/xhuajin/obsidian-settings-management) – filter (in)active plugins/hotkeys/snippets from app’s [Settings](https://help.obsidian.md/Files+and+folders/How+Obsidian+stores+data#Vault+settings), view them in a grid
 - [Link Preview](https://github.com/felipetappata/obsidian-link-preview) – show a preview for external links (without leaving note, unlike when using core [Web viewer](https://help.obsidian.md/plugins/web-viewer))
@@ -156,13 +155,18 @@ Change appearance and overall make view more compact:
 
 ## ✨ Add new *powerful features*
 
-- [Doubleshift](https://github.com/Qwyntex/doubleshift) – run app commands by pressing specified key twice (e.g., `Shift` for [Quick switcher](https://help.obsidian.md/Plugins/Quick+switcher))
-- [Note Toolbar](https://github.com/chrisgurney/obsidian-note-toolbar) – create context-aware [toolbars](https://github.com/chrisgurney/obsidian-note-toolbar/wiki/Examples) containing commands, file links, menus and scripts
-  - [JS Engine](https://github.com/mProjectsCode/obsidian-js-engine-plugin) – execute `JavaScript` code from a special code block (allows plugin above to [run scripts](https://github.com/chrisgurney/obsidian-note-toolbar/wiki/Executing-scripts#script-item-types))
 - 💻 [Execute Code](https://github.com/twibiral/obsidian-execute-code) – execute code snippets in code blocks of notes for locally installed [languages](https://github.com/twibiral/obsidian-execute-code?tab=readme-ov-file#supported-programming-languages-)
-- 💻 [Shell commands](https://github.com/Taitava/obsidian-shellcommands) – execute shell instructions automatically (via it’s events) or with app’s commands
 - 💻 [Mindmap NextGen](https://github.com/james-tindal/obsidian-mindmap-nextgen) – view notes’ content as a mindmap, configure its appearance and make screenshots
 - [Widgets](https://github.com/rafaelveiga/obsidian-widgets) – add widgets (clock, [countdown](https://github.com/rafaelveiga/obsidian-widgets?tab=readme-ov-file#countdown), counter, quote) to your notes from custom code blocks
+
+### 🦾 Create custom [commands](https://help.obsidian.md/glossary#Command), call them in new ways
+
+- [Commander](https://github.com/phibr0/obsidian-commander) – add new macros and commands to app menus (ribbon, status/tool/tab bar, editor/file menu)
+- [Context Command Hider](https://github.com/mara-li/obsidian-context-menu-hider) – hide any command from all (right-click) context menus by name
+- [Note Toolbar](https://github.com/chrisgurney/obsidian-note-toolbar) – create context-aware [toolbars](https://github.com/chrisgurney/obsidian-note-toolbar/wiki/Examples) containing commands, file links, menus and scripts
+  - [JS Engine](https://github.com/mProjectsCode/obsidian-js-engine-plugin) – execute `JavaScript` code from a special code block (allows plugin above to [run scripts](https://github.com/chrisgurney/obsidian-note-toolbar/wiki/Executing-scripts#script-item-types))
+- 💻 [Shell commands](https://github.com/Taitava/obsidian-shellcommands) – execute shell instructions automatically (via it’s events) or with app’s commands
+- 💻 [Doubleshift](https://github.com/Qwyntex/doubleshift) – run app commands by pressing specified key twice (e.g., `Shift` for [Quick switcher](https://help.obsidian.md/Plugins/Quick+switcher))
 
 ### 🎚️ Manipulate [properties](https://help.obsidian.md/Editing+and+formatting/Properties) (or note metadata/frontmatter)
 
@@ -188,7 +192,7 @@ Change appearance and overall make view more compact:
 ### 🗺️ Place note markers on *large maps*
 
 - [Map View](https://github.com/esm7/obsidian-map-view) – interact with a **world** map view: search for locations, apply them to notes and choose custom icons
-- 💻 [Leaflet](https://github.com/javalent/obsidian-leaflet) – create [**custom** maps](https://youtu.be/8CTW2DTSLpk): provide images (for multiple layers), place pins and modify their appearance
+- 💻 [Leaflet](https://github.com/javalent/obsidian-leaflet) – create [**custom** maps](https://youtu.be/8CTW2DTSLpk): provide images (with multiple layers), place pins and modify their appearance
 
 ### 📄 View *opened file* faster
 
