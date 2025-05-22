@@ -485,6 +485,9 @@
       },
       "mark-open-files": {
         "startupType": "disabled"
+      },
+      "wheel-tab-switcher": {
+        "startupType": "disabled"
       }
     }
   },

@@ -1588,6 +1588,16 @@
       "enabled": true,
       "delay": "",
       "note": ""
+    },
+    {
+      "id": "wheel-tab-switcher",
+      "name": "Wheel Tab Switcher",
+      "desc": "Switch between Tabs using your mouse wheel when hovering over tab headers",
+      "group": "",
+      "tags": [],
+      "enabled": true,
+      "delay": "",
+      "note": ""
     }
   ],
   "HIDES": []
