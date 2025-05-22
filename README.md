@@ -162,11 +162,11 @@ Change appearance and overall make view more compact:
 ### 🦾 Create custom [commands](https://help.obsidian.md/glossary#Command), call them in new ways
 
 - [Commander](https://github.com/phibr0/obsidian-commander) – add new macros and commands to app menus (ribbon, status/tool/tab bar, editor/file menu)
-- [Context Command Hider](https://github.com/mara-li/obsidian-context-menu-hider) – hide any command from all (right-click) context menus by name
 - [Note Toolbar](https://github.com/chrisgurney/obsidian-note-toolbar) – create context-aware [toolbars](https://github.com/chrisgurney/obsidian-note-toolbar/wiki/Examples) containing commands, file links, menus and scripts
   - [JS Engine](https://github.com/mProjectsCode/obsidian-js-engine-plugin) – execute `JavaScript` code from a special code block (allows plugin above to [run scripts](https://github.com/chrisgurney/obsidian-note-toolbar/wiki/Executing-scripts#script-item-types))
-- 💻 [Shell commands](https://github.com/Taitava/obsidian-shellcommands) – execute shell instructions automatically (via it’s events) or with app’s commands
+- [Context Command Hider](https://github.com/mara-li/obsidian-context-menu-hider) – hide any command from all (right-click) context menus by name
 - 💻 [Doubleshift](https://github.com/Qwyntex/doubleshift) – run app commands by pressing specified key twice (e.g., `Shift` for [Quick switcher](https://help.obsidian.md/Plugins/Quick+switcher))
+- 💻 [Shell commands](https://github.com/Taitava/obsidian-shellcommands) – execute shell instructions automatically (via it’s events) or with app’s commands
 
 ### 🎚️ Manipulate [properties](https://help.obsidian.md/Editing+and+formatting/Properties) (or note metadata/frontmatter)
 
