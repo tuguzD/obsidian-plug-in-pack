@@ -1,7 +1,5 @@
 {
-  "pluginList": [
-    "clairefro/obsidian-open-sidebar-on-hover-plus"
-  ],
+  "pluginList": [],
   "pluginSubListFrozenVersion": [],
   "themesList": [],
   "updateAtStartup": true,

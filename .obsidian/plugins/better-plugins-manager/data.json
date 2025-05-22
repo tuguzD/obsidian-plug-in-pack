@@ -1374,15 +1374,6 @@
       "delay": ""
     },
     {
-      "id": "open-sidebar-on-hover-plus",
-      "name": "Open Sidebar on Hover Plus",
-      "desc": "Opens the sidebars by hovering",
-      "group": "default",
-      "tags": [],
-      "enabled": true,
-      "delay": ""
-    },
-    {
       "id": "pdf-plus",
       "name": "PDF++",
       "desc": "The most Obsidian-native PDF annotation tool ever.",
@@ -1532,6 +1523,16 @@
       "id": "new-note-fixer",
       "name": "New Note Fixer",
       "desc": "Unifies the way non-existing notes are created when clicking on their links.",
+      "group": "",
+      "tags": [],
+      "enabled": true,
+      "delay": "",
+      "note": ""
+    },
+    {
+      "id": "quick-peek-sidebar",
+      "name": "Quick Peek Sidebar",
+      "desc": "Opens the left and/or right side panel by hovering over it.",
       "group": "",
       "tags": [],
       "enabled": true,
