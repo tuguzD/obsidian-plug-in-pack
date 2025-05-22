@@ -1568,6 +1568,16 @@
       "enabled": true,
       "delay": "",
       "note": ""
+    },
+    {
+      "id": "image-border-style",
+      "name": "Image Border Style",
+      "desc": "Border styling for images in markdown notes.",
+      "group": "",
+      "tags": [],
+      "enabled": true,
+      "delay": "",
+      "note": ""
     }
   ],
   "HIDES": []

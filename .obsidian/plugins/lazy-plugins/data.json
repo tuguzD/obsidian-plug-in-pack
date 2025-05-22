@@ -479,6 +479,9 @@
       },
       "obsidian-reminder-plugin": {
         "startupType": "disabled"
+      },
+      "image-border-style": {
+        "startupType": "disabled"
       }
     }
   },

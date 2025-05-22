@@ -1,0 +1,41 @@
+{
+  "borderRadius": "3xl",
+  "styles": [
+    {
+      "name": "rounded-none",
+      "css": "image-style-rounded-none"
+    },
+    {
+      "name": "rounded-xs",
+      "css": "image-style-rounded-xs"
+    },
+    {
+      "name": "rounded-sm",
+      "css": "image-style-rounded-sm"
+    },
+    {
+      "name": "rounded-md",
+      "css": "image-style-rounded-md"
+    },
+    {
+      "name": "rounded-lg",
+      "css": "image-style-rounded-lg"
+    },
+    {
+      "name": "rounded-xl",
+      "css": "image-style-rounded-xl"
+    },
+    {
+      "name": "rounded-2xl",
+      "css": "image-style-rounded-2xl"
+    },
+    {
+      "name": "rounded-3xl",
+      "css": "image-style-rounded-3xl"
+    },
+    {
+      "name": "rounded-4xl",
+      "css": "image-style-rounded-4xl"
+    }
+  ]
+}
