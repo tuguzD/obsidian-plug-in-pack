@@ -188,7 +188,7 @@ Change appearance and overall make view more compact:
 ### 🗺️ Place note markers on *large maps*
 
 - [Map View](https://github.com/esm7/obsidian-map-view) – interact with a **world** map view: search for locations, apply them to notes and choose custom icons
-- 💻 [Leaflet](https://github.com/javalent/obsidian-leaflet) – create **custom** maps: provide images (for multiple layers), place pins and modify their appearance
+- 💻 [Leaflet](https://github.com/javalent/obsidian-leaflet) – create [**custom** maps](https://youtu.be/8CTW2DTSLpk): provide images (for multiple layers), place pins and modify their appearance
 
 ### 📄 View *opened file* faster
 
