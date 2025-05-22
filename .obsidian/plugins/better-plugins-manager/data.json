@@ -157,6 +157,11 @@
       "id": "graph",
       "name": "Graphs",
       "color": "#549900"
+    },
+    {
+      "id": "navig-map",
+      "name": "Map navigation",
+      "color": "#3c0faa"
     }
   ],
   "TAGS": [
@@ -1413,7 +1418,7 @@
       "id": "obsidian-map-view",
       "name": "Map View",
       "desc": "An interactive map view.",
-      "group": "third-party",
+      "group": "navig-map",
       "tags": [
         "internet"
       ],
@@ -1534,6 +1539,16 @@
       "name": "Quick Peek Sidebar",
       "desc": "Opens the left and/or right side panel by hovering over it.",
       "group": "default",
+      "tags": [],
+      "enabled": true,
+      "delay": "",
+      "note": ""
+    },
+    {
+      "id": "obsidian-leaflet-plugin",
+      "name": "Leaflet",
+      "desc": "Interactive maps inside your notes",
+      "group": "navig-map",
       "tags": [],
       "enabled": true,
       "delay": "",

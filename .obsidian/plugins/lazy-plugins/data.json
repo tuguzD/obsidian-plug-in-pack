@@ -473,6 +473,9 @@
       },
       "quick-peek-sidebar": {
         "startupType": "disabled"
+      },
+      "obsidian-leaflet-plugin": {
+        "startupType": "disabled"
       }
     }
   },

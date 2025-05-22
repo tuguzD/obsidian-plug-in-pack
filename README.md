@@ -142,7 +142,6 @@ Change appearance and overall make view more compact:
 - [Visual Crossing Weather](https://github.com/willasm/vc-weather) – display current weather in [Status bar](https://help.obsidian.md/User+interface/Status+bar), add this data into notes (via templates)
 - 💻 [Discord Rich Presence](https://github.com/lukeleppan/obsidian-discordrpc) – integrate stats into [`Discord`](https://discord.com) status: show vault name, editing file and elapsed time
 - 💻 [WakaTime](https://github.com/wakatime/obsidian-wakatime) – send metrics, insights, and time tracking from app usage activity to [`WakaTime`](https://wakatime.com) dashboard
-- [Map View](https://github.com/esm7/obsidian-map-view) – interact with a map view: search for locations, apply them to notes and choose custom icons
 - [LanguageTool Integration](https://github.com/Clemens-E/obsidian-languagetool-plugin) – check grammar and spellling for many languages with [`LanguageTool`](https://languagetool.org)
 - [Todoist Sync](https://github.com/jamiebrynes7/obsidian-todoist-plugin) – bidirectional sync with [`Todoist`](https://todoist.com) task manager: create new tasks and complete existing ones
 
@@ -186,7 +185,12 @@ Change appearance and overall make view more compact:
 - ~~[Rich Foot](https://github.com/jparkerweb/rich-foot) – display backlinks, outlinks, and created/modified dates in a footer of any note (unless ignored)~~
   - disabled (for now) due to a “flickering” conflict with “Hover Editor” plugin
 
-### 📄 View *chosen file* faster
+### 🗺️ Place note markers on *large maps*
+
+- [Map View](https://github.com/esm7/obsidian-map-view) – interact with a **world** map view: search for locations, apply them to notes and choose custom icons
+- 💻 [Leaflet](https://github.com/javalent/obsidian-leaflet) – create **custom** maps: provide images (for multiple layers), place pins and modify their appearance
+
+### 📄 View *opened file* faster
 
 - 💻 [Mouse Navigation](https://github.com/hobeom/obsidian-mouse-navigation) – use gestures while pressing `RMB`: scroll note to top/bottom, navigate forward/backward
 - [Chord Sheets](https://github.com/olvidalo/obsidian-chord-sheets?tab=readme-ov-file#-autoscroll) – start/stop automatic scroll of an active note, configure scrolling speed on the fly
