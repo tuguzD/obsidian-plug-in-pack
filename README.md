@@ -29,7 +29,7 @@ For further information on how to sync your vault with new changes from this pac
 2. 💻 [Better Plugins Manager](https://github.com/0011000000110010/obsidian-manager) – create plugin groups/tags: delay, filter and toggle them “in bulk” (via commands)
 
 > [!TIP]
-> Please, don‘t be afraid of large amount of plugins here (***147*** of them, to be exact)!
+> Please, don‘t be afraid of large amount of plugins in this pack (***147*** of them, to be exact)!
 > You can reliably turn them on/off, as well as delay their startup with the help of plugins above.
 >
 > Moreover, some of the most “performance-taxing“ plugins are not designed for 📱`Mobile`.
