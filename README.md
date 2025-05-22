@@ -71,6 +71,7 @@ After launching your vault for the first time, be sure to switch to `Basic` work
 - [Copy Block Link](https://github.com/mgmeyers/obsidian-copy-block-link) – get links to text blocks/headings directly from a context menu (plain or embedded)
 - [Frontmatter Markdown Links](https://github.com/mnaoumov/obsidian-frontmatter-markdown-links) – support some new ways to write [Markdown](https://help.obsidian.md/Editing+and+formatting/Basic+formatting+syntax) links in note’s frontmatter
 - [Better Markdown Links](https://github.com/mnaoumov/obsidian-better-markdown-links) – auto-generate links with angle brackets, properly manage links with relative paths
+- [New Note Fixer](https://github.com/mnaoumov/obsidian-new-note-fixer) – consistently create non-existing notes (by clicking on their links) and respect vault settings
 
 ### 🪄 Perform actions *“in bulk”*
 
@@ -175,7 +176,7 @@ Change appearance and overall make view more compact:
 - [Projects](https://github.com/marcusolsson/obsidian-projects) – interact with in-folder notes in different views (table/board/calendar/gallery) created with metadata
 - [Meta Bind](https://github.com/mProjectsCode/obsidian-meta-bind-plugin) – change note’s metadata with inline input fields, metadata displays (view fields), and buttons
 
-### 🛠️ Create note [templates](https://help.obsidian.md/Plugins/Templates) (for future use)
+### 🛠️ Create note [templates](https://help.obsidian.md/Plugins/Templates) (for plugins / future use)
 
 - [Templater](https://github.com/SilentVoid13/Templater) – insert variables and functions’ results into templates, manipulate them with `JavaScript`
 - [QuickAdd](https://github.com/chhoumann/quickadd) – create notes from templates using custom “[choices](https://quickadd.obsidian.guide/docs/#first-steps)” (templates, captures, macros, multis)

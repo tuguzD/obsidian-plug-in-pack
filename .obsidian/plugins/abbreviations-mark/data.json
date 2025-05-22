@@ -1,13 +1,33 @@
 {
-  "useMarkdownExtraSyntax": false,
   "metadataKeyword": "abbr",
+  "detectCJK": true,
   "detectAffixes": true,
-  "affixes": "s, es",
+  "affixes": "s, es, ы",
   "markInSourceMode": true,
   "globalAbbreviations": [
     {
       "key": "CSS",
       "title": "Cascading Style Sheets"
+    },
+    {
+      "key": "UI",
+      "title": "User Interface"
+    },
+    {
+      "key": "VCS",
+      "title": "Version Control System"
+    },
+    {
+      "key": "RMB",
+      "title": "Right Mouse Button"
+    },
+    {
+      "key": "IDE",
+      "title": "Integrated Development Environment"
     }
-  ]
+  ],
+  "useMarkdownExtraSyntax": false,
+  "useExtraDefinitionDecorator": false,
+  "extraDefinitionDecoratorOpacity": 20,
+  "extraDefinitionDecoratorContent": "→ ${abbr}"
 }
