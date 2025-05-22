@@ -13,15 +13,15 @@ After launching your vault for the first time, be sure to switch to `Basic` work
 > [!CAUTION]
 > If you want to create your own vault (to store your work there), and then update it with new changes from this pack (using `Git`, obviously)… Please, ***DO NOT FORK*** this repository!
 >
-> You cannot change **visibility** of forked repositories on `GitHub`, so any of yours will stay `public` forever.
+> You cannot change 👀 **visibility** of forked repositories on `GitHub`, so any of yours will stay `public` forever (💀).
 > Instead, you should use this repository as a **template**, or clone it (creating unrelated one).
 
 > For further information on how to sync your vault with new changes from this pack, as well as other important notices regarding [`Git`](https://git-scm.com) users, follow [here](<./NOTES.md#-simplify-your-work-with-git>).
 
 >[!NOTE]
 >You still can (and absolutely should! 😁) fork this repository, if you wish to:
->- contribute new plugins, hotkeys or any other suggestions to this particular, ~~maintained~~ version of the pack
->- create YOUR OWN, personal version of the pack, where all of it will be set up for your personal needs
+>- 🚀 contribute new plugins, hotkeys or any other suggestions to this particular, ~~maintained~~ version of the pack
+>- create YOUR OWN, ✨ personal version of the pack, where all of it will be set up for your personal needs
 >
 ## 🔌 *Manage plugins* much easier
 
