@@ -42,7 +42,7 @@ After launching your vault for the first time, be sure to switch to `Basic` work
 - [Enhanced Copy](https://github.com/Mara-Li/obsidian-enhanced-copy) – change native copy function behaviour to differ for [reading/editing views](https://help.obsidian.md/Editing+and+formatting/Edit+and+preview+Markdown#Editor+views)
 - [Tab Switcher](https://github.com/Vinzent03/tab-switcher) – ignore groups when switching tabs, navigate tabs in their placement/usage order (via hotkeys)
 - [Remember cursor position](https://github.com/dy-sh/obsidian-remember-cursor-position) – remember notes’ cursor and scroll position (edit multiple notes quicker)
-- 💻 [Open Sidebar on Hover Plus](https://github.com/clairefro/obsidian-open-sidebar-on-hover-plus) – hover over the sidebar area (ribbon or pixels) to expand/collapse your sidebars
+- 💻 [Quick Peek Sidebar](https://github.com/bwya77/obsidian-quick-peek-sidebar) – hover over the sidebar area (ribbon or pixels) to expand/collapse your sidebars
 
 ### 🫥 Introduce missing, but *must-have features*
 
@@ -108,7 +108,7 @@ While others replace them completely (so they must be `⚠️DISABLED`):
 - [Omnisearch](https://github.com/scambier/obsidian-omnisearch) – search text in contents of notes and (non-textual) attachments like images, documents, and PDFs
   - [Text Extractor](https://github.com/scambier/obsidian-text-extractor) – extract text from (non-textual) attachments (allows plugin above to [use](https://publish.obsidian.md/omnisearch/Images%2C+PDFs%2C+and+non-text+documents) this data for search)
 
-### 📆 Access your [Daily notes](https://help.obsidian.md/Plugins/Daily+notes) <sup>[⚠️ OFF]</sup> easier
+### 📆 Access your [Daily notes](https://help.obsidian.md/Plugins/Daily+notes) <sup>[⚠️OFF]</sup> easier
 
 - [Periodic Notes](https://github.com/liamcain/obsidian-periodic-notes) – extend core feature by also creating weekly, monthly, quarterly and yearly notes!
 - [Calendar](https://github.com/liamcain/obsidian-calendar-plugin) – navigate between your daily/weekly notes using simple yet customizable calendar view

@@ -1533,7 +1533,7 @@
       "id": "quick-peek-sidebar",
       "name": "Quick Peek Sidebar",
       "desc": "Opens the left and/or right side panel by hovering over it.",
-      "group": "",
+      "group": "default",
       "tags": [],
       "enabled": true,
       "delay": "",
