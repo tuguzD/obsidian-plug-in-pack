@@ -1558,6 +1558,16 @@
       "enabled": true,
       "delay": "",
       "note": ""
+    },
+    {
+      "id": "obsidian-reminder-plugin",
+      "name": "Reminder",
+      "desc": "Reminder plugin for Obsidian. This plugin adds feature to manage TODOs with reminder.",
+      "group": "",
+      "tags": [],
+      "enabled": true,
+      "delay": "",
+      "note": ""
     }
   ],
   "HIDES": []

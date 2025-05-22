@@ -6,11 +6,11 @@
         "type": "split",
         "children": [
           {
-            "id": "fac552cc38cae5da",
+            "id": "43e3e05c20af6a46",
             "type": "tabs",
             "children": [
               {
-                "id": "bfe7b91c01c734d0",
+                "id": "e52b0f0ef3268ddf",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
@@ -134,6 +134,16 @@
                   "state": {},
                   "icon": "calendar-with-checkmark",
                   "title": "Calendar"
+                }
+              },
+              {
+                "id": "15835ca07c8e425a",
+                "type": "leaf",
+                "state": {
+                  "type": "reminder-list",
+                  "state": {},
+                  "icon": "clock",
+                  "title": "Reminders"
                 }
               },
               {
@@ -338,6 +348,8 @@
       },
       "left-ribbon": {
         "hiddenItems": {
+          "pexels-banner:🚩 Pixel Banner Menu": false,
+          "obsidian-leaflet-plugin:Open Leaflet Map": false,
           "obsidian-shellcommands:Shell commands: Custom variables": false,
           "better-plugins-manager:Plugin Manager": false,
           "switcher:Open quick switcher": true,
@@ -370,8 +382,8 @@
           "omnisearch:Omnisearch": false
         }
       },
-      "active": "bfe7b91c01c734d0",
-      "mtime": "2025-02-09T18:41:40+03:00",
+      "active": "e52b0f0ef3268ddf",
+      "mtime": "2025-05-22T22:56:12+03:00",
       "workspaces-plus:settings-v1": {
         "explorerFoldState": []
       }

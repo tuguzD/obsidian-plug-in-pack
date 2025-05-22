@@ -476,6 +476,9 @@
       },
       "obsidian-leaflet-plugin": {
         "startupType": "disabled"
+      },
+      "obsidian-reminder-plugin": {
+        "startupType": "disabled"
       }
     }
   },

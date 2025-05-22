@@ -22,10 +22,16 @@
   "appIcons": {},
   "tabIcons": {
     "advanced-tables-toolbar": {
+      "icon": "lucide-table-2"
+    },
+    "all-properties": {
       "icon": "lucide-table-properties"
     },
     "beautitab-react-view": {
       "icon": "lucide-file-plus-2"
+    },
+    "canvas-links": {
+      "icon": "lucide-circuit-board"
     },
     "file-tree-view": {
       "icon": "lucide-panel-bottom-close"
@@ -39,11 +45,17 @@
     "recent-notes-view": {
       "icon": "lucide-file-clock"
     },
+    "reminder-list": {
+      "icon": "lucide-alarm-clock"
+    },
     "reveal-preview-view": {
       "icon": "lucide-presentation"
     },
     "search": {
       "icon": "lucide-text-search"
+    },
+    "vertical-tabs": {
+      "icon": "lucide-gallery-vertical"
     },
     "webviewer-history": {
       "icon": "lucide-history"
