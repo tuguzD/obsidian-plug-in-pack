@@ -3630,7 +3630,6 @@ var init_imageSelectionModal = __esm({
             .pixel-banner-image-container {
                 cursor: pointer;
                 border-radius: 6px;
-                overflow: hidden;
                 border: 1px solid var(--background-modifier-border);
                 transition: transform 0.2s ease, box-shadow 0.2s ease;
                 position: relative;
@@ -7083,7 +7082,6 @@ var init_iconImageSelectionModal = __esm({
             .pixel-banner-image-container {
                 cursor: pointer;
                 border-radius: 6px;
-                overflow: hidden;
                 border: 1px solid var(--background-modifier-border);
                 transition: transform 0.2s ease, box-shadow 0.2s ease;
                 position: relative;
@@ -7958,10 +7956,16 @@ var init_iconImageSelectionModal = __esm({
             throw new Error(data.error || "Failed to fetch icon details");
           }
           const iconData = data.bannerIcon;
-          let extension = "svg";
-          let fileName = iconData.file_name || "";
-          if (fileName) {
-            const parts = fileName.split(".");
+          let extension = "png";
+          if (iconData.base64Image) {
+            const mimeTypeMatch = iconData.base64Image.match(/data:image\/([\w\+\-\.]+);base64/);
+            if (mimeTypeMatch && mimeTypeMatch[1]) {
+              extension = mimeTypeMatch[1];
+              if (extension === "jpeg") extension = "jpg";
+              if (extension === "svg+xml") extension = "svg";
+            }
+          } else if (iconData.file_name) {
+            const parts = iconData.file_name.split(".");
             if (parts.length > 1) {
               extension = parts[parts.length - 1].toLowerCase();
             }
@@ -7980,24 +7984,30 @@ var init_iconImageSelectionModal = __esm({
             if (!await this.app.vault.adapter.exists(folderPath)) {
               await this.app.vault.createFolder(folderPath);
             }
-            const suggestedName = `${iconData.description || "icon"}.${extension}`;
-            const fileName2 = await new Promise((resolve) => {
+            const suggestedName = `${iconData.description || "icon"}`;
+            const userFileName = await new Promise((resolve) => {
               new SaveImageModal(this.app, suggestedName, (result) => {
                 resolve(result);
               }).open();
             });
-            if (!fileName2) {
+            if (!userFileName) {
               new import_obsidian17.Notice("No file name provided");
               return;
             }
-            const base64Data = iconData.base64Image.split(",")[1];
+            let baseName = userFileName;
+            if (baseName.includes(".")) {
+              baseName = baseName.substring(0, baseName.lastIndexOf("."));
+            }
+            const finalFileName = `${baseName}.${extension}`;
+            const base64Parts = iconData.base64Image.split(",");
+            const base64Data = base64Parts[1];
             const binaryString = window.atob(base64Data);
             const bytes = new Uint8Array(binaryString.length);
             for (let i = 0; i < binaryString.length; i++) {
               bytes[i] = binaryString.charCodeAt(i);
             }
             try {
-              const fullPath = `${folderPath}/${fileName2}`.replace(/\/+/g, "/");
+              const fullPath = `${folderPath}/${finalFileName}`.replace(/\/+/g, "/");
               const newFile = await this.app.vault.createBinary(fullPath, bytes.buffer);
               this.onChoose(newFile);
               this.close();
@@ -29821,7 +29831,7 @@ module.exports = __toCommonJS(main_exports);
 var import_obsidian30 = require("obsidian");
 
 // virtual-module:virtual:release-notes
-var releaseNotes = '<a href="https://www.youtube.com/watch?v=fwvVX7to7-4">\n  <img src="https://pixel-banner.online/img/pixel-banner-v3.5.jpg" alt="Pixel Banner" style="max-width: 400px;">\n</a>\n\n<h2>\u{1F389} What&#39;s New</h2>\n<h3>v3.5.1 - 2025-05-19</h3>\n<h4>\u2728 Added</h4>\n<ul>\n<li>Added Command Palette command for selecting a <code>Banner Icon Image</code></li>\n</ul>\n<h3>v3.5.0 - 2025-05-18</h3>\n<h4>\u2728 Added</h4>\n<ul>\n<li>New &quot;Banner Icon Rotation&quot; option to rotate the banner icon from 0 to 360 degrees</li>\n<li>New &quot;Icon Image&quot; support to allow banner icons to contain both text/emojis and an image</li>\n<li>Added Banner Icon Image controls to the Position, Size &amp; Style Modal (image source and alignment)</li>\n<li>Banner Icon Image sources include:<ul>\n<li>Local images</li>\n<li>Web URL</li>\n<li>Online Collections (FREE downloadable icons)</li>\n</ul>\n</li>\n<li>Banner Icon Image alignment options include:<ul>\n<li>Left or Right (set the position of the icon image relative to the text/emojis)</li>\n</ul>\n</li>\n<li>New Border Radius slider control available in the Position, Size &amp; Style Modal</li>\n<li>Four new AI Models to choose from when generating an image for a banner</li>\n</ul>\n<h4>\u{1F4E6} Updated</h4>\n<ul>\n<li>Embedded notes now respect custom frontmatter settings (border radius, banner height, etc.)</li>\n<li>Any system action that sets the frontmatter value for a Banner or Icon Image now uses <code>![[image]]</code> format vs <code>[[image]]</code></li>\n<li>Updated Token currency to allow for fractional tokens (e.g. 0.5 tokens) for better pricing where applicable</li>\n</ul>\n<h4>\u{1F41B} Fixed</h4>\n<ul>\n<li>Resolved issue with content being pushed down when banner was present in embedded notes</li>\n<li>Resolved issue with max-width slider being disabled even when a custom max-width was set in frontmatter</li>\n<li>Addressed background color preventing banner from showing in reading mode for some themes</li>\n</ul>\n<a href="https://www.youtube.com/watch?v=pJFsMfrWak4">\n  <img src="https://pixel-banner.online/img/pixel-banner-transparent-bg.png" alt="Pixel Banner" style="max-width: 400px;">\n</a>';
+var releaseNotes = '<a href="https://www.youtube.com/watch?v=fwvVX7to7-4">\n  <img src="https://pixel-banner.online/img/pixel-banner-v3.5.jpg" alt="Pixel Banner" style="max-width: 400px;">\n</a>\n\n<h2>\u{1F389} What&#39;s New</h2>\n<h3>v3.5.2 - 2025-05-21</h3>\n<h4>\u{1F41B} Fixed</h4>\n<ul>\n<li>Updated styles to remove overflow on images for mobile devices</li>\n<li>Resolved issue with icon image selection modal not using the correct extension for non-svg images</li>\n</ul>\n<h3>v3.5.1 - 2025-05-19</h3>\n<h4>\u2728 Added</h4>\n<ul>\n<li>Added Command Palette command for selecting a <code>Banner Icon Image</code></li>\n</ul>\n<h3>v3.5.0 - 2025-05-18</h3>\n<h4>\u2728 Added</h4>\n<ul>\n<li>New &quot;Banner Icon Rotation&quot; option to rotate the banner icon from 0 to 360 degrees</li>\n<li>New &quot;Icon Image&quot; support to allow banner icons to contain both text/emojis and an image</li>\n<li>Added Banner Icon Image controls to the Position, Size &amp; Style Modal (image source and alignment)</li>\n<li>Banner Icon Image sources include:<ul>\n<li>Local images</li>\n<li>Web URL</li>\n<li>Online Collections (FREE downloadable icons)</li>\n</ul>\n</li>\n<li>Banner Icon Image alignment options include:<ul>\n<li>Left or Right (set the position of the icon image relative to the text/emojis)</li>\n</ul>\n</li>\n<li>New Border Radius slider control available in the Position, Size &amp; Style Modal</li>\n<li>Four new AI Models to choose from when generating an image for a banner</li>\n</ul>\n<h4>\u{1F4E6} Updated</h4>\n<ul>\n<li>Embedded notes now respect custom frontmatter settings (border radius, banner height, etc.)</li>\n<li>Any system action that sets the frontmatter value for a Banner or Icon Image now uses <code>![[image]]</code> format vs <code>[[image]]</code></li>\n<li>Updated Token currency to allow for fractional tokens (e.g. 0.5 tokens) for better pricing where applicable</li>\n</ul>\n<h4>\u{1F41B} Fixed</h4>\n<ul>\n<li>Resolved issue with content being pushed down when banner was present in embedded notes</li>\n<li>Resolved issue with max-width slider being disabled even when a custom max-width was set in frontmatter</li>\n<li>Addressed background color preventing banner from showing in reading mode for some themes</li>\n</ul>\n<a href="https://www.youtube.com/watch?v=pJFsMfrWak4">\n  <img src="https://pixel-banner.online/img/pixel-banner-transparent-bg.png" alt="Pixel Banner" style="max-width: 400px;">\n</a>';
 
 // src/settings/settings.js
 var import_obsidian6 = require("obsidian");
