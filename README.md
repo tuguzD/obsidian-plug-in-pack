@@ -12,9 +12,9 @@ After launching your vault for the first time, be sure to switch to `Basic` work
 
 > [!WARNING]
 > If you want to create your own vault (to store your work there), and then update it with new changes from this pack (using `Git`, obviously)…
-> Please, ***DO NOT FORK*** this repository! (doing that for contribution is OK, though)
+> Please, ***DO NOT FORK*** this repository! (for contribution it's OK, though 😁)
 >
-> You cannot change visibility of forked repositories on `GitHub`, so any of yours will stay **public** forever.
+> You cannot change **visibility** of forked repositories on `GitHub`, so any of yours will stay `public` forever.
 > Instead, you should use this repository as template or clone it (creating unrelated one).
 >
 > For further information on how to sync your vault with new changes from this pack, as well as other important notices regarding [`Git`](https://git-scm.com) users, follow [here](<./NOTES.md#-simplify-your-work-with-git>).
@@ -25,10 +25,11 @@ After launching your vault for the first time, be sure to switch to `Basic` work
 2. 💻 [Better Plugins Manager](https://github.com/0011000000110010/obsidian-manager) – create plugin groups/tags: delay, filter and toggle them “in bulk” (via commands)
 
 > [!TIP]
-> Please, don‘t be afraid of large amount of plugins here (***144*** of them, to be exact)!
+> Please, don‘t be afraid of large amount of plugins here (***147*** of them, to be exact)!
 > You can reliably turn them on/off, as well as delay their startup with the help of plugins above.
 >
-> Moreover, some of the most “performance-taxing“ plugins are not designed for `Mobile`. For more on the differences of working with different devices, follow [here](<./NOTES.md#-use-plugins-on-various-devices>).
+> Moreover, some of the most “performance-taxing“ plugins are not designed for 📱`Mobile`.
+> For more on the differences of working with different devices, follow [here](<./NOTES.md#-use-plugins-on-various-devices>).
 
 3. [Plugin Update Tracker](https://github.com/swar8080/obsidian-plugin-update-tracker) – show updates for all plugins, browse their release notes and even ignore them
 4. [BRAT](https://github.com/TfTHacker/obsidian42-brat) – download plugins that aren’t (yet) listed in official plugin portal (or beta versions of listed plugins)
