@@ -1,0 +1,16 @@
+.mark_open_files_container
+{
+	display:inline-block;
+	whitespace:pre;
+}
+.mark_open_files
+{
+	margin-right:2px;
+	padding:0 2px;
+	opacity:66%;
+}
+.mark_open_files:hover
+{
+	opacity:100%;
+	color:var(--icon-color-hover)
+}

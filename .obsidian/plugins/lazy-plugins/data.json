@@ -482,6 +482,9 @@
       },
       "image-border-style": {
         "startupType": "disabled"
+      },
+      "mark-open-files": {
+        "startupType": "disabled"
       }
     }
   },

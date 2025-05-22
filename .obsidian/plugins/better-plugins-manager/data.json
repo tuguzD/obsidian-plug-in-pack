@@ -1578,6 +1578,16 @@
       "enabled": true,
       "delay": "",
       "note": ""
+    },
+    {
+      "id": "mark-open-files",
+      "name": "Mark Open Files",
+      "desc": "Enhances the File Explorer by adding a marker to all the File Explorer items that are currently open in the workspace.",
+      "group": "",
+      "tags": [],
+      "enabled": true,
+      "delay": "",
+      "note": ""
     }
   ],
   "HIDES": []
