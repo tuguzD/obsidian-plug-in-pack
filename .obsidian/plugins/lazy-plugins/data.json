@@ -491,6 +491,9 @@
       },
       "autofit-tabs": {
         "startupType": "disabled"
+      },
+      "annotate-audio": {
+        "startupType": "disabled"
       }
     }
   },

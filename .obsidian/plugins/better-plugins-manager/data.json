@@ -1608,6 +1608,16 @@
       "enabled": false,
       "delay": "",
       "note": ""
+    },
+    {
+      "id": "annotate-audio",
+      "name": "Annotate Audio",
+      "desc": "Listen to an audio and add comments to it.",
+      "group": "",
+      "tags": [],
+      "enabled": true,
+      "delay": "",
+      "note": ""
     }
   ],
   "HIDES": []
