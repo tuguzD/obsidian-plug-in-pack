@@ -1598,6 +1598,16 @@
       "enabled": true,
       "delay": "",
       "note": ""
+    },
+    {
+      "id": "autofit-tabs",
+      "name": "Autofit Tabs",
+      "desc": "Automatically adjusts tab header widths in real-time to perfectly fit each tab's title content while maintaining a clean, seamless interface that prevents awkward text truncation and ensures optimal readability of your document titles.",
+      "group": "",
+      "tags": [],
+      "enabled": false,
+      "delay": "",
+      "note": ""
     }
   ],
   "HIDES": []

@@ -488,6 +488,9 @@
       },
       "wheel-tab-switcher": {
         "startupType": "disabled"
+      },
+      "autofit-tabs": {
+        "startupType": "disabled"
       }
     }
   },
