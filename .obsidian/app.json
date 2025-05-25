@@ -13,5 +13,12 @@
   "attachmentFolderPath": "./",
   "useMarkdownLinks": true,
   "newLinkFormat": "relative",
-  "mobilePullAction": "darlal-switcher-plus:switcher-plus:open-commands"
+  "mobilePullAction": "darlal-switcher-plus:switcher-plus:open-commands",
+  "pdfExportSettings": {
+    "includeName": false,
+    "pageSize": "Letter",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  }
 }

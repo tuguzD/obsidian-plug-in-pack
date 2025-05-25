@@ -383,5 +383,13 @@
       ],
       "key": "F"
     }
+  ],
+  "tray:relaunch-app": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "R"
+    }
   ]
 }
