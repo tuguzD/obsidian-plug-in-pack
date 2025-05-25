@@ -1628,6 +1628,16 @@
       "enabled": true,
       "delay": "",
       "note": ""
+    },
+    {
+      "id": "tray",
+      "name": "Tray",
+      "desc": "Run Obsidian from the system tray for customisable window management & global quick notes",
+      "group": "",
+      "tags": [],
+      "enabled": true,
+      "delay": "",
+      "note": ""
     }
   ],
   "HIDES": []
