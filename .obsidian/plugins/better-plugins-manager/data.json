@@ -1648,6 +1648,16 @@
       "enabled": true,
       "delay": "",
       "note": ""
+    },
+    {
+      "id": "metadata-icon",
+      "name": "Metadata Icon",
+      "desc": "Change metadata entry icon",
+      "group": "",
+      "tags": [],
+      "enabled": true,
+      "delay": "",
+      "note": ""
     }
   ],
   "HIDES": []

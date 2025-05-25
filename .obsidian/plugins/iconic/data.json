@@ -77,7 +77,26 @@
   },
   "bookmarkIcons": {},
   "tagIcons": {},
-  "propertyIcons": {},
+  "propertyIcons": {
+    "autoscroll-speed": {
+      "icon": "lucide-scroll"
+    },
+    "banner": {
+      "icon": "lucide-image"
+    },
+    "banner-height": {
+      "icon": "lucide-ruler"
+    },
+    "cssclasses": {
+      "icon": "lucide-shield-half"
+    },
+    "facebook": {
+      "icon": "lucide-facebook"
+    },
+    "obsidian": {
+      "icon": "obsidian-new"
+    }
+  },
   "ribbonIcons": {
     "homepage:Open homepage": {
       "icon": "lucide-home"

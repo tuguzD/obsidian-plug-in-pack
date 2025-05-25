@@ -4,6 +4,9 @@
     "cssclasses": "multitext",
     "tags": "tags",
     "autoscroll-speed": "number",
-    "year": "text"
+    "banner": "text",
+    "banner-display": "text",
+    "banner-height": "number",
+    "obsidian": "text"
   }
 }
