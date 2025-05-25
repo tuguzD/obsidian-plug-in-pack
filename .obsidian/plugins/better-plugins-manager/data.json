@@ -1638,6 +1638,16 @@
       "enabled": true,
       "delay": "",
       "note": ""
+    },
+    {
+      "id": "last-modified-timestamp-in-status-bar",
+      "name": "File Creation and Last Modified Timestamps in Status Bar",
+      "desc": "Dynamic display of file modification and creation timestamps in the status bar.",
+      "group": "",
+      "tags": [],
+      "enabled": true,
+      "delay": "",
+      "note": ""
     }
   ],
   "HIDES": []

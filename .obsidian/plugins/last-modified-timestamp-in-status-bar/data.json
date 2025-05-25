@@ -1,0 +1,9 @@
+{
+  "createdPrepend": "create: ",
+  "createdTimestampFormat": "MMMM Do [at] HH:mm",
+  "createdEnabled": false,
+  "lastModifiedEnabled": true,
+  "lastModifiedPrepend": "change: ",
+  "lastModifiedTimestampFormat": "MMMM Do [at] HH:mm",
+  "cycleOnClickEnabled": true
+}

@@ -500,6 +500,9 @@
       },
       "tray": {
         "startupType": "disabled"
+      },
+      "last-modified-timestamp-in-status-bar": {
+        "startupType": "disabled"
       }
     }
   },

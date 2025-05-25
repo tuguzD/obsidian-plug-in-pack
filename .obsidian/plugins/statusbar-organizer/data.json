@@ -25,7 +25,7 @@
         "visible": false
       },
       "plugin-obsidian-reading-time;1": {
-        "position": 11,
+        "position": 13,
         "visible": true
       },
       "left-region;1": {
@@ -33,11 +33,11 @@
         "visible": true
       },
       "plugin-workspaces-plus-workspace-switcher;1": {
-        "position": 21,
+        "position": 23,
         "visible": true
       },
       "plugin-enhanced-annotations-enhanced-annotations__status-enhanced-annotations__display-none;1": {
-        "position": 12,
+        "position": 14,
         "visible": false
       },
       "plugin-obsidian-git;1": {
@@ -45,27 +45,27 @@
         "visible": true
       },
       "plugin-better-word-count;1": {
-        "position": 13,
+        "position": 15,
         "visible": true
       },
       "plugin-editing-toolbar-cMenuToolbar-statusbar-button;1": {
-        "position": 14,
+        "position": 16,
         "visible": false
       },
       "plugin-js-engine;1": {
-        "position": 15,
-        "visible": false
-      },
-      "plugin-obsidian-languagetool-plugin;1": {
-        "position": 16,
-        "visible": true
-      },
-      "plugin-obsidian-discordrpc;1": {
         "position": 17,
         "visible": false
       },
-      "plugin-various-complements;1": {
+      "plugin-obsidian-languagetool-plugin;1": {
         "position": 18,
+        "visible": true
+      },
+      "plugin-obsidian-discordrpc;1": {
+        "position": 19,
+        "visible": false
+      },
+      "plugin-various-complements;1": {
+        "position": 20,
         "visible": false
       },
       "plugin-obsidian-plugin-update-tracker;1": {
@@ -73,11 +73,11 @@
         "visible": true
       },
       "plugin-visual-crossing-weather;1": {
-        "position": 19,
+        "position": 21,
         "visible": false
       },
       "plugin-visual-crossing-weather;2": {
-        "position": 20,
+        "position": 22,
         "visible": true
       },
       "plugin-obsidian-wakatime;1": {
@@ -93,11 +93,19 @@
         "visible": true
       },
       "plugin-editing-toolbar-editingToolbar-statusbar-button;1": {
-        "position": 23,
+        "position": 24,
         "visible": true
       },
       "plugin-obsidian-git-obsidian-git-statusbar-idle;1": {
-        "position": 24,
+        "position": 25,
+        "visible": true
+      },
+      "plugin-last-modified-timestamp-in-status-bar;1": {
+        "position": 12,
+        "visible": true
+      },
+      "plugin-last-modified-timestamp-in-status-bar;2": {
+        "position": 11,
         "visible": true
       }
     }

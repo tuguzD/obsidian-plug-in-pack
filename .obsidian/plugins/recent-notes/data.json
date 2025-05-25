@@ -9,6 +9,11 @@
   "showCSVFiles": false,
   "excludedFolders": [],
   "excludedFiles": [],
-  "previewLines": 2,
-  "pinnedNotes": []
+  "previewLines": 1,
+  "showTime": true,
+  "pinnedNotes": [],
+  "dateFormat": "DD/MM/YYYY",
+  "propertyModified": "",
+  "density": "compact",
+  "openInNewTab": "new"
 }
