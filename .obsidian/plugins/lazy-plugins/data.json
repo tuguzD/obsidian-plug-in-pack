@@ -503,6 +503,9 @@
       },
       "last-modified-timestamp-in-status-bar": {
         "startupType": "disabled"
+      },
+      "metadata-icon": {
+        "startupType": "disabled"
       }
     }
   },
