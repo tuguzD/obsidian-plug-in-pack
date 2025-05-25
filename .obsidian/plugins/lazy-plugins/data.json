@@ -494,6 +494,9 @@
       },
       "annotate-audio": {
         "startupType": "disabled"
+      },
+      "custom-font-loader": {
+        "startupType": "disabled"
       }
     }
   },

@@ -1618,6 +1618,16 @@
       "enabled": true,
       "delay": "",
       "note": ""
+    },
+    {
+      "id": "custom-font-loader",
+      "name": "Custom Font Loader",
+      "desc": "Customize your Obsidian vault with any font you want (+ Support for Android and IOS)",
+      "group": "",
+      "tags": [],
+      "enabled": true,
+      "delay": "",
+      "note": ""
     }
   ],
   "HIDES": []
