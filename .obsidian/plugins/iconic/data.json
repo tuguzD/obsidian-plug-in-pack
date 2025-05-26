@@ -30,6 +30,9 @@
     "beautitab-react-view": {
       "icon": "lucide-file-plus-2"
     },
+    "calendar": {
+      "icon": "lucide-calendar-days"
+    },
     "canvas-links": {
       "icon": "lucide-circuit-board"
     },

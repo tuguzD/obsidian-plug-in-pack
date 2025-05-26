@@ -1658,6 +1658,16 @@
       "enabled": true,
       "delay": "",
       "note": ""
+    },
+    {
+      "id": "obsidian-front-matter-title-plugin",
+      "name": "Front Matter Title",
+      "desc": "Lets you define a title in frontmatter to be displayed as the filename for explorer, graph, search and etc.",
+      "group": "",
+      "tags": [],
+      "enabled": true,
+      "delay": "",
+      "note": ""
     }
   ],
   "HIDES": []

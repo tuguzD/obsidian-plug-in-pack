@@ -506,6 +506,9 @@
       },
       "metadata-icon": {
         "startupType": "disabled"
+      },
+      "obsidian-front-matter-title-plugin": {
+        "startupType": "disabled"
       }
     }
   },
