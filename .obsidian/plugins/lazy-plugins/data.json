@@ -515,6 +515,9 @@
       },
       "shrink-pinned-tabs": {
         "startupType": "disabled"
+      },
+      "obsidian-min-width": {
+        "startupType": "disabled"
       }
     }
   },

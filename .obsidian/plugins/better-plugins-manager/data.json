@@ -1688,6 +1688,16 @@
       "enabled": true,
       "delay": "",
       "note": ""
+    },
+    {
+      "id": "obsidian-min-width",
+      "name": "Min Width",
+      "desc": "Set the Minimum Width of the Active Pane in Obsidian",
+      "group": "",
+      "tags": [],
+      "enabled": true,
+      "delay": "",
+      "note": ""
     }
   ],
   "HIDES": []
