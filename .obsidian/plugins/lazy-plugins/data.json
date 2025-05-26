@@ -512,6 +512,9 @@
       },
       "obsidian-hide-sidebars-when-narrow": {
         "startupType": "disabled"
+      },
+      "shrink-pinned-tabs": {
+        "startupType": "disabled"
       }
     }
   },

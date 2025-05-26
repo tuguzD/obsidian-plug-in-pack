@@ -1678,6 +1678,16 @@
       "enabled": true,
       "delay": "",
       "note": ""
+    },
+    {
+      "id": "shrink-pinned-tabs",
+      "name": "Shrink pinned tabs",
+      "desc": "Shrinks pinned tabs to save screen space.",
+      "group": "",
+      "tags": [],
+      "enabled": true,
+      "delay": "",
+      "note": ""
     }
   ],
   "HIDES": []
