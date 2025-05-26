@@ -17,22 +17,6 @@
       "key": "F"
     }
   ],
-  "obsidian-footnotes:insert-autonumbered-footnote": [
-    {
-      "modifiers": [
-        "Alt"
-      ],
-      "key": "0"
-    }
-  ],
-  "obsidian-footnotes:insert-named-footnote": [
-    {
-      "modifiers": [
-        "Alt"
-      ],
-      "key": "-"
-    }
-  ],
   "obsidian-git:commit-push-specified-message": [
     {
       "modifiers": [
@@ -390,6 +374,22 @@
         "Alt"
       ],
       "key": "R"
+    }
+  ],
+  "obsidian-footnotes:insert-named-footnote": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "="
+    }
+  ],
+  "obsidian-footnotes:insert-autonumbered-footnote": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "-"
     }
   ]
 }

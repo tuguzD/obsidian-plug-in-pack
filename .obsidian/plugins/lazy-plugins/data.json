@@ -509,6 +509,9 @@
       },
       "obsidian-front-matter-title-plugin": {
         "startupType": "disabled"
+      },
+      "obsidian-hide-sidebars-when-narrow": {
+        "startupType": "disabled"
       }
     }
   },

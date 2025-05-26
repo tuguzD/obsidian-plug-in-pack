@@ -1668,6 +1668,16 @@
       "enabled": true,
       "delay": "",
       "note": ""
+    },
+    {
+      "id": "obsidian-hide-sidebars-when-narrow",
+      "name": "Hide Sidebars on Window Resize",
+      "desc": "Automatically hides the sidebars when your window is resized to be narrower",
+      "group": "",
+      "tags": [],
+      "enabled": true,
+      "delay": "",
+      "note": ""
     }
   ],
   "HIDES": []
