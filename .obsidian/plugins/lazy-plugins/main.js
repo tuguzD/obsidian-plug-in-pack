@@ -30,7 +30,7 @@ var require_manifest = __commonJS({
     module2.exports = {
       id: "lazy-plugins",
       name: "Lazy Plugin Loader",
-      version: "1.0.20",
+      version: "1.0.21",
       minAppVersion: "1.6.0",
       description: "Load plugins with a delay on startup, so that you can get your app startup down into the sub-second loading time.",
       author: "Alan Grainger",
@@ -84,6 +84,7 @@ var SettingsTab = class extends import_obsidian.PluginSettingTab {
   async display() {
     const { containerEl } = this;
     this.containerEl = containerEl;
+    this.lazyPlugin.updateManifests();
     await this.lazyPlugin.loadSettings();
     this.buildDom();
   }
@@ -201,8 +202,7 @@ var LazyPlugin = class extends import_obsidian2.Plugin {
   }
   async onload() {
     await this.loadSettings();
-    this.manifests = Object.values(this.app.plugins.manifests).filter((plugin) => plugin.id !== lazyPluginId && // Filter out the Lazy Loader plugin
-    !(import_obsidian2.Platform.isMobile && plugin.isDesktopOnly)).sort((a, b) => a.name.localeCompare(b.name));
+    this.updateManifests();
     await this.setInitialPluginsConfiguration();
     this.addSettingTab(new SettingsTab(this.app, this));
     this.manifests.forEach((plugin) => this.setPluginStartup(plugin.id));
@@ -293,6 +293,13 @@ var LazyPlugin = class extends import_obsidian2.Plugin {
   async updatePluginSettings(pluginId, startupType) {
     this.settings.plugins[pluginId] = { startupType };
     await this.saveSettings();
+  }
+  updateManifests() {
+    this.manifests = Object.values(this.app.plugins.manifests).filter((plugin) => (
+      // Filter out the Lazy Loader plugin
+      plugin.id !== lazyPluginId && // Filter out desktop-only plugins from mobile
+      !(import_obsidian2.Platform.isMobile && plugin.isDesktopOnly)
+    )).sort((a, b) => a.name.localeCompare(b.name));
   }
   /*
    * Originally this was set up so that when the plugin unloaded, it would enablePluginAndSave()
