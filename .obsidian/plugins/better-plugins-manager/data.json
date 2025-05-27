@@ -1708,6 +1708,16 @@
       "enabled": true,
       "delay": "",
       "note": ""
+    },
+    {
+      "id": "obsidian-living-graph",
+      "name": "Living Graph",
+      "desc": "A for-fun graph plugin",
+      "group": "",
+      "tags": [],
+      "enabled": true,
+      "delay": "",
+      "note": ""
     }
   ],
   "HIDES": []

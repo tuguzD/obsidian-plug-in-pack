@@ -33,6 +33,12 @@
       "icon": "lucide-app-window-mac",
       "name": "Widgets: Add widget",
       "mode": "desktop"
+    },
+    {
+      "id": "obsidian-living-graph:toggle",
+      "icon": "lucide-leaf",
+      "name": "Living Graph",
+      "mode": "desktop"
     }
   ],
   "macros": [
