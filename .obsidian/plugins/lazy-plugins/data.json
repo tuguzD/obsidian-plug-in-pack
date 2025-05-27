@@ -530,6 +530,9 @@
       },
       "extended-graph": {
         "startupType": "disabled"
+      },
+      "modalforms": {
+        "startupType": "disabled"
       }
     }
   },

@@ -39,6 +39,9 @@
     "file-tree-view": {
       "icon": "lucide-panel-bottom-close"
     },
+    "modal-form-manage-forms-view": {
+      "icon": "lucide-list-video"
+    },
     "obsidian-leaflet-map-view": {
       "icon": "obsidian-leaflet-plugin-icon-map"
     },
@@ -103,6 +106,9 @@
   "ribbonIcons": {
     "homepage:Open homepage": {
       "icon": "lucide-home"
+    },
+    "obsidian-projects:Open projects": {
+      "icon": "box-glyph"
     }
   },
   "fileRules": [],

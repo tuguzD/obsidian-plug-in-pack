@@ -1719,6 +1719,16 @@
       "enabled": true,
       "delay": "",
       "note": ""
+    },
+    {
+      "id": "modalforms",
+      "name": "Modal forms",
+      "desc": "Define forms for filling data that you will be able to open from anywhere you can run JS",
+      "group": "",
+      "tags": [],
+      "enabled": true,
+      "delay": "",
+      "note": ""
     }
   ],
   "HIDES": []
