@@ -53,7 +53,7 @@
     "repelStrength": 19.6,
     "linkStrength": 0.7,
     "linkDistance": 329,
-    "scale": 0.7514342322277596,
+    "scale": 1.0534979423868343,
     "close": true
   },
   "states": [
@@ -84,11 +84,11 @@
     }
   ],
   "startingStateID": "default-vault",
-  "imageProperty": "image-graph",
+  "imageProperty": "graph.image",
   "borderFactor": 0.06,
   "allowExternalImages": true,
   "allowExternalLocalImages": true,
-  "nodesSizeProperty": "",
+  "nodesSizeProperty": "graph.size",
   "nodesSizeFunction": "default",
   "nodesColorColormap": "YlOrRd",
   "nodesColorFunction": "default",
@@ -97,7 +97,7 @@
   "linksColorFunction": "default",
   "zoomFactor": 2,
   "maxNodes": 20,
-  "delay": 500,
+  "delay": 0,
   "enableFeatures": {
     "graph": {
       "auto-enabled": true,
@@ -110,14 +110,14 @@
       "imagesFromProperty": true,
       "imagesFromEmbeds": false,
       "imagesForAttachments": false,
-      "focus": false,
-      "shapes": true,
+      "focus": true,
+      "shapes": false,
       "source": false,
       "target": false,
       "elements-stats": true,
       "names": true,
       "icons": true,
-      "arrows": false
+      "arrows": true
     },
     "localgraph": {
       "auto-enabled": false,
@@ -127,17 +127,17 @@
       "links": true,
       "curvedLinks": false,
       "folders": false,
-      "imagesFromProperty": true,
+      "imagesFromProperty": false,
       "imagesFromEmbeds": false,
       "imagesForAttachments": false,
       "focus": false,
-      "shapes": true,
+      "shapes": false,
       "source": false,
       "target": false,
       "elements-stats": true,
       "names": true,
       "icons": true,
-      "arrows": false
+      "arrows": true
     }
   },
   "shapeQueries": {
@@ -241,16 +241,16 @@
     "showIcons": false
   },
   "fadeOnDisable": false,
-  "focusScaleFactor": 2,
+  "focusScaleFactor": 1.8,
   "borderUnresolved": "",
   "invertArrows": false,
   "flatArrows": true,
   "numberOfCharacters": null,
   "showOnlyFileName": false,
   "noExtension": false,
-  "usePropertyForName": null,
-  "addBackgroundToName": false,
-  "nameVerticalOffset": 0,
+  "usePropertyForName": "title",
+  "addBackgroundToName": true,
+  "nameVerticalOffset": 15,
   "useInterfaceFont": true,
   "iconProperty": "",
   "usePluginForIcon": true,

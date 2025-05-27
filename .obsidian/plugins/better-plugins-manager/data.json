@@ -1357,15 +1357,6 @@
       "delay": ""
     },
     {
-      "id": "custom-node-size",
-      "name": "Custom Node Size",
-      "desc": "Customize nodes size for improved graph understanding.",
-      "group": "graph",
-      "tags": [],
-      "enabled": true,
-      "delay": ""
-    },
-    {
       "id": "persistent-graph",
       "name": "Persistent Graph",
       "desc": "Adds commands to save and restore the positions of nodes on the global graph view",
