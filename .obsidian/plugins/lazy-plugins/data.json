@@ -518,6 +518,12 @@
       },
       "obsidian-min-width": {
         "startupType": "disabled"
+      },
+      "graph-link-types": {
+        "startupType": "disabled"
+      },
+      "node-factor": {
+        "startupType": "disabled"
       }
     }
   },

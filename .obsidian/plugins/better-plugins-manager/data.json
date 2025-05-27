@@ -1698,6 +1698,16 @@
       "enabled": true,
       "delay": "",
       "note": ""
+    },
+    {
+      "id": "node-factor",
+      "name": "Node Factor",
+      "desc": "Customize factors effecting node size in graph.",
+      "group": "",
+      "tags": [],
+      "enabled": true,
+      "delay": "",
+      "note": ""
     }
   ],
   "HIDES": []

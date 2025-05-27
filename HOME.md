@@ -4,7 +4,6 @@ banner: https://bing.biturl.top/?resolution=1920&format=image&index=0&mkt=zh-CN
 banner-height: 240
 banner-display: cover
 ---
-
 # Home
 
 Plugins `~{I want}` to test before adding to template:
@@ -19,7 +18,6 @@ Plugins `~{I want}` to test before adding to template:
 - commands:
 	- [Keyshots](https://github.com/KrazyManJ/obsidian-keyshots), [Grappling Hook](https://github.com/chrisgrieser/grappling-hook), …
 - several [graph plugins](https://github.com/ElsaTam/obsidian-extended-graph?tab=readme-ov-file#related-plugins):
-	- [Node Factor](https://github.com/CalfMoon/node-factor), [Graph Link Types](https://github.com/natefrisch01/Graph-Link-Types),
-	- [Living Graph](https://github.com/geoffreysflaminglasersword/obsidian-living-graph), [Graph Banner](https://github.com/ras0q/obsidian-graph-banner), [Juggl](https://github.com/HEmile/juggl),
+	- [Graph Link Types](https://github.com/natefrisch01/Graph-Link-Types), [Living Graph](https://github.com/geoffreysflaminglasersword/obsidian-living-graph), [Juggl](https://github.com/HEmile/juggl),
 - performed badly:
 	- ~~[Outliner.md](https://github.com/Quorafind/Outliner.MD)~~, ~~[Query Control](https://github.com/reply2za/obsidian-query-control)~~, …
