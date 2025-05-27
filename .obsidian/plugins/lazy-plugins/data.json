@@ -524,6 +524,9 @@
       },
       "node-factor": {
         "startupType": "disabled"
+      },
+      "obsidian-living-graph": {
+        "startupType": "disabled"
       }
     }
   },
