@@ -1718,6 +1718,16 @@
       "enabled": true,
       "delay": "",
       "note": ""
+    },
+    {
+      "id": "extended-graph",
+      "name": "Extended Graph",
+      "desc": "Extends the features of the core Graph view, display images, manage states, remove links, change node shapes, and more.",
+      "group": "",
+      "tags": [],
+      "enabled": true,
+      "delay": "",
+      "note": ""
     }
   ],
   "HIDES": []

@@ -527,6 +527,9 @@
       },
       "obsidian-living-graph": {
         "startupType": "disabled"
+      },
+      "extended-graph": {
+        "startupType": "disabled"
       }
     }
   },
