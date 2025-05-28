@@ -212,21 +212,6 @@
                 }
               },
               {
-                "id": "0378d32ae6e83c62",
-                "type": "leaf",
-                "state": {
-                  "type": "outline",
-                  "state": {
-                    "file": "README.md",
-                    "followCursor": false,
-                    "showSearch": false,
-                    "searchQuery": ""
-                  },
-                  "icon": "lucide-list",
-                  "title": "Outline of README"
-                }
-              },
-              {
                 "id": "f029f121bfc41c09",
                 "type": "leaf",
                 "state": {
@@ -247,7 +232,7 @@
                 }
               }
             ],
-            "currentTab": 1
+            "currentTab": 2
           },
           {
             "id": "57f3dcfa2c7c4e84",
@@ -348,6 +333,7 @@
       },
       "left-ribbon": {
         "hiddenItems": {
+          "modalforms:Edit forms": false,
           "pexels-banner:🚩 Pixel Banner Menu": false,
           "obsidian-leaflet-plugin:Open Leaflet Map": false,
           "obsidian-shellcommands:Shell commands: Custom variables": false,
@@ -367,7 +353,6 @@
           "callout-manager:Insert Callout": false,
           "abbreviations-mark:List abbreviations": false,
           "periodic-notes:Open today": false,
-          "workspaces-plus:Manage workspaces": false,
           "obsidian42-brat:BRAT": false,
           "widgets:Add widget": false,
           "obsidian-day-and-night:Toggle Theme": false,
@@ -383,7 +368,7 @@
         }
       },
       "active": "e52b0f0ef3268ddf",
-      "mtime": "2025-05-22T22:56:12+03:00",
+      "mtime": "2025-05-28T12:42:33+03:00",
       "workspaces-plus:settings-v1": {
         "explorerFoldState": [],
         "mode": null
