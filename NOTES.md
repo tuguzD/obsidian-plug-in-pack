@@ -58,6 +58,7 @@ git update-index --skip-worktree ".obsidian\plugins\novel-word-count\data.json"
 git update-index --skip-worktree ".obsidian\plugins\enhanced-annotations\data.json"
 git update-index --skip-worktree ".obsidian\plugins\obsidian-day-and-night\data.json"
 git update-index --skip-worktree ".obsidian\plugins\enhanced-symbols-prettifier\data.json"
+git update-index --skip-worktree ".obsidian\snippets\metadata-icon-auto-gen.css"
 ```
 
 > [!IMPORTANT]
