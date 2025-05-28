@@ -61,6 +61,8 @@ git update-index --skip-worktree ".obsidian\plugins\enhanced-symbols-prettifier\
 git update-index --skip-worktree ".obsidian\snippets\metadata-icon-auto-gen.css"
 ```
 
+You can view a list of all ignored files using [this](https://stackoverflow.com/a/54320844/15877911) Git command.
+
 > [!IMPORTANT]
 > Of course, all of these files can be deleted from the repository, and then added to `.gitignore` file (if you so desire) – this way, they won’t be present in it anymore.
 >
