@@ -61,6 +61,12 @@
   "customBannerIconSizeField": [
     "icon-size"
   ],
+  "customBannerIconImageSizeMultiplierField": [
+    "icon-image-size-multiplier"
+  ],
+  "customBannerIconTextVerticalOffsetField": [
+    "icon-text-vertical-offset"
+  ],
   "customBannerIconRotateField": [
     "icon-rotate"
   ],
@@ -115,8 +121,8 @@
   "hidePropertiesSectionIfOnlyBanner": false,
   "titleColor": "var(--inline-title-color)",
   "enableImageShuffle": false,
-  "hideEmbeddedNoteTitles": false,
-  "hideEmbeddedNoteBanners": false,
+  "hideEmbeddedNoteTitles": true,
+  "hideEmbeddedNoteBanners": true,
   "showBannerInPopoverPreviews": true,
   "showSelectImageIcon": true,
   "selectImageIconOpacity": 50,
@@ -126,6 +132,8 @@
   "useShortPath": true,
   "bannerGap": 12,
   "bannerIconSize": 70,
+  "bannerIconImageSizeMultiplier": 1,
+  "bannerIconTextVerticalOffset": 0,
   "bannerIconXPosition": 25,
   "bannerIconOpacity": 100,
   "bannerIconColor": "",

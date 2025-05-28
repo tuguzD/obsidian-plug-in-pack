@@ -9,8 +9,8 @@ banner-display: cover
 
 Plugins `~{I want}` to test before adding to template:
 
-- hotkeys:
-	- add [leading](https://github.com/jlumpe/obsidian-spacekeys?tab=readme-ov-file#similar-plugins) symbols, [Keyshots](https://github.com/KrazyManJ/obsidian-keyshots), …
+- hotkeys (also, add [leading](https://github.com/jlumpe/obsidian-spacekeys?tab=readme-ov-file#similar-plugins) symbols):
+	- [Editor Commands Remap](https://github.com/c4ctus5/editor-commands-remap), [Keyshots](https://github.com/KrazyManJ/obsidian-keyshots), …
 - files:
 	- [External File Linker](https://github.com/Kay607/obsidian-pathlinker), [File Ignore](https://github.com/Feng6611/Obsidian-File-Ignore), …
 - other:
