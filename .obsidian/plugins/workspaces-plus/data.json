@@ -17,8 +17,8 @@
   },
   "activeWorkspaceDesktop": "Basic",
   "activeWorkspaceMobile": "",
-  "reloadLivePreview": false,
-  "workspaceSwitcherRibbon": true,
-  "modeSwitcherRibbon": false,
-  "replaceNativeRibbon": false
+  "reloadLivePreview": true,
+  "workspaceSwitcherRibbon": false,
+  "modeSwitcherRibbon": true,
+  "replaceNativeRibbon": true
 }

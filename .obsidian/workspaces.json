@@ -385,7 +385,8 @@
       "active": "e52b0f0ef3268ddf",
       "mtime": "2025-05-22T22:56:12+03:00",
       "workspaces-plus:settings-v1": {
-        "explorerFoldState": []
+        "explorerFoldState": [],
+        "mode": null
       }
     }
   },

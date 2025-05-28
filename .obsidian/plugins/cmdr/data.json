@@ -100,7 +100,9 @@
       "Shell commands: Custom variables",
       "🚩 Pixel Banner Menu",
       "Open Leaflet Map",
-      "Edit forms"
+      "Edit forms",
+      "Manage workspaces",
+      "Manage modes"
     ]
   },
   "spacing": "12",

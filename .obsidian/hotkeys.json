@@ -50,14 +50,6 @@
       "key": "P"
     }
   ],
-  "obsidian-git:toggle-line-author-info": [
-    {
-      "modifiers": [
-        "Alt"
-      ],
-      "key": "A"
-    }
-  ],
   "table-editor-obsidian:table-control-bar": [],
   "quick-explorer:browse-current": [
     {
@@ -390,6 +382,14 @@
         "Alt"
       ],
       "key": "-"
+    }
+  ],
+  "obsidian-git:toggle-line-author-info": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "G"
     }
   ]
 }

@@ -107,6 +107,10 @@
       "plugin-last-modified-timestamp-in-status-bar;2": {
         "position": 12,
         "visible": true
+      },
+      "plugin-workspaces-plus-mode-switcher;1": {
+        "position": 27,
+        "visible": true
       }
     }
   },
