@@ -1965,7 +1965,6 @@ var SelectionHistoryStorage = class {
     return (_b = (_a = this.data[word.hit]) == null ? void 0 : _a[word.value]) == null ? void 0 : _b[word.type];
   }
   increment(word) {
-    console.log(word);
     if (!this.data[word.hit]) {
       this.data[word.hit] = {};
     }
