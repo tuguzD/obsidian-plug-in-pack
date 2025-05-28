@@ -338,6 +338,57 @@ var VirtualFSPluginSettingsTab = class extends import_obsidian5.PluginSettingTab
   }
 };
 
+// obsidian-typings/src/obsidian/implementations/Classes/CustomArrayDictImpl.ts
+var CustomArrayDictImpl = class {
+  constructor() {
+    this.data = /* @__PURE__ */ new Map();
+  }
+  add(key, value) {
+    let values = this.get(key);
+    if (!values) {
+      values = [];
+      this.data.set(key, values);
+    }
+    if (!values.includes(value)) {
+      values.push(value);
+    }
+  }
+  remove(key, value) {
+    const values = this.get(key);
+    if (!values) {
+      return;
+    }
+    values.remove(value);
+    if (values.length === 0) {
+      this.clear(key);
+    }
+  }
+  get(key) {
+    return this.data.get(key) || null;
+  }
+  keys() {
+    return Array.from(this.data.keys());
+  }
+  clear(key) {
+    this.data.delete(key);
+  }
+  clearAll() {
+    this.data.clear();
+  }
+  contains(key, value) {
+    var _a;
+    return !!((_a = this.get(key)) == null ? void 0 : _a.contains(value));
+  }
+  count() {
+    var _a, _b;
+    let ans = 0;
+    for (const key in this.keys()) {
+      ans += (_b = (_a = this.get(key)) == null ? void 0 : _a.length) != null ? _b : 0;
+    }
+    return ans;
+  }
+};
+
 // src/main.ts
 var Main = class extends PluginWithSettings({}) {
   constructor() {
@@ -398,10 +449,9 @@ var Main = class extends PluginWithSettings({}) {
           if (existing instanceof import_obsidian6.TFile)
             this.app.vault.onChange("file-removed", node.path);
           else if (existing instanceof import_obsidian6.TFolder) {
+            const newByName = new Set(node.children.map((v) => v.name));
             for (const child of existing.children) {
-              const wasDeleted = !node.children.find(
-                (c) => c.name === child.name
-              );
+              const wasDeleted = !newByName.has(child.name);
               const isVirtual = child instanceof import_obsidian6.TFile && child.extension === "dir";
               if (wasDeleted && !isVirtual)
                 this.app.vault.onChange("file-removed", child.path);
@@ -409,9 +459,6 @@ var Main = class extends PluginWithSettings({}) {
             return;
           }
         }
-      }
-      if (this.app.vault.adapter instanceof import_obsidian6.FileSystemAdapter) {
-        void this.app.vault.adapter.startWatchPath(node.path);
       }
       if ("size" in node) {
         this.app.vault.onChange("file-created", node.path, void 0, node);
@@ -485,26 +532,134 @@ var Main = class extends PluginWithSettings({}) {
     const adapter = this.app.vault.adapter;
     const fsCache = new FSCache(adapter.basePath);
     this.fsCache = fsCache;
+    console.time("reading cache");
     const wasInitialised = await fsCache.init();
     const tree = await fsCache.getTree();
+    console.timeEnd("reading cache");
     const wasEmpty = wasInitialised || Object.keys(tree.children).length === 0;
     const otherHandlers = this.app.vault._;
     this.app.vault._ = {};
+    console.time("applying cache");
     this.visitCachedNodes(tree, this.reconcileNode, "/");
+    console.timeEnd("applying cache");
     this.app.vault._ = otherHandlers;
     this.setupListenersForCache(fsCache);
     const reconcilePromise = this.visitRealNodes(
       "/",
       this.reconcileNode,
-      readdir
+      readdir,
+      wasEmpty ? void 0 : 10
     );
-    const updateMetadataCache = initialize.bind(this.app.metadataCache);
+    const updateMetadataCache = async () => {
+      console.time("metadata");
+      await initialize.bind(this.app.metadataCache)();
+      console.timeEnd("metadata");
+    };
+    const updateFile = (file) => {
+      var _a, _b, _c, _d, _e, _f, _g, _h;
+      for (const [target] of (_a = file.links) != null ? _a : []) {
+        (_b = target.backlinks) == null ? void 0 : _b.delete(file);
+      }
+      const cache = this.app.metadataCache.getFileCache(file);
+      if (cache) {
+        (_c = file.links) != null ? _c : file.links = /* @__PURE__ */ new Map();
+        for (const link of [
+          ...(_d = cache.links) != null ? _d : [],
+          ...(_e = cache.frontmatterLinks) != null ? _e : []
+        ]) {
+          const target = this.app.metadataCache.getFirstLinkpathDest(
+            link.link,
+            file.path
+          );
+          if (!target)
+            continue;
+          (_f = target.backlinks) != null ? _f : target.backlinks = /* @__PURE__ */ new Map();
+          const refs = (_g = target.backlinks.get(file)) != null ? _g : [];
+          refs.push(link);
+          target.backlinks.set(file, refs);
+          const outRefs = (_h = file.links.get(target)) != null ? _h : [];
+          outRefs.push(link);
+          file.links.set(target, outRefs);
+        }
+      }
+    };
+    const updateBacklinks = async () => {
+      const notice = new Notice("Starting filling backlinks", 1e5);
+      console.time("backlinks");
+      const files = this.app.vault.getFiles();
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        if (file)
+          updateFile(file);
+        if (i % 100 === 0)
+          await new Promise((r) => setTimeout(r, 1));
+      }
+      console.timeEnd("backlinks");
+      notice.setMessage("Finished filling backlinks");
+      setTimeout(() => {
+        notice.hide();
+      }, 2e3);
+    };
+    const bindFileWatchers = adapter instanceof import_obsidian6.FileSystemAdapter ? async () => {
+      const notice = new Notice(
+        "Starting setting watches",
+        1e5
+      );
+      console.time("watches");
+      const files = Object.keys(adapter.files);
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        await adapter.startWatchPath(file);
+        if (i % 20 === 0)
+          await new Promise((r) => setTimeout(r, 20));
+      }
+      console.timeEnd("watches");
+      notice.setMessage("Finished setting watches");
+      setTimeout(() => {
+        notice.hide();
+      }, 2e3);
+    } : async () => {
+    };
     if (wasEmpty) {
+      console.time("filling cache");
       await reconcilePromise;
-      void updateMetadataCache();
+      console.timeEnd("filling cache");
+      void updateMetadataCache().then(updateBacklinks).then(bindFileWatchers);
     } else {
-      void reconcilePromise.then(updateMetadataCache);
+      console.time("updating cache");
+      void updateBacklinks();
+      void reconcilePromise.then(() => {
+        console.timeEnd("updating cache");
+      }).then(updateMetadataCache).then(bindFileWatchers);
     }
+    this.app.metadataCache.on("resolve", (file) => {
+      updateFile(file);
+    });
+    this.app.metadataCache.on("changed", (file) => {
+      updateFile(file);
+    });
+    this.app.vault.on("delete", (file) => {
+      var _a, _b;
+      if (file instanceof import_obsidian6.TFile)
+        for (const [target] of (_a = file.links) != null ? _a : []) {
+          (_b = target.backlinks) == null ? void 0 : _b.delete(file);
+        }
+    });
+    this.registerPatch(this.app.metadataCache, {
+      getBacklinksForFile() {
+        return (file) => {
+          var _a, _b;
+          const dict = new CustomArrayDictImpl();
+          dict.data = new Map(
+            [...(_b = (_a = file.backlinks) == null ? void 0 : _a.entries()) != null ? _b : []].map(([k, v]) => [
+              k.path,
+              v
+            ])
+          );
+          return dict;
+        };
+      }
+    });
     return fsCache;
   }
   visitCachedNodes(tree, visitor, path) {
@@ -530,10 +685,12 @@ var Main = class extends PluginWithSettings({}) {
       }
     }
   }
-  async visitRealNodes(p, visitor, readdir) {
+  async visitRealNodes(p, visitor, readdir, timeout) {
     const base = this.app.vault.adapter.basePath;
     const fullPath = p === "/" ? base : base + "/" + p;
     const children = await readdir(fullPath);
+    if (timeout !== void 0)
+      await new Promise((r) => setTimeout(r, timeout));
     visitor({ type: "folder", path: p, children });
     for (const c of children) {
       const nextPath = p === "/" ? c.name : `${p}/${c.name}`;
