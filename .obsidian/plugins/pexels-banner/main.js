@@ -877,7 +877,7 @@ var init_selectPixelBannerModal = __esm({
       }
       // Initialize the basic UI (non-API dependent)
       async initializeBasicUI() {
-        var _a, _b;
+        var _a;
         const { contentEl } = this;
         const titleContainer = contentEl.createEl("h2", {
           cls: "pixel-banner-selector-title",
@@ -936,7 +936,12 @@ var init_selectPixelBannerModal = __esm({
           openSettings();
         });
         const activeFile = this.app.workspace.getActiveFile();
-        const hasBanner = activeFile ? this.plugin.hasBannerFrontmatter(activeFile) || ((_b = (_a = this.plugin.app.metadataCache.getFileCache(activeFile)) == null ? void 0 : _a.frontmatter) == null ? void 0 : _b[this.plugin.settings.customBannerShuffleField[0]]) : false;
+        const hasBanner = activeFile ? this.plugin.hasBannerFrontmatter(activeFile) || ((_a = this.plugin.app.metadataCache.getFileCache(activeFile)) == null ? void 0 : _a.frontmatter) && this.plugin.settings.customBannerShuffleField.some(
+          (field) => {
+            var _a2, _b;
+            return (_b = (_a2 = this.plugin.app.metadataCache.getFileCache(activeFile)) == null ? void 0 : _a2.frontmatter) == null ? void 0 : _b[field];
+          }
+        ) : false;
         const mainContainer = contentEl.createDiv({ cls: "pixel-banner-main-container" });
         const bannerSourceSection = mainContainer.createDiv({ cls: "pixel-banner-section" });
         bannerSourceSection.createEl("h3", {
@@ -29974,7 +29979,7 @@ module.exports = __toCommonJS(main_exports);
 var import_obsidian30 = require("obsidian");
 
 // virtual-module:virtual:release-notes
-var releaseNotes = '<a href="https://www.youtube.com/watch?v=fwvVX7to7-4">\n  <img src="https://pixel-banner.online/img/pixel-banner-v3.5.jpg" alt="Pixel Banner" style="max-width: 400px;">\n</a>\n\n<h2>\u{1F389} What&#39;s New</h2>\n<h3>v3.5.3 - 2025-05-23</h3>\n<h4>\u2728 Added</h4>\n<ul>\n<li>New <code>Icon Image Size Multiplier</code> control:<br>allows for changing the icon image size relative to the Banner Icon elements size (perfect to when you want the image to be larger or smaller than any accompanying icon text)</li>\n<li>New <code>Icon Text Vertical Offset</code> control:<br>allows for adjusting the vertical offset of the Icon Text relative to the Icon Image if set (perfect for fine-tuning center alignment of text)</li>\n</ul>\n<h4>\u{1F4E6} Updated</h4>\n<ul>\n<li>Updated some labels on the &quot;Position, Size &amp; Style&quot; modal for clarity</li>\n</ul>\n<h3>v3.5.2 - 2025-05-21</h3>\n<h4>\u{1F41B} Fixed</h4>\n<ul>\n<li>Updated styles to remove overflow on images for mobile devices</li>\n<li>Resolved issue with icon image selection modal not using the correct extension for non-svg images</li>\n</ul>\n<h3>v3.5.1 - 2025-05-19</h3>\n<h4>\u2728 Added</h4>\n<ul>\n<li>Added Command Palette command for selecting a <code>Banner Icon Image</code></li>\n</ul>\n<h3>v3.5.0 - 2025-05-18</h3>\n<h4>\u2728 Added</h4>\n<ul>\n<li>New &quot;Banner Icon Rotation&quot; option to rotate the banner icon from 0 to 360 degrees</li>\n<li>New &quot;Icon Image&quot; support to allow banner icons to contain both text/emojis and an image</li>\n<li>Added Banner Icon Image controls to the Position, Size &amp; Style Modal (image source and alignment)</li>\n<li>Banner Icon Image sources include:<ul>\n<li>Local images</li>\n<li>Web URL</li>\n<li>Online Collections (FREE downloadable icons)</li>\n</ul>\n</li>\n<li>Banner Icon Image alignment options include:<ul>\n<li>Left or Right (set the position of the icon image relative to the text/emojis)</li>\n</ul>\n</li>\n<li>New Border Radius slider control available in the Position, Size &amp; Style Modal</li>\n<li>Four new AI Models to choose from when generating an image for a banner</li>\n</ul>\n<h4>\u{1F4E6} Updated</h4>\n<ul>\n<li>Embedded notes now respect custom frontmatter settings (border radius, banner height, etc.)</li>\n<li>Any system action that sets the frontmatter value for a Banner or Icon Image now uses <code>![[image]]</code> format vs <code>[[image]]</code></li>\n<li>Updated Token currency to allow for fractional tokens (e.g. 0.5 tokens) for better pricing where applicable</li>\n</ul>\n<h4>\u{1F41B} Fixed</h4>\n<ul>\n<li>Resolved issue with content being pushed down when banner was present in embedded notes</li>\n<li>Resolved issue with max-width slider being disabled even when a custom max-width was set in frontmatter</li>\n<li>Addressed background color preventing banner from showing in reading mode for some themes</li>\n</ul>\n<a href="https://www.youtube.com/watch?v=pJFsMfrWak4">\n  <img src="https://pixel-banner.online/img/pixel-banner-transparent-bg.png" alt="Pixel Banner" style="max-width: 400px;">\n</a>';
+var releaseNotes = '<a href="https://www.youtube.com/watch?v=fwvVX7to7-4">\n  <img src="https://pixel-banner.online/img/pixel-banner-v3.5.jpg" alt="Pixel Banner" style="max-width: 400px;">\n</a>\n\n<h2>\u{1F389} What&#39;s New</h2>\n<h3>v3.5.4 - 2025-05-27</h3>\n<h4>\u{1F41B} Fixed</h4>\n<ul>\n<li>Resolve issue with not evaluating all defined custom field names for &quot;banner&quot; frontmatter</li>\n<li>Revert aggresive css change impacting the background color of some theme variations and plugins</li>\n</ul>\n<h3>v3.5.3 - 2025-05-23</h3>\n<h4>\u2728 Added</h4>\n<ul>\n<li>New <code>Icon Image Size Multiplier</code> control:<br>allows for changing the icon image size relative to the Banner Icon elements size (perfect to when you want the image to be larger or smaller than any accompanying icon text)</li>\n<li>New <code>Icon Text Vertical Offset</code> control:<br>allows for adjusting the vertical offset of the Icon Text relative to the Icon Image if set (perfect for fine-tuning center alignment of text)</li>\n</ul>\n<h4>\u{1F4E6} Updated</h4>\n<ul>\n<li>Updated some labels on the &quot;Position, Size &amp; Style&quot; modal for clarity</li>\n</ul>\n<h3>v3.5.2 - 2025-05-21</h3>\n<h4>\u{1F41B} Fixed</h4>\n<ul>\n<li>Updated styles to remove overflow on images for mobile devices</li>\n<li>Resolved issue with icon image selection modal not using the correct extension for non-svg images</li>\n</ul>\n<h3>v3.5.1 - 2025-05-19</h3>\n<h4>\u2728 Added</h4>\n<ul>\n<li>Added Command Palette command for selecting a <code>Banner Icon Image</code></li>\n</ul>\n<h3>v3.5.0 - 2025-05-18</h3>\n<h4>\u2728 Added</h4>\n<ul>\n<li>New &quot;Banner Icon Rotation&quot; option to rotate the banner icon from 0 to 360 degrees</li>\n<li>New &quot;Icon Image&quot; support to allow banner icons to contain both text/emojis and an image</li>\n<li>Added Banner Icon Image controls to the Position, Size &amp; Style Modal (image source and alignment)</li>\n<li>Banner Icon Image sources include:<ul>\n<li>Local images</li>\n<li>Web URL</li>\n<li>Online Collections (FREE downloadable icons)</li>\n</ul>\n</li>\n<li>Banner Icon Image alignment options include:<ul>\n<li>Left or Right (set the position of the icon image relative to the text/emojis)</li>\n</ul>\n</li>\n<li>New Border Radius slider control available in the Position, Size &amp; Style Modal</li>\n<li>Four new AI Models to choose from when generating an image for a banner</li>\n</ul>\n<h4>\u{1F4E6} Updated</h4>\n<ul>\n<li>Embedded notes now respect custom frontmatter settings (border radius, banner height, etc.)</li>\n<li>Any system action that sets the frontmatter value for a Banner or Icon Image now uses <code>![[image]]</code> format vs <code>[[image]]</code></li>\n<li>Updated Token currency to allow for fractional tokens (e.g. 0.5 tokens) for better pricing where applicable</li>\n</ul>\n<h4>\u{1F41B} Fixed</h4>\n<ul>\n<li>Resolved issue with content being pushed down when banner was present in embedded notes</li>\n<li>Resolved issue with max-width slider being disabled even when a custom max-width was set in frontmatter</li>\n<li>Addressed background color preventing banner from showing in reading mode for some themes</li>\n</ul>\n<a href="https://www.youtube.com/watch?v=pJFsMfrWak4">\n  <img src="https://pixel-banner.online/img/pixel-banner-transparent-bg.png" alt="Pixel Banner" style="max-width: 400px;">\n</a>';
 
 // src/settings/settings.js
 var import_obsidian6 = require("obsidian");
@@ -33839,9 +33844,11 @@ function getActiveApiProvider() {
   return availableProviders[Math.floor(Math.random() * availableProviders.length)];
 }
 function hasBannerFrontmatter(file) {
-  var _a;
   const metadata = this.app.metadataCache.getFileCache(file);
-  return ((_a = metadata == null ? void 0 : metadata.frontmatter) == null ? void 0 : _a.banner) !== void 0;
+  if (!(metadata == null ? void 0 : metadata.frontmatter)) return false;
+  return this.settings.customBannerField.some(
+    (fieldName) => metadata.frontmatter[fieldName] !== void 0
+  );
 }
 function createFolderImageSettings(folderImage) {
   const settings = { ...folderImage };

@@ -34,16 +34,13 @@
   "backupGraphOptions": {
     "collapse-filter": true,
     "search": "",
-    "localJumps": 1,
-    "localBacklinks": true,
-    "localForelinks": true,
-    "localInterlinks": true,
     "showTags": false,
     "showAttachments": false,
     "hideUnresolved": false,
+    "showOrphans": true,
     "collapse-color-groups": true,
     "colorGroups": [],
-    "collapse-display": true,
+    "collapse-display": false,
     "showArrow": false,
     "textFadeMultiplier": 0,
     "nodeSizeMultiplier": 1,
@@ -53,7 +50,7 @@
     "repelStrength": 19.6,
     "linkStrength": 0.7,
     "linkDistance": 329,
-    "scale": 1.0534979423868343,
+    "scale": 1.426550925244884,
     "close": true
   },
   "states": [
@@ -97,7 +94,7 @@
   "linksColorFunction": "default",
   "zoomFactor": 2,
   "maxNodes": 20,
-  "delay": 0,
+  "delay": 100,
   "enableFeatures": {
     "graph": {
       "auto-enabled": true,
@@ -105,19 +102,17 @@
       "properties": true,
       "property-key": true,
       "links": true,
-      "curvedLinks": false,
       "folders": true,
       "imagesFromProperty": true,
       "imagesFromEmbeds": false,
       "imagesForAttachments": false,
       "focus": true,
       "shapes": false,
-      "source": false,
-      "target": false,
       "elements-stats": true,
       "names": true,
       "icons": true,
-      "arrows": true
+      "arrows": true,
+      "linksSameColorAsNode": false
     },
     "localgraph": {
       "auto-enabled": false,
@@ -125,19 +120,17 @@
       "properties": true,
       "property-key": true,
       "links": true,
-      "curvedLinks": false,
       "folders": false,
       "imagesFromProperty": false,
       "imagesFromEmbeds": false,
       "imagesForAttachments": false,
       "focus": false,
       "shapes": false,
-      "source": false,
-      "target": false,
       "elements-stats": true,
       "names": true,
       "icons": true,
-      "arrows": true
+      "arrows": true,
+      "linksSameColorAsNode": false
     }
   },
   "shapeQueries": {
@@ -256,6 +249,21 @@
   "usePluginForIcon": true,
   "usePluginForIconColor": true,
   "useParentIcon": true,
-  "collapseState": false,
-  "collapseLegend": false
+  "collapseState": true,
+  "collapseLegend": true,
+  "curvedLinks": false,
+  "disableSource": false,
+  "disableTarget": false,
+  "invertNodeStats": false,
+  "excludedSourcesFolder": [],
+  "excludedTargetsFolder": [],
+  "outlineLinks": false,
+  "opaqueArrowsButKeepFading": false,
+  "alwaysOpaqueArrows": true,
+  "arrowScale": 1,
+  "arrowFixedSize": true,
+  "arrowColorBool": false,
+  "arrowColor": "",
+  "dynamicVerticalOffset": false,
+  "resetAfterChanges": false
 }
