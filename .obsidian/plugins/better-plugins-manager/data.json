@@ -1739,6 +1739,16 @@
       "enabled": true,
       "delay": "",
       "note": ""
+    },
+    {
+      "id": "obsidian-shortcuts-for-starred-files",
+      "name": "Hotkeys for Bookmarks",
+      "desc": "Set an individual hotkey for the first 9 bookmarks and open them just with your keyboard.",
+      "group": "",
+      "tags": [],
+      "enabled": true,
+      "delay": "",
+      "note": ""
     }
   ],
   "HIDES": []

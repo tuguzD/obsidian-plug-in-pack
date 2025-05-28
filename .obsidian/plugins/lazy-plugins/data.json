@@ -536,6 +536,9 @@
       },
       "lazy-cached-vault-load": {
         "startupType": "disabled"
+      },
+      "obsidian-shortcuts-for-starred-files": {
+        "startupType": "disabled"
       }
     }
   },
