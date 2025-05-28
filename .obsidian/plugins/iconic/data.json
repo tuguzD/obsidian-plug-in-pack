@@ -45,6 +45,9 @@
     "obsidian-leaflet-map-view": {
       "icon": "obsidian-leaflet-plugin-icon-map"
     },
+    "obsidian-projects": {
+      "icon": "lucide-kanban-square"
+    },
     "recent-files": {
       "icon": "lucide-file-search"
     },
@@ -104,11 +107,14 @@
     }
   },
   "ribbonIcons": {
+    "better-plugins-manager:Plugin Manager": {
+      "icon": "lucide-plug"
+    },
     "homepage:Open homepage": {
       "icon": "lucide-home"
     },
     "obsidian-projects:Open projects": {
-      "icon": "box-glyph"
+      "icon": "lucide-folder-kanban"
     }
   },
   "fileRules": [],
