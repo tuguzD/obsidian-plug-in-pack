@@ -533,6 +533,9 @@
       },
       "modalforms": {
         "startupType": "disabled"
+      },
+      "lazy-cached-vault-load": {
+        "startupType": "disabled"
       }
     }
   },

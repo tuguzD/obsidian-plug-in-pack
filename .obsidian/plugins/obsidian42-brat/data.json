@@ -1,6 +1,13 @@
 {
-  "pluginList": [],
-  "pluginSubListFrozenVersion": [],
+  "pluginList": [
+    "d7sd6u/obsidian-lazy-cached-vault-load"
+  ],
+  "pluginSubListFrozenVersion": [
+    {
+      "repo": "d7sd6u/obsidian-lazy-cached-vault-load",
+      "version": "latest"
+    }
+  ],
   "themesList": [],
   "updateAtStartup": true,
   "updateThemesAtStartup": true,

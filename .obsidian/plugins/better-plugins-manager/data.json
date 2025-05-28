@@ -1729,6 +1729,16 @@
       "enabled": true,
       "delay": "",
       "note": ""
+    },
+    {
+      "id": "lazy-cached-vault-load",
+      "name": "Lazy Cached Vault Load",
+      "desc": "Achieve under 3 seconds load time for 30k+ files vault on mobile by loading file tree from cache and reconciling changes from filesystem in background.",
+      "group": "",
+      "tags": [],
+      "enabled": true,
+      "delay": "",
+      "note": ""
     }
   ],
   "HIDES": []
