@@ -539,6 +539,9 @@
       },
       "obsidian-shortcuts-for-starred-files": {
         "startupType": "disabled"
+      },
+      "bin-theme-controller": {
+        "startupType": "disabled"
       }
     }
   },

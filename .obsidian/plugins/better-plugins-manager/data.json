@@ -1749,6 +1749,16 @@
       "enabled": true,
       "delay": "",
       "note": ""
+    },
+    {
+      "id": "bin-theme-controller",
+      "name": "Theme Controller",
+      "desc": "Set when and how the themes will be displayed.",
+      "group": "",
+      "tags": [],
+      "enabled": true,
+      "delay": "",
+      "note": ""
     }
   ],
   "HIDES": []

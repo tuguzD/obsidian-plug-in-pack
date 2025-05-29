@@ -19,6 +19,6 @@
   "activeWorkspaceMobile": "",
   "reloadLivePreview": true,
   "workspaceSwitcherRibbon": false,
-  "modeSwitcherRibbon": true,
+  "modeSwitcherRibbon": false,
   "replaceNativeRibbon": true
 }

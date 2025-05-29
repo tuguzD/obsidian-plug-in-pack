@@ -1,0 +1,16 @@
+{
+  "enableColorStatusBarIcon": true,
+  "darkModeStringStatus": "🌑",
+  "lightModeStringStatus": "🔆",
+  "pathThemesArr": [],
+  "pathFolderDummy": "",
+  "pathThemeDummy": "None",
+  "pathColorDummy": true,
+  "tagThemesArr": [],
+  "tagStrDummy": "",
+  "tagThemeDummy": "None",
+  "tagColorDummy": true,
+  "defaultTheme": "None",
+  "defaultColor": true,
+  "defaultEnabled": false
+}
