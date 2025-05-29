@@ -39,6 +39,12 @@
     "file-tree-view": {
       "icon": "lucide-panel-bottom-close"
     },
+    "git-history-view": {
+      "icon": "lucide-folder-git-2"
+    },
+    "git-view": {
+      "icon": "lucide-git-pull-request"
+    },
     "modal-form-manage-forms-view": {
       "icon": "lucide-list-video"
     },
