@@ -127,9 +127,7 @@ body {
 }
 
 .graph-modal-new input {
-    flex: 1 0 0;
     font-size: var(--font-ui-medium);
-    padding: var(--size-4-1) var(--size-4-3);
 }
 
 /* MODAL GRAPH STATE */
@@ -441,6 +439,15 @@ body {
             font-size: var(--font-ui-small);
             font-weight: var(--font-weight);
         }
+        .setting-header-fold-icon {
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+    .setting-item-heading:not(.is-collapsed) {
+        .setting-header-fold-icon {
+            transform: rotate(90deg);
+        }
     }
 
     >.setting-item-heading~.setting-item:not(.setting-item-heading):not(.no-section) {
@@ -459,6 +466,7 @@ body {
         margin-top: 0.75em;
     }
 
+    .setting-item-heading.setting-automation.is-collapsed~.setting-automation,
     .setting-item-heading.setting-tags.is-collapsed~.setting-tags,
     .setting-item-heading.setting-properties.is-collapsed~.setting-properties,
     .setting-item-heading.setting-property-key.is-collapsed~.setting-property-key,
@@ -470,7 +478,9 @@ body {
     .setting-item-heading.setting-names.is-collapsed~.setting-names,
     .setting-item-heading.setting-shapes.is-collapsed~.setting-shapes,
     .setting-item-heading.setting-arrows.is-collapsed~.setting-arrows,
-    .setting-item-heading.setting-elements-stats.is-collapsed~.setting-elements-stats {
+    .setting-item-heading.setting-elements-stats.is-collapsed~.setting-elements-stats,
+    .setting-item-heading.setting-zoom.is-collapsed~.setting-zoom,
+    .setting-item-heading.setting-performances.is-collapsed~.setting-performances {
         display: none;
     }
 

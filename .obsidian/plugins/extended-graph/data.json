@@ -268,5 +268,21 @@
   "arrowColorBool": false,
   "arrowColor": "",
   "dynamicVerticalOffset": false,
-  "resetAfterChanges": false
+  "resetAfterChanges": false,
+  "collapsedSettings": {
+    "automation": true,
+    "tags": true,
+    "properties": true,
+    "links": true,
+    "arrows": true,
+    "folders": true,
+    "images": true,
+    "icons": true,
+    "focus": true,
+    "shapes": true,
+    "elements-stats": true,
+    "zoom": true,
+    "names": true,
+    "performances": true
+  }
 }
