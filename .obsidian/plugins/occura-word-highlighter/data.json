@@ -6,5 +6,6 @@
   "statusBarOccurrencesNumberEnabled": true,
   "keywords": [],
   "autoKeywordsHighlightEnabled": true,
-  "keywordsCaseSensitive": false
+  "keywordsCaseSensitive": false,
+  "occuraCaseSensitive": false
 }
