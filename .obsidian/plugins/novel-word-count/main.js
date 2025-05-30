@@ -396,6 +396,7 @@ var DEFAULT_SETTINGS = {
   rootAbbreviateDescriptions: false,
   // ADVANCED
   showAdvanced: false,
+  labelOpacity: 0.75,
   wordsPerMinute: 265,
   charsPerMinute: 500,
   wordsPerPage: 300,
@@ -1597,6 +1598,14 @@ var NovelWordCountSettingTab = class extends import_obsidian4.PluginSettingTab {
       })
     );
     if (this.plugin.settings.showAdvanced) {
+      const opacityChanged = async (value) => {
+        this.plugin.settings.labelOpacity = Math.clamp(value, 0, 1);
+        await this.plugin.saveSettings();
+        await this.plugin.updateDisplayedCounts();
+      };
+      new import_obsidian4.Setting(containerEl).setName("Label opacity").setDesc("Increase this value to make all count labels in the File Explorer more visible.").addSlider((slider) => {
+        slider.setLimits(0, 1, 0.05).setDynamicTooltip().setValue(this.plugin.settings.labelOpacity).onChange((0, import_obsidian4.debounce)(opacityChanged.bind(this), 500));
+      });
       const includePathsChanged = async (txt, value) => {
         this.plugin.settings.includeDirectories = value;
         await this.plugin.saveSettings();
@@ -1984,6 +1993,7 @@ var NovelWordCountPlugin = class extends import_obsidian5.Plugin {
         "data-novel-word-count-plugin",
         this.nodeLabelHelper.getNodeLabel(counts)
       );
+      document.documentElement.style.setProperty("--novel-word-count-opacity", `${this.settings.labelOpacity}`);
     }
     if (file) {
       const relevantItems = Object.keys(fileItems).filter(
