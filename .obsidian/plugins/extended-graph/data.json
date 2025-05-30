@@ -34,17 +34,14 @@
   "backupGraphOptions": {
     "collapse-filter": true,
     "search": "",
-    "localJumps": 1,
-    "localBacklinks": true,
-    "localForelinks": true,
-    "localInterlinks": true,
     "showTags": false,
     "showAttachments": false,
     "hideUnresolved": false,
+    "showOrphans": true,
     "collapse-color-groups": true,
     "colorGroups": [],
-    "collapse-display": true,
-    "showArrow": false,
+    "collapse-display": false,
+    "showArrow": true,
     "textFadeMultiplier": 0,
     "nodeSizeMultiplier": 1,
     "lineSizeMultiplier": 2,
@@ -53,7 +50,7 @@
     "repelStrength": 10,
     "linkStrength": 1,
     "linkDistance": 250,
-    "scale": 1.0000000000000002,
+    "scale": 2,
     "close": true
   },
   "states": [
@@ -268,7 +265,7 @@
   "arrowColorBool": false,
   "arrowColor": "",
   "dynamicVerticalOffset": false,
-  "resetAfterChanges": false,
+  "resetAfterChanges": true,
   "collapsedSettings": {
     "automation": true,
     "tags": true,
@@ -284,5 +281,7 @@
     "zoom": true,
     "names": true,
     "performances": true
-  }
+  },
+  "openInNewTab": true,
+  "allowMultipleLinkTypes": true
 }

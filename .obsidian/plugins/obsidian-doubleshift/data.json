@@ -11,6 +11,11 @@
       "command": "app:open-settings",
       "key": "`",
       "lastKeyUpTime": 0
+    },
+    {
+      "command": "vimium:show-markers",
+      "key": "CapsLock",
+      "lastKeyUpTime": 0
     }
   ]
 }

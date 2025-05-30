@@ -542,6 +542,9 @@
       },
       "bin-theme-controller": {
         "startupType": "disabled"
+      },
+      "vimium": {
+        "startupType": "disabled"
       }
     }
   },
