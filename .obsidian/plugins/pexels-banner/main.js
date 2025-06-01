@@ -62,6 +62,7 @@ var init_constants = __esm({
         PING: "ping",
         VERIFY: "verify",
         TEXT_TO_IMAGE_MODELS: "text-to-image-models",
+        UPLOAD_TEMP_IMAGE: "/upload-temp-image",
         GENERATE: "generatev2",
         GENERATE_BANNER_IDEA: "generate-banner-idea",
         GENERATE_BANNER_IDEA_FROM_SEED: "generate-banner-idea-from-seed",
@@ -2288,6 +2289,62 @@ var init_generateAIBannerModal = __esm({
               type: "select",
               value: control.defaultValue
             });
+          } else if (control.type === "image_file") {
+            const fileContainer = controlElement.createDiv({
+              attr: { style: "display: flex; flex-direction: column; gap: 10px;" }
+            });
+            const fileInput = fileContainer.createEl("input", {
+              type: "file",
+              attr: {
+                id: `control-${this.selectedModelId}-${controlKey}`,
+                accept: "image/jpeg,image/jpg,image/png,image/webp,image/gif"
+              }
+            });
+            const previewImage = fileContainer.createEl("img", {
+              attr: {
+                id: `${fileInput.id}-preview`,
+                style: "max-width: 200px; max-height: 200px; display: none; border-radius: 4px; border: 1px solid var(--background-modifier-border);"
+              }
+            });
+            const fileInfo = fileContainer.createDiv({
+              attr: {
+                id: `${fileInput.id}-info`,
+                style: "font-size: 12px; color: var(--text-muted);"
+              },
+              text: "No file selected (max 10MB)"
+            });
+            fileInput.addEventListener("change", (e) => {
+              const file = e.target.files[0];
+              if (file) {
+                const maxFileSize = 10 * 1024 * 1024;
+                const fileSizeMB = (file.size / (1024 * 1024)).toFixed(1);
+                if (file.size > maxFileSize) {
+                  fileInfo.innerHTML = `<span style="color: var(--text-error);">\u274C File too large: ${fileSizeMB}MB (max 10MB)</span>`;
+                  previewImage.style.display = "none";
+                  this.controlValues[controlKey] = null;
+                  controlValueDisplay.textContent = "File too large";
+                  console.error(`File too large: ${fileSizeMB}MB`);
+                  return;
+                }
+                fileInfo.innerHTML = `\u{1F4C1} ${file.name} (${fileSizeMB}MB)`;
+                const reader = new FileReader();
+                reader.onload = (e2) => {
+                  previewImage.src = e2.target.result;
+                  previewImage.style.display = "block";
+                };
+                reader.onerror = (e2) => {
+                  console.error("File reader error:", e2);
+                };
+                reader.readAsDataURL(file);
+                this.controlValues[controlKey] = "FILE_SELECTED";
+                controlValueDisplay.textContent = "File selected";
+              } else {
+                fileInfo.textContent = "No file selected (max 10MB)";
+                previewImage.style.display = "none";
+                this.controlValues[controlKey] = null;
+                controlValueDisplay.textContent = "No file";
+              }
+            });
           }
         });
         setTimeout(() => {
@@ -2303,6 +2360,84 @@ var init_generateAIBannerModal = __esm({
             }
           });
         }, 50);
+      }
+      // Helper method to collect control values
+      async collectControlValues() {
+        console.log("collectControlValues called");
+        if (!this.selectedModelId || !this.availableModels[this.selectedModelId]) {
+          console.error("No selected model or model data not found");
+          return {};
+        }
+        const controlValues = {};
+        const controls = this.availableModels[this.selectedModelId].controls;
+        for (const controlKey in controls) {
+          const controlId = `control-${this.selectedModelId}-${controlKey}`;
+          const controlElement = this.contentEl.querySelector(`#${controlId}`);
+          if (controlElement) {
+            if (controls[controlKey].type === "slider") {
+              controlValues[controlKey] = parseInt(controlElement.value, 10);
+            } else if (controls[controlKey].type === "image_file") {
+              const file = controlElement.files[0];
+              controlValues[controlKey] = file ? "FILE_SELECTED" : null;
+            } else {
+              controlValues[controlKey] = controlElement.value;
+            }
+          } else {
+            console.warn(`Control element not found for ${controlKey} (ID: ${controlId})`);
+          }
+        }
+        return controlValues;
+      }
+      // Helper method to upload image files
+      async uploadImageFiles(controlValues) {
+        var _a;
+        const controls = this.availableModels[this.selectedModelId].controls;
+        const updatedControlValues = { ...controlValues };
+        for (const controlKey in controlValues) {
+          if (((_a = controls[controlKey]) == null ? void 0 : _a.type) === "image_file" && controlValues[controlKey] === "FILE_SELECTED") {
+            const controlId = `control-${this.selectedModelId}-${controlKey}`;
+            const fileInput = this.contentEl.querySelector(`#${controlId}`);
+            const file = fileInput == null ? void 0 : fileInput.files[0];
+            if (file) {
+              try {
+                const maxFileSize = 10 * 1024 * 1024;
+                if (file.size > maxFileSize) {
+                  throw new Error(`Image file too large. Maximum size is ${maxFileSize / (1024 * 1024)}MB, but file is ${(file.size / (1024 * 1024)).toFixed(1)}MB`);
+                }
+                const formData = new FormData();
+                formData.append("image", file);
+                const uploadUrl = new URL(PIXEL_BANNER_PLUS.ENDPOINTS.UPLOAD_TEMP_IMAGE, PIXEL_BANNER_PLUS.API_URL).toString();
+                const response = await fetch(uploadUrl, {
+                  method: "POST",
+                  headers: {
+                    "X-User-Email": this.plugin.settings.pixelBannerPlusEmail,
+                    "X-API-Key": this.plugin.settings.pixelBannerPlusApiKey,
+                    "X-Pixel-Banner-Version": this.plugin.settings.lastVersion
+                    // Don't set Content-Type - let browser set it with boundary for FormData
+                  },
+                  body: formData
+                });
+                if (!response.ok) {
+                  const errorText = await response.text();
+                  console.error(`Upload failed with status ${response.status}:`, errorText);
+                  throw new Error(`Failed to upload ${controlKey} image: HTTP ${response.status}`);
+                }
+                const responseData = await response.json();
+                if (!(responseData == null ? void 0 : responseData.imageId)) {
+                  console.error("Upload response missing imageId:", responseData);
+                  throw new Error(`Upload response missing imageId for ${controlKey}`);
+                }
+                updatedControlValues[controlKey] = responseData.imageId;
+              } catch (error) {
+                console.error(`Error uploading ${controlKey}:`, error);
+                throw new Error(`Failed to upload ${controlKey}: ${error.message}`);
+              }
+            } else {
+              updatedControlValues[controlKey] = null;
+            }
+          }
+        }
+        return updatedControlValues;
       }
       async generateImage() {
         if (!this.imageContainer) return;
@@ -2326,13 +2461,27 @@ var init_generateAIBannerModal = __esm({
           if (existingImageData) {
             await this.refreshHistoryContainer();
           }
+          let controlValues = await this.collectControlValues();
+          const hasImageFiles = Object.values(controlValues).includes("FILE_SELECTED");
+          if (hasImageFiles) {
+            loadingContainer.empty();
+            const uploadingDiv = loadingContainer.createDiv({ text: "Uploading images..." });
+            try {
+              controlValues = await this.uploadImageFiles(controlValues);
+            } catch (uploadError) {
+              console.error("Image upload failed:", uploadError);
+              throw uploadError;
+            }
+            loadingContainer.empty();
+            loadingContainer.createDiv({ cls: "dot-pulse" });
+          }
           const generateUrl = new URL(PIXEL_BANNER_PLUS.ENDPOINTS.GENERATE, PIXEL_BANNER_PLUS.API_URL).toString();
           const modelData = this.availableModels[this.selectedModelId];
           const modelControlValues = {};
           if (modelData.controls) {
             Object.keys(modelData.controls).forEach((controlKey) => {
-              if (this.controlValues[controlKey] !== void 0) {
-                modelControlValues[controlKey] = this.controlValues[controlKey];
+              if (controlValues[controlKey] !== void 0) {
+                modelControlValues[controlKey] = controlValues[controlKey];
               } else {
                 modelControlValues[controlKey] = modelData.controls[controlKey].defaultValue;
               }
@@ -3424,7 +3573,6 @@ var init_generateAIBannerModal = __esm({
           this.loadingOverlay.remove();
         }
       }
-      // This method was removed as it's no longer needed with the dynamic model approach
     };
   }
 });
@@ -29979,7 +30127,7 @@ module.exports = __toCommonJS(main_exports);
 var import_obsidian30 = require("obsidian");
 
 // virtual-module:virtual:release-notes
-var releaseNotes = '<a href="https://www.youtube.com/watch?v=fwvVX7to7-4">\n  <img src="https://pixel-banner.online/img/pixel-banner-v3.5.jpg" alt="Pixel Banner" style="max-width: 400px;">\n</a>\n\n<h2>\u{1F389} What&#39;s New</h2>\n<h3>v3.5.4 - 2025-05-27</h3>\n<h4>\u{1F41B} Fixed</h4>\n<ul>\n<li>Resolve issue with not evaluating all defined custom field names for &quot;banner&quot; frontmatter</li>\n<li>Revert aggresive css change impacting the background color of some theme variations and plugins</li>\n</ul>\n<h3>v3.5.3 - 2025-05-23</h3>\n<h4>\u2728 Added</h4>\n<ul>\n<li>New <code>Icon Image Size Multiplier</code> control:<br>allows for changing the icon image size relative to the Banner Icon elements size (perfect to when you want the image to be larger or smaller than any accompanying icon text)</li>\n<li>New <code>Icon Text Vertical Offset</code> control:<br>allows for adjusting the vertical offset of the Icon Text relative to the Icon Image if set (perfect for fine-tuning center alignment of text)</li>\n</ul>\n<h4>\u{1F4E6} Updated</h4>\n<ul>\n<li>Updated some labels on the &quot;Position, Size &amp; Style&quot; modal for clarity</li>\n</ul>\n<h3>v3.5.2 - 2025-05-21</h3>\n<h4>\u{1F41B} Fixed</h4>\n<ul>\n<li>Updated styles to remove overflow on images for mobile devices</li>\n<li>Resolved issue with icon image selection modal not using the correct extension for non-svg images</li>\n</ul>\n<h3>v3.5.1 - 2025-05-19</h3>\n<h4>\u2728 Added</h4>\n<ul>\n<li>Added Command Palette command for selecting a <code>Banner Icon Image</code></li>\n</ul>\n<h3>v3.5.0 - 2025-05-18</h3>\n<h4>\u2728 Added</h4>\n<ul>\n<li>New &quot;Banner Icon Rotation&quot; option to rotate the banner icon from 0 to 360 degrees</li>\n<li>New &quot;Icon Image&quot; support to allow banner icons to contain both text/emojis and an image</li>\n<li>Added Banner Icon Image controls to the Position, Size &amp; Style Modal (image source and alignment)</li>\n<li>Banner Icon Image sources include:<ul>\n<li>Local images</li>\n<li>Web URL</li>\n<li>Online Collections (FREE downloadable icons)</li>\n</ul>\n</li>\n<li>Banner Icon Image alignment options include:<ul>\n<li>Left or Right (set the position of the icon image relative to the text/emojis)</li>\n</ul>\n</li>\n<li>New Border Radius slider control available in the Position, Size &amp; Style Modal</li>\n<li>Four new AI Models to choose from when generating an image for a banner</li>\n</ul>\n<h4>\u{1F4E6} Updated</h4>\n<ul>\n<li>Embedded notes now respect custom frontmatter settings (border radius, banner height, etc.)</li>\n<li>Any system action that sets the frontmatter value for a Banner or Icon Image now uses <code>![[image]]</code> format vs <code>[[image]]</code></li>\n<li>Updated Token currency to allow for fractional tokens (e.g. 0.5 tokens) for better pricing where applicable</li>\n</ul>\n<h4>\u{1F41B} Fixed</h4>\n<ul>\n<li>Resolved issue with content being pushed down when banner was present in embedded notes</li>\n<li>Resolved issue with max-width slider being disabled even when a custom max-width was set in frontmatter</li>\n<li>Addressed background color preventing banner from showing in reading mode for some themes</li>\n</ul>\n<a href="https://www.youtube.com/watch?v=pJFsMfrWak4">\n  <img src="https://pixel-banner.online/img/pixel-banner-transparent-bg.png" alt="Pixel Banner" style="max-width: 400px;">\n</a>';
+var releaseNotes = '<a href="https://www.youtube.com/watch?v=fwvVX7to7-4">\n  <img src="https://pixel-banner.online/img/pixel-banner-v3.5.jpg" alt="Pixel Banner" style="max-width: 400px;">\n</a>\n\n<h2>\u{1F389} What&#39;s New</h2>\n<h3>v3.5.5 - 2025-05-30</h3>\n<h4>\u2728 Added</h4>\n<ul>\n<li>New AI Image Model, <code>FLUX Kontext (pro)</code>, allows for uploading images and editing them via text prompts<ul>\n<li>example: type in a prompt &quot;Make this a Studio Ghible cartoon&quot;, select the &quot;FLUX Kontext&quot; model, upload an image, then click Generate</li>\n</ul>\n</li>\n</ul>\n<h3>v3.5.4 - 2025-05-27</h3>\n<h4>\u{1F41B} Fixed</h4>\n<ul>\n<li>Resolve issue with not evaluating all defined custom field names for &quot;banner&quot; frontmatter</li>\n<li>Revert aggresive css change impacting the background color of some theme variations and plugins</li>\n</ul>\n<h3>v3.5.3 - 2025-05-23</h3>\n<h4>\u2728 Added</h4>\n<ul>\n<li>New <code>Icon Image Size Multiplier</code> control:<br>allows for changing the icon image size relative to the Banner Icon elements size (perfect to when you want the image to be larger or smaller than any accompanying icon text)</li>\n<li>New <code>Icon Text Vertical Offset</code> control:<br>allows for adjusting the vertical offset of the Icon Text relative to the Icon Image if set (perfect for fine-tuning center alignment of text)</li>\n</ul>\n<h4>\u{1F4E6} Updated</h4>\n<ul>\n<li>Updated some labels on the &quot;Position, Size &amp; Style&quot; modal for clarity</li>\n</ul>\n<h3>v3.5.2 - 2025-05-21</h3>\n<h4>\u{1F41B} Fixed</h4>\n<ul>\n<li>Updated styles to remove overflow on images for mobile devices</li>\n<li>Resolved issue with icon image selection modal not using the correct extension for non-svg images</li>\n</ul>\n<h3>v3.5.1 - 2025-05-19</h3>\n<h4>\u2728 Added</h4>\n<ul>\n<li>Added Command Palette command for selecting a <code>Banner Icon Image</code></li>\n</ul>\n<h3>v3.5.0 - 2025-05-18</h3>\n<h4>\u2728 Added</h4>\n<ul>\n<li>New &quot;Banner Icon Rotation&quot; option to rotate the banner icon from 0 to 360 degrees</li>\n<li>New &quot;Icon Image&quot; support to allow banner icons to contain both text/emojis and an image</li>\n<li>Added Banner Icon Image controls to the Position, Size &amp; Style Modal (image source and alignment)</li>\n<li>Banner Icon Image sources include:<ul>\n<li>Local images</li>\n<li>Web URL</li>\n<li>Online Collections (FREE downloadable icons)</li>\n</ul>\n</li>\n<li>Banner Icon Image alignment options include:<ul>\n<li>Left or Right (set the position of the icon image relative to the text/emojis)</li>\n</ul>\n</li>\n<li>New Border Radius slider control available in the Position, Size &amp; Style Modal</li>\n<li>Four new AI Models to choose from when generating an image for a banner</li>\n</ul>\n<h4>\u{1F4E6} Updated</h4>\n<ul>\n<li>Embedded notes now respect custom frontmatter settings (border radius, banner height, etc.)</li>\n<li>Any system action that sets the frontmatter value for a Banner or Icon Image now uses <code>![[image]]</code> format vs <code>[[image]]</code></li>\n<li>Updated Token currency to allow for fractional tokens (e.g. 0.5 tokens) for better pricing where applicable</li>\n</ul>\n<h4>\u{1F41B} Fixed</h4>\n<ul>\n<li>Resolved issue with content being pushed down when banner was present in embedded notes</li>\n<li>Resolved issue with max-width slider being disabled even when a custom max-width was set in frontmatter</li>\n<li>Addressed background color preventing banner from showing in reading mode for some themes</li>\n</ul>\n<a href="https://www.youtube.com/watch?v=pJFsMfrWak4">\n  <img src="https://pixel-banner.online/img/pixel-banner-transparent-bg.png" alt="Pixel Banner" style="max-width: 400px;">\n</a>';
 
 // src/settings/settings.js
 var import_obsidian6 = require("obsidian");

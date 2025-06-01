@@ -2132,7 +2132,8 @@ var DEFAULT_SETTINGS_VALUES = {
   cloneNodeMargin: 20,
   expandNodeStepSize: 20,
   nativeFileSearchEnabled: true,
-  floatingEdgeFeatureEnabled: false,
+  floatingEdgeFeatureEnabled: true,
+  allowFloatingEdgeCreation: false,
   newEdgeFromSideFloating: false,
   flipEdgeFeatureEnabled: true,
   betterExportFeatureEnabled: true,
@@ -2161,7 +2162,11 @@ var DEFAULT_SETTINGS_VALUES = {
   slideTransitionAnimationIntensity: 1.25,
   canvasEncapsulationEnabled: false,
   portalsFeatureEnabled: true,
-  showEdgesIntoDisabledPortals: true
+  showEdgesIntoDisabledPortals: true,
+  autoFileNodeEdgesFeatureEnabled: false,
+  autoFileNodeEdgesFrontmatterKey: "canvas-edges",
+  edgeHighlightEnabled: false,
+  highlightIncomingEdges: false
 };
 var SETTINGS = {
   // @ts-ignore
@@ -2265,10 +2270,23 @@ var SETTINGS = {
     }
   },
   nativeFileSearchEnabled: {
-    label: "Add native-like file search",
+    label: "Native-like file search",
     description: "When enabled, the file search will be done using the native Obsidian file search.",
     infoSection: "native-like-file-search",
     children: {}
+  },
+  autoFileNodeEdgesFeatureEnabled: {
+    label: "Auto file node edges",
+    description: "Automatically create edges between file nodes based their frontmatter links.",
+    infoSection: "auto-file-node-edges",
+    children: {
+      autoFileNodeEdgesFrontmatterKey: {
+        label: "Frontmatter key name",
+        description: "The frontmatter key to fetch the outgoing edges from. (Keep the default to ensure best compatibility.)",
+        type: "text",
+        parse: (value) => value.trim() || "canvas-edges"
+      }
+    }
   },
   portalsFeatureEnabled: {
     label: "Portals",
@@ -2374,9 +2392,14 @@ var SETTINGS = {
   },
   floatingEdgeFeatureEnabled: {
     label: "Floating edges (auto edge side)",
-    description: "Create edges that are automatically placed on the most suitable side of the node by dragging the edge over the target node without placing it over a specific side connection point.",
+    description: "Floating edges are automatically placed on the most suitable side of the node.",
     infoSection: "floating-edges-automatic-edge-side",
     children: {
+      allowFloatingEdgeCreation: {
+        label: "Allow floating edges creation",
+        description: "Allow floating edges creation by dragging the edge over the target node without placing it over a specific side connection point. (If disabled, floating edges can only be created and used by other Advanced Canvas features.)",
+        type: "boolean"
+      },
       newEdgeFromSideFloating: {
         label: "New edge from side floating",
         description: 'When enabled, the "from" side of the edge will always be floating.',
@@ -2517,6 +2540,18 @@ var SETTINGS = {
       hideBackgroundGridWhenInReadonly: {
         label: "Hide background grid when in readonly",
         description: "When enabled, the background grid will be hidden when in readonly mode.",
+        type: "boolean"
+      }
+    }
+  },
+  edgeHighlightEnabled: {
+    label: "Edge highlight",
+    description: "Highlight outgoing (and optionally incoming) edges of a selected node.",
+    infoSection: "edge-highlight",
+    children: {
+      highlightIncomingEdges: {
+        label: "Highlight incoming edges",
+        description: "When enabled, incoming edges will also be highlighted.",
         type: "boolean"
       }
     }
@@ -3068,12 +3103,26 @@ var CanvasPatcher = class extends Patcher {
     const that = this;
     Patcher.patchPrototype(this.plugin, view, {
       setEphemeralState: Patcher.OverrideExisting((next) => function(state) {
+        var _a, _b;
         if (state == null ? void 0 : state.subpath) {
           const nodeId = state.subpath.replace(/^#/, "");
           const node = this.canvas.nodes.get(nodeId);
-          if (!node) return next.call(this, state);
-          this.canvas.selectOnly(node);
-          this.canvas.zoomToSelection();
+          if (node) {
+            this.canvas.selectOnly(node);
+            this.canvas.zoomToSelection();
+            return;
+          }
+        }
+        if (((_b = (_a = state.match) == null ? void 0 : _a.matches) == null ? void 0 : _b[0]) && !(state == null ? void 0 : state.nodeId)) {
+          const match = state.match.matches[0];
+          const elementType = match[0] === 0 ? "nodes" : "edges";
+          const elementIndex = match[1];
+          const element = elementType === "nodes" ? Array.from(this.canvas.nodes.values())[elementIndex] : Array.from(this.canvas.edges.values())[elementIndex];
+          if (element) {
+            this.canvas.selectOnly(element);
+            this.canvas.zoomToSelection();
+            return;
+          }
         }
         return next.call(this, state);
       }),
@@ -3284,8 +3333,9 @@ var CanvasPatcher = class extends Patcher {
           if (!this.view.file || this.view.file.path !== targetFilePath) return;
           this.importData(data2, true, true);
         };
-        if (!silent) that.plugin.app.workspace.trigger("advanced-canvas:load-data", this, data, setData);
+        if (!silent) that.plugin.app.workspace.trigger("advanced-canvas:data-loaded:before", this, data, setData);
         const result = next.call(this, data, clearCanvas);
+        if (!silent) that.plugin.app.workspace.trigger("advanced-canvas:data-loaded:after", this, data, setData);
         return result;
       }),
       requestSave: Patcher.OverrideExisting((next) => function(...args) {
@@ -3379,7 +3429,18 @@ var CanvasPatcher = class extends Patcher {
         });
         const result = next.call(this, e, side);
         return result;
-      })
+      }),
+      // File nodes
+      setFile: (next) => function(...args) {
+        const result = next.call(this, ...args);
+        that.plugin.app.workspace.trigger("advanced-canvas:node-changed", this.canvas, this);
+        return result;
+      },
+      setFilePath: (next) => function(...args) {
+        const result = next.call(this, ...args);
+        that.plugin.app.workspace.trigger("advanced-canvas:node-changed", this.canvas, this);
+        return result;
+      }
     });
     this.runAfterInitialized(node, () => {
       this.plugin.app.workspace.trigger("advanced-canvas:node-added", node.canvas, node);
@@ -3589,7 +3650,7 @@ var MetadataCachePatcher = class extends Patcher {
         return next.call(this, filepath, ...args);
       }),
       computeFileMetadataAsync: Patcher.OverrideExisting((next) => async function(file, ...args) {
-        var _a, _b;
+        var _a, _b, _c, _d, _e, _f;
         if (FilepathHelper.extension(file.path) !== "canvas")
           return next.call(this, file, ...args);
         const fileHash = await HashHelper.getFileHash(that.plugin, file);
@@ -3599,9 +3660,8 @@ var MetadataCachePatcher = class extends Patcher {
           mtime: file.stat.mtime,
           size: file.stat.size
         });
-        const content = JSON.parse((_a = await this.vault.cachedRead(file)) != null ? _a : "{}");
-        if (!(content == null ? void 0 : content.nodes)) return;
-        const frontmatter = (_b = content.metadata) == null ? void 0 : _b.frontmatter;
+        const content = JSON.parse(await this.vault.cachedRead(file) || "{}");
+        const frontmatter = (_a = content.metadata) == null ? void 0 : _a.frontmatter;
         const frontmatterData = {};
         if (frontmatter) {
           frontmatterData.frontmatterPosition = {
@@ -3617,8 +3677,7 @@ var MetadataCachePatcher = class extends Patcher {
                 key,
                 displayText: aliases.length > 0 ? aliases.join("|") : link,
                 link,
-                original: v,
-                position: { start: { line: 0, col: 0, offset: 0 }, end: { line: 0, col: 0, offset: 0 } }
+                original: v
               };
             }).filter((v) => v !== null);
             if (typeof value === "string") return getLinks([value]);
@@ -3627,35 +3686,52 @@ var MetadataCachePatcher = class extends Patcher {
             return [];
           });
         }
-        const fileNodesEmbeds = content.nodes.filter((node) => node.type === "file" && node.file).map((node) => [node.id, node.file]).map(([nodeId, linkedFile]) => ({
-          link: linkedFile,
-          original: linkedFile,
-          displayText: linkedFile,
+        const fileNodesEmbeds = (_d = (_c = (_b = content.nodes) == null ? void 0 : _b.map((nodeData, index) => nodeData.type === "file" && nodeData.file ? {
+          link: nodeData.file,
+          original: nodeData.file,
+          displayText: nodeData.file,
           position: {
-            nodeId,
-            start: { line: 0, col: 0, offset: 0 },
-            end: { line: 0, col: 0, offset: 0 }
+            start: { line: 0, col: 1, offset: 0 },
+            // 0 for nodes
+            end: { line: 0, col: 1, offset: index }
+            // index of node
           }
-        }));
+        } : null)) == null ? void 0 : _c.filter((entry) => entry !== null)) != null ? _d : [];
         const textEncoder = new TextEncoder();
-        const textNodes = content.nodes.filter((node) => node.type === "text" && node.text);
-        const textNodesIds = textNodes.map((node) => node.id);
-        const textNodesMetadataPromises = textNodes.map((node) => textEncoder.encode(node.text).buffer).map((buffer) => this.computeMetadataAsync(buffer));
-        const textNodesMetadata = await Promise.all(textNodesMetadataPromises);
-        const textNodesEmbeds = textNodesMetadata.map((metadata, index) => (metadata.embeds || []).map((embed2) => ({
-          ...embed2,
-          position: {
-            nodeId: textNodesIds[index],
-            ...embed2.position
-          }
-        }))).flat();
-        const textNodesLinks = textNodesMetadata.map((metadata, index) => (metadata.links || []).map((link) => ({
-          ...link,
-          position: {
-            nodeId: textNodesIds[index],
-            ...link.position
-          }
-        }))).flat();
+        const nodesMetadataPromises = (_f = (_e = content.nodes) == null ? void 0 : _e.map((node) => node.type === "text" ? textEncoder.encode(node.text).buffer : null)) == null ? void 0 : _f.map((buffer) => buffer ? this.computeMetadataAsync(buffer) : Promise.resolve(null));
+        const nodesMetadata = await Promise.all(nodesMetadataPromises);
+        const textNodesEmbeds = nodesMetadata.map((metadata, index) => {
+          var _a2;
+          return ((_a2 = metadata == null ? void 0 : metadata.embeds) != null ? _a2 : []).map((embed2) => {
+            var _a3, _b2;
+            return {
+              ...embed2,
+              position: {
+                nodeId: (_b2 = (_a3 = content.nodes) == null ? void 0 : _a3[index]) == null ? void 0 : _b2.id,
+                start: { line: 0, col: 1, offset: 0 },
+                // 0 for node 
+                end: { line: 0, col: 1, offset: index }
+                // index of node
+              }
+            };
+          });
+        }).flat();
+        const textNodesLinks = nodesMetadata.map((metadata, index) => {
+          var _a2;
+          return ((_a2 = metadata == null ? void 0 : metadata.links) != null ? _a2 : []).map((link) => {
+            var _a3, _b2;
+            return {
+              ...link,
+              position: {
+                nodeId: (_b2 = (_a3 = content.nodes) == null ? void 0 : _a3[index]) == null ? void 0 : _b2.id,
+                start: { line: 0, col: 1, offset: 0 },
+                // 0 for node 
+                end: { line: 0, col: 1, offset: index }
+                // index of node
+              }
+            };
+          });
+        }).flat();
         this.metadataCache[fileHash] = {
           v: 1,
           ...frontmatterData,
@@ -3667,8 +3743,11 @@ var MetadataCachePatcher = class extends Patcher {
             ...textNodesLinks
           ],
           nodes: {
-            ...textNodesMetadata.reduce((acc, metadata, index) => {
-              acc[textNodesIds[index]] = metadata;
+            ...nodesMetadata.reduce((acc, metadata, index) => {
+              var _a2, _b2;
+              const nodeId = (_b2 = (_a2 = content.nodes) == null ? void 0 : _a2[index]) == null ? void 0 : _b2.id;
+              if (nodeId && metadata)
+                acc[nodeId] = metadata;
               return acc;
             }, {})
           }
@@ -3679,7 +3758,7 @@ var MetadataCachePatcher = class extends Patcher {
         this.resolveLinks(file.path, content);
       }),
       resolveLinks: Patcher.OverrideExisting((next) => async function(filepath, cachedContent) {
-        var _a, _b, _c;
+        var _a, _b;
         if (FilepathHelper.extension(filepath) !== "canvas")
           return next.call(this, filepath);
         const file = this.vault.getAbstractFileByPath(filepath);
@@ -3694,17 +3773,19 @@ var MetadataCachePatcher = class extends Patcher {
           return acc;
         }, {});
         if (that.plugin.settings.getSetting("treatFileNodeEdgesAsLinks")) {
-          for (const edge of cachedContent.edges || []) {
-            const from = (_b = cachedContent.nodes) == null ? void 0 : _b.find((node) => node.id === edge.fromNode);
-            const to = (_c = cachedContent.nodes) == null ? void 0 : _c.find((node) => node.id === edge.toNode);
-            if (!from || !to) continue;
-            if (from.type !== "file" || to.type !== "file" || !from.file || !from.file) continue;
+          ;
+          ((_b = cachedContent.edges) != null ? _b : []).forEach((edge) => {
+            var _a2, _b2;
+            const from = (_a2 = cachedContent.nodes) == null ? void 0 : _a2.find((node) => node.id === edge.fromNode);
+            const to = (_b2 = cachedContent.nodes) == null ? void 0 : _b2.find((node) => node.id === edge.toNode);
+            if (!from || !to) return;
+            if (from.type !== "file" || to.type !== "file" || !from.file || !from.file) return;
             const fromFile = from.file;
             const toFile = to.file;
             this.registerInternalLinkAC(file.name, fromFile, toFile);
             if (!(edge.toEnd !== "none" || edge.fromEnd === "arrow"))
               this.registerInternalLinkAC(file.name, toFile, fromFile);
-          }
+          });
         }
         this.trigger("resolve", file);
         this.trigger("resolved");
@@ -3725,7 +3806,10 @@ var MetadataCachePatcher = class extends Patcher {
               link: to,
               original: to,
               displayText: `${canvasName} \u2192 ${to}`,
-              position: { start: { line: 0, col: 0, offset: 0 }, end: { line: 0, col: 0, offset: 0 } }
+              position: {
+                start: { line: 0, col: 0, offset: 0 },
+                end: { line: 0, col: 0, offset: 0 }
+              }
             }
           ]
         };
@@ -4528,6 +4612,21 @@ var _CanvasHelper = class _CanvasHelper {
   }
   static alignToGrid(value, gridSize = this.GRID_SIZE) {
     return Math.round(value / gridSize) * gridSize;
+  }
+  static getBestSideForFloatingEdge(sourcePos, target) {
+    const targetBBox = target.getBBox();
+    const possibleSides = ["top", "right", "bottom", "left"];
+    const possibleTargetPos = possibleSides.map((side) => [side, BBoxHelper.getCenterOfBBoxSide(targetBBox, side)]);
+    let bestSide = null;
+    let bestDistance = Infinity;
+    for (const [side, pos] of possibleTargetPos) {
+      const distance = Math.sqrt(Math.pow(sourcePos.x - pos.x, 2) + Math.pow(sourcePos.y - pos.y, 2));
+      if (distance < bestDistance) {
+        bestDistance = distance;
+        bestSide = side;
+      }
+    }
+    return bestSide;
   }
 };
 _CanvasHelper.GRID_SIZE = 20;
@@ -5531,9 +5630,8 @@ var PortalsCanvasExtension = class _PortalsCanvasExtension extends CanvasExtensi
   }
   init() {
     this.plugin.registerEvent(this.plugin.app.vault.on("modify", (file) => {
-      var _a;
-      for (const canvasLeaf of this.plugin.app.workspace.getLeavesOfType("canvas"))
-        if ((_a = canvasLeaf.view) == null ? void 0 : _a.canvas) this.onFileModified(canvasLeaf.view.canvas, file);
+      for (const canvas of this.plugin.getCanvases())
+        this.onFileModified(canvas, file);
     }));
     this.plugin.registerEvent(this.plugin.app.workspace.on(
       "advanced-canvas:popup-menu-created",
@@ -5576,7 +5674,7 @@ var PortalsCanvasExtension = class _PortalsCanvasExtension extends CanvasExtensi
       (canvas, data) => this.onGetData(canvas, data)
     ));
     this.plugin.registerEvent(this.plugin.app.workspace.on(
-      "advanced-canvas:load-data",
+      "advanced-canvas:data-loaded:before",
       (canvas, data, setData) => {
         this.onSetData(canvas, data).then((newData) => {
           if (newData.nodes.length === data.nodes.length && newData.edges.length === data.edges.length) return;
@@ -6115,7 +6213,7 @@ var CollapsibleGroupsCanvasExtension = class extends CanvasExtension {
       (_canvas, data) => this.expandAllCollapsedNodes(data)
     ));
     this.plugin.registerEvent(this.plugin.app.workspace.on(
-      "advanced-canvas:load-data",
+      "advanced-canvas:data-loaded:before",
       (_canvas, data, _setData) => this.collapseNodes(data)
     ));
   }
@@ -6247,6 +6345,81 @@ var FocusModeCanvasExtension = class extends CanvasExtension {
     const newValue = controlMenuFocusToggle.dataset.toggled !== "true";
     canvas.wrapperEl.dataset.focusModeEnabled = newValue.toString();
     controlMenuFocusToggle.dataset.toggled = newValue.toString();
+  }
+};
+
+// src/canvas-extensions/auto-file-node-edges-canvas-extension.ts
+var AUTO_EDGE_ID_PREFIX = "afe";
+var AutoFileNodeEdgesCanvasExtension = class extends CanvasExtension {
+  isEnabled() {
+    return "autoFileNodeEdgesFeatureEnabled";
+  }
+  init() {
+    this.plugin.registerEvent(this.plugin.app.metadataCache.on("changed", (file) => {
+      for (const canvas of this.plugin.getCanvases())
+        this.onMetadataChanged(canvas, file);
+    }));
+    this.plugin.registerEvent(this.plugin.app.workspace.on(
+      "advanced-canvas:node-added",
+      (canvas, node) => this.onNodeChanged(canvas, node)
+    ));
+    this.plugin.registerEvent(this.plugin.app.workspace.on(
+      "advanced-canvas:node-changed",
+      (canvas, node) => this.onNodeChanged(canvas, node)
+    ));
+  }
+  onMetadataChanged(canvas, file) {
+    var _a;
+    for (const node of canvas.nodes.values()) {
+      if (node.getData().type !== "file" || ((_a = node.file) == null ? void 0 : _a.path) !== file.path) continue;
+      this.updateFileNodeEdges(canvas, node);
+    }
+  }
+  onNodeChanged(canvas, node) {
+    if (node.getData().type !== "file") return;
+    for (const node2 of canvas.nodes.values()) {
+      if (node2.getData().type !== "file") continue;
+      this.updateFileNodeEdges(canvas, node2);
+    }
+  }
+  updateFileNodeEdges(canvas, node) {
+    const edges = this.getFileNodeEdges(canvas, node);
+    const newEdges = Array.from(edges.values()).filter((edge) => !canvas.edges.has(edge.id));
+    canvas.importData({ nodes: [], edges: newEdges }, false, false);
+    for (const edge of canvas.edges.values()) {
+      if (edge.id.startsWith(`${AUTO_EDGE_ID_PREFIX}${node.id}`) && !edges.has(edge.id))
+        canvas.removeEdge(edge);
+    }
+  }
+  getFileNodeEdges(canvas, node) {
+    var _a, _b;
+    const canvasFile = canvas.view.file;
+    if (!canvasFile || !node.file) return /* @__PURE__ */ new Map();
+    const fileMetadata = this.plugin.app.metadataCache.getFileCache(node.file);
+    if (!fileMetadata) return /* @__PURE__ */ new Map();
+    const linkedFilesFrontmatterKey = this.plugin.settings.getSetting("autoFileNodeEdgesFrontmatterKey");
+    const fileLinksToBeLinkedTo = (_b = (_a = fileMetadata.frontmatterLinks) == null ? void 0 : _a.filter((link) => link.key.split(".")[0] === linkedFilesFrontmatterKey)) != null ? _b : [];
+    const filepathsToBeLinkedTo = fileLinksToBeLinkedTo.map((link) => this.plugin.app.metadataCache.getFirstLinkpathDest(link.link, canvasFile.path)).map((file) => file == null ? void 0 : file.path).filter((path) => path !== null);
+    const nodesToBeLinkedTo = Array.from(canvas.nodes.values()).filter((otherNode) => {
+      var _a2;
+      return otherNode.id !== node.id && filepathsToBeLinkedTo.includes((_a2 = otherNode.file) == null ? void 0 : _a2.path);
+    });
+    const newEdges = /* @__PURE__ */ new Map();
+    for (const otherNode of nodesToBeLinkedTo) {
+      const edgeId = `${AUTO_EDGE_ID_PREFIX}${node.id}${otherNode.id}`;
+      const bestFromSide = CanvasHelper.getBestSideForFloatingEdge(BBoxHelper.getCenterOfBBoxSide(otherNode.getBBox(), "right"), node);
+      const bestToSide = CanvasHelper.getBestSideForFloatingEdge(BBoxHelper.getCenterOfBBoxSide(node.getBBox(), "left"), otherNode);
+      newEdges.set(edgeId, {
+        id: edgeId,
+        fromNode: node.id,
+        fromSide: bestFromSide,
+        fromFloating: true,
+        toNode: otherNode.id,
+        toSide: bestToSide,
+        toFloating: true
+      });
+    }
+    return newEdges;
   }
 };
 
@@ -7330,17 +7503,30 @@ var FloatingEdgeCanvasExtension = class extends CanvasExtension {
   }
   init() {
     this.plugin.registerEvent(this.plugin.app.workspace.on(
+      "advanced-canvas:data-loaded:after",
+      (canvas, data, setData) => this.onLoadData(canvas, data)
+    ));
+    this.plugin.registerEvent(this.plugin.app.workspace.on(
       "advanced-canvas:node-moved",
       (canvas, node) => this.onNodeMoved(canvas, node)
     ));
-    this.plugin.registerEvent(this.plugin.app.workspace.on(
-      "advanced-canvas:edge-connection-dragging:before",
-      (canvas, edge, event, newEdge, side) => this.onEdgeStartedDragging(canvas, edge, event, newEdge, side)
-    ));
+    if (this.plugin.settings.getSetting("allowFloatingEdgeCreation")) {
+      this.plugin.registerEvent(this.plugin.app.workspace.on(
+        "advanced-canvas:edge-connection-dragging:before",
+        (canvas, edge, event, newEdge, side) => this.onEdgeStartedDragging(canvas, edge, event, newEdge, side)
+      ));
+    }
     this.plugin.registerEvent(this.plugin.app.workspace.on(
       "advanced-canvas:edge-connection-dragging:after",
       (canvas, edge, event, newEdge, side) => this.onEdgeStoppedDragging(canvas, edge, event, newEdge, side)
     ));
+  }
+  onLoadData(canvas, data) {
+    for (const edgeData of data.edges) {
+      const edge = canvas.edges.get(edgeData.id);
+      if (!edge) return console.warn("Imported edge is not yet loaded :(");
+      this.updateEdgeConnectionSide(edge);
+    }
   }
   onNodeMoved(canvas, node) {
     const affectedEdges = canvas.getEdgesForNode(node);
@@ -7351,7 +7537,7 @@ var FloatingEdgeCanvasExtension = class extends CanvasExtension {
     const edgeData = edge.getData();
     if (edgeData.fromFloating) {
       const fixedNodeConnectionPoint = BBoxHelper.getCenterOfBBoxSide(edge.to.node.getBBox(), edge.to.side);
-      const bestSide = this.getBestSideForFloatingEdge(fixedNodeConnectionPoint, edge.from.node);
+      const bestSide = CanvasHelper.getBestSideForFloatingEdge(fixedNodeConnectionPoint, edge.from.node);
       if (bestSide !== edge.from.side) {
         edge.setData({
           ...edgeData,
@@ -7361,7 +7547,7 @@ var FloatingEdgeCanvasExtension = class extends CanvasExtension {
     }
     if (edgeData.toFloating) {
       const fixedNodeConnectionPoint = BBoxHelper.getCenterOfBBoxSide(edge.from.node.getBBox(), edge.from.side);
-      const bestSide = this.getBestSideForFloatingEdge(fixedNodeConnectionPoint, edge.to.node);
+      const bestSide = CanvasHelper.getBestSideForFloatingEdge(fixedNodeConnectionPoint, edge.to.node);
       if (bestSide !== edge.to.side) {
         edge.setData({
           ...edgeData,
@@ -7369,21 +7555,6 @@ var FloatingEdgeCanvasExtension = class extends CanvasExtension {
         });
       }
     }
-  }
-  getBestSideForFloatingEdge(sourcePos, target) {
-    const targetBBox = target.getBBox();
-    const possibleSides = ["top", "right", "bottom", "left"];
-    const possibleTargetPos = possibleSides.map((side) => [side, BBoxHelper.getCenterOfBBoxSide(targetBBox, side)]);
-    let bestSide = null;
-    let bestDistance = Infinity;
-    for (const [side, pos] of possibleTargetPos) {
-      const distance = Math.sqrt(Math.pow(sourcePos.x - pos.x, 2) + Math.pow(sourcePos.y - pos.y, 2));
-      if (distance < bestDistance) {
-        bestDistance = distance;
-        bestSide = side;
-      }
-    }
-    return bestSide;
   }
   onEdgeStartedDragging(canvas, edge, _event, newEdge, _side) {
     if (newEdge && this.plugin.settings.getSetting("newEdgeFromSideFloating")) edge.setData({
@@ -7414,7 +7585,7 @@ var FloatingEdgeCanvasExtension = class extends CanvasExtension {
     document.removeEventListener("pointermove", this.onPointerMove);
     const dropZoneNode = side === "from" ? edge.from.node : edge.to.node;
     const floatingEdgeDropZone = this.getFloatingEdgeDropZoneForNode(dropZoneNode);
-    const wasDroppedInFloatingEdgeDropZone = BBoxHelper.insideBBox({ x: event.clientX, y: event.clientY }, floatingEdgeDropZone, true);
+    const wasDroppedInFloatingEdgeDropZone = this.plugin.settings.getSetting("allowFloatingEdgeCreation") ? BBoxHelper.insideBBox({ x: event.clientX, y: event.clientY }, floatingEdgeDropZone, true) : false;
     const edgeData = edge.getData();
     if (side === "from" && wasDroppedInFloatingEdgeDropZone == edgeData.fromFloating) return;
     if (side === "to" && wasDroppedInFloatingEdgeDropZone == edgeData.toFloating) return;
@@ -7436,6 +7607,34 @@ var FloatingEdgeCanvasExtension = class extends CanvasExtension {
       maxX: nodeElClientBoundingRect.right - (nodeElClientBoundingRect.width - nodeFloatingEdgeDropZoneSize.width) / 2,
       maxY: nodeElClientBoundingRect.bottom - (nodeElClientBoundingRect.height - nodeFloatingEdgeDropZoneSize.height) / 2
     };
+  }
+};
+
+// src/canvas-extensions/edge-highlight-canvas-extension.ts
+var EdgeHighlightCanvasExtension = class extends CanvasExtension {
+  isEnabled() {
+    return "edgeHighlightEnabled";
+  }
+  init() {
+    this.plugin.registerEvent(this.plugin.app.workspace.on(
+      "advanced-canvas:selection-changed",
+      (canvas, oldSelection, updateSelection) => this.onSelectionChanged(canvas, oldSelection)
+    ));
+  }
+  onSelectionChanged(canvas, oldSelection) {
+    const connectedEdgesToBeHighlighted = new Set(canvas.getSelectionData().nodes.flatMap((nodeData) => {
+      var _a, _b;
+      return [
+        ...(_a = canvas.edgeFrom.get(canvas.nodes.get(nodeData.id))) != null ? _a : [],
+        ...this.plugin.settings.getSetting("highlightIncomingEdges") ? (_b = canvas.edgeTo.get(canvas.nodes.get(nodeData.id))) != null ? _b : [] : []
+      ];
+    }));
+    for (const edge of canvas.edges.values()) {
+      edge.lineGroupEl.classList.toggle(
+        "is-focused",
+        canvas.selection.has(edge) || connectedEdgesToBeHighlighted.has(edge)
+      );
+    }
   }
 };
 
@@ -8315,7 +8514,7 @@ var EXPOSED_SETTINGS = [
   "hideBackgroundGridWhenInReadonly",
   "collapsibleGroupsFeatureEnabled",
   "collapsedGroupPreviewOnDrag",
-  "floatingEdgeFeatureEnabled"
+  "allowFloatingEdgeCreation"
 ];
 var CanvasWrapperExposerExtension = class extends CanvasExtension {
   isEnabled() {
@@ -8382,6 +8581,8 @@ var CANVAS_EXTENSIONS = [
   BetterReadonlyCanvasExtension,
   GroupCanvasExtension,
   VariableBreakpointCanvasExtension,
+  EdgeHighlightCanvasExtension,
+  AutoFileNodeEdgesCanvasExtension,
   FlipEdgeCanvasExtension,
   ZOrderingCanvasExtension,
   ExportCanvasExtension,
@@ -8411,6 +8612,12 @@ var AdvancedCanvasPlugin = class extends import_obsidian18.Plugin {
     });
   }
   onunload() {
+  }
+  getCanvases() {
+    return this.app.workspace.getLeavesOfType("canvas").map((leaf) => {
+      var _a;
+      return (_a = leaf.view) == null ? void 0 : _a.canvas;
+    }).filter((canvas) => canvas);
   }
   getCurrentCanvasView() {
     const canvasView = this.app.workspace.getActiveViewOfType(import_obsidian18.ItemView);
