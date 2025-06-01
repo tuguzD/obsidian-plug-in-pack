@@ -1767,7 +1767,7 @@
       "desc": "Add a button in file header in edit mode, to switch between source & live-preview",
       "group": "",
       "tags": [],
-      "enabled": false,
+      "enabled": true,
       "delay": "",
       "note": ""
     },
@@ -1775,6 +1775,16 @@
       "id": "auto-bullet",
       "name": "Auto Bullet",
       "desc": "Automatically inserts bullet points when you type spaces or tabs at the beginning of a line.",
+      "group": "",
+      "tags": [],
+      "enabled": true,
+      "delay": "",
+      "note": ""
+    },
+    {
+      "id": "open-tab-settings",
+      "name": "Open Tab Settings",
+      "desc": "Adds options to customize how tabs are opened, including open in new tab by default, preventing duplicate tabs, and more.",
       "group": "",
       "tags": [],
       "enabled": true,

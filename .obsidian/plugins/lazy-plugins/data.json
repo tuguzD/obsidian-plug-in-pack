@@ -551,6 +551,9 @@
       },
       "auto-bullet": {
         "startupType": "disabled"
+      },
+      "open-tab-settings": {
+        "startupType": "disabled"
       }
     }
   },
