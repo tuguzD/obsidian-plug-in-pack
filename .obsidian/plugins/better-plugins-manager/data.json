@@ -1770,6 +1770,16 @@
       "enabled": false,
       "delay": "",
       "note": ""
+    },
+    {
+      "id": "auto-bullet",
+      "name": "Auto Bullet",
+      "desc": "Automatically inserts bullet points when you type spaces or tabs at the beginning of a line.",
+      "group": "",
+      "tags": [],
+      "enabled": true,
+      "delay": "",
+      "note": ""
     }
   ],
   "HIDES": []

@@ -548,6 +548,9 @@
       },
       "shortcut-edit-mode": {
         "startupType": "disabled"
+      },
+      "auto-bullet": {
+        "startupType": "disabled"
       }
     }
   },
