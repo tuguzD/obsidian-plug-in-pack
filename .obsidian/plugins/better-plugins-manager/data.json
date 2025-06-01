@@ -1017,7 +1017,7 @@
       "desc": "Find and highlight all occurrences of selected text in notes, similar to Notepad++ or IDEs.",
       "group": "info",
       "tags": [],
-      "enabled": true,
+      "enabled": false,
       "delay": ""
     },
     {
