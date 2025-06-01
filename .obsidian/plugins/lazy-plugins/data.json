@@ -545,6 +545,9 @@
       },
       "vimium": {
         "startupType": "disabled"
+      },
+      "shortcut-edit-mode": {
+        "startupType": "disabled"
       }
     }
   },

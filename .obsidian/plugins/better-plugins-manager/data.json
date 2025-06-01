@@ -1760,6 +1760,16 @@
       "enabled": true,
       "delay": "",
       "note": ""
+    },
+    {
+      "id": "shortcut-edit-mode",
+      "name": "Edit mode switch",
+      "desc": "Add a button in file header in edit mode, to switch between source & live-preview",
+      "group": "",
+      "tags": [],
+      "enabled": false,
+      "delay": "",
+      "note": ""
     }
   ],
   "HIDES": []
