@@ -19,25 +19,25 @@
     {
       "id": "obsidian-version-history-diff:open-git-diff-view",
       "icon": "lucide-github",
-      "name": "Version history diff: Show Git Diff view for active file",
+      "name": "View history diff (from Git)",
       "mode": "desktop"
     },
     {
       "id": "slides-extended:open-preview",
       "icon": "lucide-presentation",
-      "name": "Slides Extended: Show slide preview",
+      "name": "Slide preview",
       "mode": "desktop"
     },
     {
       "id": "widgets:add-widget",
       "icon": "lucide-app-window-mac",
-      "name": "Widgets: Add widget",
+      "name": "New widget",
       "mode": "desktop"
     },
     {
       "id": "obsidian-living-graph:toggle",
       "icon": "lucide-leaf",
-      "name": "Living Graph",
+      "name": "Animate graph",
       "mode": "desktop"
     },
     {
