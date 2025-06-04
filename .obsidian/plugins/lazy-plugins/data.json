@@ -554,6 +554,9 @@
       },
       "open-tab-settings": {
         "startupType": "disabled"
+      },
+      "come-down": {
+        "startupType": "disabled"
       }
     }
   },

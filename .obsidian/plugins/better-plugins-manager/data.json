@@ -1790,6 +1790,16 @@
       "enabled": true,
       "delay": "",
       "note": ""
+    },
+    {
+      "id": "come-down",
+      "name": "Come Down",
+      "desc": "Maintains a cache of your notes’ embedded external images.",
+      "group": "",
+      "tags": [],
+      "enabled": true,
+      "delay": "",
+      "note": ""
     }
   ],
   "HIDES": []

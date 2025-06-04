@@ -6,6 +6,7 @@
 **/text-extractor/cache/**
 **/canvas-link-optimizer/data/linkCache/
 **/code-styler/reference-files/cache.json
+**/come-down/cache.json
 
 # Exclude workspace cache
 .obsidian/workspace.json
