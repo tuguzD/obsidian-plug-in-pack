@@ -19,7 +19,8 @@ Tasks (or `TODO`‘s) to complete:
 Plugins `~{I want}` to test before adding to template:
 
 - hotkeys:
-	- choose a plugin for adding leading symbols: [#1](https://github.com/jlumpe/obsidian-spacekeys?tab=readme-ov-file#similar-plugins), [#2](https://github.com/ConnorMeyers/obsidian-chorded-hotkeys?tab=readme-ov-file#compare-with-similar-plugins), [#3](https://github.com/anselmwang/obsidian-key-sequence-shortcut?tab=readme-ov-file#compare-with-similar-plugins), …
+	- ~~choose a plugin for adding leading symbols: [#1](https://github.com/jlumpe/obsidian-spacekeys?tab=readme-ov-file#similar-plugins), [#2](https://github.com/ConnorMeyers/obsidian-chorded-hotkeys?tab=readme-ov-file#compare-with-similar-plugins), [#3](https://github.com/anselmwang/obsidian-key-sequence-shortcut?tab=readme-ov-file#compare-with-similar-plugins), …~~
+		- test new "[Spacekeys](<./utils/spacekeys.md>)" plugin
 	- [Editor Commands Remap](https://github.com/c4ctus5/editor-commands-remap), [Keyshots](https://github.com/KrazyManJ/obsidian-keyshots), [Code Editor Shortcuts](https://github.com/timhor/obsidian-editor-shortcuts), …
 	- compare: [Enhanced Copy](https://github.com/Mara-Li/obsidian-enhanced-copy), [Easy Copy](https://github.com/Moyf/easy-copy), [Paste Reformatter](https://github.com/keathmilligan/obsidian-paste-reformatter), …
 - other:
