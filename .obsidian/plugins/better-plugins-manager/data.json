@@ -1012,15 +1012,6 @@
       "delay": "1st"
     },
     {
-      "id": "occura-word-highlighter",
-      "name": "Occura",
-      "desc": "Find and highlight all occurrences of selected text in notes, similar to Notepad++ or IDEs.",
-      "group": "info",
-      "tags": [],
-      "enabled": false,
-      "delay": ""
-    },
-    {
       "id": "omnisearch",
       "name": "Omnisearch",
       "desc": "A search engine that just works",

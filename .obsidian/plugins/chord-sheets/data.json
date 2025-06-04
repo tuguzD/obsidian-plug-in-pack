@@ -8,12 +8,13 @@
   "defaultInstrument": "guitar",
   "diagramWidth": 100,
   "autoscrollDefaultSpeed": 10,
-  "showAutoscrollButton": "always",
+  "showAutoscrollButton": "never",
   "blockLanguageSpecifier": "chords",
   "alwaysSaveAutoscrollSpeedToFrontmatter": false,
   "chordLineMarker": "%c",
   "textLineMarker": "%t",
   "highlightChords": false,
   "highlightSectionHeaders": false,
-  "highlightRhythmMarkers": false
+  "highlightRhythmMarkers": false,
+  "displayInlineChordsOverLyrics": false
 }

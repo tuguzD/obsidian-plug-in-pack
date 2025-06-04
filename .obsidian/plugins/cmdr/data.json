@@ -39,6 +39,12 @@
       "icon": "lucide-leaf",
       "name": "Living Graph",
       "mode": "desktop"
+    },
+    {
+      "id": "chord-sheets:toggle-autoscroll",
+      "icon": "lucide-arrow-down-circle",
+      "name": "Scroll automatically",
+      "mode": "any"
     }
   ],
   "macros": [
