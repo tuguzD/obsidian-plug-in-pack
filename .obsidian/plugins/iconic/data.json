@@ -69,6 +69,9 @@
     "search": {
       "icon": "lucide-text-search"
     },
+    "swar8080/AVAILABLE_PLUGIN_UPDATES": {
+      "icon": "lucide-unplug"
+    },
     "vertical-tabs": {
       "icon": "lucide-gallery-vertical"
     },
