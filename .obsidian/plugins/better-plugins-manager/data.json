@@ -1810,6 +1810,16 @@
       "enabled": true,
       "delay": "",
       "note": ""
+    },
+    {
+      "id": "settings-profiles",
+      "name": "Settings profiles",
+      "desc": "Allows you to create various global settings profiles. You can sync them between different vaults. To keep all your settings in sync, you'll never have to manually adjust them again for every vault you have or create in the future.",
+      "group": "",
+      "tags": [],
+      "enabled": true,
+      "delay": "",
+      "note": ""
     }
   ],
   "HIDES": []

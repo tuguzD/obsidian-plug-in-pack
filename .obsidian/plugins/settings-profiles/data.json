@@ -1,0 +1,10 @@
+{
+  "activeProfile": {},
+  "profileUpdate": false,
+  "profileUpdateDelay": 5000,
+  "uiUpdate": true,
+  "uiUpdateInterval": 5000,
+  "devices": {
+    "d21a422d2f2cccb2b6f5eb7a198f9d268ace16d363fdfc914655adc34b4554be": "C:\\obsidian"
+  }
+}

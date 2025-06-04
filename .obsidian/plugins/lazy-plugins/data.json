@@ -563,6 +563,9 @@
       },
       "spacekeys": {
         "startupType": "disabled"
+      },
+      "settings-profiles": {
+        "startupType": "disabled"
       }
     }
   },
