@@ -463,5 +463,13 @@
       ],
       "key": "1"
     }
+  ],
+  "spacekeys:leader": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "Q"
+    }
   ]
 }

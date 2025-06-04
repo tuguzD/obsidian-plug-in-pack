@@ -91,6 +91,25 @@
     "README.md": {
       "icon": "lucide-book-marked",
       "color": "orange"
+    },
+    "utils": {
+      "icon": "lucide-folder-code",
+      "unsynced": [
+        "054d7ed642df09e6"
+      ]
+    },
+    "utils/spacekeys.md": {
+      "icon": "lucide-keyboard",
+      "color": "red"
+    },
+    "utils/templates": {
+      "icon": "lucide-copy-slash",
+      "unsynced": [
+        "054d7ed642df09e6"
+      ]
+    },
+    "utils/templates/empty.md": {
+      "icon": "lucide-book-template"
     }
   },
   "bookmarkIcons": {},
