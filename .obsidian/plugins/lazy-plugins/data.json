@@ -560,6 +560,9 @@
       },
       "file-manager": {
         "startupType": "disabled"
+      },
+      "spacekeys": {
+        "startupType": "disabled"
       }
     }
   },

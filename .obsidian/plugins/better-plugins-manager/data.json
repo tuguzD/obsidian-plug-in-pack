@@ -1810,6 +1810,16 @@
       "enabled": true,
       "delay": "",
       "note": ""
+    },
+    {
+      "id": "spacekeys",
+      "name": "Spacekeys",
+      "desc": "Define hotkeys based on sequences of keypresses.",
+      "group": "",
+      "tags": [],
+      "enabled": false,
+      "delay": "",
+      "note": ""
     }
   ],
   "HIDES": []
