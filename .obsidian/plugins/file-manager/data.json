@@ -1,0 +1,11 @@
+{
+  "conflictResolutionMethod": "PROMPT",
+  "showSelectionStatusBar": false,
+  "showCopyMoveStats": true,
+  "showClipboardStatusBar": false,
+  "newFolderName": "New Folder",
+  "newNoteName": "New Note.md",
+  "duplicateSuffix": " - Copy",
+  "apps": [],
+  "patterns": []
+}

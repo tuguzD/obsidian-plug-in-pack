@@ -1800,6 +1800,16 @@
       "enabled": true,
       "delay": "",
       "note": ""
+    },
+    {
+      "id": "file-manager",
+      "name": "File Manager",
+      "desc": "Adds missing features to the file explorer.",
+      "group": "",
+      "tags": [],
+      "enabled": true,
+      "delay": "",
+      "note": ""
     }
   ],
   "HIDES": []

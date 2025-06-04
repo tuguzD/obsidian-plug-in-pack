@@ -557,6 +557,9 @@
       },
       "come-down": {
         "startupType": "disabled"
+      },
+      "file-manager": {
+        "startupType": "disabled"
       }
     }
   },
