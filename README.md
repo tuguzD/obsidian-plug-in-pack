@@ -24,7 +24,13 @@ For further information on how to sync your vault with new changes from this pac
 > - 🚀 contribute new plugins, hotkeys or any other suggestions to this particular, ~~maintained~~ pack
 > - create **YOUR OWN**, ✨ personal version of the pack, where all of it will be set up for your personal needs
 
-## Installation
+## ⚡ Features
+
+TODO
+
+…
+
+## 🪄 Installation
 
 TODO
 
