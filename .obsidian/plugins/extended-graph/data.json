@@ -49,10 +49,10 @@
     "nodeSizeMultiplier": 1,
     "lineSizeMultiplier": 2,
     "collapse-forces": true,
-    "centerStrength": 0.425,
-    "repelStrength": 18.7,
-    "linkStrength": 0.7,
-    "linkDistance": 329,
+    "centerStrength": 0.518713248970312,
+    "repelStrength": 10,
+    "linkStrength": 1,
+    "linkDistance": 250,
     "scale": 1.0000000000000002,
     "close": true
   },
@@ -80,15 +80,15 @@
         "link": [],
         "folder": []
       },
-      "pinNodes": {}
+      "pinNodes": {},
+      "hiddenLegendRows": [],
+      "collapsedLegendRows": []
     }
   ],
   "startingStateID": "default-vault",
-  "imageProperty": "graph.image",
   "borderFactor": 0.06,
   "allowExternalImages": true,
   "allowExternalLocalImages": true,
-  "nodesSizeProperty": "graph.size",
   "nodesSizeFunction": "default",
   "nodesColorColormap": "YlOrRd",
   "nodesColorFunction": "default",
@@ -115,7 +115,7 @@
       "names": true,
       "icons": true,
       "arrows": true,
-      "linksSameColorAsNode": false
+      "linksSameColorAsNode": true
     },
     "localgraph": {
       "auto-enabled": false,
@@ -133,7 +133,7 @@
       "names": true,
       "icons": true,
       "arrows": true,
-      "linksSameColorAsNode": false
+      "linksSameColorAsNode": true
     }
   },
   "shapeQueries": {
@@ -244,11 +244,8 @@
   "numberOfCharacters": null,
   "showOnlyFileName": false,
   "noExtension": false,
-  "usePropertyForName": "title",
   "addBackgroundToName": true,
   "nameVerticalOffset": 15,
-  "useInterfaceFont": true,
-  "iconProperty": "",
   "usePluginForIcon": true,
   "usePluginForIconColor": true,
   "useParentIcon": true,
@@ -282,9 +279,34 @@
     "shapes": true,
     "elements-stats": true,
     "zoom": true,
-    "names": true,
-    "performances": true
+    "names": false,
+    "performances": true,
+    "display": false,
+    "beta": true
   },
   "openInNewTab": true,
-  "allowMultipleLinkTypes": true
+  "allowMultipleLinkTypes": true,
+  "iconProperties": [
+    ""
+  ],
+  "nodesSizeProperties": [
+    "graph.size"
+  ],
+  "imageProperties": [
+    "graph.image"
+  ],
+  "usePropertiesForName": [
+    "title"
+  ],
+  "revertAction": false,
+  "enableCSS": false,
+  "cssSnippetFilename": "",
+  "spreadArcs": false,
+  "weightArcs": false,
+  "animateDotsOnLinks": true,
+  "animationSpeedForDots": 1,
+  "folderRadius": 50,
+  "folderShowFullPath": true,
+  "showNamesWhenNeighborHighlighted": false,
+  "horizontalLegend": true
 }

@@ -127,6 +127,10 @@
       "plugin-settings-profiles;1": {
         "position": 4,
         "visible": false
+      },
+      "plugin-extended-graph;1": {
+        "position": 32,
+        "visible": false
       }
     }
   },
