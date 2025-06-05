@@ -88,6 +88,10 @@
       "icon": "lucide-info",
       "color": "cyan"
     },
+    "PLUGINS.md": {
+      "icon": "lucide-plug",
+      "color": "green"
+    },
     "README.md": {
       "icon": "lucide-book-marked",
       "color": "orange"

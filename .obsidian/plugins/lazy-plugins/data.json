@@ -566,6 +566,9 @@
       },
       "settings-profiles": {
         "startupType": "disabled"
+      },
+      "external-file-embed-and-link": {
+        "startupType": "disabled"
       }
     }
   },
