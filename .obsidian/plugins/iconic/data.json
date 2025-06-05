@@ -84,14 +84,6 @@
       "icon": "lucide-home",
       "color": "yellow"
     },
-    "NOTES.md": {
-      "icon": "lucide-info",
-      "color": "cyan"
-    },
-    "PLUGINS.md": {
-      "icon": "lucide-plug",
-      "color": "green"
-    },
     "README.md": {
       "icon": "lucide-book-marked",
       "color": "orange"
@@ -101,13 +93,14 @@
       "unsynced": [
         "054d7ed642df09e6"
       ],
-      "color": "gray"
+      "color": "cyan"
     },
     "utils/commands": {
       "icon": "lucide-code-square",
       "unsynced": [
         "054d7ed642df09e6"
-      ]
+      ],
+      "color": "purple"
     },
     "utils/commands/HOTKEYS.md": {
       "icon": "lucide-keyboard",
@@ -116,6 +109,21 @@
     "utils/commands/SPACEKEYS.md": {
       "icon": "keyboard-toggle",
       "color": "pink"
+    },
+    "utils/pack": {
+      "icon": "lucide-package",
+      "unsynced": [
+        "054d7ed642df09e6"
+      ],
+      "color": "orange"
+    },
+    "utils/pack/NOTES.md": {
+      "icon": "lucide-info",
+      "color": "cyan"
+    },
+    "utils/pack/PLUGINS.md": {
+      "icon": "lucide-plug",
+      "color": "green"
     },
     "utils/templates": {
       "icon": "lucide-copy-slash",

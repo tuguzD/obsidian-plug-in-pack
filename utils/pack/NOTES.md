@@ -24,7 +24,7 @@ Due to [Better Plugins Manager](https://github.com/0011000000110010/obsidian-man
 >
 > On the other hand, they can’t be called ”in bulk” this way, so it’s suggested to work from system terminal.
 
-## 🔄️ Pulling changes from “[Plug-in-pack](<./README.md>)” template
+## 🔄️ Pulling changes from “[Plug-in-pack](<../../README.md>)” template
 
 If you want to update your own repository (containing your vault and work) with **remote changes** from this one, you can pull all of them using these `Git` commands (in your terminal) in succession, according to [source](https://gist.github.com/krlozadan/4b75255b88d7a1504e5e632cb817c3f5):
 
