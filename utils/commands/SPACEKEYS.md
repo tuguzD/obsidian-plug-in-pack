@@ -1,3 +1,9 @@
+TODO for this file:
+
+- modify keymap
+
+---
+
 This is a sample keymap file for the [Spacekeys](https://github.com/jlumpe/obsidian-spacekeys?tab=readme-ov-file#key-codes) Obsidian plugin. The keymap itself is defined in a YAML code block below, it is wrapped in a Markdown file to allow editing within Obsidian.
 
 You can use the "Spacekeys: Find command ID" command to search for command IDs (either by assigning it a hotkey or invoking it through the command palette).

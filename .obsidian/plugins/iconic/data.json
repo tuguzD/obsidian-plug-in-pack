@@ -97,14 +97,25 @@
       "color": "orange"
     },
     "utils": {
-      "icon": "lucide-folder-code",
+      "icon": "lucide-zap",
+      "unsynced": [
+        "054d7ed642df09e6"
+      ],
+      "color": "gray"
+    },
+    "utils/commands": {
+      "icon": "lucide-code-square",
       "unsynced": [
         "054d7ed642df09e6"
       ]
     },
-    "utils/spacekeys.md": {
+    "utils/commands/HOTKEYS.md": {
       "icon": "lucide-keyboard",
       "color": "red"
+    },
+    "utils/commands/SPACEKEYS.md": {
+      "icon": "keyboard-toggle",
+      "color": "pink"
     },
     "utils/templates": {
       "icon": "lucide-copy-slash",

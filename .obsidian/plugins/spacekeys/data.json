@@ -1,6 +1,6 @@
 {
   "keymapFile": {
-    "path": "utils/spacekeys.md",
+    "path": "utils/commands/SPACEKEYS.md",
     "format": "auto",
     "extend": false
   },
