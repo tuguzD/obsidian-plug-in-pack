@@ -26,12 +26,8 @@ For further information on how to sync your vault with new changes from this pac
 
 ## ⚡ Features
 
-TODO
-
 …
 
 ## 🪄 Installation
-
-TODO
 
 …

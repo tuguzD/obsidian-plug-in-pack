@@ -6,15 +6,6 @@ banner-display: cover
 
 # Home
 
-Tasks (or `TODO`‘s) to complete:
-
-- list of included plugins:
-	- re-group new entries
-	- update with new entries
-- instructions to install:
-	- for completely new vaults (only `git`?)
-	- for already existing ones ("Settings profiles" plugin, to copy others)
-
 Plugins `~{I want}` to test before adding to template:
 
 - hotkeys:

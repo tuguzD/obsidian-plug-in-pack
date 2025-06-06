@@ -31,6 +31,13 @@
         "type": "FILES",
         "pattern": "README.md",
         "patternType": "STRICT"
+      },
+      {
+        "name": "",
+        "active": true,
+        "type": "FILES",
+        "pattern": "utils/pack/TODOs.md",
+        "patternType": "STRICT"
       }
     ],
     "frontMatter": [

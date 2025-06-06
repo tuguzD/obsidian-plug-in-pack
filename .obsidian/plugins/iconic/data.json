@@ -125,6 +125,10 @@
       "icon": "lucide-plug",
       "color": "green"
     },
+    "utils/pack/TODOs.md": {
+      "icon": "lucide-list-todo",
+      "color": "orange"
+    },
     "utils/templates": {
       "icon": "lucide-copy-slash",
       "unsynced": [
