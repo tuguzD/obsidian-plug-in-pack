@@ -22,13 +22,6 @@
         "name": "",
         "active": true,
         "type": "FILES",
-        "pattern": "README.md",
-        "patternType": "STRICT"
-      },
-      {
-        "name": "",
-        "active": true,
-        "type": "FILES",
         "pattern": "utils/pack/TODOs.md",
         "patternType": "STRICT"
       },
@@ -36,7 +29,14 @@
         "name": "",
         "active": true,
         "type": "FILES",
-        "pattern": "utils/HOME.md",
+        "pattern": "README.md",
+        "patternType": "STRICT"
+      },
+      {
+        "name": "",
+        "active": true,
+        "type": "FILES",
+        "pattern": "HOME.md",
         "patternType": "STRICT"
       }
     ],
@@ -60,7 +60,15 @@
         "patternType": "STRICT"
       }
     ],
-    "paths": [],
+    "paths": [
+      {
+        "name": "",
+        "active": true,
+        "type": "FILES_AND_DIRECTORIES",
+        "pattern": "",
+        "patternType": "WILDCARD"
+      }
+    ],
     "frontMatter": [
       {
         "name": "",

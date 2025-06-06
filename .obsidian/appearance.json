@@ -7,7 +7,8 @@
   "enabledCssSnippets": [
     "metadata-icon-auto-gen",
     "obsidian-blur-plugin",
-    "supercharged-links-gen"
+    "supercharged-links-gen",
+    "vault-logo"
   ],
   "showViewHeader": true
 }

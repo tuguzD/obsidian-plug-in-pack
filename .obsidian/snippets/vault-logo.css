@@ -1,0 +1,25 @@
+/* This snippet is based on another one (by @TfTHacker):
+ * https://github.com/TfTHacker/DashboardPlusPlus/blob/master/.obsidian/snippets/vault-logo.css
+*/
+
+/* Embed an image to the right of the div */
+div[data-path="HOME.md"] * {
+  display: none;
+}
+
+div[data-path="HOME.md"] {
+  order: -1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 5px;
+  width: 100%;
+  min-height: 150px;
+  border-radius: 15px;
+  border: 2px solid var(--color-accent);
+
+  /* Docs on url() function: 
+   * https://developer.mozilla.org/en-US/docs/Web/CSS/url_function
+  */
+  background-image: url('https://bing.biturl.top/?resolution=1920&format=image&index=0&mkt=zh-CN');
+}

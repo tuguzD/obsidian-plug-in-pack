@@ -80,6 +80,10 @@
     }
   },
   "fileIcons": {
+    "HOME.md": {
+      "icon": "lucide-home",
+      "color": "yellow"
+    },
     "README.md": {
       "icon": "lucide-book-marked",
       "color": "orange"
@@ -90,10 +94,6 @@
         "054d7ed642df09e6"
       ],
       "color": "cyan"
-    },
-    "utils/HOME.md": {
-      "icon": "lucide-home",
-      "color": "yellow"
     },
     "utils/commands": {
       "icon": "lucide-code-square",
