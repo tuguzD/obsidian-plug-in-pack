@@ -527,7 +527,7 @@
       "desc": "Links nested tags in graph view",
       "group": "graph",
       "tags": [],
-      "enabled": true,
+      "enabled": false,
       "delay": ""
     },
     {
