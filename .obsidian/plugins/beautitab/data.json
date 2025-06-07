@@ -10,7 +10,7 @@
   "showTime": true,
   "timeFormat": "24-hour",
   "showGreeting": true,
-  "greetingText": "{{greeting}}, my dear!",
+  "greetingText": "{{greeting}}!",
   "showInlineSearch": true,
   "inlineSearchProvider": {
     "command": "omnisearch:show-modal",
