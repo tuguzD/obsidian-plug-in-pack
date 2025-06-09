@@ -101,47 +101,55 @@
       ],
       "color": "cyan"
     },
-    "utils/commands": {
-      "icon": "lucide-code-square",
+    "vault": {
+      "icon": "obsidian-new",
       "unsynced": [
         "054d7ed642df09e6"
       ],
       "color": "purple"
     },
-    "utils/commands/HOTKEYS.md": {
-      "icon": "lucide-keyboard",
-      "color": "red"
-    },
-    "utils/commands/SPACEKEYS.md": {
-      "icon": "keyboard-toggle",
+    "vault/commands": {
+      "icon": "lucide-code-square",
+      "unsynced": [
+        "054d7ed642df09e6"
+      ],
       "color": "pink"
     },
-    "utils/pack": {
+    "vault/commands/HOTKEYS.md": {
+      "icon": "lucide-keyboard",
+      "color": "purple"
+    },
+    "vault/commands/SPACEKEYS.md": {
+      "icon": "keyboard-toggle",
+      "color": "red"
+    },
+    "vault/pack": {
       "icon": "lucide-package",
       "unsynced": [
         "054d7ed642df09e6"
       ],
       "color": "orange"
     },
-    "utils/pack/NOTES.md": {
+    "vault/pack/NOTES.md": {
       "icon": "lucide-info",
       "color": "cyan"
     },
-    "utils/pack/PLUGINS.md": {
+    "vault/pack/PLUGINS.md": {
       "icon": "lucide-plug",
       "color": "green"
     },
-    "utils/pack/TODOs.md": {
+    "vault/pack/TODOs.md": {
       "icon": "lucide-list-todo",
       "color": "orange"
     },
-    "utils/templates": {
+    "vault/templates": {
       "icon": "lucide-copy-slash",
       "unsynced": [
         "054d7ed642df09e6"
-      ]
+      ],
+      "color": "cyan"
     },
-    "utils/templates/empty.md": {
+    "vault/templates/empty.md": {
       "icon": "lucide-book-template"
     }
   },

@@ -17,7 +17,7 @@ After launching your vault for the first time, be sure to switch to `Basic` work
 > You cannot change 👀 **visibility** of forked repositories on `GitHub`, so any of yours will stay `public` forever (💀).
 > Instead, you should use this repository as a **template**, or clone it (creating unrelated one).
 
-For further information on how to sync your vault with new changes from this pack, as well as other important notices regarding [`Git`](https://git-scm.com) users, follow [here](<./utils/pack/NOTES.md#-simplify-your-work-with-git>).
+For further information on how to sync your vault with new changes from this pack, as well as other important notices regarding [`Git`](https://git-scm.com) users, follow [here](<./vault/pack/NOTES.md#-simplify-your-work-with-git>).
 
 > [!NOTE]
 > You still can (😁 and absolutely should!) fork this repository, if you wish to:

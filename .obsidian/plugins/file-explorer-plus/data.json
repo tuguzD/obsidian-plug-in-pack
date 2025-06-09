@@ -22,7 +22,7 @@
         "name": "",
         "active": true,
         "type": "FILES",
-        "pattern": "utils/pack/TODOs.md",
+        "pattern": "vault/pack/TODOs.md",
         "patternType": "STRICT"
       },
       {
