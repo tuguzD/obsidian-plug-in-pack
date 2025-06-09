@@ -1841,6 +1841,16 @@
       "enabled": true,
       "delay": "",
       "note": ""
+    },
+    {
+      "id": "highlight-active-folder-section",
+      "name": "Highlight active folder section",
+      "desc": "Highlight the active folder section and the title in the file explorer.",
+      "group": "",
+      "tags": [],
+      "enabled": true,
+      "delay": "",
+      "note": ""
     }
   ],
   "HIDES": []
