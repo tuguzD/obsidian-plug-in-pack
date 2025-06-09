@@ -33,7 +33,6 @@
   "additionalProperties": {},
   "backupGraphOptions": {
     "collapse-filter": true,
-    "search": "",
     "localJumps": 1,
     "localBacklinks": true,
     "localForelinks": true,
@@ -49,8 +48,8 @@
     "nodeSizeMultiplier": 1,
     "lineSizeMultiplier": 2,
     "collapse-forces": true,
-    "centerStrength": 0.413694084481893,
-    "repelStrength": 18.1573160551309,
+    "centerStrength": 0.438818202426219,
+    "repelStrength": 19.3632737164585,
     "linkStrength": 0.7,
     "linkDistance": 329,
     "scale": 1.0000000000000002,
@@ -308,5 +307,6 @@
   "folderRadius": 50,
   "folderShowFullPath": true,
   "showNamesWhenNeighborHighlighted": false,
-  "horizontalLegend": true
+  "horizontalLegend": true,
+  "useRadialMenu": false
 }

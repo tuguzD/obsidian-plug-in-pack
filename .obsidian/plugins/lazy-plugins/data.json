@@ -569,6 +569,9 @@
       },
       "external-file-embed-and-link": {
         "startupType": "disabled"
+      },
+      "lapel": {
+        "startupType": "disabled"
       }
     }
   },
