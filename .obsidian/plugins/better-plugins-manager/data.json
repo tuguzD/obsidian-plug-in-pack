@@ -1831,6 +1831,16 @@
       "enabled": true,
       "delay": "",
       "note": ""
+    },
+    {
+      "id": "lapel",
+      "name": "Lapel",
+      "desc": "Dress up your editor with decorations that mark each of your headings.",
+      "group": "",
+      "tags": [],
+      "enabled": true,
+      "delay": "",
+      "note": ""
     }
   ],
   "HIDES": []
