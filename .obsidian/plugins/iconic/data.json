@@ -19,28 +19,47 @@
     "emojiMode": true,
     "rulePage": "file"
   },
-  "appIcons": {},
+  "appIcons": {
+    "help": {
+      "color": "purple"
+    }
+  },
   "tabIcons": {
     "Strange New Worlds": {
-      "icon": "lucide-file-symlink"
+      "icon": "lucide-file-symlink",
+      "color": "cyan"
     },
     "advanced-tables-toolbar": {
       "icon": "lucide-table-2"
     },
     "all-properties": {
-      "icon": "lucide-table-properties"
+      "icon": "lucide-variable",
+      "color": "pink"
+    },
+    "annotations-outline": {
+      "color": "yellow"
     },
     "beautitab-react-view": {
-      "icon": "lucide-file-plus-2"
+      "icon": "lucide-file-plus-2",
+      "color": "yellow"
+    },
+    "bookmarks": {
+      "color": "purple"
     },
     "calendar": {
-      "icon": "lucide-calendar-days"
+      "icon": "lucide-calendar-days",
+      "color": "orange"
     },
     "canvas-links": {
-      "icon": "lucide-circuit-board"
+      "icon": "lucide-circuit-board",
+      "color": "green"
     },
     "external-links-view": {
-      "icon": "lucide-external-link"
+      "icon": "lucide-external-link",
+      "color": "cyan"
+    },
+    "file-explorer": {
+      "color": "yellow"
     },
     "file-tree-view": {
       "icon": "lucide-panel-bottom-close"
@@ -49,7 +68,14 @@
       "icon": "lucide-folder-git-2"
     },
     "git-view": {
-      "icon": "lucide-git-pull-request"
+      "icon": "lucide-git-pull-request",
+      "color": "purple"
+    },
+    "graph": {
+      "color": "purple"
+    },
+    "localgraph": {
+      "color": "purple"
     },
     "modal-form-manage-forms-view": {
       "icon": "lucide-list-video"
@@ -64,7 +90,8 @@
       "icon": "lucide-file-search"
     },
     "recent-notes-view": {
-      "icon": "lucide-file-clock"
+      "icon": "lucide-file-clock",
+      "color": "pink"
     },
     "reminder-list": {
       "icon": "lucide-alarm-clock"
@@ -73,16 +100,25 @@
       "icon": "lucide-presentation"
     },
     "search": {
-      "icon": "lucide-text-search"
+      "icon": "lucide-text-search",
+      "color": "orange"
     },
     "swar8080/AVAILABLE_PLUGIN_UPDATES": {
       "icon": "lucide-unplug"
     },
+    "tag": {
+      "color": "purple"
+    },
+    "trash-explorer": {
+      "color": "red"
+    },
     "vertical-tabs": {
-      "icon": "lucide-gallery-vertical"
+      "icon": "lucide-gallery-vertical",
+      "color": "yellow"
     },
     "webviewer-history": {
-      "icon": "lucide-history"
+      "icon": "lucide-history",
+      "color": "cyan"
     }
   },
   "fileIcons": {
@@ -211,7 +247,11 @@
   },
   "ribbonIcons": {
     "better-plugins-manager:Plugin Manager": {
-      "icon": "lucide-plug"
+      "icon": "lucide-plug",
+      "color": "green"
+    },
+    "graph:Open graph view": {
+      "color": "purple"
     },
     "homepage:Open homepage": {
       "icon": "lucide-home"

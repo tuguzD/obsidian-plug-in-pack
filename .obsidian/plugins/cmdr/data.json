@@ -116,7 +116,9 @@
       "Manage workspaces",
       "Manage modes",
       "Toggle Theme",
-      "obsifetch"
+      "obsifetch",
+      "Open homepage",
+      "Open projects"
     ]
   },
   "spacing": "12",
