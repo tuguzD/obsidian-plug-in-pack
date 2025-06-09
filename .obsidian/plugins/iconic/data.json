@@ -77,6 +77,9 @@
     "localgraph": {
       "color": "purple"
     },
+    "map": {
+      "color": "pink"
+    },
     "modal-form-manage-forms-view": {
       "icon": "lucide-list-video"
     },
@@ -255,6 +258,9 @@
     },
     "homepage:Open homepage": {
       "icon": "lucide-home"
+    },
+    "obsidian-map-view:Open map view": {
+      "color": "pink"
     },
     "obsidian-projects:Open projects": {
       "icon": "lucide-folder-kanban"

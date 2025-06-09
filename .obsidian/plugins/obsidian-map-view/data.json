@@ -101,7 +101,7 @@
     }
   ],
   "mapControls": {
-    "minimized": false,
+    "minimized": true,
     "filtersDisplayed": true,
     "viewDisplayed": true,
     "linksDisplayed": true,
