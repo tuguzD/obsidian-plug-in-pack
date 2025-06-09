@@ -1861,6 +1861,16 @@
       "enabled": true,
       "delay": "",
       "note": ""
+    },
+    {
+      "id": "obsidian42-strange-new-worlds",
+      "name": "Strange New Worlds",
+      "desc": "Help see how your vault is interconnected with visual indicators.",
+      "group": "",
+      "tags": [],
+      "enabled": true,
+      "delay": "",
+      "note": ""
     }
   ],
   "HIDES": []

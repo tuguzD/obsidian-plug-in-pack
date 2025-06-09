@@ -572,6 +572,15 @@
       },
       "lapel": {
         "startupType": "disabled"
+      },
+      "highlight-active-folder-section": {
+        "startupType": "disabled"
+      },
+      "rendered-block-link-suggestions": {
+        "startupType": "disabled"
+      },
+      "obsidian42-strange-new-worlds": {
+        "startupType": "disabled"
       }
     }
   },
