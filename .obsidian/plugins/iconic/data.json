@@ -151,6 +151,40 @@
     },
     "vault/templates/empty.md": {
       "icon": "lucide-book-template"
+    },
+    "vault/templates/periods": {
+      "icon": "lucide-calendar-cog",
+      "unsynced": [
+        "054d7ed642df09e6"
+      ],
+      "color": "pink"
+    },
+    "vault/templates/periods/1 day.md": {
+      "icon": "calendar-day",
+      "color": "red"
+    },
+    "vault/templates/periods/1 week.md": {
+      "icon": "calendar-week",
+      "color": "orange"
+    },
+    "vault/templates/periods/month.md": {
+      "icon": "calendar-month",
+      "color": "yellow"
+    },
+    "vault/templates/periods/quarter.md": {
+      "icon": "calendar-quarter",
+      "color": "green"
+    },
+    "vault/templates/periods/year.md": {
+      "icon": "calendar-year",
+      "color": "cyan"
+    },
+    "vault/templates/snippets": {
+      "icon": "lucide-text-select",
+      "unsynced": [
+        "054d7ed642df09e6"
+      ],
+      "color": "purple"
     }
   },
   "bookmarkIcons": {},

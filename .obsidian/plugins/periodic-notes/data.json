@@ -4,31 +4,31 @@
   "hasMigratedWeeklyNoteSettings": false,
   "daily": {
     "format": "",
-    "template": "",
+    "template": "vault/templates/periods/1 day.md",
     "folder": "",
     "enabled": true
   },
   "weekly": {
     "format": "",
-    "template": "",
+    "template": "vault/templates/periods/1 week.md",
     "folder": "",
     "enabled": true
   },
   "monthly": {
     "format": "",
-    "template": "",
+    "template": "vault/templates/periods/month.md",
     "folder": "",
     "enabled": true
   },
   "quarterly": {
     "format": "",
-    "template": "",
+    "template": "vault/templates/periods/quarter.md",
     "folder": "",
     "enabled": true
   },
   "yearly": {
     "format": "",
-    "template": "",
+    "template": "vault/templates/periods/year.md",
     "folder": "",
     "enabled": true
   }
