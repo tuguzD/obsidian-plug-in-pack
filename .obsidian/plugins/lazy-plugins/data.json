@@ -584,6 +584,12 @@
       },
       "obsifetch": {
         "startupType": "disabled"
+      },
+      "consecutive-lists": {
+        "startupType": "disabled"
+      },
+      "auto-template-trigger": {
+        "startupType": "disabled"
       }
     }
   },
