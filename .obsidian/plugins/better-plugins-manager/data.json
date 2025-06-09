@@ -1851,6 +1851,16 @@
       "enabled": true,
       "delay": "",
       "note": ""
+    },
+    {
+      "id": "rendered-block-link-suggestions",
+      "name": "Rendered Block Link Suggestions",
+      "desc": "Upgrade Obsidian's built-in link suggestions with block markdown rendering.",
+      "group": "",
+      "tags": [],
+      "enabled": true,
+      "delay": "",
+      "note": ""
     }
   ],
   "HIDES": []
