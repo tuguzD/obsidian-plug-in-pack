@@ -33,7 +33,7 @@
         "visible": true
       },
       "plugin-workspaces-plus-workspace-switcher;1": {
-        "position": 28,
+        "position": 29,
         "visible": true
       },
       "plugin-enhanced-annotations-enhanced-annotations__status-enhanced-annotations__display-none;1": {
@@ -89,7 +89,7 @@
         "visible": true
       },
       "cmdr-clickable-icon;1": {
-        "position": 5,
+        "position": 28,
         "visible": true
       },
       "plugin-editing-toolbar-editingToolbar-statusbar-button;1": {
@@ -109,11 +109,11 @@
         "visible": true
       },
       "plugin-workspaces-plus-mode-switcher;1": {
-        "position": 29,
+        "position": 30,
         "visible": true
       },
       "plugin-bin-theme-controller;1": {
-        "position": 30,
+        "position": 31,
         "visible": true
       },
       "plugin-file-manager;1": {
@@ -131,6 +131,10 @@
       "plugin-extended-graph;1": {
         "position": 32,
         "visible": false
+      },
+      "cmdr-clickable-icon;2": {
+        "position": 5,
+        "visible": true
       }
     }
   },

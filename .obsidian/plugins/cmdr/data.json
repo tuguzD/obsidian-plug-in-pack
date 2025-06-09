@@ -13,6 +13,12 @@
       "icon": "lucide-arrow-down-01",
       "name": "Execute (shell command): Sync with \"Plug-in-pack\"",
       "mode": "desktop"
+    },
+    {
+      "id": "obsifetch:show",
+      "icon": "lucide-activity",
+      "name": "Obsifetch",
+      "mode": "any"
     }
   ],
   "pageHeader": [
@@ -109,7 +115,8 @@
       "Edit forms",
       "Manage workspaces",
       "Manage modes",
-      "Toggle Theme"
+      "Toggle Theme",
+      "obsifetch"
     ]
   },
   "spacing": "12",

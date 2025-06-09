@@ -581,6 +581,9 @@
       },
       "obsidian42-strange-new-worlds": {
         "startupType": "disabled"
+      },
+      "obsifetch": {
+        "startupType": "disabled"
       }
     }
   },

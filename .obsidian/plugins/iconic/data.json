@@ -21,6 +21,9 @@
   },
   "appIcons": {},
   "tabIcons": {
+    "Strange New Worlds": {
+      "icon": "lucide-file-symlink"
+    },
     "advanced-tables-toolbar": {
       "icon": "lucide-table-2"
     },
@@ -35,6 +38,9 @@
     },
     "canvas-links": {
       "icon": "lucide-circuit-board"
+    },
+    "external-links-view": {
+      "icon": "lucide-external-link"
     },
     "file-tree-view": {
       "icon": "lucide-panel-bottom-close"

@@ -1871,6 +1871,16 @@
       "enabled": true,
       "delay": "",
       "note": ""
+    },
+    {
+      "id": "obsifetch",
+      "name": "Obsifetch",
+      "desc": "A neofetch-style vault information display",
+      "group": "",
+      "tags": [],
+      "enabled": true,
+      "delay": "",
+      "note": ""
     }
   ],
   "HIDES": []

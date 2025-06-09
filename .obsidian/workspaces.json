@@ -6,11 +6,11 @@
         "type": "split",
         "children": [
           {
-            "id": "43e3e05c20af6a46",
+            "id": "e443707060ea4a81",
             "type": "tabs",
             "children": [
               {
-                "id": "e52b0f0ef3268ddf",
+                "id": "eab676deb061319a",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
@@ -36,7 +36,7 @@
           {
             "id": "8563ba047e468848",
             "type": "tabs",
-            "dimension": 60.609480812641074,
+            "dimension": 60.633484162895925,
             "children": [
               {
                 "id": "a2b61e686cc07b31",
@@ -114,7 +114,7 @@
           {
             "id": "c5b359856d887b32",
             "type": "tabs",
-            "dimension": 39.39051918735892,
+            "dimension": 39.366515837104075,
             "children": [
               {
                 "id": "ee0493006aa23741",
@@ -122,7 +122,7 @@
                 "state": {
                   "type": "vertical-tabs",
                   "state": {},
-                  "icon": "gallery-vertical",
+                  "icon": "vertical-tabs",
                   "title": "Vertical tabs"
                 }
               },
@@ -232,7 +232,7 @@
                 }
               }
             ],
-            "currentTab": 2
+            "currentTab": 1
           },
           {
             "id": "57f3dcfa2c7c4e84",
@@ -259,7 +259,7 @@
                       "collapse-color-groups": true,
                       "colorGroups": [],
                       "collapse-display": true,
-                      "showArrow": false,
+                      "showArrow": true,
                       "textFadeMultiplier": 0,
                       "nodeSizeMultiplier": 1,
                       "lineSizeMultiplier": 2,
@@ -287,13 +287,13 @@
                 }
               },
               {
-                "id": "e107ec04be1480ed",
+                "id": "26230c11abfc7f62",
                 "type": "leaf",
                 "state": {
-                  "type": "canvas-links",
+                  "type": "Strange New Worlds",
                   "state": {},
-                  "icon": "align-center-horizontal",
-                  "title": "Canvas Links"
+                  "icon": "file-digit",
+                  "title": "Strange New Worlds"
                 }
               },
               {
@@ -316,13 +316,13 @@
                 }
               },
               {
-                "id": "82d4afd67b1be2db",
+                "id": "e107ec04be1480ed",
                 "type": "leaf",
                 "state": {
-                  "type": "advanced-tables-toolbar",
+                  "type": "canvas-links",
                   "state": {},
-                  "icon": "spreadsheet",
-                  "title": "Advanced Tables"
+                  "icon": "align-center-horizontal",
+                  "title": "Canvas Links"
                 }
               }
             ]
@@ -348,29 +348,34 @@
           "quick-tagger:Add tag to current note": true,
           "quick-tagger:Remove tag from current note": true,
           "graph:Open graph view": false,
-          "obsidian-trash-explorer:Open trash explorer": false,
           "recent-notes:Recent notes": false,
           "callout-manager:Insert Callout": false,
           "abbreviations-mark:List abbreviations": false,
+          "obsidian-trash-explorer:Open trash explorer": false,
+          "obsifetch:obsifetch": false,
           "periodic-notes:Open today": false,
           "obsidian42-brat:BRAT": false,
           "widgets:Add widget": false,
           "obsidian-day-and-night:Toggle Theme": false,
           "quickadd:QuickAdd": false,
-          "templater-obsidian:Templater": false,
+          "iconic:Open rulebook": false,
           "obsidian-projects:Open projects": false,
           "slides-extended:Show slide preview": false,
-          "iconic:Open rulebook": false,
+          "templater-obsidian:Templater": false,
           "pdf-plus:PDF++: Toggle auto-copy": false,
           "pdf-plus:PDF++: Toggle auto-focus": false,
           "pdf-plus:PDF++: Toggle auto-paste": false,
           "omnisearch:Omnisearch": false
         }
       },
-      "active": "e52b0f0ef3268ddf",
-      "mtime": "2025-05-28T12:42:33+03:00",
+      "active": "eab676deb061319a",
+      "mtime": "2025-06-09T16:32:03+03:00",
       "workspaces-plus:settings-v1": {
-        "explorerFoldState": [],
+        "explorerFoldState": [
+          "utils",
+          "utils/commands",
+          "utils/pack"
+        ],
         "mode": null
       }
     }
