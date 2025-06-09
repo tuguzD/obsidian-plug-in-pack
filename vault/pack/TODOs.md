@@ -9,8 +9,9 @@
 
 - replace existing plugins:
 	- compare: [Enhanced Copy](https://github.com/Mara-Li/obsidian-enhanced-copy), [Easy Copy](https://github.com/Moyf/easy-copy), [Paste Reformatter](https://github.com/keathmilligan/obsidian-paste-reformatter), …
-	- [Automatic Table Of Contents](https://github.com/johansatge/obsidian-automatic-table-of-contents) (instead of "Waypoint"),
 	- [Block Link Plus](https://github.com/Jasper-1024/block-link-plus) (instead of "Copy Block Link"),
+		- before that, FIX "Windows/System32" weird behavior!!!
+	- [Automatic Table Of Contents](https://github.com/johansatge/obsidian-automatic-table-of-contents) (instead of "Waypoint"),
 - new hotkeys:
 	- [Editor Commands Remap](https://github.com/c4ctus5/editor-commands-remap), [Keyshots](https://github.com/KrazyManJ/obsidian-keyshots), [Code Editor Shortcuts](https://github.com/timhor/obsidian-editor-shortcuts), …
 - note aliases:

@@ -140,7 +140,7 @@
     },
     "vault/pack/TODOs.md": {
       "icon": "lucide-list-todo",
-      "color": "orange"
+      "color": "yellow"
     },
     "vault/templates": {
       "icon": "lucide-copy-slash",
