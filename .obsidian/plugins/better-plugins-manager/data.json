@@ -1881,6 +1881,16 @@
       "enabled": true,
       "delay": "",
       "note": ""
+    },
+    {
+      "id": "consecutive-lists",
+      "name": "Consecutive Lists",
+      "desc": "Create consecutive lists that are displayed separately in reading mode.",
+      "group": "",
+      "tags": [],
+      "enabled": true,
+      "delay": "",
+      "note": ""
     }
   ],
   "HIDES": []
