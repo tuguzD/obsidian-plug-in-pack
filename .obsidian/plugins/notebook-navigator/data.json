@@ -17,9 +17,7 @@
   "dateFormat": "MMM d, yyyy",
   "confirmBeforeDelete": true,
   "leftPaneWidth": 150,
-  "pinnedNotes": {
-    "vault/templates/periods": []
-  },
+  "pinnedNotes": {},
   "folderIcons": {
     "vault": "obsidian-new",
     "vault/commands": "lucide-code-square",

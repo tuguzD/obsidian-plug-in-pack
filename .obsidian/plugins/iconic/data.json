@@ -75,7 +75,7 @@
       "color": "purple"
     },
     "localgraph": {
-      "color": "purple"
+      "color": "pink"
     },
     "map": {
       "color": "pink"
@@ -101,7 +101,8 @@
       "color": "pink"
     },
     "reminder-list": {
-      "icon": "lucide-alarm-clock"
+      "icon": "lucide-alarm-clock",
+      "color": "cyan"
     },
     "reveal-preview-view": {
       "icon": "lucide-presentation"
