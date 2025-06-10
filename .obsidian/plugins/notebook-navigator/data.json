@@ -1,0 +1,49 @@
+{
+  "sortOption": "modified",
+  "groupByDate": true,
+  "showNotesFromSubfolders": false,
+  "autoRevealActiveFile": true,
+  "excludedFiles": "",
+  "ignoreFolders": "",
+  "showFilePreview": true,
+  "skipHeadingsInPreview": false,
+  "skipNonTextInPreview": true,
+  "showFeatureImage": true,
+  "featureImageProperty": "feature",
+  "showRootFolder": false,
+  "showFolderFileCount": true,
+  "showTags": true,
+  "showUntagged": false,
+  "dateFormat": "MMM d, yyyy",
+  "confirmBeforeDelete": true,
+  "leftPaneWidth": 150,
+  "pinnedNotes": {
+    "vault/templates/periods": []
+  },
+  "folderIcons": {
+    "vault": "obsidian-new",
+    "vault/commands": "lucide-code-square",
+    "vault/pack": "lucide-package",
+    "vault/templates/snippets": "lucide-text-select",
+    "vault/templates": "lucide-copy-slash",
+    "vault/templates/periods": "lucide-calendar-cog"
+  },
+  "folderColors": {
+    "vault/commands": "#d946ef",
+    "vault": "#a855f7",
+    "vault/pack": "#f59e0b",
+    "vault/templates/snippets": "#8b5cf6",
+    "vault/templates": "#14b8a6",
+    "vault/templates/periods": "#ec4899"
+  },
+  "recentlyUsedIcons": [
+    "lucide-calendar-cog",
+    "lucide-copy-slash",
+    "lucide-text-select",
+    "lucide-package",
+    "lucide-box",
+    "lucide-code-square",
+    "lucide-command",
+    "obsidian-new"
+  ]
+}

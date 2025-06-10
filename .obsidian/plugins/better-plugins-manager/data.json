@@ -1485,15 +1485,6 @@
       "delay": ""
     },
     {
-      "id": "file-tree-alternative",
-      "name": "File Tree Alternative",
-      "desc": "This plugin allows you to have an alternative file tree view.",
-      "group": "explorer",
-      "tags": [],
-      "enabled": true,
-      "delay": ""
-    },
-    {
       "id": "context-command-hider",
       "name": "Context Command Hider",
       "desc": "Hide any command from the right-click menu.",
@@ -1896,6 +1887,16 @@
       "id": "auto-template-trigger",
       "name": "Auto Template Trigger",
       "desc": "Automatically apply or prompt for a template when creating a note. Supports assigning templates to folders.",
+      "group": "",
+      "tags": [],
+      "enabled": true,
+      "delay": "",
+      "note": ""
+    },
+    {
+      "id": "notebook-navigator",
+      "name": "Notebook Navigator",
+      "desc": "Replace the default file explorer with a clean two-pane interface featuring folder tree, tag browsing, file previews, keyboard navigation, drag-and-drop, pinned notes, and customizable display options.",
       "group": "",
       "tags": [],
       "enabled": true,

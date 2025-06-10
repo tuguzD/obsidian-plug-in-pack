@@ -590,6 +590,9 @@
       },
       "auto-template-trigger": {
         "startupType": "disabled"
+      },
+      "notebook-navigator": {
+        "startupType": "disabled"
       }
     }
   },

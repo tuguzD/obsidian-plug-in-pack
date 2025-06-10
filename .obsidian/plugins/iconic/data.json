@@ -83,6 +83,10 @@
     "modal-form-manage-forms-view": {
       "icon": "lucide-list-video"
     },
+    "notebook-navigator-react-view": {
+      "icon": "lucide-split-square-horizontal",
+      "color": "yellow"
+    },
     "obsidian-leaflet-map-view": {
       "icon": "obsidian-leaflet-plugin-icon-map"
     },

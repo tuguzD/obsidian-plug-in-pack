@@ -1,8 +1,13 @@
 {
   "pluginList": [
+    "johansan/notebook-navigator",
     "d7sd6u/obsidian-lazy-cached-vault-load"
   ],
   "pluginSubListFrozenVersion": [
+    {
+      "repo": "johansan/notebook-navigator",
+      "version": "latest"
+    },
     {
       "repo": "d7sd6u/obsidian-lazy-cached-vault-load",
       "version": "latest"
